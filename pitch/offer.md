@@ -3,17 +3,19 @@
 **Category:** Product design partner for AI startups  
 **One-liner:** We decide what to build, design it, and ship the interface.
 
-Figma: [dubranding-general-file](https://www.figma.com/design/x2WwbpezaVTEHpXAQkKe8q/dubranding-general-file?node-id=29-2) · claim: [`../positioning.md`](../positioning.md)
+Figma: [dubranding-general-file · NEW PHASE deck](https://www.figma.com/design/x2WwbpezaVTEHpXAQkKe8q/dubranding-general-file?node-id=1236-3) · claim: [`../positioning.md`](../positioning.md) · repo: [freitaspauloo/dudesign](https://github.com/freitaspauloo/dudesign)
 
 ---
 
 ## What you get
 
-| Layer | Delivered |
-|-------|-----------|
+
+| Layer   | Delivered                                  |
+| ------- | ------------------------------------------ |
 | Product | Discovery, prioritization, success metrics |
-| Design | Flows, UX/UI, system, hi-fi |
-| Ship | Production UI in code (components / pages) |
+| Design  | Flows, UX/UI, system, hi-fi                |
+| Ship    | Production UI in code (components / pages) |
+
 
 **Add-on (quoted):** backend via trusted eng partners — same engagement, not a software-house rebrand.
 
@@ -25,11 +27,13 @@ Shipping is in the critical path (design + UI build overlap), not a week-8 hando
 
 ### Ship — 6 weeks
 
-| Weeks | Focus |
-|------:|-------|
-| 1–2 | Discovery, product bets, flows, wireframes |
-| 3–5 | Design system, hi-fi, **production UI in parallel** |
-| 6 | Polish, validate, deliver frontend package |
+
+| Weeks | Focus                                               |
+| ----- | --------------------------------------------------- |
+| 1–2   | Discovery, product bets, flows, wireframes          |
+| 3–5   | Design system, hi-fi, **production UI in parallel** |
+| 6     | Polish, validate, deliver frontend package          |
+
 
 Gates: end of week 2 · mid week 5 · week 6 sign-off. Feedback SLA: 5 business days.
 
@@ -41,12 +45,12 @@ Same spine as Ship, then **monthly product + design + UI shipping** (slices, rev
 
 ## Pricing
 
-Old deck ($12k / $25k) was design-to-handoff. Shipping the interface is the product — price for that.
 
-| Tier | Price | Duration | Best for |
-|------|------:|----------|----------|
-| **Ship** | **$18,000** | 6 weeks | Founder / VP Product — defined surface, designed + shipped |
-| **Partner** *(recommended)* | **$32,000** then **$7,500/mo** | 8-week build + monthly | Series A–B — embedded partner, not a vendor |
+| Tier                        | Price                          | Duration               | Best for                                                   |
+| --------------------------- | ------------------------------ | ---------------------- | ---------------------------------------------------------- |
+| **Ship**                    | **$18,000**                    | 6 weeks                | Founder / VP Product — defined surface, designed + shipped |
+| **Partner** *(recommended)* | **$32,000** then **$7,500/mo** | 8-week build + monthly | Series A–B — embedded partner, not a vendor                |
+
 
 ### Why this value
 
@@ -57,11 +61,13 @@ Old deck ($12k / $25k) was design-to-handoff. Shipping the interface is the prod
 
 ### vs what you’re replacing
 
-| Buy | Rough cost | With DUDESIGN |
-|-----|------------|---------------|
-| Mid design agency (handoff) | $20–40k project | More outcome for similar $ — design **and** shipped UI |
-| Design engineer hire | $150–220k + equity | Partner without FT overhead |
-| “Software house” MVP | $40–80k+ | We’re not that — don’t buy or price us like a body shop |
+
+| Buy                         | Rough cost         | With DUDESIGN                                           |
+| --------------------------- | ------------------ | ------------------------------------------------------- |
+| Mid design agency (handoff) | $20–40k project    | More outcome for similar $ — design **and** shipped UI  |
+| Design engineer hire        | $150–220k + equity | Partner without FT overhead                             |
+| “Software house” MVP        | $40–80k+           | We’re not that — don’t buy or price us like a body shop |
+
 
 ### What’s in each
 
@@ -75,10 +81,12 @@ Everything in Ship · usability testing · eng interface walkthrough · team tra
 
 ### Payment
 
-| Tier | Schedule |
-|------|----------|
-| Ship | 50% kick-off · 25% end week 3 · 25% on delivery |
+
+| Tier    | Schedule                                                               |
+| ------- | ---------------------------------------------------------------------- |
+| Ship    | 50% kick-off · 25% end week 3 · 25% on delivery                        |
 | Partner | 40% kick-off · 30% end week 4 · 30% end week 8 · then monthly retainer |
+
 
 Wire / ACH · USD · net 7 · invoices on fixed dates · IP to client on final payment · DUDESIGN portfolio rights · NDA first · extra revision rounds $500
 
@@ -88,17 +96,19 @@ Wire / ACH · USD · net 7 · invoices on fixed dates · IP to client on final p
 
 Keep layout. Replace claims:
 
-| Slide | Copy |
-|-------|------|
-| Cover | **Product design partner for AI startups.** / We decide what to build, design it, and ship the interface. |
-| About | Fortune 500 quality. Partner speed. · Independent product design partner — product, UX/UI, shipped interface. Audi, Samsung, 3M, Ford, Sony + Honda, Costco. |
-| Method | Research → strategy → design → **ship.** Ends in production UI, not a handoff folder. |
-| Process | **Ship: 6 weeks.** Discover → architect → design + build → deliver. |
-| Included | Weekly updates · system docs · 2 revision rounds · channel · **production UI package** · case study |
-| FAQ | Eng partners for backend if needed · IP yes · fixed invoice dates · extend existing systems |
-| Tiers | **Ship $18k / 6 wks** · **Partner $32k + $7.5k/mo** |
-| Upside | **vs what you’re replacing.** Agency $20–40k handoff → we ship UI. Design eng hire $150–220k+ → partner, no FT. Software house $40–80k+ → we’re not that. |
-| CTA | hello@dudesign.us · dudesign.us |
+
+| Slide    | Copy                                                                                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Cover    | **Product design partner for AI startups.** / We decide what to build, design it, and ship the interface.                                                    |
+| About    | Fortune 500 quality. Partner speed. · Independent product design partner — product, UX/UI, shipped interface. Audi, Samsung, 3M, Ford, Sony + Honda, Costco. |
+| Method   | Research → strategy → design → **ship.** Ends in production UI, not a handoff folder.                                                                        |
+| Process  | **Ship: 6 weeks.** Discover → architect → design + build → deliver.                                                                                          |
+| Included | Weekly updates · system docs · 2 revision rounds · channel · **production UI package** · case study                                                          |
+| FAQ      | Eng partners for backend if needed · IP yes · fixed invoice dates · extend existing systems                                                                  |
+| Tiers    | **Ship $18k / 6 wks** · **Partner $32k + $7.5k/mo**                                                                                                          |
+| Upside   | **vs what you’re replacing.** Agency $20–40k handoff → we ship UI. Design eng hire $150–220k+ → partner, no FT. Software house $40–80k+ → we’re not that.    |
+| CTA      | [hello@dudesign.us](mailto:hello@dudesign.us) · dudesign.us                                                                                                  |
+
 
 Cases / track record: keep visuals; label **Interface delivery** where relevant.
 

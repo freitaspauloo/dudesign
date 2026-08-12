@@ -3,7 +3,7 @@
 **Category:** Product design partner for AI startups  
 **One-liner:** We decide what to build, design it, and ship the interface.
 
-Figma: [dubranding-general-file · NEW PHASE deck](https://www.figma.com/design/x2WwbpezaVTEHpXAQkKe8q/dubranding-general-file?node-id=1236-3) · claim: [`../positioning.md`](../positioning.md) · repo: [freitaspauloo/dudesign](https://github.com/freitaspauloo/dudesign)
+Commercial terms below. Slide content lives in code (`src/content/slides.ts`).
 
 ---
 
@@ -62,11 +62,11 @@ Same spine as Ship, then **monthly product + design + UI shipping** (slices, rev
 ### vs what you’re replacing
 
 
-| Buy                         | Rough cost         | With DUDESIGN                                           |
-| --------------------------- | ------------------ | ------------------------------------------------------- |
-| Mid design agency (handoff) | $20–40k project    | More outcome for similar $ — design **and** shipped UI  |
-| Design engineer hire        | $150–220k + equity | Partner without FT overhead                             |
-| “Software house” MVP        | $40–80k+           | We’re not that — don’t buy or price us like a body shop |
+| Buy | Rough cost | With DUDESIGN |
+| --- | --- | --- |
+| Design agency (handoff) | $20–40k | Same craft — plus the interface shipped in code |
+| Full-time design engineer | $150–220k + equity | Senior partner capacity without a full-time seat |
+| Software house MVP | $40–80k+ | Product taste first — not a build-by-the-hour shop |
 
 
 ### What’s in each
@@ -92,29 +92,11 @@ Wire / ACH · USD · net 7 · invoices on fixed dates · IP to client on final p
 
 ---
 
-## Deck copy (paste into Figma)
+## Deck
 
-Keep layout. Replace claims:
+Live deck is code-first: [`src/content/slides.ts`](../src/content/slides.ts) → `npm run dev`.
 
-
-| Slide    | Copy                                                                                                                                                         |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Cover    | **Product design partner for AI startups.** / We decide what to build, design it, and ship the interface.                                                    |
-| About    | Fortune 500 quality. Partner speed. · Independent product design partner — product, UX/UI, shipped interface. Audi, Samsung, 3M, Ford, Sony + Honda, Costco. |
-| Method   | Research → strategy → design → **ship.** Ends in production UI, not a handoff folder.                                                                        |
-| Process  | **Ship: 6 weeks.** Discover → architect → design + build → deliver.                                                                                          |
-| Included | Weekly updates · system docs · 2 revision rounds · channel · **production UI package** · case study                                                          |
-| FAQ      | Eng partners for backend if needed · IP yes · fixed invoice dates · extend existing systems                                                                  |
-| Tiers    | **Ship $18k / 6 wks** · **Partner $32k + $7.5k/mo**                                                                                                          |
-| Upside   | **vs what you’re replacing.** Agency $20–40k handoff → we ship UI. Design eng hire $150–220k+ → partner, no FT. Software house $40–80k+ → we’re not that.    |
-| CTA      | [hello@dudesign.us](mailto:hello@dudesign.us) · dudesign.us                                                                                                  |
-
-
-Cases / track record: keep visuals; label **Interface delivery** where relevant.
-
-### Frame map (later site)
-
-`1236:3` Cover → `1236:5` Wordmark → `1236:7` About → method/included/process/work frames → `1236:718` Tiers → `1236:890` Bonuses → `1236:672` CTA · file key `x2WwbpezaVTEHpXAQkKe8q`
+Figma (reference only, older frames still mixed in file): [NEW PHASE](https://www.figma.com/design/x2WwbpezaVTEHpXAQkKe8q/dubranding-general-file?node-id=1236-3) · repo: [freitaspauloo/dudesign](https://github.com/freitaspauloo/dudesign)
 
 ---
 

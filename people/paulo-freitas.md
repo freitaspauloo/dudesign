@@ -155,6 +155,46 @@ Previously designed for Audi, Samsung, Ford, 3M
 
 Paste at [linkedin.com/in/freitas-pauloo](https://www.linkedin.com/in/freitas-pauloo) → Edit profile. Optional: add a Frameline Experience row if you create a company page for it.
 
+### DUDESIGN — X / IG
+
+Studio accounts `@dudesign_us` / `@dudesign.us`. Same three-line pattern; no Founder/Athlete line.
+
+**Recommended** (fits X 160 and IG 150)
+
+```
+Product design partner for AI startups.
+We decide what to build, design it, and ship the interface.
+Previously: @Audi @Samsung @Ford @3M
+```
+
+X website field: `dudesign.us`. On IG, tap each @ after save — if `@3m` is the wrong account, use `Audi · Samsung · Ford · 3M`.
+
+**Alt**
+
+```
+Fortune 500 craft. Startup speed.
+We decide what to build, design it, and ship the interface.
+@Audi @Samsung @Ford @3M
+```
+
+### BuiltOps — X / IG
+
+Product account, not Losani's. Don't tag Losani unless Scott wants BuiltOps public. No public URL yet — skip the Vercel preview.
+
+**Recommended**
+
+```
+Connected web experience for home builders.
+Communities, models, maps — not another brochure site.
+```
+
+**Alt**
+
+```
+The builder's marketing site, rebuilt as a product.
+One template. Every community. Actually connected.
+```
+
 ### A — Closest to what you have now
 
 **IG**

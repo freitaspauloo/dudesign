@@ -29,7 +29,7 @@ Before DUDESIGN, I led design at **XIX3D**, working across product design, HMI, 
 
 Clients include **Audi, Samsung, 3M, Ford, Sony + Honda (Afeela), and Costco**.
 
-Fortune 500 craft. Startup speed. Same standard now serving Series A–B teams that need to move without lowering the bar — product judgment, UX/UI, and a production interface in one engagement.
+Fortune 500 craft. Startup speed. Same standard now serving Series A–B teams that need to move without lowering the bar — product judgment, UX/UI, and interface implementation in one engagement.
 
 ## Career ladder
 

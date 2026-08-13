@@ -21,7 +21,7 @@ AI / Series A–B — founders and VP Product who need product judgment, UX/UI, 
 
 **Alts:** Fortune 500 craft. Startup speed. · From product bet to shipped interface.
 
-**About:** Independent product design partner founded by Paulo Freitas. Fortune 500 craft (Audi, Samsung, 3M, Ford, Sony + Honda, Costco) for Series A–B teams that need to move without lowering the bar — product judgment, UX/UI, production interface.
+**About:** Independent product design partner founded by Paulo Freitas. Fortune 500 craft (Audi, Samsung, 3M, Ford, Sony + Honda, Costco) for Series A–B teams that need to move without lowering the bar — product judgment, UX/UI, interface implementation.
 
 **Bio:** DUDESIGN helps AI startups turn product bets into shipped interfaces. Product judgment, UX/UI, and production frontend — one partner engagement.
 

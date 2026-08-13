@@ -135,6 +135,26 @@ Previously designed for @Audi @Samsung @Ford @3M
 
 After save, tap `@framelineai`. If it doesn't open a profile, claim that handle first (site is [frameline.ai](https://frameline.ai)).
 
+### Chosen — LinkedIn (locked)
+
+Same three lines as X. LinkedIn **headline and About do not support `@` tags** — those only work in posts. Use company names here; DUDESIGN already links via the Experience entry ([company page](https://www.linkedin.com/company/dudesignstudio1)).
+
+**Headline** (114 / 220)
+
+```
+Designer | Founder | Athlete | Building DUDESIGN + Frameline | Previously designed for Audi, Samsung, Ford, 3M
+```
+
+**About** (the bio people see before “see more”)
+
+```
+Designer | Founder | Athlete
+Building DUDESIGN + Frameline
+Previously designed for Audi, Samsung, Ford, 3M
+```
+
+Paste at [linkedin.com/in/freitas-pauloo](https://www.linkedin.com/in/freitas-pauloo) → Edit profile. Optional: add a Frameline Experience row if you create a company page for it.
+
 ### A — Closest to what you have now
 
 **IG**

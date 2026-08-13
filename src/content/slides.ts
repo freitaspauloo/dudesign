@@ -189,7 +189,7 @@ export const slides: Slide[] = [
         ],
         bestFor:
           "Founders and VP Product who need one surface designed and live.",
-        note: "Backend, auth, and infra available as an eng-partner add-on.",
+        note: "Backend, auth, and infra available via engineering partners — a separate engagement, quoted in addition.",
       },
       {
         name: "Partner",
@@ -219,7 +219,7 @@ export const slides: Slide[] = [
     items: [
       {
         q: "Do you replace our engineers?",
-        a: "No. We own product, design, and the shipped interface. If you need backend, we bring trusted eng partners under the same engagement.",
+        a: "No. We own product, design, and interface implementation. If you need backend, we can introduce trusted engineering partners — that's a separate engagement, quoted in addition.",
       },
       {
         q: "Do I own the work?",

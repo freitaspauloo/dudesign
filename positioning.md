@@ -1,7 +1,7 @@
 # DUDESIGN — positioning
 
 **Category:** Product design partner for AI startups  
-**One-liner:** We decide what to build, design it, and ship the interface.
+**One-liner:** We decide what to build, design it, and we implement the interface.
 
 Partner engagement — not an IC hire, not Figma-only, not a software house. Backend boundary (or eng-partner add-on) lives in [`pitch/offer.md`](pitch/offer.md), never in the hero.
 
@@ -17,7 +17,7 @@ AI / Series A–B — founders and VP Product who need product judgment, UX/UI, 
 
 ## Copy
 
-**Hero:** Product design partner for AI startups. / We decide what to build, design it, and ship the interface.
+**Hero:** Product design partner for AI startups. / We decide what to build, design it, and we implement the interface.
 
 **Alts:** Fortune 500 craft. Startup speed. · From product bet to shipped interface.
 

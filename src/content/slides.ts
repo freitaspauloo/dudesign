@@ -78,7 +78,7 @@ export const slides: Slide[] = [
     id: "claim",
     kind: "claim",
     category: "Product design partner for AI startups.",
-    line: "We decide what to build, design it, and ship the interface.",
+    line: "We decide what to build, design it, and we implement the interface.",
   },
   {
     id: "about",

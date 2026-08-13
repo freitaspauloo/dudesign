@@ -1,7 +1,7 @@
 # DUDESIGN — offer & pitch
 
 **Category:** Product design partner for AI startups  
-**One-liner:** We decide what to build, design it, and ship the interface.
+**One-liner:** We decide what to build, design it, and we implement the interface.
 
 Commercial terms below. Slide content lives in code (`src/content/slides.ts`).
 

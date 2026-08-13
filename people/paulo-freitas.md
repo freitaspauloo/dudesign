@@ -4,7 +4,7 @@
 
 Living Notion page: [Paulo Freitas](https://app.notion.com/p/3bb0f86a1720813c942ae08f6bc3254e)
 
-> Product design partner for AI startups. We decide what to build, design it, and ship the interface.
+> Product design partner for AI startups. We decide what to build, design it, and we implement the interface.
 
 ## Snapshot
 
@@ -163,7 +163,7 @@ Studio accounts `@dudesign_us` / `@dudesign.us`. Same three-line pattern; no Fou
 
 ```
 Product design partner for AI startups.
-We decide what to build, design it, and ship the interface.
+We decide what to build, design it, and we implement the interface.
 Previously: @Audi @Samsung @Ford @3M
 ```
 
@@ -173,7 +173,7 @@ X website field: `dudesign.us`. On IG, tap each @ after save — if `@3m` is the
 
 ```
 Fortune 500 craft. Startup speed.
-We decide what to build, design it, and ship the interface.
+We decide what to build, design it, and we implement the interface.
 @Audi @Samsung @Ford @3M
 ```
 
@@ -265,7 +265,7 @@ Audi, Samsung, 3M, Ford, Costco.
 dudesign.us
 ```
 
-**LinkedIn headline:** Founder @ DUDESIGN · Building Frameline | We decide what to build, design it, and ship the interface
+**LinkedIn headline:** Founder @ DUDESIGN · Building Frameline | We decide what to build, design it, and we implement the interface
 
 **LinkedIn about:** Independent product design partner for AI startups. Fortune 500 craft (Audi, Samsung, 3M, Ford, Sony + Honda, Costco) at startup speed. Now building DUDESIGN and Frameline — one is the studio, one is the product.
 

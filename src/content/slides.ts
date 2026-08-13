@@ -115,10 +115,9 @@ export const slides: Slide[] = [
     kind: "method",
     label: "The Method",
     steps: [
-      "Research first.",
-      "Strategy second.",
-      "Design third.",
-      "Ship the interface.",
+      "Strategy first.",
+      "Design second.",
+      "Implementation third.",
     ],
     body: "We start with the problem, not the pixels — and finish with production UI in the product, not a file left behind in Figma.",
   },

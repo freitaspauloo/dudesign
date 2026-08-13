@@ -85,7 +85,7 @@ export const slides: Slide[] = [
     kind: "about",
     headline: "Fortune 500 craft.\nStartup speed.",
     body: [
-      "DUDESIGN is an independent product design partner for AI startups, founded by Paulo Freitas. Product judgment, UX/UI, and production interface — one engagement.",
+      "DUDESIGN is an independent product design partner for AI startups, founded by Paulo Freitas. Product judgment, UX/UI, and interface implementation — one engagement.",
       "We've shipped for Audi, Samsung, 3M, Ford, Sony + Honda, and Costco. That same standard now serves Series A–B teams that need to move without lowering the bar.",
     ],
     work: ["01", "02", "03", "04", "05", "06", "07", "08", "09"],

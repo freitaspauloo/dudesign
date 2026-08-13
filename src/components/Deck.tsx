@@ -261,50 +261,52 @@ export function Deck() {
     slides[index]?.kind === "title" || slides[index]?.kind === "claim";
 
   return (
-    <div className="deck">
-      <div className="progress" style={{ width: `${progress}%` }} />
-      {slides.map((slide, i) => (
-        <section
-          key={slide.id}
-          className={`slide${i === index ? " is-active" : ""}`}
-          aria-hidden={i !== index}
-        >
-          <SlideView slide={slide} />
-        </section>
-      ))}
-      <div className={`deck-chrome${chromeHidden ? " is-minimal" : ""}`}>
-        <div className="dots" role="tablist" aria-label="Slides">
-          {slides.map((slide, i) => (
+    <div className="deck-viewport">
+      <div className="deck">
+        <div className="progress" style={{ width: `${progress}%` }} />
+        {slides.map((slide, i) => (
+          <section
+            key={slide.id}
+            className={`slide${i === index ? " is-active" : ""}`}
+            aria-hidden={i !== index}
+          >
+            <SlideView slide={slide} />
+          </section>
+        ))}
+        <div className={`deck-chrome${chromeHidden ? " is-minimal" : ""}`}>
+          <div className="dots" role="tablist" aria-label="Slides">
+            {slides.map((slide, i) => (
+              <button
+                key={slide.id}
+                type="button"
+                className={`dot${i === index ? " is-active" : ""}`}
+                aria-label={`Go to slide ${i + 1}`}
+                aria-current={i === index ? "true" : undefined}
+                onClick={() => go(i)}
+              />
+            ))}
+          </div>
+          <div className="counter" aria-hidden>
+            {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+          </div>
+          <div className="nav-btns">
             <button
-              key={slide.id}
               type="button"
-              className={`dot${i === index ? " is-active" : ""}`}
-              aria-label={`Go to slide ${i + 1}`}
-              aria-current={i === index ? "true" : undefined}
-              onClick={() => go(i)}
-            />
-          ))}
-        </div>
-        <div className="counter" aria-hidden>
-          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-        </div>
-        <div className="nav-btns">
-          <button
-            type="button"
-            aria-label="Previous slide"
-            disabled={index === 0}
-            onClick={() => go(index - 1)}
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            aria-label="Next slide"
-            disabled={index === total - 1}
-            onClick={() => go(index + 1)}
-          >
-            →
-          </button>
+              aria-label="Previous slide"
+              disabled={index === 0}
+              onClick={() => go(index - 1)}
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              aria-label="Next slide"
+              disabled={index === total - 1}
+              onClick={() => go(index + 1)}
+            >
+              →
+            </button>
+          </div>
         </div>
       </div>
     </div>

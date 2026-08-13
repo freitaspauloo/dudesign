@@ -2,7 +2,7 @@
 
 **Product design partner for AI startups.**
 
-We decide what to build, design it, and ship the interface.
+We decide what to build, design it, and we implement the interface.
 
 ## Run the deck
 

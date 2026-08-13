@@ -55,7 +55,7 @@ Independent studio founded by Paulo (LinkedIn: founded 2020; 1-person company).
 | Design | Flows, UX/UI, system, hi-fi |
 | Ship | Production UI in code (components / pages) |
 
-**Method:** Research first. Strategy second. Design third. Ship the interface.
+**Method:** Strategy first. Design second. Implementation third.
 
 **Tiers (live deck, Aug 2026):**
 

@@ -177,24 +177,26 @@ We decide what to build, design it, and ship the interface.
 @Audi @Samsung @Ford @3M
 ```
 
-### BuiltOps — X / IG
+### Frameline — X / IG
 
-Product account, not Losani's. Don't tag Losani unless Scott wants BuiltOps public. No public URL yet — skip the Vercel preview.
+Product accounts (`@framelineai` on X). Website / link field: `frameline.ai`. Don't put Fortune 500 in this bio — that's DUDESIGN's.
 
 **Recommended**
 
 ```
-Connected web experience for home builders.
-Communities, models, maps — not another brochure site.
+Design assets for the AI era.
+Shippable surface — so you don't ship the default look.
 ```
 
-**Alt**
+**Alt** (cross-tags the studio)
 
 ```
-The builder's marketing site, rebuilt as a product.
-One template. Every community. Actually connected.
+Stop shipping the default AI look.
+Materials you install, not PNGs you hope scale.
+By @dudesign_us
 ```
 
+On IG, last line is `By @dudesign.us`.
 ### A — Closest to what you have now
 
 **IG**

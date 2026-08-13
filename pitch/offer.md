@@ -17,7 +17,7 @@ Commercial terms below. Slide content lives in code (`src/content/slides.ts`).
 | Ship    | Production UI in code (components / pages) |
 
 
-**Add-on (quoted):** backend via trusted eng partners — same engagement, not a software-house rebrand.
+**Add-on (quoted separately):** backend via trusted eng partners — additional cost, not included in Ship or Partner.
 
 ---
 

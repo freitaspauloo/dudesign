@@ -25,5 +25,6 @@ Open [http://localhost:3000](http://localhost:3000) — arrow keys / space to na
 | [positioning.md](positioning.md) | Claim, ICP, copy, objections |
 | [pitch/offer.md](pitch/offer.md) | Timelines, pricing, commercial terms |
 | [src/content/slides.ts](src/content/slides.ts) | Live deck content (source of truth for slides) |
+| [people/paulo-freitas.md](people/paulo-freitas.md) | Founder profile — Paulo Freitas |
 
 The code deck is narrowed to the new partner offer only — not the older Figma Foundation / handoff material.

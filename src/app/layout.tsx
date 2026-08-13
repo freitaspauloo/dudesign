@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     "We decide what to build, design it, and we implement the interface.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover" as const,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

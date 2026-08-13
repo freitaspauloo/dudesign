@@ -123,6 +123,18 @@ Collaborators who show up across the work: Scott Berty, Anthony Spadafora, Chris
 
 Same job as the current IG: who you are, what you're building, Fortune 500 proof. Limits: IG 150 · X 160 · LinkedIn headline 220.
 
+### Chosen — X (locked)
+
+114 / 160 characters. Use on the **personal** account so `@dudesign_us` is a real tag, not a self-mention.
+
+```
+Designer | Founder | Athlete
+Building @dudesign_us + @framelineai
+Previously designed for @Audi @Samsung @Ford @3M
+```
+
+After save, tap `@framelineai`. If it doesn't open a profile, claim that handle first (site is [frameline.ai](https://frameline.ai)).
+
 ### A — Closest to what you have now
 
 **IG**

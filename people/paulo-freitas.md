@@ -119,6 +119,82 @@ Collaborators who show up across the work: Scott Berty, Anthony Spadafora, Chris
 
 **Skills:** Product Design, AI Design, Brand Identity, UX Design, Visual Design, Creative Direction, 3D Visualization.
 
+## Social bio options
+
+Same job as the current IG: who you are, what you're building, Fortune 500 proof. Limits: IG 150 · X 160 · LinkedIn headline 220.
+
+### A — Closest to what you have now
+
+**IG**
+
+```
+Designer | Founder | Athlete
+Building DUDESIGN + Frameline
+🥇 Audi · Samsung · Ford · 3M · Costco
+dudesign.us
+```
+
+**X**
+
+```
+Designer | Founder | Athlete
+Building DUDESIGN + Frameline
+Design for Audi, Samsung, Ford, 3M, Costco
+dudesign.us
+```
+
+**LinkedIn headline:** Founder, DUDESIGN + Frameline | Product design for AI startups | Audi, Samsung, 3M, Ford, Costco
+
+**LinkedIn about:** I design products for companies that can afford to look cheap — and don't. Building DUDESIGN (product design partner for AI startups) and Frameline (surfaces you install so you don't ship the default AI look). Previously: Fortune 500 craft at XIX3D — Audi, Samsung, 3M, Ford, Sony + Honda, Costco.
+
+### B — Funny, still serious
+
+**IG**
+
+```
+Designer. Founder. Allergic to AI slop.
+Building DUDESIGN + Frameline
+Audi · Samsung · Ford · 3M · Costco
+dudesign.us
+```
+
+**X**
+
+```
+Designer. Founder. Still shipping for humans.
+Building DUDESIGN + Frameline
+so your product doesn't look generated.
+Audi, Samsung, Ford, 3M, Costco
+```
+
+**LinkedIn headline:** Building DUDESIGN + Frameline | Product design that doesn't look generated | Audi, Samsung, Ford, 3M
+
+**LinkedIn about:** Day job: make AI products look as expensive as the tech behind them. Side quest: Frameline — design assets you can actually install, so teams stop shipping the default look. Clients have included Audi, Samsung, 3M, Ford, Sony + Honda, and Costco.
+
+### C — Dry / smart
+
+**IG**
+
+```
+Product design. Then I ship it.
+Building DUDESIGN + Frameline
+Audi · Samsung · Ford · 3M · Costco
+dudesign.us
+```
+
+**X**
+
+```
+Product design for AI startups.
+Building DUDESIGN (the partner) and Frameline (the surfaces).
+Audi, Samsung, 3M, Ford, Costco.
+dudesign.us
+```
+
+**LinkedIn headline:** Founder @ DUDESIGN · Building Frameline | We decide what to build, design it, and ship the interface
+
+**LinkedIn about:** Independent product design partner for AI startups. Fortune 500 craft (Audi, Samsung, 3M, Ford, Sony + Honda, Costco) at startup speed. Now building DUDESIGN and Frameline — one is the studio, one is the product.
+
 ## Sources
 
 Compiled 13 Aug 2026 from:

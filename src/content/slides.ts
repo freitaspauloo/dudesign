@@ -17,13 +17,6 @@ export type Slide =
     }
   | {
       id: string;
-      kind: "method";
-      label: string;
-      steps: string[];
-      body: string;
-    }
-  | {
-      id: string;
       kind: "process";
       label: string;
       headline: string;
@@ -50,6 +43,7 @@ export type Slide =
         includes: string[];
         bestFor: string;
         note?: string;
+        save?: string;
       }[];
     }
   | {
@@ -104,6 +98,7 @@ export type Slide =
         price: string;
         duration: string;
         tag?: string;
+        save?: string;
         schedule: { pct: string; when: string; amount: string }[];
         foot: string;
       }[];
@@ -151,7 +146,7 @@ export const slides: Slide[] = [
     kind: "about",
     headline: "Fortune 500 craft.\nStartup speed.",
     body: [
-      "DUDESIGN is an independent product design partner for AI startups, founded by Paulo Freitas. Product judgment, UX/UI, and interface implementation. One engagement.",
+      "DUDESIGN is an independent product design partner for AI startups. Product judgment, UX/UI, and interface implementation. One engagement.",
       "We've shipped for Audi, Samsung, 3M, Ford, Sony + Honda, and Costco. That same standard now serves Series A–B teams that need to move without lowering the bar.",
     ],
     work: "/work/tiles.png",
@@ -233,36 +228,25 @@ export const slides: Slide[] = [
     ],
   },
   {
-    id: "method",
-    kind: "method",
-    label: "The Method",
-    steps: [
-      "Strategy.",
-      "Design.",
-      "Implementation.",
-    ],
-    body: "We start with the problem, not the pixels, and finish with production UI in the product, not a file left behind in Figma.",
-  },
-  {
     id: "process",
     kind: "process",
     label: "The Process",
-    headline: "Implemented in 8 weeks.",
+    headline: "First surface in week two.",
     phases: [
       {
-        when: "Weeks 1–2",
+        when: "Week 1",
         title: "Discover",
         detail: "Product bets, architecture, and key flows locked",
       },
       {
-        when: "Weeks 3–7",
-        title: "Design + build",
-        detail: "System, hi-fi, and production UI built in parallel",
+        when: "Week 2",
+        title: "First surface",
+        detail: "Screens in the product you can click through. Not a Figma dump",
       },
       {
-        when: "Week 8",
-        title: "Deliver",
-        detail: "Polish, validate, and hand over a frontend package",
+        when: "From week 3",
+        title: "Design + build",
+        detail: "Production UI continues. Standard hands over. Partner and Yearly stay on",
       },
     ],
   },
@@ -289,8 +273,8 @@ export const slides: Slide[] = [
         detail: "Specs, assets, component library, production-ready files. No back-and-forth.",
       },
       {
-        title: "Two structured revision rounds",
-        detail: "Per deliverable. Clear feedback windows so the timeline holds.",
+        title: "Iteration in the build",
+        detail: "Feedback as we go. Not two rounds and a freeze. The timeline still holds.",
       },
       {
         title: "Portfolio-grade case study",
@@ -306,8 +290,8 @@ export const slides: Slide[] = [
     rows: [
       {
         buy: "Design agency (handoff)",
-        cost: "$20–40k",
-        us: "Same craft, plus the interface shipped in code",
+        cost: "$35–60k",
+        us: "A stronger body of work. Shipped in the product, not a file.",
       },
       {
         buy: "Full-time design engineer",
@@ -330,44 +314,44 @@ export const slides: Slide[] = [
       {
         name: "Standard",
         blurb: "A defined surface, designed and shipped",
-        price: "$21,000",
-        duration: "8 weeks. Then it ends.",
+        price: "$7,000/mo",
+        duration: "3 months. Then it ends.",
         includes: [
           "Product decisions and design system",
           "Hi-fi prototype and production UI",
-          "Two structured revision rounds",
-          "Weekly updates and dedicated channel",
+          "Iteration in the build, as the work needs it",
           "Production UI package in code",
         ],
-        bestFor: "A closed box. You pay extra to walk away at week 8.",
+        bestFor: "A first product surface with a defined end date.",
         note: "Backend, auth, and infra available via engineering partners. A separate engagement, quoted in addition.",
       },
       {
         name: "Partner",
-        blurb: "The seat, with a six-month out",
+        blurb: "The seat, six-month minimum",
         price: "$6,000/mo",
-        duration: "6-month minimum. $36,000. Then month-to-month.",
+        duration: "6-month commit. Then month-to-month.",
+        save: "Save $6,000",
         includes: [
-          "Same first surface as Standard",
-          "Slack as a teammate. 2-day SLA",
+          "Everything from Standard, plus",
           "Usability testing in the build",
           "Ongoing product and UI shipping",
-          "No revision cap",
+          "The next surface is in the seat, not a new project",
         ],
-        bestFor: "You want an out at month 6, and you'll pay for that flexibility.",
+        bestFor: "An ongoing design seat, with a six-month commitment.",
       },
       {
         name: "Yearly",
         tag: "Recommended",
         blurb: "The same seat, for the year",
         price: "$5,000/mo",
-        duration: "12-month commit. $60,000. Billed monthly.",
+        duration: "12-month commit. Billed monthly.",
+        save: "Save $24,000",
         includes: [
-          "Same seat as Partner, for the year",
+          "Everything from Partner, plus",
           "Priority scheduling",
           "Quarterly design audit",
-          "You're the design function, not a vendor",
-          "First surface in about 8 weeks",
+          "Design and UI through the year, not a project",
+          "First surface in week two",
         ],
         bestFor:
           "Series A–B teams who already know this isn’t a one-surface problem.",
@@ -385,38 +369,39 @@ export const slides: Slide[] = [
       {
         name: "Standard",
         blurb: "A defined surface, designed and shipped",
-        price: "$21,000",
-        duration: "8 weeks",
+        price: "$7,000/mo",
+        duration: "3 months",
         schedule: [
-          { pct: "1 of 3", when: "At kick-off", amount: "$7,000" },
-          { pct: "2 of 3", when: "End of month 1", amount: "$7,000" },
-          { pct: "3 of 3", when: "End of month 2", amount: "$7,000" },
+          { pct: "Month 1", when: "At kick-off", amount: "$7,000" },
+          { pct: "Months 2–3", when: "Same date each month", amount: "$7,000/mo" },
         ],
-        foot: "Three equal invoices. Then it ends.",
+        foot: "Billed monthly. 3-month commit.",
       },
       {
         name: "Partner",
-        blurb: "The seat, with a six-month out",
+        blurb: "The seat, six-month minimum",
         price: "$6,000/mo",
-        duration: "$36,000 minimum",
+        duration: "6-month commit",
+        save: "Save $6,000",
         schedule: [
           { pct: "Month 1", when: "At kick-off", amount: "$6,000" },
           { pct: "Months 2–6", when: "Same date each month", amount: "$6,000/mo" },
           { pct: "After", when: "Month-to-month", amount: "$6,000/mo" },
         ],
-        foot: "Six-month minimum. Then the same rate until they cancel.",
+        foot: "Billed monthly. 6-month commit.",
       },
       {
         name: "Yearly",
         tag: "Recommended",
         blurb: "The same seat, for the year",
         price: "$5,000/mo",
-        duration: "$60,000 for the year",
+        duration: "12-month commit",
+        save: "Save $24,000",
         schedule: [
           { pct: "Month 1", when: "At kick-off", amount: "$5,000" },
           { pct: "Months 2–12", when: "Same date each month", amount: "$5,000/mo" },
         ],
-        foot: "Billed monthly. No $60,000 invoice. 12-month commit.",
+        foot: "Billed monthly. 12-month commit.",
       },
     ],
   },
@@ -446,7 +431,7 @@ export const slides: Slide[] = [
       },
       {
         name: "Partner",
-        blurb: "The seat, with a six-month out",
+        blurb: "The seat, six-month minimum",
         count: "+3",
         items: [
           {
@@ -470,12 +455,22 @@ export const slides: Slide[] = [
         name: "Yearly",
         tag: "Recommended",
         blurb: "The same seat, for the year",
-        count: "+2",
+        count: "+3",
         items: [
-          { title: "Everything in Partner" },
           {
-            title: "Priority throughout the year",
-            detail: "Scheduling lock. You don’t re-enter the queue in June.",
+            title: "Everything in Partner",
+            detail:
+              "Next-screen session, rollout deck, and the co-authored story.",
+          },
+          {
+            title: "On-site working week",
+            detail:
+              "One week with their team, in their repo. We leave with something live.",
+          },
+          {
+            title: "Two competitive teardowns",
+            detail:
+              "Their product against the two they actually lose to. What to copy, what to ignore.",
           },
         ],
       },
@@ -496,12 +491,12 @@ export const slides: Slide[] = [
         a: "Yes. Full IP transfers on final payment. Source files and UI code included. DUDESIGN retains portfolio rights only.",
       },
       {
-        q: "How does billing work?",
-        a: "Standard: $7,000 at kickoff, $7,000 at end of month 1, $7,000 at end of month 2. Partner: $6,000 at kickoff, then $6,000 each month, six-month minimum. Yearly: $5,000 at kickoff, then $5,000 each month, 12-month commit. Invoices land on fixed dates.",
+        q: "Can we start Standard and switch later?",
+        a: "Yes. Standard ships one surface, then it ends. If you want the seat after that, Partner or Yearly picks up from the live work. You don't re-buy what already shipped.",
       },
       {
         q: "Can you work with our existing system?",
-        a: "Yes. We extend what you already have. We don't rip and replace for sport.",
+        a: "Yes. We work in what you already have. If the interface isn't at the level the product needs, we raise it — same essence, higher standard. We don't keep weak design just because it exists.",
       },
     ],
   },

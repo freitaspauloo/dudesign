@@ -142,29 +142,6 @@ function SlideShell({
   );
 }
 
-function ToneHeadline({
-  text,
-  className,
-}: {
-  text: string;
-  className?: string;
-}) {
-  const parts = text.split(/(?<=\.)\s+/);
-  return (
-    <h2 className={className}>
-      {parts.map((part, i) => (
-        <span
-          key={part}
-          className={i === parts.length - 1 && parts.length > 1 ? "is-soft" : undefined}
-        >
-          {i > 0 ? " " : ""}
-          {part}
-        </span>
-      ))}
-    </h2>
-  );
-}
-
 function SlideView({ slide }: { slide: Slide }) {
   switch (slide.kind) {
     case "title":
@@ -330,17 +307,6 @@ function SlideView({ slide }: { slide: Slide }) {
           </ul>
         </SlideShell>
       );
-    case "method":
-      return (
-        <SlideShell>
-          <ol className="method-steps">
-            {slide.steps.map((step) => (
-              <li key={step}>{step}</li>
-            ))}
-          </ol>
-          <p className="method-body">{slide.body}</p>
-        </SlideShell>
-      );
     case "process":
       return (
         <SlideShell>
@@ -382,8 +348,8 @@ function SlideView({ slide }: { slide: Slide }) {
               <thead>
                 <tr>
                   <th>Option</th>
-                  <th>Typical cost</th>
-                  <th>With DUDESIGN</th>
+                  <th className="cost">Typical cost</th>
+                  <th className="us">With DUDESIGN</th>
                 </tr>
               </thead>
               <tbody>
@@ -391,7 +357,7 @@ function SlideView({ slide }: { slide: Slide }) {
                   <tr key={row.buy}>
                     <td>{row.buy}</td>
                     <td className="cost">{row.cost}</td>
-                    <td>{row.us}</td>
+                    <td className="us">{row.us}</td>
                   </tr>
                 ))}
               </tbody>
@@ -411,7 +377,10 @@ function SlideView({ slide }: { slide: Slide }) {
                 key={tier.name}
               >
                 {tier.tag ? <div className="tier-tag">{tier.tag}</div> : null}
-                <h3>{tier.name}</h3>
+                <div className="price-head">
+                  <h3>{tier.name}</h3>
+                  {tier.save ? <span className="price-save">{tier.save}</span> : null}
+                </div>
                 <p className="price-blurb">{tier.blurb}</p>
                 <p className="price-figure">{tier.price}</p>
                 <p className="price-meta">{tier.duration}</p>
@@ -434,7 +403,7 @@ function SlideView({ slide }: { slide: Slide }) {
     case "payment":
       return (
         <SlideShell>
-          <ToneHeadline text={slide.headline} className="tiers-headline" />
+          <h2 className="tiers-headline">{slide.headline}</h2>
           <p className="section-lead">{slide.body}</p>
           <div className="price-grid">
             {slide.plans.map((plan) => (
@@ -443,7 +412,10 @@ function SlideView({ slide }: { slide: Slide }) {
                 key={plan.name}
               >
                 {plan.tag ? <div className="tier-tag">{plan.tag}</div> : null}
-                <h3>{plan.name}</h3>
+                <div className="price-head">
+                  <h3>{plan.name}</h3>
+                  {plan.save ? <span className="price-save">{plan.save}</span> : null}
+                </div>
                 <p className="price-blurb">{plan.blurb}</p>
                 <p className="price-figure">{plan.price}</p>
                 <p className="price-meta">{plan.duration}</p>

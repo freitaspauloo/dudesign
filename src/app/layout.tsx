@@ -9,7 +9,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "DUDESIGN — Product design partner for AI startups",
+  title: "DUDESIGN. Product design partner for AI startups",
   description:
     "We decide what to build, design it, and we implement the interface.",
 };

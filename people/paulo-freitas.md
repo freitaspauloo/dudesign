@@ -55,12 +55,12 @@ Independent studio founded by Paulo (LinkedIn: founded 2020; 1-person company).
 | Design | Flows, UX/UI, system, hi-fi |
 | Ship | Production UI in code (components / pages) |
 
-**Method:** Strategy first. Design second. Implementation third.
+**Method:** Strategy. Design. Implementation.
 
 **Tiers (live deck, Aug 2026):**
 
-- **Ship** — $18,000 / 6 weeks — a defined surface, designed and shipped
-- **Partner** (recommended) — $32,000 then $7,500/mo — 8-week build, then monthly
+- **Standard** — $15,000 / 8 weeks — a defined surface, designed and shipped
+- **Partner** (recommended) — $25,000 then $5,000/mo — 12-week build, then monthly
 
 Backend, auth, and infra are a separate engineering-partner engagement — quoted in addition, not the hero.
 

@@ -15,21 +15,18 @@ function BrandMark() {
 
 function SlideShell({
   children,
-  label,
   showBrand = true,
   showFooter = true,
 }: {
   children: React.ReactNode;
-  label?: string;
   showBrand?: boolean;
   showFooter?: boolean;
 }) {
   return (
     <>
-      {showBrand || label ? (
+      {showBrand ? (
         <header className="slide-top">
-          {showBrand ? <BrandMark /> : <span />}
-          {label ? <div className="slide-label">{label}</div> : null}
+          <BrandMark />
         </header>
       ) : null}
       <div className="slide-main">{children}</div>
@@ -40,6 +37,29 @@ function SlideShell({
         </footer>
       ) : null}
     </>
+  );
+}
+
+function ToneHeadline({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) {
+  const parts = text.split(/(?<=\.)\s+/);
+  return (
+    <h2 className={className}>
+      {parts.map((part, i) => (
+        <span
+          key={part}
+          className={i === parts.length - 1 && parts.length > 1 ? "is-soft" : undefined}
+        >
+          {i > 0 ? " " : ""}
+          {part}
+        </span>
+      ))}
+    </h2>
   );
 }
 
@@ -58,8 +78,9 @@ function SlideView({ slide }: { slide: Slide }) {
       return (
         <div className="claim-slide slide-main">
           <p className="claim-copy">
-            <span>{slide.category}</span>
-            <span>{slide.line}</span>
+            {slide.lines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
           </p>
         </div>
       );
@@ -68,7 +89,11 @@ function SlideView({ slide }: { slide: Slide }) {
         <SlideShell>
           <div className="about-grid">
             <div className="about-copy">
-              <h2 className="about-headline">{slide.headline}</h2>
+              <h2 className="about-headline">
+                {slide.headline.split("\n").map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </h2>
               <div className="about-body">
                 {slide.body.map((p) => (
                   <p key={p}>{p}</p>
@@ -76,15 +101,65 @@ function SlideView({ slide }: { slide: Slide }) {
               </div>
             </div>
             <div className="work-grid" aria-hidden>
-              {slide.work.map((n, i) => (
-                <span key={`${n}-${i}`}>
+              <Image
+                src={slide.work}
+                alt=""
+                fill
+                unoptimized
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div>
+          </div>
+        </SlideShell>
+      );
+    case "featured":
+      return (
+        <SlideShell>
+          <div className="featured">
+            <div className="featured-copy">
+              <div className="featured-main">
+                <div className="featured-logos">
+                  {slide.logos.map((logo) => (
+                    <img key={logo.src} src={logo.src} alt={logo.alt} />
+                  ))}
+                </div>
+                <div className="featured-text">
+                  <h2 className="featured-title">{slide.title}</h2>
+                  <p className="featured-lead">
+                    {slide.lead}
+                    <strong>{slide.leadEm}</strong>
+                  </p>
+                  <p className="featured-body">{slide.body}</p>
+                </div>
+                <div className="featured-tags-block">
+                  <p className="micro-label">Deliverables</p>
+                  <ul className="tag-list">
+                    {slide.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <dl className="featured-meta">
+                {slide.meta.map((item) => (
+                  <div key={item.label}>
+                    <dt>{item.label}</dt>
+                    <dd>{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <div className="featured-media">
+              {slide.images.map((image) => (
+                <span key={image.src}>
                   <Image
-                    src={`/work/${n}.png`}
-                    alt=""
+                    src={image.src}
+                    alt={image.alt}
                     fill
-                    sizes="(max-width: 960px) 30vw, 180px"
+                    unoptimized
                     style={{ objectFit: "cover" }}
-                    priority={i < 3}
+                    priority
                   />
                 </span>
               ))}
@@ -92,9 +167,47 @@ function SlideView({ slide }: { slide: Slide }) {
           </div>
         </SlideShell>
       );
+    case "workgrid":
+      return (
+        <SlideShell>
+          <div className="workgrid">
+            <div className="workgrid-head">
+              <h2 className="workgrid-headline">{slide.headline}</h2>
+            </div>
+            <div className="work-cards">
+              {slide.items.map((item) => (
+                <article className="work-card" key={item.title}>
+                  <div className="work-card-media">
+                    <Image
+                      src={item.image}
+                      alt=""
+                      fill
+                      unoptimized
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="work-card-meta">
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.detail}</p>
+                    </div>
+                    {item.logos.length > 0 ? (
+                      <div className="work-card-logos">
+                        {item.logos.map((logo) => (
+                          <img key={logo.src} src={logo.src} alt={logo.alt} />
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </SlideShell>
+      );
     case "stack":
       return (
-        <SlideShell label={slide.label}>
+        <SlideShell>
           <h2 className="stack-headline">{slide.headline}</h2>
           <ul className="stack-list">
             {slide.layers.map((layer) => (
@@ -108,7 +221,7 @@ function SlideView({ slide }: { slide: Slide }) {
       );
     case "method":
       return (
-        <SlideShell label={slide.label}>
+        <SlideShell>
           <ol className="method-steps">
             {slide.steps.map((step) => (
               <li key={step}>{step}</li>
@@ -119,7 +232,7 @@ function SlideView({ slide }: { slide: Slide }) {
       );
     case "process":
       return (
-        <SlideShell label={slide.label}>
+        <SlideShell>
           <h2 className="process-headline">{slide.headline}</h2>
           <div className="phase-grid">
             {slide.phases.map((phase) => (
@@ -132,9 +245,26 @@ function SlideView({ slide }: { slide: Slide }) {
           </div>
         </SlideShell>
       );
+    case "included":
+      return (
+        <SlideShell>
+          <h2 className="included-headline">{slide.headline}</h2>
+          <ul className="included-grid">
+            {slide.items.map((item) => (
+              <li key={item.title}>
+                <span aria-hidden>✓</span>
+                <div>
+                  <strong>{item.title}</strong>
+                  <p>{item.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </SlideShell>
+      );
     case "upside":
       return (
-        <SlideShell label={slide.label}>
+        <SlideShell>
           <h2 className="upside-headline">{slide.headline}</h2>
           <div className="upside-wrap">
             <table className="upside-table">
@@ -158,35 +288,98 @@ function SlideView({ slide }: { slide: Slide }) {
           </div>
         </SlideShell>
       );
-    case "tiers":
+    case "tiers": {
+      const footnote = slide.tiers.find((tier) => tier.note)?.note;
       return (
-        <SlideShell label={slide.label}>
+        <SlideShell>
           <h2 className="tiers-headline">{slide.headline}</h2>
-          <div className="tier-grid">
+          <div className="price-grid">
             {slide.tiers.map((tier) => (
               <article
-                className={`tier${tier.tag ? " is-featured" : ""}`}
+                className={`price-card${tier.tag ? " is-featured" : ""}`}
                 key={tier.name}
               >
                 {tier.tag ? <div className="tier-tag">{tier.tag}</div> : null}
-                <div className="tier-head">
-                  <h3>{tier.name}</h3>
-                  <p className="tier-blurb">{tier.blurb}</p>
-                </div>
-                <div className="tier-price-block">
-                  <p className="tier-price">{tier.price}</p>
-                  <p className="tier-duration">{tier.duration}</p>
-                </div>
-                <ul className="tier-includes">
+                <h3>{tier.name}</h3>
+                <p className="price-blurb">{tier.blurb}</p>
+                <p className="price-figure">{tier.price}</p>
+                <p className="price-meta">{tier.duration}</p>
+                <ul className="price-list checks">
                   {tier.includes.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-                {tier.note ? <p className="tier-note">{tier.note}</p> : null}
-                <div className="tier-best">
-                  <span>Best for</span>
+                <div className="price-foot">
+                  <span className="micro-label">Best for</span>
                   <p>{tier.bestFor}</p>
                 </div>
+              </article>
+            ))}
+          </div>
+          {footnote ? <p className="section-note">{footnote}</p> : null}
+        </SlideShell>
+      );
+    }
+    case "payment":
+      return (
+        <SlideShell>
+          <ToneHeadline text={slide.headline} className="tiers-headline" />
+          <p className="section-lead">{slide.body}</p>
+          <div className="price-grid">
+            {slide.plans.map((plan) => (
+              <article
+                className={`price-card${plan.tag ? " is-featured" : ""}`}
+                key={plan.name}
+              >
+                {plan.tag ? <div className="tier-tag">{plan.tag}</div> : null}
+                <h3>{plan.name}</h3>
+                <p className="price-blurb">{plan.blurb}</p>
+                <p className="price-figure">{plan.price}</p>
+                <p className="price-meta">{plan.duration}</p>
+                <p className="micro-label">Payment schedule</p>
+                <ul className="price-rows">
+                  {plan.schedule.map((row) => (
+                    <li key={`${row.pct}-${row.when}`}>
+                      <div>
+                        <strong>{row.pct}</strong>
+                        <span>{row.when}</span>
+                      </div>
+                      <em>{row.amount}</em>
+                    </li>
+                  ))}
+                </ul>
+                <p className="price-foot-note">{plan.foot}</p>
+              </article>
+            ))}
+          </div>
+          <p className="section-note">{slide.note}</p>
+        </SlideShell>
+      );
+    case "bonuses":
+      return (
+        <SlideShell>
+          <h2 className="tiers-headline">{slide.headline}</h2>
+          <p className="section-lead">{slide.body}</p>
+          <div className="price-grid">
+            {slide.plans.map((plan) => (
+              <article
+                className={`price-card${plan.tag ? " is-featured" : ""}`}
+                key={plan.name}
+              >
+                {plan.tag ? <div className="tier-tag">{plan.tag}</div> : null}
+                <h3>{plan.name}</h3>
+                <p className="price-blurb">{plan.blurb}</p>
+                <p className="price-figure">{plan.count}</p>
+                <p className="price-meta">bonuses included</p>
+                <p className="micro-label">What&apos;s added</p>
+                <ul className="price-stack">
+                  {plan.items.map((item) => (
+                    <li key={item.title}>
+                      <strong>{item.title}</strong>
+                      {item.detail ? <p>{item.detail}</p> : null}
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -194,7 +387,7 @@ function SlideView({ slide }: { slide: Slide }) {
       );
     case "faq":
       return (
-        <SlideShell label={slide.label}>
+        <SlideShell>
           <h2 className="faq-headline">{slide.headline}</h2>
           <ul className="faq-list">
             {slide.items.map((item) => (
@@ -257,8 +450,6 @@ export function Deck() {
   }, [go, index, total]);
 
   const progress = ((index + 1) / total) * 100;
-  const chromeHidden =
-    slides[index]?.kind === "title" || slides[index]?.kind === "claim";
 
   return (
     <div className="deck-viewport">
@@ -273,41 +464,6 @@ export function Deck() {
             <SlideView slide={slide} />
           </section>
         ))}
-        <div className={`deck-chrome${chromeHidden ? " is-minimal" : ""}`}>
-          <div className="dots" role="tablist" aria-label="Slides">
-            {slides.map((slide, i) => (
-              <button
-                key={slide.id}
-                type="button"
-                className={`dot${i === index ? " is-active" : ""}`}
-                aria-label={`Go to slide ${i + 1}`}
-                aria-current={i === index ? "true" : undefined}
-                onClick={() => go(i)}
-              />
-            ))}
-          </div>
-          <div className="counter" aria-hidden>
-            {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-          </div>
-          <div className="nav-btns">
-            <button
-              type="button"
-              aria-label="Previous slide"
-              disabled={index === 0}
-              onClick={() => go(index - 1)}
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              aria-label="Next slide"
-              disabled={index === total - 1}
-              onClick={() => go(index + 1)}
-            >
-              →
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );

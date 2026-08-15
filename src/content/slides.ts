@@ -1,12 +1,12 @@
 export type Slide =
   | { id: string; kind: "title"; brand: string }
-  | { id: string; kind: "claim"; category: string; line: string }
+  | { id: string; kind: "claim"; category: string; lines: string[] }
   | {
       id: string;
       kind: "about";
       headline: string;
       body: string[];
-      work: string[];
+      work: string;
     }
   | {
       id: string;
@@ -61,13 +61,76 @@ export type Slide =
     }
   | {
       id: string;
+      kind: "featured";
+      label: string;
+      title: string;
+      logos: { src: string; alt: string }[];
+      lead: string;
+      leadEm: string;
+      body: string;
+      tags: string[];
+      meta: { label: string; value: string }[];
+      images: { src: string; alt: string }[];
+    }
+  | {
+      id: string;
+      kind: "workgrid";
+      label: string;
+      headline: string;
+      items: {
+        title: string;
+        detail: string;
+        image: string;
+        logos: { src: string; alt: string }[];
+      }[];
+    }
+  | {
+      id: string;
+      kind: "included";
+      label: string;
+      headline: string;
+      items: { title: string; detail: string }[];
+    }
+  | {
+      id: string;
+      kind: "payment";
+      label: string;
+      headline: string;
+      body: string;
+      note: string;
+      plans: {
+        name: string;
+        blurb: string;
+        price: string;
+        duration: string;
+        tag?: string;
+        schedule: { pct: string; when: string; amount: string }[];
+        foot: string;
+      }[];
+    }
+  | {
+      id: string;
+      kind: "bonuses";
+      label: string;
+      headline: string;
+      body: string;
+      plans: {
+        name: string;
+        blurb: string;
+        count: string;
+        tag?: string;
+        items: { title: string; detail?: string }[];
+      }[];
+    }
+  | {
+      id: string;
       kind: "cta";
       headline: string;
       email: string;
       web: string;
     };
 
-/** Live deck content — partner offer only. */
+/** Live deck content. Partner offer only. */
 export const slides: Slide[] = [
   {
     id: "title",
@@ -77,36 +140,95 @@ export const slides: Slide[] = [
   {
     id: "claim",
     kind: "claim",
-    category: "Product design partner for AI startups.",
-    line: "We decide what to build, design it, and we implement the interface.",
+    category: "",
+    lines: [
+      "Product design partner",
+      "for AI startups.",
+    ],
   },
   {
     id: "about",
     kind: "about",
     headline: "Fortune 500 craft.\nStartup speed.",
     body: [
-      "DUDESIGN is an independent product design partner for AI startups, founded by Paulo Freitas. Product judgment, UX/UI, and interface implementation — one engagement.",
+      "DUDESIGN is an independent product design partner for AI startups, founded by Paulo Freitas. Product judgment, UX/UI, and interface implementation. One engagement.",
       "We've shipped for Audi, Samsung, 3M, Ford, Sony + Honda, and Costco. That same standard now serves Series A–B teams that need to move without lowering the bar.",
     ],
-    work: ["01", "02", "03", "04", "05", "06", "07", "08", "09"],
+    work: "/work/tiles.png",
+  },
+  {
+    id: "featured",
+    kind: "featured",
+    label: "Featured Work",
+    title: "IAA Mobility 2025",
+    logos: [
+      { src: "/work/logos/audi.svg", alt: "Audi" },
+      { src: "/work/logos/3m.svg", alt: "3M" },
+      { src: "/work/logos/samsung.svg", alt: "Samsung" },
+    ],
+    lead: "A full CGI and UX/UI production for the IAA Mobility 2025 debut in Munich, ",
+    leadEm: "the world's largest mobility event.",
+    body: "The work brought a new vehicle concept to life alongside the interface experience that would sit inside it, built end-to-end for the stage.",
+    tags: [
+      "CGI Production",
+      "Product Design",
+      "UX/UI",
+      "Creative Direction",
+      "Vehicle Visualization",
+    ],
+    meta: [
+      { label: "Clients", value: "Audi, Samsung, 3M" },
+      { label: "Event", value: "IAA Mobility, Munich" },
+      { label: "Date", value: "November 2025" },
+    ],
+    images: [
+      { src: "/work/cases/iaa-car.png", alt: "IAA Mobility concept vehicle" },
+      { src: "/work/cases/iaa-stage.png", alt: "IAA Mobility 2025 stage" },
+    ],
+  },
+  {
+    id: "workgrid",
+    kind: "workgrid",
+    label: "A track record, not a portfolio.",
+    headline: "More work",
+    items: [
+      {
+        title: "Ford",
+        detail: "First OEM-Aftermarket Program",
+        image: "/work/cases/ford.png",
+        logos: [{ src: "/work/logos/ford.svg", alt: "Ford" }],
+      },
+      {
+        title: "Frameline",
+        detail: "Shippable Design Surfaces",
+        image: "/work/cases/frameline.png",
+        logos: [{ src: "/work/logos/frameline.png", alt: "Frameline" }],
+      },
+      {
+        title: "Aligned AI",
+        detail: "Personal AI Workspace",
+        image: "/work/cases/aligned.png",
+        logos: [{ src: "/work/logos/aligned.png", alt: "Aligned AI" }],
+      },
+    ],
   },
   {
     id: "stack",
     kind: "stack",
     label: "What you get",
-    headline: "Product. Design. Ship.",
+    headline: "Product. Design. Implementation.",
     layers: [
       {
         name: "Product",
-        detail: "Clarify the bet — discovery, priorities, and what success looks like",
+        detail: "Clarify the bet: discovery, priorities, and what success looks like",
       },
       {
         name: "Design",
         detail: "Flows, UX/UI, system, and a hi-fi prototype ready to build from",
       },
       {
-        name: "Ship",
-        detail: "Production UI in code — components and pages your team can extend",
+        name: "Implementation",
+        detail: "Production UI in code: components and pages your team can extend",
       },
     ],
   },
@@ -115,32 +237,64 @@ export const slides: Slide[] = [
     kind: "method",
     label: "The Method",
     steps: [
-      "Strategy first.",
-      "Design second.",
-      "Implementation third.",
+      "Strategy.",
+      "Design.",
+      "Implementation.",
     ],
-    body: "We start with the problem, not the pixels — and finish with production UI in the product, not a file left behind in Figma.",
+    body: "We start with the problem, not the pixels, and finish with production UI in the product, not a file left behind in Figma.",
   },
   {
     id: "process",
     kind: "process",
     label: "The Process",
-    headline: "Ship in 6 weeks.",
+    headline: "Implemented in 8 weeks.",
     phases: [
       {
         when: "Weeks 1–2",
         title: "Discover",
-        detail: "Product bets, information architecture, and key flows locked",
+        detail: "Product bets, architecture, and key flows locked",
       },
       {
-        when: "Weeks 3–5",
+        when: "Weeks 3–7",
         title: "Design + build",
         detail: "System, hi-fi, and production UI built in parallel",
       },
       {
-        when: "Week 6",
+        when: "Week 8",
         title: "Deliver",
         detail: "Polish, validate, and hand over a frontend package",
+      },
+    ],
+  },
+  {
+    id: "included",
+    kind: "included",
+    label: "What's Included",
+    headline: "Beyond the deliverables:",
+    items: [
+      {
+        title: "Weekly progress updates",
+        detail: "Every week, a clear summary of what shipped and what's next. No status meetings.",
+      },
+      {
+        title: "Dedicated comms channel",
+        detail: "Slack, email, or whatever you use. Direct line to the company.",
+      },
+      {
+        title: "Design system documentation",
+        detail: "Everything your team needs to extend the work after the engagement ends.",
+      },
+      {
+        title: "Production UI package",
+        detail: "Specs, assets, component library, production-ready files. No back-and-forth.",
+      },
+      {
+        title: "Two structured revision rounds",
+        detail: "Per deliverable. Clear feedback windows so the timeline holds.",
+      },
+      {
+        title: "Portfolio-grade case study",
+        detail: "Published with your approval. Becomes part of your company's design story.",
       },
     ],
   },
@@ -153,7 +307,7 @@ export const slides: Slide[] = [
       {
         buy: "Design agency (handoff)",
         cost: "$20–40k",
-        us: "Same craft — plus the interface shipped in code",
+        us: "Same craft, plus the interface shipped in code",
       },
       {
         buy: "Full-time design engineer",
@@ -163,7 +317,7 @@ export const slides: Slide[] = [
       {
         buy: "Software house MVP",
         cost: "$40–80k+",
-        us: "Product taste first — not a build-by-the-hour shop",
+        us: "Product taste first. Not a build-by-the-hour shop.",
       },
     ],
   },
@@ -174,31 +328,30 @@ export const slides: Slide[] = [
     headline: "Two ways to work together.",
     tiers: [
       {
-        name: "Ship",
-        blurb: "A defined surface — designed and shipped",
-        price: "$18,000",
-        duration: "6 weeks",
+        name: "Standard",
+        blurb: "A defined surface, designed and shipped",
+        price: "$15,000",
+        duration: "8 weeks",
         includes: [
           "Product decisions and design system",
           "Hi-fi prototype and production UI",
           "Two structured revision rounds",
           "Weekly updates and dedicated channel",
           "Production UI package in code",
-          "Decisions log and stakeholder walkthrough",
           "Case study with your approval",
         ],
         bestFor:
           "Founders and VP Product who need one surface designed and live.",
-        note: "Backend, auth, and infra available via engineering partners — a separate engagement, quoted in addition.",
+        note: "Backend, auth, and infra available via engineering partners. A separate engagement, quoted in addition.",
       },
       {
         name: "Partner",
         tag: "Recommended",
         blurb: "Embedded product design partnership",
-        price: "$32,000 → $7,500/mo",
-        duration: "8-week build, then monthly",
+        price: "$25,000 → $5,000/mo",
+        duration: "12-week build, then monthly",
         includes: [
-          "Everything in Ship",
+          "Everything in Standard",
           "Usability testing",
           "System docs and team training",
           "Ongoing product and UI shipping",
@@ -212,6 +365,92 @@ export const slides: Slide[] = [
     ],
   },
   {
+    id: "payment",
+    kind: "payment",
+    label: "Payment Structure",
+    headline: "Fair terms. Clear dates.",
+    body: "Invoices issued on fixed dates, independent of feedback pace or deliverable status. Payment schedules scale to each engagement.",
+    note: "Payment via wire transfer or ACH. Invoices payable within 7 days of receipt. All amounts in USD.",
+    plans: [
+      {
+        name: "Standard",
+        blurb: "A defined surface, designed and shipped",
+        price: "$15,000",
+        duration: "8 weeks",
+        schedule: [
+          { pct: "40%", when: "At kick-off", amount: "$6,000" },
+          { pct: "30%", when: "End of month 1", amount: "$4,500" },
+          { pct: "30%", when: "End of month 2", amount: "$4,500" },
+        ],
+        foot: "Three milestones over two months. Monthly cadence keeps the engagement moving.",
+      },
+      {
+        name: "Partner",
+        tag: "Recommended",
+        blurb: "Embedded product design partnership",
+        price: "$25,000",
+        duration: "12-week build, then $5,000/mo",
+        schedule: [
+          { pct: "40%", when: "At kick-off", amount: "$10,000" },
+          { pct: "30%", when: "End of month 1", amount: "$7,500" },
+          { pct: "30%", when: "End of the build", amount: "$7,500" },
+          { pct: "Retainer", when: "Monthly after the build", amount: "$5,000" },
+        ],
+        foot: "Build phase plus ongoing retainer. Invoices land on fixed dates.",
+      },
+    ],
+  },
+  {
+    id: "bonuses",
+    kind: "bonuses",
+    label: "Bonuses",
+    headline: "What you also get.",
+    body: "The work is in the product. These extras help it land with users and with the team.",
+    plans: [
+      {
+        name: "Standard",
+        blurb: "A defined surface, designed and shipped",
+        count: "+2",
+        items: [
+          {
+            title: "30-day post-ship review",
+            detail:
+              "One session on the live surface. What to fix, what to leave.",
+          },
+          {
+            title: "Recorded system tour",
+            detail:
+              "Twenty minutes they can replay for a new hire. Not a live engineering meeting.",
+          },
+        ],
+      },
+      {
+        name: "Partner",
+        tag: "Recommended",
+        blurb: "Embedded product design partnership",
+        count: "+4",
+        items: [
+          { title: "+ Everything in Standard" },
+          {
+            title: "Next-screen working session",
+            detail:
+              "Build the following slice with their team, in their repo.",
+          },
+          {
+            title: "Internal rollout deck",
+            detail:
+              "Branded slides for board or all-hands. Ready to present.",
+          },
+          {
+            title: "Co-authored story",
+            detail:
+              "A case study they can publish. You get the work on record.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "faq",
     kind: "faq",
     label: "Common questions",
@@ -219,26 +458,26 @@ export const slides: Slide[] = [
     items: [
       {
         q: "Do you replace our engineers?",
-        a: "No. We own product, design, and interface implementation. If you need backend, we can introduce trusted engineering partners — that's a separate engagement, quoted in addition.",
+        a: "No. We own product, design, and interface implementation. If you need backend, we can introduce trusted engineering partners. That's a separate engagement, quoted in addition.",
       },
       {
         q: "Do I own the work?",
-        a: "Yes. Full IP transfers on final payment — source files and UI code included. DUDESIGN retains portfolio rights only.",
+        a: "Yes. Full IP transfers on final payment. Source files and UI code included. DUDESIGN retains portfolio rights only.",
       },
       {
         q: "How does billing work?",
-        a: "Ship: 50% at kickoff, 25% mid-engagement, 25% on delivery. Partner: 40% / 30% / 30%, then monthly. Invoices land on fixed dates.",
+        a: "Standard: 40% ($6,000) at kickoff, 30% ($4,500) at end of month 1, 30% ($4,500) at end of month 2. Partner: 40% / 30% / 30% on the 12-week build, then $5,000/mo. Invoices land on fixed dates.",
       },
       {
         q: "Can you work with our existing system?",
-        a: "Yes. We extend what you already have — we don't rip and replace for sport.",
+        a: "Yes. We extend what you already have. We don't rip and replace for sport.",
       },
     ],
   },
   {
     id: "cta",
     kind: "cta",
-    headline: "Let's talk.",
+    headline: "Ready when you are.",
     email: "hello@dudesign.us",
     web: "dudesign.us",
   },

@@ -1,14 +1,115 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { slides, type Slide } from "@/content/slides";
 
-function BrandMark() {
+type ViewMode = "desktop" | "mobile";
+
+const VIEW_KEY = "dudesign-view";
+
+const ViewContext = createContext<{
+  mode: ViewMode;
+  setMode: (mode: ViewMode) => void;
+} | null>(null);
+
+function useView() {
+  const ctx = useContext(ViewContext);
+  if (!ctx) throw new Error("ViewContext missing");
+  return ctx;
+}
+
+function Chevron({ open }: { open: boolean }) {
   return (
-    <div className="brand-mark">
-      <span className="du">DU</span>
-      <span className="design">DESIGN</span>
+    <svg
+      className={`brand-chevron${open ? " is-open" : ""}`}
+      width="10"
+      height="6"
+      viewBox="0 0 10 6"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M1 1.25 5 4.75 9 1.25"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function BrandMenu() {
+  const { mode, setMode } = useView();
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (e: PointerEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("pointerdown", onPointer);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("pointerdown", onPointer);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div className="brand-menu" ref={rootRef}>
+      <button
+        type="button"
+        className="brand-mark"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span className="du">DU</span>
+        <span className="design">DESIGN</span>
+        <Chevron open={open} />
+      </button>
+      {open ? (
+        <div className="brand-pop" role="menu" aria-label="View settings">
+          <p className="brand-pop-label">View</p>
+          <button
+            type="button"
+            role="menuitemradio"
+            aria-checked={mode === "desktop"}
+            className={mode === "desktop" ? "is-active" : undefined}
+            onClick={() => {
+              setMode("desktop");
+              setOpen(false);
+            }}
+          >
+            Desktop
+          </button>
+          <button
+            type="button"
+            role="menuitemradio"
+            aria-checked={mode === "mobile"}
+            className={mode === "mobile" ? "is-active" : undefined}
+            onClick={() => {
+              setMode("mobile");
+              setOpen(false);
+            }}
+          >
+            Mobile
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -26,7 +127,7 @@ function SlideShell({
     <>
       {showBrand ? (
         <header className="slide-top">
-          <BrandMark />
+          <BrandMenu />
         </header>
       ) : null}
       <div className="slide-main">{children}</div>
@@ -67,22 +168,32 @@ function SlideView({ slide }: { slide: Slide }) {
   switch (slide.kind) {
     case "title":
       return (
-        <div className="title-slide slide-main">
-          <h1 className="title-brand">
-            <span className="du">DU</span>
-            <span className="design">DESIGN</span>
-          </h1>
-        </div>
+        <>
+          <header className="slide-top is-ghost">
+            <BrandMenu />
+          </header>
+          <div className="title-slide slide-main">
+            <h1 className="title-brand">
+              <span className="du">DU</span>
+              <span className="design">DESIGN</span>
+            </h1>
+          </div>
+        </>
       );
     case "claim":
       return (
-        <div className="claim-slide slide-main">
-          <p className="claim-copy">
-            {slide.lines.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </p>
-        </div>
+        <>
+          <header className="slide-top is-ghost">
+            <BrandMenu />
+          </header>
+          <div className="claim-slide slide-main">
+            <p className="claim-copy">
+              {slide.lines.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </p>
+          </div>
+        </>
       );
     case "about":
       return (
@@ -416,9 +527,92 @@ function SlideView({ slide }: { slide: Slide }) {
   }
 }
 
+function DeckNav({
+  index,
+  total,
+  onPrev,
+  onNext,
+}: {
+  index: number;
+  total: number;
+  onPrev: () => void;
+  onNext: () => void;
+}) {
+  return (
+    <div className="deck-nav" aria-label="Slides">
+      <button
+        type="button"
+        className="deck-nav-btn"
+        onClick={onPrev}
+        disabled={index === 0}
+        aria-label="Previous slide"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+          <path
+            d="M10 3 5 8l5 5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      <button
+        type="button"
+        className="deck-nav-btn"
+        onClick={onNext}
+        disabled={index === total - 1}
+        aria-label="Next slide"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+          <path
+            d="M6 3l5 5-5 5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+  );
+}
+
+function readStoredMode(): ViewMode | null {
+  try {
+    const value = localStorage.getItem(VIEW_KEY);
+    if (value === "desktop" || value === "mobile") return value;
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
 export function Deck() {
+  const [mode, setModeState] = useState<ViewMode>("desktop");
   const [index, setIndex] = useState(0);
   const total = slides.length;
+  const swipeRef = useRef<{ x: number; y: number; id: number } | null>(null);
+
+  const setMode = useCallback((next: ViewMode) => {
+    setModeState(next);
+    try {
+      localStorage.setItem(VIEW_KEY, next);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  useEffect(() => {
+    const stored = readStoredMode();
+    if (stored) {
+      setModeState(stored);
+      return;
+    }
+    if (window.matchMedia("(max-width: 720px)").matches) {
+      setModeState("mobile");
+    }
+  }, []);
 
   const go = useCallback(
     (next: number) => {
@@ -429,6 +623,9 @@ export function Deck() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLElement && e.target.closest("input, textarea")) {
+        return;
+      }
       if (
         e.key === "ArrowRight" ||
         e.key === " " ||
@@ -449,22 +646,57 @@ export function Deck() {
     return () => window.removeEventListener("keydown", onKey);
   }, [go, index, total]);
 
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "mouse" && mode === "desktop") return;
+    const target = e.target as HTMLElement;
+    if (target.closest("a, button, .brand-pop")) return;
+    swipeRef.current = { x: e.clientX, y: e.clientY, id: e.pointerId };
+  };
+
+  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    const start = swipeRef.current;
+    swipeRef.current = null;
+    if (!start || start.id !== e.pointerId) return;
+    const dx = e.clientX - start.x;
+    const dy = e.clientY - start.y;
+    if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy) * 1.25) return;
+    if (dx < 0) go(index + 1);
+    else go(index - 1);
+  };
+
   const progress = ((index + 1) / total) * 100;
 
   return (
-    <div className="deck-viewport">
-      <div className="deck">
-        <div className="progress" style={{ width: `${progress}%` }} />
-        {slides.map((slide, i) => (
-          <section
-            key={slide.id}
-            className={`slide${i === index ? " is-active" : ""}`}
-            aria-hidden={i !== index}
-          >
-            <SlideView slide={slide} />
-          </section>
-        ))}
+    <ViewContext.Provider value={{ mode, setMode }}>
+      <div className="deck-viewport" data-mode={mode}>
+        <div
+          className="deck"
+          onPointerDown={onPointerDown}
+          onPointerUp={onPointerUp}
+          onPointerCancel={() => {
+            swipeRef.current = null;
+          }}
+        >
+          <div className="progress" style={{ width: `${progress}%` }} />
+          {slides.map((slide, i) => (
+            <section
+              key={slide.id}
+              className={`slide${i === index ? " is-active" : ""}`}
+              aria-hidden={i !== index}
+            >
+              <SlideView slide={slide} />
+            </section>
+          ))}
+          {mode === "mobile" ? (
+            <DeckNav
+              index={index}
+              total={total}
+              onPrev={() => go(index - 1)}
+              onNext={() => go(index + 1)}
+            />
+          ) : null}
+        </div>
       </div>
-    </div>
+    </ViewContext.Provider>
   );
 }

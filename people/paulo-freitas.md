@@ -59,8 +59,9 @@ Independent studio founded by Paulo (LinkedIn: founded 2020; 1-person company).
 
 **Tiers (live deck, Aug 2026):**
 
-- **Standard** — $15,000 / 8 weeks — a defined surface, designed and shipped
-- **Partner** (recommended) — $25,000 then $5,000/mo — 12-week build, then monthly
+- **Standard** — $21,000 / 8 weeks — a defined surface, designed and shipped
+- **Partner** — $6,000/mo · 6-month minimum ($36,000) — then month-to-month
+- **Yearly** (recommended) — $5,000/mo · 12-month commit ($60,000) — billed monthly
 
 Backend, auth, and infra are a separate engineering-partner engagement — quoted in addition, not the hero.
 

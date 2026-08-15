@@ -77,8 +77,9 @@ function BrandMenu() {
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
-        <span className="du">DU</span>
-        <span className="design">DESIGN</span>
+        <span className="brand-word">
+          <span className="du">DU</span><span className="design">DESIGN</span>
+        </span>
         <Chevron open={open} />
       </button>
       {open ? (
@@ -174,8 +175,7 @@ function SlideView({ slide }: { slide: Slide }) {
           </header>
           <div className="title-slide slide-main">
             <h1 className="title-brand">
-              <span className="du">DU</span>
-              <span className="design">DESIGN</span>
+              <span className="du">DU</span><span className="design">DESIGN</span>
             </h1>
           </div>
         </>

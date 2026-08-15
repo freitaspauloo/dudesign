@@ -17,13 +17,13 @@ Commercial terms below. Slide content lives in code (`src/content/slides.ts`).
 | Ship    | Production UI in code (components / pages) |
 
 
-**Add-on (quoted separately):** backend via trusted eng partners. Additional cost, not included in Standard or Partner.
+**Add-on (quoted separately):** backend via trusted eng partners. Additional cost, not included in Standard, Partner, or Yearly.
 
 ---
 
 ## Timelines
 
-Shipping is in the critical path (design + UI build overlap), not a late-phase handoff.
+Shipping is in the critical path (design + UI build overlap), not a late-phase handoff. First surface is about 8 weeks on every tier.
 
 ### Standard. 8 weeks
 
@@ -35,21 +35,26 @@ Shipping is in the critical path (design + UI build overlap), not a late-phase h
 | 8     | Polish, validate, deliver frontend package          |
 
 
-Gates: end of week 2 · mid week 6 · week 8 sign-off. Feedback SLA: 5 business days.
+Gates: end of week 2 · mid week 6 · week 8 sign-off. Then it ends.
 
-### Partner. 12 weeks + ongoing
+### Partner. $6,000/mo · 6-month minimum
 
-Longer build than Standard, then **monthly product + design + UI shipping** (slices, reviews, iteration). Min 3 months after the build phase.
+Same first surface, then the seat stays on. Slack as a teammate, testing in the build, ongoing shipping. After month 6, month-to-month at $6,000.
+
+### Yearly. $5,000/mo · 12-month commit *(recommended)*
+
+Same seat as Partner, for the year. Billed monthly. Priority scheduling and a quarterly audit.
 
 ---
 
 ## Pricing
 
 
-| Tier                        | Price                          | Duration               | Best for                                                   |
-| --------------------------- | ------------------------------ | ---------------------- | ---------------------------------------------------------- |
-| **Standard**                | **$15,000**                    | 8 weeks                 | Founder / VP Product. Defined surface, designed and shipped |
-| **Partner** *(recommended)* | **$25,000** then **$5,000/mo** | 12-week build + monthly | Series A–B. Embedded partner, not a vendor                |
+| Tier                        | Price            | Term                         | Best for                                      |
+| --------------------------- | ---------------- | ---------------------------- | --------------------------------------------- |
+| **Standard**                | **$21,000**      | 8 weeks, then done           | Closed box. Pay extra to walk away.           |
+| **Partner**                 | **$6,000/mo**    | 6-month min ($36,000)        | Flexibility. An out at month 6.               |
+| **Yearly** *(recommended)*  | **$5,000/mo**    | 12-month commit ($60,000)    | You already know this isn’t one surface.      |
 
 
 ### Why this value
@@ -71,23 +76,28 @@ Longer build than Standard, then **monthly product + design + UI shipping** (sli
 
 ### What’s in each
 
-**Standard ($15k)**  
-Product → design → shipped UI · system docs · 2 revision rounds · weekly updates · dedicated channel · case study (with approval)  
+**Standard ($21k)**  
+One surface · 2 revision rounds · weekly updates · production UI in code  
 Bonuses: 30-day post-ship review · recorded system tour
 
-**Partner ($25k build + $5,000/mo)**  
-Everything in Standard · usability testing · team transfer · priority scheduling · monthly shipping cadence · quarterly audit  
-Bonuses: everything in Standard · next-screen working session · internal rollout deck · co-authored story
+**Partner ($6k/mo, $36k min)**  
+Same first surface · Slack as a teammate · 2-day SLA · testing in the build · ongoing shipping · no revision cap  
+Bonuses: next-screen working session · internal rollout deck · co-authored story
 
-**Neither includes by default:** auth, APIs, infra, DevOps (add-on via eng partners).
+**Yearly ($5k/mo, $60k)**  
+Same seat as Partner for the year · priority scheduling · quarterly audit  
+Bonuses: everything in Partner · priority throughout the year
+
+**None include by default:** auth, APIs, infra, DevOps (add-on via eng partners).
 
 ### Payment
 
 
-| Tier    | Schedule                                                               |
-| ------- | ---------------------------------------------------------------------- |
-| Standard | 40% ($6,000) kick-off · 30% ($4,500) end of month 1 · 30% ($4,500) end of month 2 |
-| Partner  | 40% kick-off · 30% end week 6 · 30% end week 12 · then $5,000/mo retainer         |
+| Tier     | Schedule                                                                 |
+| -------- | ------------------------------------------------------------------------ |
+| Standard | $7,000 kick-off · $7,000 end of month 1 · $7,000 end of month 2          |
+| Partner  | $6,000 kick-off · $6,000/mo through month 6 · then month-to-month        |
+| Yearly   | $5,000 kick-off · $5,000/mo through month 12                             |
 
 
 Wire / ACH · USD · net 7 · invoices on fixed dates · IP to client on final payment · DUDESIGN portfolio rights · NDA first · extra revision rounds $500
@@ -104,5 +114,5 @@ Figma (reference only, older frames still mixed in file): [NEW PHASE](https://ww
 
 ## Language
 
-**Say:** partner · ship the interface · Standard / Partner  
+**Say:** partner · ship the interface · Standard / Partner / Yearly  
 **Don't:** design engineer · software house · hero that apologizes for no backend

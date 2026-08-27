@@ -1,0 +1,535 @@
+{
+  "posts_analyzed": 50,
+  "posts": [
+    {
+      "company": "GitLab",
+      "title": "Senior Product Designer, AI",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8464608002"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer, Connect Risk",
+      "url": "https://stripe.com/jobs/search?gh_jid=7568117"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer - Dashboard",
+      "url": "https://stripe.com/jobs/search?gh_jid=7980578"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer, Global",
+      "url": "https://stripe.com/jobs/search?gh_jid=7861422"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer, Internal Tools",
+      "url": "https://stripe.com/jobs/search?gh_jid=7954207"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer, Link",
+      "url": "https://stripe.com/jobs/search?gh_jid=8155002"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer, Risk",
+      "url": "https://stripe.com/jobs/search?gh_jid=7954118"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer, Stablecoin",
+      "url": "https://stripe.com/jobs/search?gh_jid=7663023"
+    },
+    {
+      "company": "Stripe",
+      "title": "Product Designer, Terminal",
+      "url": "https://stripe.com/jobs/search?gh_jid=7925550"
+    },
+    {
+      "company": "Stripe",
+      "title": "Senior Staff Product Designer, Data & AI",
+      "url": "https://stripe.com/jobs/search?gh_jid=8128499"
+    },
+    {
+      "company": "Stripe",
+      "title": "Senior Staff Product Designer, Risk",
+      "url": "https://stripe.com/jobs/search?gh_jid=8031782"
+    },
+    {
+      "company": "Stripe",
+      "title": "Staff Product Designer, Link",
+      "url": "https://stripe.com/jobs/search?gh_jid=7202630"
+    },
+    {
+      "company": "Stripe",
+      "title": "Staff Product Designer, Risk",
+      "url": "https://stripe.com/jobs/search?gh_jid=8008405"
+    },
+    {
+      "company": "Scale AI",
+      "title": "Forward Deployed Product Designer",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4724276005"
+    },
+    {
+      "company": "Scale AI",
+      "title": "Senior Product Design Manager",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4721008005"
+    },
+    {
+      "company": "Fin",
+      "title": "Senior Product Designer",
+      "url": "https://job-boards.greenhouse.io/intercom/jobs/7861866"
+    },
+    {
+      "company": "Fin",
+      "title": "Staff/Principal Product Designer",
+      "url": "https://job-boards.greenhouse.io/intercom/jobs/7862038"
+    },
+    {
+      "company": "Durable",
+      "title": "Senior Product Designer, AI",
+      "url": "https://job-boards.greenhouse.io/durable/jobs/5156296008"
+    },
+    {
+      "company": "Durable",
+      "title": "Staff Product Designer, AI",
+      "url": "https://job-boards.greenhouse.io/durable/jobs/5214357008"
+    },
+    {
+      "company": "VSCO",
+      "title": "Senior Product Designer",
+      "url": "https://job-boards.greenhouse.io/vsco39/jobs/8563099002"
+    },
+    {
+      "company": "VSCO",
+      "title": "Staff Product Designer",
+      "url": "https://job-boards.greenhouse.io/vsco39/jobs/8567712002"
+    },
+    {
+      "company": "Sigma Computing",
+      "title": "Senior Product Designer, AI ",
+      "url": "https://job-boards.greenhouse.io/sigmacomputing/jobs/7767897003"
+    },
+    {
+      "company": "AiDASH, Inc.",
+      "title": "Senior Product Designer ",
+      "url": "https://job-boards.greenhouse.io/aidashinc/jobs/4377978009"
+    },
+    {
+      "company": "Circle.so",
+      "title": "Lead Product Designer",
+      "url": "https://job-boards.greenhouse.io/circleso/jobs/5406670008"
+    },
+    {
+      "company": "Circle.so",
+      "title": "Lead Product Designer, Marketplace",
+      "url": "https://job-boards.greenhouse.io/circleso/jobs/5406680008"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Product Designer, Core Apps",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5392054008"
+    },
+    {
+      "company": "Figma",
+      "title": "Product Designer, AI Models",
+      "url": "https://boards.greenhouse.io/figma/jobs/5711913004?gh_jid=5711913004"
+    },
+    {
+      "company": "Figma",
+      "title": "Product Designer, CMS",
+      "url": "https://boards.greenhouse.io/figma/jobs/6126976004?gh_jid=6126976004"
+    },
+    {
+      "company": "Figma",
+      "title": "Product Designer, Design, Dev, & AI Tools",
+      "url": "https://boards.greenhouse.io/figma/jobs/5711468004?gh_jid=5711468004"
+    },
+    {
+      "company": "Figma",
+      "title": "Product Designer, Design Systems",
+      "url": "https://boards.greenhouse.io/figma/jobs/5787576004?gh_jid=5787576004"
+    },
+    {
+      "company": "Figma",
+      "title": "Product Designer - Figma Weave (Tel Aviv, Israel)",
+      "url": "https://boards.greenhouse.io/figma/jobs/5991320004?gh_jid=5991320004"
+    },
+    {
+      "company": "Figma",
+      "title": "Product Designer, Growth & Monetization",
+      "url": "https://boards.greenhouse.io/figma/jobs/5711595004?gh_jid=5711595004"
+    },
+    {
+      "company": "Datadog",
+      "title": "Senior Product Designer - AAA",
+      "url": "https://careers.datadoghq.com/detail/8002906/?gh_jid=8002906"
+    },
+    {
+      "company": "Datadog",
+      "title": "Senior Staff Product Designer, Design Lab",
+      "url": "https://careers.datadoghq.com/detail/8100001/?gh_jid=8100001"
+    },
+    {
+      "company": "Datadog",
+      "title": "Staff Product Designer, APM",
+      "url": "https://careers.datadoghq.com/detail/7989348/?gh_jid=7989348"
+    },
+    {
+      "company": "Datadog",
+      "title": "Staff Product Designer, Modern Compute",
+      "url": "https://careers.datadoghq.com/detail/8094854/?gh_jid=8094854"
+    },
+    {
+      "company": "Databricks",
+      "title": "Sr. Product Designer, AI/BI",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8429978002"
+    },
+    {
+      "company": "Databricks",
+      "title": "Staff Product Designer, AI Products ",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8584704002"
+    },
+    {
+      "company": "Brex",
+      "title": "Staff Product Designer",
+      "url": "https://www.brex.com/careers/7669111002?gh_jid=7669111002"
+    },
+    {
+      "company": "Brex",
+      "title": "Staff Product Designer, AI",
+      "url": "https://www.brex.com/careers/8616214002?gh_jid=8616214002"
+    },
+    {
+      "company": "Gusto, Inc.",
+      "title": "Design Systems, Product Designer",
+      "url": "https://job-boards.greenhouse.io/gusto/jobs/8111984"
+    },
+    {
+      "company": "Gusto, Inc.",
+      "title": "Product Designer, Contractors",
+      "url": "https://job-boards.greenhouse.io/gusto/jobs/7488373"
+    },
+    {
+      "company": "Gusto, Inc.",
+      "title": "Product Designer, Finance",
+      "url": "https://job-boards.greenhouse.io/gusto/jobs/6625049"
+    },
+    {
+      "company": "Gusto, Inc.",
+      "title": "Product Designer, HR Experiences",
+      "url": "https://job-boards.greenhouse.io/gusto/jobs/7905702"
+    },
+    {
+      "company": "Gusto, Inc.",
+      "title": "Product Designer, Retirement",
+      "url": "https://job-boards.greenhouse.io/gusto/jobs/7514758"
+    },
+    {
+      "company": "Airtable",
+      "title": "Product Designer (8+ YOE)",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8400776002"
+    },
+    {
+      "company": "Asana",
+      "title": "Product Designer",
+      "url": "https://www.asana.com/jobs/apply/8024052?gh_jid=8024052"
+    },
+    {
+      "company": "Asana",
+      "title": "Product Designer, Coordinate",
+      "url": "https://www.asana.com/jobs/apply/7587002?gh_jid=7587002"
+    },
+    {
+      "company": "Dropbox",
+      "title": "Staff Product Designer",
+      "url": "https://jobs.dropbox.com/listing/8092715?gh_jid=8092715"
+    },
+    {
+      "company": "Discord",
+      "title": "Product Designer, Growth",
+      "url": "https://job-boards.greenhouse.io/discord/jobs/8674411002"
+    }
+  ],
+  "top_10": [
+    {
+      "rank": 1,
+      "skill": "Cross-functional leadership with PM and Eng",
+      "count": 48,
+      "total": 50,
+      "pct": 96,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe"
+      ],
+      "more": 40
+    },
+    {
+      "rank": 2,
+      "skill": "Developer tools, B2B SaaS, or enterprise complexity",
+      "count": 46,
+      "total": 50,
+      "pct": 92,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe"
+      ],
+      "more": 38
+    },
+    {
+      "rank": 3,
+      "skill": "Prototyping in code (beyond static mocks)",
+      "count": 45,
+      "total": 50,
+      "pct": 90,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe"
+      ],
+      "more": 37
+    },
+    {
+      "rank": 4,
+      "skill": "Interaction and visual craft",
+      "count": 35,
+      "total": 50,
+      "pct": 70,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe"
+      ],
+      "more": 27
+    },
+    {
+      "rank": 5,
+      "skill": "Systems thinking and design systems",
+      "count": 34,
+      "total": 50,
+      "pct": 68,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe"
+      ],
+      "more": 26
+    },
+    {
+      "rank": 6,
+      "skill": "End-to-end product design (0 to 1 through ship)",
+      "count": 30,
+      "total": 50,
+      "pct": 60,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe"
+      ],
+      "more": 22
+    },
+    {
+      "rank": 7,
+      "skill": "Accessibility and trust UX",
+      "count": 29,
+      "total": 50,
+      "pct": 58,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Scale AI",
+        "Scale AI",
+        "Sigma Computing"
+      ],
+      "more": 21
+    },
+    {
+      "rank": 8,
+      "skill": "AI and agent UX design",
+      "count": 28,
+      "total": 50,
+      "pct": 56,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Scale AI",
+        "Scale AI",
+        "Fin",
+        "Fin",
+        "Durable"
+      ],
+      "more": 20
+    },
+    {
+      "rank": 9,
+      "skill": "Experimentation, growth, and metrics",
+      "count": 26,
+      "total": 50,
+      "pct": 52,
+      "companies": [
+        "GitLab",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Stripe",
+        "Durable",
+        "Durable",
+        "VSCO"
+      ],
+      "more": 18
+    },
+    {
+      "rank": 10,
+      "skill": "Figma fluency",
+      "count": 22,
+      "total": 50,
+      "pct": 44,
+      "companies": [
+        "Stripe",
+        "Fin",
+        "Fin",
+        "Durable",
+        "Durable",
+        "VSCO",
+        "Sigma Computing",
+        "AiDASH, Inc."
+      ],
+      "more": 14
+    }
+  ],
+  "extras": [
+    {
+      "skill": "Storytelling and design communication",
+      "count": 20,
+      "total": 50,
+      "pct": 40
+    },
+    {
+      "skill": "Cursor, Claude Code, or v0",
+      "count": 13,
+      "total": 50,
+      "pct": 26
+    },
+    {
+      "skill": "User research and validation",
+      "count": 9,
+      "total": 50,
+      "pct": 18
+    },
+    {
+      "skill": "React or frontend fluency",
+      "count": 5,
+      "total": 50,
+      "pct": 10
+    }
+  ],
+  "all_skills": [
+    {
+      "skill": "Cross-functional leadership with PM and Eng",
+      "count": 48,
+      "pct": 96
+    },
+    {
+      "skill": "Developer tools, B2B SaaS, or enterprise complexity",
+      "count": 46,
+      "pct": 92
+    },
+    {
+      "skill": "Prototyping in code (beyond static mocks)",
+      "count": 45,
+      "pct": 90
+    },
+    {
+      "skill": "Interaction and visual craft",
+      "count": 35,
+      "pct": 70
+    },
+    {
+      "skill": "Systems thinking and design systems",
+      "count": 34,
+      "pct": 68
+    },
+    {
+      "skill": "End-to-end product design (0 to 1 through ship)",
+      "count": 30,
+      "pct": 60
+    },
+    {
+      "skill": "Accessibility and trust UX",
+      "count": 29,
+      "pct": 58
+    },
+    {
+      "skill": "AI and agent UX design",
+      "count": 28,
+      "pct": 56
+    },
+    {
+      "skill": "Experimentation, growth, and metrics",
+      "count": 26,
+      "pct": 52
+    },
+    {
+      "skill": "Figma fluency",
+      "count": 22,
+      "pct": 44
+    },
+    {
+      "skill": "Storytelling and design communication",
+      "count": 20,
+      "pct": 40
+    },
+    {
+      "skill": "Cursor, Claude Code, or v0",
+      "count": 13,
+      "pct": 26
+    },
+    {
+      "skill": "User research and validation",
+      "count": 9,
+      "pct": 18
+    },
+    {
+      "skill": "React or frontend fluency",
+      "count": 5,
+      "pct": 10
+    }
+  ]
+}

@@ -155,30 +155,26 @@ export const slides: Slide[] = [
     id: "featured",
     kind: "featured",
     label: "Featured Work",
-    title: "IAA Mobility 2025",
-    logos: [
-      { src: "/work/logos/audi.svg", alt: "Audi" },
-      { src: "/work/logos/3m.svg", alt: "3M" },
-      { src: "/work/logos/samsung.svg", alt: "Samsung" },
-    ],
-    lead: "A full CGI and UX/UI production for the IAA Mobility 2025 debut in Munich, ",
-    leadEm: "the world's largest mobility event.",
-    body: "The work brought a new vehicle concept to life alongside the interface experience that would sit inside it, built end-to-end for the stage.",
+    title: "Aligned AI",
+    logos: [{ src: "/work/logos/aligned.svg", alt: "Aligned AI" }],
+    lead: "We designed a personal AI workspace where trust, clarity, and benchmark content ship together — ",
+    leadEm: "not as a deck, but as product.",
+    body: "The engagement covered workspace UX, AI trust patterns, and benchmark docs — prototyped in code so PM and Eng could react to real interaction, not static mocks.",
     tags: [
-      "CGI Production",
+      "AI Workspace",
+      "Trust UX",
       "Product Design",
-      "UX/UI",
-      "Creative Direction",
-      "Vehicle Visualization",
+      "Shipped in Code",
+      "B2B SaaS",
     ],
     meta: [
-      { label: "Clients", value: "Audi, Samsung, 3M" },
-      { label: "Event", value: "IAA Mobility, Munich" },
-      { label: "Date", value: "November 2025" },
+      { label: "Client", value: "Aligned" },
+      { label: "Scope", value: "Workspace UX + benchmark content" },
+      { label: "Proof", value: "paulofreitas.design/work/aligned-ai" },
     ],
     images: [
-      { src: "/work/cases/iaa-car.png", alt: "IAA Mobility concept vehicle" },
-      { src: "/work/cases/iaa-stage.png", alt: "IAA Mobility 2025 stage" },
+      { src: "/work/cases/aligned.png", alt: "Aligned AI workspace" },
+      { src: "/work/cases/frameline.png", alt: "Frameline surfaces" },
     ],
   },
   {
@@ -188,10 +184,10 @@ export const slides: Slide[] = [
     headline: "More work",
     items: [
       {
-        title: "Ford",
-        detail: "First OEM-Aftermarket Program",
-        image: "/work/cases/ford.png",
-        logos: [{ src: "/work/logos/ford.svg", alt: "Ford" }],
+        title: "Aligned AI",
+        detail: "Personal AI Workspace · Trust UX",
+        image: "/work/cases/aligned.png",
+        logos: [{ src: "/work/logos/aligned.svg", alt: "Aligned AI" }],
       },
       {
         title: "Frameline",
@@ -200,10 +196,10 @@ export const slides: Slide[] = [
         logos: [{ src: "/work/logos/frameline.png", alt: "Frameline" }],
       },
       {
-        title: "Aligned AI",
-        detail: "Personal AI Workspace",
-        image: "/work/cases/aligned.png",
-        logos: [{ src: "/work/logos/aligned.png", alt: "Aligned AI" }],
+        title: "BuiltOps",
+        detail: "Losani Community Platform · Enterprise B2B",
+        image: "/work/cases/ford.png",
+        logos: [{ src: "/work/logos/ford.svg", alt: "BuiltOps" }],
       },
     ],
   },
@@ -315,12 +311,12 @@ export const slides: Slide[] = [
         name: "Standard",
         blurb: "A defined surface, designed and shipped",
         price: "$7,000/mo",
-        duration: "3 months. Then it ends.",
+        duration: "3-month commit. Billed monthly.",
         includes: [
-          "Product decisions and design system",
           "Hi-fi prototype and production UI",
           "Iteration in the build, as the work needs it",
           "Production UI package in code",
+          "First surface in week two",
         ],
         bestFor: "A first product surface with a defined end date.",
         note: "Backend, auth, and infra available via engineering partners. A separate engagement, quoted in addition.",
@@ -329,11 +325,11 @@ export const slides: Slide[] = [
         name: "Partner",
         blurb: "The seat, six-month minimum",
         price: "$6,000/mo",
-        duration: "6-month commit. Then month-to-month.",
+        duration: "6-month commit. Billed monthly.",
         save: "Save $6,000",
         includes: [
-          "Everything from Standard, plus",
-          "Usability testing in the build",
+          "Everything from Standard, plus:",
+          "Product decisions and design system",
           "Ongoing product and UI shipping",
           "The next surface is in the seat, not a new project",
         ],
@@ -347,11 +343,11 @@ export const slides: Slide[] = [
         duration: "12-month commit. Billed monthly.",
         save: "Save $24,000",
         includes: [
-          "Everything from Partner, plus",
+          "Everything from Partner, plus:",
+          "Usability testing in the build",
           "Priority scheduling",
           "Quarterly design audit",
           "Design and UI through the year, not a project",
-          "First surface in week two",
         ],
         bestFor:
           "Series A–B teams who already know this isn’t a one-surface problem.",
@@ -418,31 +414,9 @@ export const slides: Slide[] = [
         count: "+2",
         items: [
           {
-            title: "30-day post-ship review",
-            detail:
-              "One session on the live surface. What to fix, what to leave.",
-          },
-          {
             title: "Recorded system tour",
             detail:
               "Twenty minutes they can replay for a new hire. Not a live engineering meeting.",
-          },
-        ],
-      },
-      {
-        name: "Partner",
-        blurb: "The seat, six-month minimum",
-        count: "+3",
-        items: [
-          {
-            title: "Next-screen working session",
-            detail:
-              "Build the following slice with their team, in their repo.",
-          },
-          {
-            title: "Internal rollout deck",
-            detail:
-              "Branded slides for board or all-hands. Ready to present.",
           },
           {
             title: "Co-authored story",
@@ -452,25 +426,37 @@ export const slides: Slide[] = [
         ],
       },
       {
+        name: "Partner",
+        blurb: "The seat, six-month minimum",
+        count: "+2",
+        items: [
+          {
+            title: "Everything in Standard, plus:",
+            detail:
+              "Recorded system tour and co-authored story.",
+          },
+          {
+            title: "30-day post-ship review",
+            detail:
+              "One session on the live surface. What to fix, what to leave.",
+          },
+          {
+            title: "Internal rollout deck",
+            detail:
+              "Branded slides for board or all-hands. Ready to present.",
+          },
+        ],
+      },
+      {
         name: "Yearly",
         tag: "Recommended",
         blurb: "The same seat, for the year",
-        count: "+3",
+        count: "+1",
         items: [
           {
             title: "Everything in Partner",
             detail:
-              "Next-screen session, rollout deck, and the co-authored story.",
-          },
-          {
-            title: "On-site working week",
-            detail:
-              "One week with their team, in their repo. We leave with something live.",
-          },
-          {
-            title: "Two competitive teardowns",
-            detail:
-              "Their product against the two they actually lose to. What to copy, what to ignore.",
+              "Post-ship review and internal rollout deck.",
           },
         ],
       },
@@ -492,7 +478,7 @@ export const slides: Slide[] = [
       },
       {
         q: "Can we start Standard and switch later?",
-        a: "Yes. Standard ships one surface, then it ends. If you want the seat after that, Partner or Yearly picks up from the live work. You don't re-buy what already shipped.",
+        a: "Yes. You can move to Partner or Yearly anytime. Partner still has a 6-month commit. Yearly still has a 12-month commit.",
       },
       {
         q: "Can you work with our existing system?",

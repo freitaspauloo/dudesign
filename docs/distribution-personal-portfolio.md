@@ -1,6 +1,6 @@
 # Distribution — add to your profiles
 
-Personal portfolio: **https://paulofreitas.design**
+Personal portfolio: **https://paulo.dudesign.us**
 
 Full checklist lives in the portfolio repo: `paulo-portfolio/docs/distribution.md`
 
@@ -8,15 +8,15 @@ Full checklist lives in the portfolio repo: `paulo-portfolio/docs/distribution.m
 
 **LinkedIn headline:**
 ```
-Senior Product Designer · AI/SaaS · I design complex surfaces and ship in code | Frameline · DUDESIGN
+Product Designer · AI/SaaS · I design complex surfaces and ship in code | Frameline · DUDESIGN
 ```
 
-**Applications:** Use paulofreitas.design — never dudesign.us for job apps.
+**Applications:** Use paulo.dudesign.us — never the dudesign.us root for job apps.
 
-**Résumé:** Print https://paulofreitas.design/resume → Save as PDF
+**Résumé:** Print https://paulo.dudesign.us/resume → Save as PDF
 
 ## DUDESIGN deck (Phase 2 done)
 
 - Featured slide → Aligned AI
 - Work grid → Aligned, Frameline, BuiltOps (client-framed)
-- Full case depth → paulofreitas.design/work/*
+- Full case depth → paulo.dudesign.us/work/*

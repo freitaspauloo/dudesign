@@ -1,0 +1,175 @@
+2:I[33479,["2972","static/chunks/2972-38be387bba6f8dd9.js","2681","static/chunks/2681-114bae303ca569c6.js","4555","static/chunks/4555-3d4ce1d9e04273c1.js","1931","static/chunks/app/page-f45fd410b5e06c8f.js"],"default"]
+3:"$Sreact.fragment"
+4:I[72972,["2972","static/chunks/2972-38be387bba6f8dd9.js","2681","static/chunks/2681-114bae303ca569c6.js","4555","static/chunks/4555-3d4ce1d9e04273c1.js","1931","static/chunks/app/page-f45fd410b5e06c8f.js"],""]
+5:I[44823,["2972","static/chunks/2972-38be387bba6f8dd9.js","2681","static/chunks/2681-114bae303ca569c6.js","4555","static/chunks/4555-3d4ce1d9e04273c1.js","1931","static/chunks/app/page-f45fd410b5e06c8f.js"],"default"]
+6:I[25569,["2972","static/chunks/2972-38be387bba6f8dd9.js","2681","static/chunks/2681-114bae303ca569c6.js","4555","static/chunks/4555-3d4ce1d9e04273c1.js","1931","static/chunks/app/page-f45fd410b5e06c8f.js"],"default"]
+7:I[44943,["2972","static/chunks/2972-38be387bba6f8dd9.js","2681","static/chunks/2681-114bae303ca569c6.js","4555","static/chunks/4555-3d4ce1d9e04273c1.js","1931","static/chunks/app/page-f45fd410b5e06c8f.js"],"default"]
+8:I[29139,["2972","static/chunks/2972-38be387bba6f8dd9.js","2681","static/chunks/2681-114bae303ca569c6.js","4555","static/chunks/4555-3d4ce1d9e04273c1.js","1931","static/chunks/app/page-f45fd410b5e06c8f.js"],"default"]
+9:I[90607,["2972","static/chunks/2972-38be387bba6f8dd9.js","2681","static/chunks/2681-114bae303ca569c6.js","4555","static/chunks/4555-3d4ce1d9e04273c1.js","1931","static/chunks/app/page-f45fd410b5e06c8f.js"],"default"]
+c:I[26443,["2072","static/chunks/2072-d5c9a3392aae1862.js","6949","static/chunks/6949-645c945d65cf3a42.js","3374","static/chunks/3374-a36da688fe78474c.js","8058","static/chunks/8058-123aa954ea96f4e8.js","9378","static/chunks/9378-ea501148a5e1e7d7.js","3185","static/chunks/app/layout-f02f05bb0327b686.js"],"default"]
+d:I[91595,["2072","static/chunks/2072-d5c9a3392aae1862.js","6949","static/chunks/6949-645c945d65cf3a42.js","3374","static/chunks/3374-a36da688fe78474c.js","8058","static/chunks/8058-123aa954ea96f4e8.js","9378","static/chunks/9378-ea501148a5e1e7d7.js","3185","static/chunks/app/layout-f02f05bb0327b686.js"],"default"]
+e:I[39824,["2072","static/chunks/2072-d5c9a3392aae1862.js","6949","static/chunks/6949-645c945d65cf3a42.js","3374","static/chunks/3374-a36da688fe78474c.js","8058","static/chunks/8058-123aa954ea96f4e8.js","9378","static/chunks/9378-ea501148a5e1e7d7.js","3185","static/chunks/app/layout-f02f05bb0327b686.js"],"default"]
+f:I[4707,[],""]
+10:I[13490,["7601","static/chunks/app/error-2c852dc7fa3ab27d.js"],"default"]
+11:I[36423,[],""]
+12:I[84664,["2972","static/chunks/2972-38be387bba6f8dd9.js","7527","static/chunks/7527-5046ed634003434e.js","9160","static/chunks/app/not-found-3d0e0f8304e1dfe9.js"],"default"]
+13:I[36893,["2972","static/chunks/2972-38be387bba6f8dd9.js","7527","static/chunks/7527-5046ed634003434e.js","9160","static/chunks/app/not-found-3d0e0f8304e1dfe9.js"],"StudioPathBounce"]
+14:I[60024,["2972","static/chunks/2972-38be387bba6f8dd9.js","7527","static/chunks/7527-5046ed634003434e.js","9160","static/chunks/app/not-found-3d0e0f8304e1dfe9.js"],"default"]
+15:I[28349,["2972","static/chunks/2972-38be387bba6f8dd9.js","7527","static/chunks/7527-5046ed634003434e.js","9160","static/chunks/app/not-found-3d0e0f8304e1dfe9.js"],"Footer"]
+16:I[87950,["2072","static/chunks/2072-d5c9a3392aae1862.js","6949","static/chunks/6949-645c945d65cf3a42.js","3374","static/chunks/3374-a36da688fe78474c.js","8058","static/chunks/8058-123aa954ea96f4e8.js","9378","static/chunks/9378-ea501148a5e1e7d7.js","3185","static/chunks/app/layout-f02f05bb0327b686.js"],"default"]
+a:T10c0,(function(){try{
+var g=globalThis;
+
+/* crypto.randomUUID (WebKit 15.4+) — RFC 4122 v4 from getRandomValues,
+   which WebKit 15.0 does ship. */
+if(g.crypto&&g.crypto.getRandomValues&&!g.crypto.randomUUID){
+  g.crypto.randomUUID=function(){
+    var b=new Uint8Array(16);
+    g.crypto.getRandomValues(b);
+    b[6]=(b[6]&15)|64;  /* version nibble -> 4 */
+    b[8]=(b[8]&63)|128; /* variant bits -> 10xx (RFC 4122) */
+    var h='',i;
+    for(i=0;i<16;i++){
+      h+=(b[i]+256).toString(16).slice(1);
+      if(i===3||i===5||i===7||i===9)h+='-';
+    }
+    return h;
+  };
+}
+
+/* DataCloneError-shaped error, shared by the structuredClone fallback. */
+function dataCloneError(msg){
+  try{return new DOMException(msg,'DataCloneError');}
+  catch(_){var e=new Error(msg);e.name='DataCloneError';return e;}
+}
+
+/* structuredClone (WebKit 15.4+). Coverage boundary documented in the
+   module header of lib/polyfills/webkit15-floor.ts. */
+if(!g.structuredClone){
+  var cloneRec=function(v,seen){
+    if(v===null||(typeof v!=='object'&&typeof v!=='function')){
+      if(typeof v==='symbol')throw dataCloneError('Symbols cannot be cloned.');
+      return v; /* undefined/boolean/number/bigint/string */
+    }
+    if(typeof v==='function')throw dataCloneError('Functions cannot be cloned.');
+    var hit=seen.get(v);
+    if(hit!==undefined)return hit; /* cycle or shared reference */
+    var out,i;
+    if(v instanceof Date){out=new Date(v.getTime());seen.set(v,out);return out;}
+    if(v instanceof RegExp){out=new RegExp(v.source,v.flags);seen.set(v,out);return out;}
+    if(Array.isArray(v)){
+      out=[];out.length=v.length;seen.set(v,out);
+      for(i=0;i<v.length;i++)if(i in v)out[i]=cloneRec(v[i],seen);
+      return out;
+    }
+    if(v instanceof Map){
+      out=new Map();seen.set(v,out);
+      v.forEach(function(val,key){out.set(cloneRec(key,seen),cloneRec(val,seen));});
+      return out;
+    }
+    if(v instanceof Set){
+      out=new Set();seen.set(v,out);
+      v.forEach(function(val){out.add(cloneRec(val,seen));});
+      return out;
+    }
+    if(v instanceof ArrayBuffer){out=v.slice(0);seen.set(v,out);return out;}
+    if(ArrayBuffer.isView(v)){
+      out=new v.constructor(v.buffer.slice(v.byteOffset,v.byteOffset+v.byteLength));
+      seen.set(v,out);return out;
+    }
+    if(typeof Node!=='undefined'&&v instanceof Node)
+      throw dataCloneError('DOM nodes cannot be cloned.');
+    /* Plain object, null-prototype object, or class instance: own
+       enumerable string keys into a fresh object. Null prototype is
+       preserved; class prototypes are dropped — both match native. */
+    out=Object.getPrototypeOf(v)===null?Object.create(null):{};
+    seen.set(v,out);
+    var keys=Object.keys(v);
+    for(i=0;i<keys.length;i++)out[keys[i]]=cloneRec(v[keys[i]],seen);
+    return out;
+  };
+  g.structuredClone=function(value){return cloneRec(value,new WeakMap());};
+}
+
+/* Object.hasOwn (WebKit 15.4+). */
+if(!Object.hasOwn){
+  Object.defineProperty(Object,'hasOwn',{
+    value:function(o,k){return Object.prototype.hasOwnProperty.call(Object(o),k);},
+    writable:true,configurable:true
+  });
+}
+
+/* Array.prototype.at (WebKit 15.4+). defineProperty, NOT assignment: a
+   prototype method must stay non-enumerable or every for-in over an array
+   grows an 'at' key. */
+if(!Array.prototype.at){
+  Object.defineProperty(Array.prototype,'at',{
+    value:function(n){
+      var len=this.length>>>0;
+      n=Math.trunc(Number(n))||0; /* NaN and -0 -> 0, per ToIntegerOrInfinity */
+      if(n<0)n+=len;
+      return n<0||n>=len?undefined:this[n];
+    },
+    writable:true,configurable:true
+  });
+}
+
+/* AbortSignal.timeout (WebKit 16+). Pre-15.4 AbortController.abort()
+   ignores the reason argument — the signal still aborts, callers just see
+   an undefined reason instead of the TimeoutError; every call site here
+   only cares that the fetch stops. */
+if(g.AbortSignal&&g.AbortController&&!g.AbortSignal.timeout){
+  g.AbortSignal.timeout=function(ms){
+    var c=new g.AbortController();
+    setTimeout(function(){
+      var reason;
+      try{reason=new DOMException('The operation timed out.','TimeoutError');}
+      catch(_){reason=new Error('The operation timed out.');reason.name='TimeoutError';}
+      c.abort(reason);
+    },ms);
+    return c.signal;
+  };
+}
+}catch(e){}})();b:Te01,(function(){try{
+  var T={"density":[{"key":"comfortable","vars":{"rowPadY":"10px","rowGap":"14px","listRowPad":"14px 18px","sectionGap":"28px","padBtn":"10px 18px","inputPad":"9px 12px","disclosureGap":"8px"}},{"key":"compact","vars":{"rowPadY":"7px","rowGap":"10px","listRowPad":"10px 14px","sectionGap":"22px","padBtn":"8px 15px","inputPad":"7px 11px","disclosureGap":"6px"}},{"key":"dense","vars":{"rowPadY":"5px","rowGap":"7px","listRowPad":"7px 12px","sectionGap":"17px","padBtn":"6px 13px","inputPad":"6px 10px","disclosureGap":"5px"}}],"mono":[{"key":"jetbrains","stack":""},{"key":"berkeley","stack":"\"Berkeley Mono\", \"Fira Code\", \"JetBrains Mono\", ui-monospace, monospace"},{"key":"ibm","stack":"\"IBM Plex Mono\", \"JetBrains Mono\", ui-monospace, monospace"},{"key":"system","stack":"ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"}],"textScale":[{"key":"small","scale":0.92},{"key":"default","scale":1},{"key":"large","scale":1.12},{"key":"xl","scale":1.25}],"fsBase":{"--studio-fs-hero":"36px","--studio-fs-section":"22px","--studio-fs-name":"18px","--studio-fs-card-title":"17px","--studio-fs-body":"14px","--studio-fs-body-sm":"13px","--studio-fs-tip":"12.5px","--studio-fs-back":"12px","--studio-fs-card-meta":"11.5px","--studio-fs-meta":"11px","--studio-fs-pill":"11px"}};
+  var raw=null; try{raw=localStorage.getItem('conifer-appearance');}catch(_){}
+  var p={}; try{p=raw?JSON.parse(raw):{};}catch(_){p={};}
+  if(!p||typeof p!=='object')p={};
+  // Theme resolution mirrors theme-bootstrap.ts (authority on data-theme,
+  // runs right after). Owner call 2026-08-24: marketing is light unless
+  // the legacy key is explicitly 'dark'; studio stays dark-default with
+  // the full tri-state. A missing legacy key must not force dark on marketing.
+  var lt=null; try{lt=localStorage.getItem('conifer-theme');}catch(_){}
+  var stored=(lt==='system'||lt==='light'||lt==='dark')?lt:((p.theme==='system'||p.theme==='light'||p.theme==='dark')?p.theme:null);
+  var pth=location.pathname;
+  var studio=pth==='/app'||pth.indexOf('/app/')===0;
+  var surface;
+  if(studio){
+    if(stored==='light')surface='light';
+    else if(stored==='dark')surface='dark';
+    else if(stored==='system'){ try{surface=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}catch(_){surface='dark';} }
+    else{ surface='dark'; }
+  } else {
+    surface=lt==='dark'?'dark':'light';
+  }
+  var el=document.documentElement;
+  if(surface==='dark')el.setAttribute('data-theme','dark');else el.removeAttribute('data-theme');
+  function val(arr,key,field){for(var i=0;i<arr.length;i++){if(arr[i].key===key)return arr[i][field];}return null;}
+  function setv(n,v){if(v!=null)el.style.setProperty(n,v);}
+  // density
+  if(p.density&&p.density!=='comfortable'){
+    var d=val(T.density,p.density,'vars');
+    if(d){setv('--studio-row-pad-y',d.rowPadY);setv('--studio-row-gap',d.rowGap);setv('--studio-list-row-pad',d.listRowPad);setv('--studio-section-gap',d.sectionGap);setv('--studio-pad-btn',d.padBtn);setv('--studio-input-pad',d.inputPad);setv('--studio-disclosure-gap',d.disclosureGap);}
+  }
+  // serif
+  if(p.serif&&p.serif!=='full')el.setAttribute('data-appearance-serif',p.serif);
+  // mono
+  if(p.mono&&p.mono!=='jetbrains'){var ms=val(T.mono,p.mono,'stack');if(ms)setv('--studio-font-mono',ms);}
+  // text scale
+  if(p.textScale&&p.textScale!=='default'){
+    var sc=val(T.textScale,p.textScale,'scale');
+    if(sc&&sc!==1){for(var k in T.fsBase){if(Object.prototype.hasOwnProperty.call(T.fsBase,k))setv(k,'calc('+T.fsBase[k]+' * '+sc+')');}}
+  }
+}catch(e){}})();0:["O86b3c9PN5PaenGL076SG",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",{"children":["__PAGE__",{},[["$L1",["$","div",null,{"className":"marble-ground relative min-h-screen flex flex-col","children":[["$","svg",null,{"aria-hidden":true,"focusable":"false","width":"0","height":"0","style":{"position":"absolute","width":0,"height":0,"overflow":"hidden"},"children":["$","defs",null,{"children":[["$","filter",null,{"id":"marble-warp","x":"-20%","y":"-20%","width":"140%","height":"140%","colorInterpolationFilters":"sRGB","children":[["$","feTurbulence",null,{"type":"fractalNoise","baseFrequency":"0.006","numOctaves":2,"seed":17,"result":"noise"}],["$","feDisplacementMap",null,{"in":"SourceGraphic","in2":"noise","scale":62,"xChannelSelector":"R","yChannelSelector":"G"}]]}],["$","filter",null,{"id":"marble-warp-fine","x":"-20%","y":"-20%","width":"140%","height":"140%","colorInterpolationFilters":"sRGB","children":[["$","feTurbulence",null,{"type":"fractalNoise","baseFrequency":"0.017","numOctaves":2,"seed":41,"result":"noise"}],["$","feDisplacementMap",null,{"in":"SourceGraphic","in2":"noise","scale":64,"xChannelSelector":"R","yChannelSelector":"G"}]]}]]}]}],["$","div",null,{"className":"marble-glow","aria-hidden":true,"children":[["$","span",null,{"className":"marble-glow-node marble-glow-node--1"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--2"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--3"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--4"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--5"}]]}],["$","main",null,{"className":"relative flex-1","children":[["$","div",null,{"className":"landing-splash","children":[["$","$L2",null,{}],["$","div",null,{"className":"cell-links","children":[["$","$3","download",{"children":null}],["$","$3","vision",{"children":["$","div",null,{"className":"cell-box cell-box--lower","children":["$","div",null,{"className":"cell-body","children":[[["$","p","0",{"className":"cell-desc","children":["Conifer routes to the"," ",["$","a",null,{"href":"/models/#frontier","className":"term","children":"Pareto frontier"}]]}]],null,["$","div",null,{"className":"cell-cta","role":"group","aria-label":"Get started","children":[["$","a","/console#/keys",{"href":"/console#/keys","className":"folio-btn cell-btn folio-btn--gold","data-track":"cta:Mint an API key","children":"Mint an API key"}],["$","$L4","/products/",{"href":"/products/","className":"folio-btn cell-btn folio-btn--ghost","data-track":"cta:Explore other products","children":"Explore other products"}]]}]]}]}]}],["$","$3","docs",{"children":null}]]}],["$","div",null,{"className":"lp-boxes","aria-label":"Elsewhere on the site","children":[["$","$L4","docs",{"href":"/docs","className":"lp-box lp-box--c1","data-track":"box:docs","children":[["$","img",null,{"className":"lp-box-art","src":"/channels/spec-sprig-glyph-sm.png","srcSet":"/channels/spec-sprig-glyph-sm.png 450w, /channels/spec-sprig-glyph.png 900w","sizes":"(max-width: 1100px) 40vw, 15vw","alt":"A eucalyptus sprig, drawn in ASCII.","loading":"lazy"}],["$","span",null,{"className":"lp-box-label","children":"docs"}]]}],["$","$L4","models",{"href":"/models","className":"lp-box lp-box--c2","data-track":"box:models","children":[["$","img",null,{"className":"lp-box-art","src":"/channels/spec-cone-glyph-sm.png","srcSet":"/channels/spec-cone-glyph-sm.png 450w, /channels/spec-cone-glyph.png 900w","sizes":"(max-width: 1100px) 40vw, 15vw","alt":"A single pine cone, drawn in ASCII.","loading":"lazy"}],["$","span",null,{"className":"lp-box-label","children":"models"}]]}],["$","a","console",{"href":"/console","className":"lp-box lp-box--c3","data-track":"box:console","children":[["$","img",null,{"className":"lp-box-art","src":"/channels/spec-leaf-glyph-sm.png","srcSet":"/channels/spec-leaf-glyph-sm.png 450w, /channels/spec-leaf-glyph.png 900w","sizes":"(max-width: 1100px) 40vw, 15vw","alt":"A single leaf, drawn in ASCII.","loading":"lazy"}],["$","span",null,{"className":"lp-box-label","children":"console"}]]}],["$","$L4","faq",{"href":"/faq","className":"lp-box lp-box--r1","data-track":"box:faq","children":[["$","img",null,{"className":"lp-box-art","src":"/channels/spec-twig-glyph-sm.png","srcSet":"/channels/spec-twig-glyph-sm.png 450w, /channels/spec-twig-glyph.png 900w","sizes":"(max-width: 1100px) 40vw, 15vw","alt":"A bare twig, drawn in ASCII.","loading":"lazy"}],["$","span",null,{"className":"lp-box-label","children":"faq"}]]}],["$","$L4","contact",{"href":"/contact","className":"lp-box lp-box--r2","data-track":"box:contact","children":[["$","img",null,{"className":"lp-box-art","src":"/channels/spec-seed-glyph-sm.png","srcSet":"/channels/spec-seed-glyph-sm.png 450w, /channels/spec-seed-glyph.png 900w","sizes":"(max-width: 1100px) 40vw, 15vw","alt":"A seed head, drawn in ASCII.","loading":"lazy"}],["$","span",null,{"className":"lp-box-label","children":"contact"}]]}],["$","$L4","vision",{"href":"/vision","className":"lp-box lp-box--r3","data-track":"box:vision","children":[["$","img",null,{"className":"lp-box-art","src":"/channels/spec-bonsai-glyph-sm.png","srcSet":"/channels/spec-bonsai-glyph-sm.png 450w, /channels/spec-bonsai-glyph.png 900w","sizes":"(max-width: 1100px) 40vw, 15vw","alt":"A bonsai pine, drawn in ASCII.","loading":"lazy"}],["$","span",null,{"className":"lp-box-label","children":"vision"}]]}]]}]]}],["$","section",null,{"className":"start-beat","aria-labelledby":"start-head","children":["$","div",null,{"className":"start-grid","children":[["$","div",null,{"className":"start-copy","children":[["$","h2",null,{"id":"start-head","className":"start-head","children":"Works with the cloud, self-hosted models, and your own hardware."}],["$","ol",null,{"className":"start-steps","children":[["$","li","1",{"className":"start-step","children":[["$","span",null,{"className":"start-n","aria-hidden":true,"children":"1"}],["$","div",null,{"className":"start-step-body","children":[["$","h3",null,{"className":"start-step-title","children":"Install the runtime"}],["$","$L5",null,{}],["$","p",null,{"className":"start-step-text","children":"No charge. The runtime, the router and local inference are free."}]]}]]}],["$","li","2",{"className":"start-step","children":[["$","span",null,{"className":"start-n","aria-hidden":true,"children":"2"}],["$","div",null,{"className":"start-step-body","children":[["$","h3",null,{"className":"start-step-title","children":"One key to the gateway"}],null,["$","p",null,{"className":"start-step-text","children":["Over 200 models behind ",["$","code",null,{"children":"api.conifer.build"}],": the frontier labs and the open-weights field, Qwen, DeepSeek, GLM, Kimi, Llama and the rest. Or bring your own provider keys."]}]]}]]}],["$","li","3",{"className":"start-step","children":[["$","span",null,{"className":"start-n","aria-hidden":true,"children":"3"}],["$","div",null,{"className":"start-step-body","children":[["$","h3",null,{"className":"start-step-title","children":"No upcharge"}],null,["$","p",null,{"className":"start-step-text","children":"Cloud tokens bill at the model’s own rate and nothing on top. Your own keys and your own hardware, through any llama-compatible endpoint or our engine, cost nothing."}]]}]]}]]}]]}],["$","div",null,{"className":"start-stage","children":["$","$L6",null,{}]}]]}]}],["$","$L7",null,{}],["$","$L8",null,{}],["$","$L9",null,{}],["$","section",null,{"className":"social-strip","aria-label":"Conifer elsewhere","children":[["$","div",null,{"className":"social-strip-row","children":[["$","a","x",{"href":"https://x.com/coniferbuild","className":"social-strip-link","aria-label":"X / Twitter","target":"_blank","rel":"noreferrer noopener","children":["$","img",null,{"src":"/socials/x.png","alt":"","className":"social-strip-icon"}]}],["$","a","github",{"href":"https://github.com/ConiferKit/use-conifer","className":"social-strip-link","aria-label":"GitHub","target":"_blank","rel":"noreferrer noopener","children":["$","img",null,{"src":"/socials/github.png","alt":"","className":"social-strip-icon"}]}],["$","a","linkedin",{"href":"https://www.linkedin.com/company/coniferbuild","className":"social-strip-link","aria-label":"LinkedIn","target":"_blank","rel":"noreferrer noopener","children":["$","img",null,{"src":"/socials/linkedin.png","alt":"","className":"social-strip-icon"}]}],["$","a","discord",{"href":"https://discord.com/invite/DakgqGebRH","className":"social-strip-link","aria-label":"Discord","target":"_blank","rel":"noreferrer noopener","children":["$","img",null,{"src":"/socials/discord.svg","alt":"","className":"social-strip-icon"}]}],["$","a","mail",{"href":"mailto:contact@conifer.build","className":"social-strip-link","aria-label":"Email","target":"$undefined","rel":"$undefined","children":["$","img",null,{"src":"/socials/mail.png","alt":"","className":"social-strip-icon"}]}]]}],["$","div",null,{"className":"social-strip-meta","children":[["$","span",null,{"children":"© 2026 Conifer"}],["$","span",null,{"aria-hidden":true,"children":"·"}],["$","a",null,{"href":"/faq/","children":"FAQ"}],["$","span",null,{"aria-hidden":true,"children":"·"}],["$","$L4",null,{"href":"/docs/","children":"Docs"}],["$","span",null,{"aria-hidden":true,"children":"·"}],["$","a",null,{"href":"/privacy/","children":"Privacy"}],["$","span",null,{"aria-hidden":true,"children":"·"}],["$","a",null,{"href":"/contact/","children":"Partner with us"}]]}]]}]]}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/cc76d5e93225f26b.css","precedence":"next","crossOrigin":"$undefined"}]]],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/eb115a4d19ab2033.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/2dba7e18b5e276eb.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/e93bf479b9f7aae0.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_f7bc24 __variable_cd0e62 __variable_a5ca7a __variable_5abfa7 __variable_715bb3","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$b"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{\n  var d=document.documentElement;\n  var v=localStorage.getItem('conifer-theme');\n  var p=location.pathname;\n  var studio=p==='/app'||p.indexOf('/app/')===0;\n  var landing=p==='/'||p==='';\n  var dark;\n  if(studio){\n    if(v==='system'){\n      try{ dark=!window.matchMedia('(prefers-color-scheme: light)').matches; }\n      catch(_){ dark=true; }\n    } else {\n      dark=v!=='light';\n    }\n  } else if(landing){\n    dark=v==='dark';\n  } else {\n    dark=v==='dark';\n  }\n  if(dark){ d.setAttribute('data-theme','dark'); }\n  else { d.removeAttribute('data-theme'); }\n}catch(e){}})();"}}],null,["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.conifer.build/#organization\",\"name\":\"Conifer\",\"url\":\"https://www.conifer.build\",\"logo\":\"https://www.conifer.build/icon.png\",\"description\":\"Conifer routes to the Pareto frontier: the cheapest seat that still clears the work. Name a model and that model is served.\",\"sameAs\":[\"https://github.com/ConiferKit\"]},{\"@type\":\"WebSite\",\"@id\":\"https://www.conifer.build/#website\",\"url\":\"https://www.conifer.build\",\"name\":\"Conifer\",\"description\":\"Conifer routes to the Pareto frontier: the cheapest seat that still clears the work. Name a model and that model is served.\",\"publisher\":{\"@id\":\"https://www.conifer.build/#organization\"},\"inLanguage\":\"en-US\"}]}"}}],["$","noscript",null,{"children":["$","style",null,{"children":".reveal{opacity:1;transform:none}"}]}],["$","meta",null,{"name":"conifer-build-commit","content":"2a8f419"}],["$","meta",null,{"name":"conifer-build-time","content":"2026-09-08T10:22:29.006Z"}]]}],["$","body",null,{"children":[["$","$Lc",null,{}],["$","$Ld",null,{}],["$","$Le",null,{}],["$","$Lf",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$10","errorStyles":[],"errorScripts":[],"template":["$","$L11",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"marble-ground relative min-h-screen flex flex-col","children":[["$","svg",null,{"aria-hidden":true,"focusable":"false","width":"0","height":"0","style":{"position":"absolute","width":0,"height":0,"overflow":"hidden"},"children":["$","defs",null,{"children":[["$","filter",null,{"id":"marble-warp","x":"-20%","y":"-20%","width":"140%","height":"140%","colorInterpolationFilters":"sRGB","children":[["$","feTurbulence",null,{"type":"fractalNoise","baseFrequency":"0.006","numOctaves":2,"seed":17,"result":"noise"}],["$","feDisplacementMap",null,{"in":"SourceGraphic","in2":"noise","scale":62,"xChannelSelector":"R","yChannelSelector":"G"}]]}],["$","filter",null,{"id":"marble-warp-fine","x":"-20%","y":"-20%","width":"140%","height":"140%","colorInterpolationFilters":"sRGB","children":[["$","feTurbulence",null,{"type":"fractalNoise","baseFrequency":"0.017","numOctaves":2,"seed":41,"result":"noise"}],["$","feDisplacementMap",null,{"in":"SourceGraphic","in2":"noise","scale":64,"xChannelSelector":"R","yChannelSelector":"G"}]]}]]}]}],["$","div",null,{"className":"marble-glow","aria-hidden":true,"children":[["$","span",null,{"className":"marble-glow-node marble-glow-node--1"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--2"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--3"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--4"}],["$","span",null,{"className":"marble-glow-node marble-glow-node--5"}]]}],["$","a",null,{"href":"#main","className":"mono mkt-tap-extend fixed left-3 top-3 z-50 -translate-y-20 rounded-xs px-3 py-2 focus-visible:translate-y-0","style":{"background":"var(--ink)","color":"var(--paper)","fontSize":12,"transition":"transform var(--dur-quick) var(--ease-quiet)"},"children":"skip to content"}],["$","$L12",null,{"active":"$undefined"}],["$","main",null,{"id":"main","className":"relative flex-1 w-full px-5 sm:px-6 md:px-10","style":{"maxWidth":"var(--max-line)","margin":"0 auto"},"children":[["$","$L13",null,{}],["$","section",null,{"style":{"minHeight":"52vh","display":"flex","flexDirection":"column","justifyContent":"center","paddingTop":"clamp(56px, 8vw, 96px)","paddingBottom":"clamp(28px, 4vw, 56px)"},"children":[["$","$L14",null,{"children":["$","div",null,{"className":"mono","style":{"fontSize":11,"letterSpacing":"0.18em","textTransform":"uppercase","color":"var(--green-deep)"},"children":"error · 404"}]}],["$","$L14",null,{"delay":80,"children":["$","h1",null,{"className":"font-light","style":{"fontSize":"clamp(34px, 5vw, 56px)","lineHeight":1.02,"letterSpacing":"-0.03em","marginTop":"0.5rem"},"children":"This path doesn’t exist."}]}],["$","$L14",null,{"delay":140,"children":["$","p",null,{"style":{"maxWidth":"42ch","marginTop":"1rem","color":"var(--ink-soft, var(--ink))","lineHeight":1.5},"children":"The page moved, or never grew here. Everything still runs on your machine. Head back and pick up where you were."}]}],["$","$L14",null,{"delay":200,"children":["$","$L4",null,{"href":"/","className":"mono mkt-tap-extend","style":{"position":"relative","display":"inline-block","marginTop":"1.75rem","fontSize":13,"letterSpacing":"0.04em","color":"var(--accent)","textDecoration":"none","borderBottom":"1px solid var(--accent)","paddingBottom":2,"width":"fit-content"},"children":"← back to conifer.build"}]}]]}]]}],["$","$L15",null,{}]]}],"notFoundStyles":[]}],["$","$L16",null,{}]]}]]}]],null],null],["$L17",null]]]]
+17:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#fcfdff"}],["$","meta","2",{"name":"color-scheme","content":"light dark"}],["$","meta","3",{"charSet":"utf-8"}],["$","title","4",{"children":"Conifer · Run AI locally, route the rest"}],["$","meta","5",{"name":"description","content":"Conifer routes to the Pareto frontier: the cheapest seat that still clears the work. Name a model and that model is served."}],["$","meta","6",{"name":"application-name","content":"Conifer"}],["$","meta","7",{"name":"author","content":"Conifer"}],["$","meta","8",{"name":"keywords","content":"inference gateway,AI model router,local inference,on-device LLM,Conifer"}],["$","meta","9",{"name":"creator","content":"Conifer"}],["$","meta","10",{"name":"publisher","content":"Conifer"}],["$","meta","11",{"name":"robots","content":"index, follow"}],["$","meta","12",{"name":"googlebot","content":"index, follow, max-image-preview:large, max-snippet:-1"}],["$","link","13",{"rel":"canonical","href":"https://www.conifer.build/"}],["$","meta","14",{"property":"og:title","content":"Conifer · Run AI locally, route the rest"}],["$","meta","15",{"property":"og:description","content":"Conifer routes to the Pareto frontier: the cheapest seat that still clears the work. Name a model and that model is served."}],["$","meta","16",{"property":"og:url","content":"https://www.conifer.build/"}],["$","meta","17",{"property":"og:site_name","content":"Conifer"}],["$","meta","18",{"property":"og:locale","content":"en_US"}],["$","meta","19",{"property":"og:image:type","content":"image/png"}],["$","meta","20",{"property":"og:image:width","content":"2400"}],["$","meta","21",{"property":"og:image:height","content":"1260"}],["$","meta","22",{"property":"og:image","content":"https://www.conifer.build/opengraph-image.png?e9c7f59273774159"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:title","content":"Conifer · Run AI locally, route the rest"}],["$","meta","26",{"name":"twitter:description","content":"Conifer routes to the Pareto frontier: the cheapest seat that still clears the work. Name a model and that model is served."}],["$","meta","27",{"name":"twitter:image:type","content":"image/png"}],["$","meta","28",{"name":"twitter:image:width","content":"2400"}],["$","meta","29",{"name":"twitter:image:height","content":"1260"}],["$","meta","30",{"name":"twitter:image","content":"https://www.conifer.build/opengraph-image.png?e9c7f59273774159"}],["$","link","31",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","32",{"rel":"icon","href":"/icon.png?9b06d990d63766e5","type":"image/png","sizes":"256x256"}],["$","link","33",{"rel":"apple-touch-icon","href":"/apple-icon.png?4b93e965b03bb22f","type":"image/png","sizes":"180x180"}],["$","meta","34",{"name":"next-size-adjust"}]]
+1:null

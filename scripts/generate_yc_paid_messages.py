@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Generate paid YC outreach Message + Message 2 from roster rows (JSON on stdin)."""
+"""Generate paid YC outreach Message + Message 2 from roster rows (JSON on stdin).
+
+Output is for Notion **YC CEOs — master outreach** only. See docs/prospeccao-yc-master.md.
+"""
 
 from __future__ import annotations
 

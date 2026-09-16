@@ -1,7 +1,8 @@
 {
-  "next_index": 146,
-  "success": 146,
+  "next_index": 147,
+  "success": 147,
   "errors": [],
-  "note": "async_task queued counts as submitted",
-  "total_target": 679
+  "note": "async_task queued counts as submitted; index 171 (Kun Qian) also submitted out-of-band",
+  "total_target": 679,
+  "extra_submitted_indices": [171]
 }

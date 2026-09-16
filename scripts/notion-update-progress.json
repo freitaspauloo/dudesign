@@ -1,6 +1,7 @@
 {
-  "next_index": 15,
-  "success": 15,
+  "next_index": 146,
+  "success": 146,
   "errors": [],
-  "note": "async_task queued counts as submitted"
+  "note": "async_task queued counts as submitted",
+  "total_target": 679
 }

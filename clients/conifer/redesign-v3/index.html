@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conifer · v3 pure ascii</title>
+    <meta
+      name="description"
+      content="Conifer sends every request to the cheapest model that clears it — starting with your own hardware."
+    />
+    <meta name="theme-color" content="#dce8f2" />
+    <link rel="icon" href="./assets/mark.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400&family=Geist+Mono:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="pill brand" href="#top" aria-label="Conifer home">
+        <img class="brand-mark" src="./assets/conifer-mark.svg" alt="" width="42" height="42" />
+        <span class="brand-name">Conifer</span>
+      </a>
+      <nav class="pill nav" aria-label="Primary">
+        <a href="https://www.conifer.build/docs/">docs</a>
+        <a href="https://www.conifer.build/models/">models</a>
+        <a href="https://www.conifer.build/pricing/">pricing</a>
+        <a href="https://www.conifer.build/console">console</a>
+        <a href="https://www.conifer.build/vision/">vision</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-shell" aria-labelledby="h1">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="./assets/bonsai-ascii.png" alt="" width="1920" height="1015" decoding="async" />
+          <div class="ascii-host ascii-host--hero" id="hero-ascii" data-ascii-src="./assets/bonsai-ascii.png"></div>
+        </div>
+        <div class="hero">
+          <h1 id="h1" class="headline">
+            Run AI locally.<br />
+            Route the rest.
+          </h1>
+          <div class="install-row">
+            <div class="os-wrap">
+              <button class="pill os" type="button" id="os-btn" aria-haspopup="listbox" aria-expanded="false">
+                <span id="os-label">windows</span>
+                <svg class="chev" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
+                  <path d="M1 1 L5 5 L9 1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <ul class="os-menu" id="os-menu" role="listbox" hidden>
+                <li role="option" data-os="mac">mac</li>
+                <li role="option" data-os="linux">linux</li>
+                <li role="option" data-os="win" aria-selected="true">windows</li>
+              </ul>
+            </div>
+            <div class="pill cmd" data-cmd>
+              <span class="cmd-text" id="cmd-display">conifer.build/install...</span>
+              <button class="copy" type="button" data-copy>copy</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="numbers" aria-label="Key numbers">
+        <div class="wrap">
+          <div class="num-grid reveal">
+            <div class="pill stat stat-ascii-demo" data-ascii-card>
+              <div class="ascii-host ascii-host--card" data-ascii-src="./assets/bonsai-ascii.png" aria-hidden="true"></div>
+              <span class="stat-val">80<sup>%</sup></span>
+              <span class="stat-label">lower token spend</span>
+            </div>
+            <div class="pill stat">
+              <span class="stat-val">200<sup>+</sup></span>
+              <span class="stat-label">models, one key</span>
+            </div>
+            <div class="pill stat">
+              <span class="stat-val">60<sup>%</sup></span>
+              <span class="stat-label">faster decode than llama.cpp</span>
+            </div>
+            <div class="pill stat">
+              <span class="stat-val">$0</span>
+              <span class="stat-label">to run on your hardware</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block routing" aria-labelledby="h-route">
+        <div class="wrap">
+          <header class="block-head">
+            <span class="kicker">01 — routing</span>
+            <h2 id="h-route" class="title">Every request, <em>routed.</em></h2>
+            <p class="lead">
+              Four decisions the moment a query arrives: harness, model, provider, cache. You send
+              the text. Conifer does the rest.
+            </p>
+          </header>
+          <div class="pill panel route reveal" id="route">
+            <div class="route-head">
+              <span class="route-prompt" aria-hidden="true">›</span>
+              <span class="route-query" id="route-query"></span>
+              <span class="route-cost">cost <b id="route-cost"></b></span>
+            </div>
+            <div class="route-body" id="route-body"></div>
+            <div class="route-foot">
+              <p class="route-why" id="route-why"></p>
+              <div class="route-steps" id="route-steps" role="tablist" aria-label="Example queries"></div>
+            </div>
+          </div>
+          <p class="note">Illustrative routes and prices. Real decisions depend on your keys, hardware and live rates.</p>
+        </div>
+      </section>
+
+      <section class="block works" aria-labelledby="h-works">
+        <div class="wrap">
+          <header class="block-head">
+            <span class="kicker">02 — compatibility</span>
+            <h2 id="h-works" class="title">Works where you <em>already work.</em></h2>
+            <p class="lead">
+              OpenAI-compatible endpoint. Point your harness at it — keep prompts, tools, keybindings.
+            </p>
+          </header>
+          <div class="chip-grid reveal">
+            <span class="pill chip">Cursor</span>
+            <span class="pill chip">Claude Code</span>
+            <span class="pill chip">Codex</span>
+            <span class="pill chip">Zed</span>
+            <span class="pill chip">VS Code</span>
+            <span class="pill chip">OpenCode</span>
+            <span class="pill chip">Antigravity</span>
+            <span class="pill chip">cmux</span>
+            <span class="pill chip">Pi</span>
+            <span class="pill chip">Terminal</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="block steps" aria-labelledby="h-steps">
+        <div class="wrap">
+          <header class="block-head">
+            <span class="kicker">03 — getting started</span>
+            <h2 id="h-steps" class="title">Three moves. <em>Two minutes.</em></h2>
+            <p class="lead">
+              Cloud, self-hosted and your hardware — one interface. Start free. Add a key when you want the cloud.
+            </p>
+          </header>
+          <div class="step-grid reveal">
+            <article class="pill card">
+              <span class="card-n">01</span>
+              <h3 class="card-title">Install the runtime</h3>
+              <p class="card-body">One line. Runtime, router and local inference — free, no account.</p>
+              <div class="pill cmd sm" data-cmd>
+                <span class="cmd-text">conifer.build/install...</span>
+                <button class="copy" type="button" data-copy>copy</button>
+              </div>
+            </article>
+            <article class="pill card">
+              <span class="card-n">02</span>
+              <h3 class="card-title">One key to the gateway</h3>
+              <p class="card-body">
+                200+ models at <code>api.conifer.build</code> — frontier labs and open weights. Or bring your own keys.
+              </p>
+              <div class="tag-row">
+                <span class="pill tag">Qwen</span>
+                <span class="pill tag">DeepSeek</span>
+                <span class="pill tag">GLM</span>
+                <span class="pill tag">Kimi</span>
+                <span class="pill tag">Llama</span>
+                <span class="pill tag">Claude</span>
+                <span class="pill tag">GPT</span>
+                <span class="pill tag">Gemini</span>
+                <span class="pill tag">+192</span>
+              </div>
+            </article>
+            <article class="pill card">
+              <span class="card-n">03</span>
+              <h3 class="card-title">Point your harness at it</h3>
+              <p class="card-body">
+                Swap one base URL. Local first. Cloud only when the task needs it.
+              </p>
+              <a class="pill link-btn" href="https://www.conifer.build/docs/">setup guides →</a>
+            </article>
+          </div>
+          <div class="price-grid reveal">
+            <div class="pill price">
+              <span class="price-where">your hardware</span>
+              <span class="price-what"><b>$0.</b> Local inference through our engine or any llama-compatible endpoint.</span>
+            </div>
+            <div class="pill price">
+              <span class="price-where">your own keys</span>
+              <span class="price-what"><b>$0.</b> Bring provider keys. Conifer routes; you pay them directly.</span>
+            </div>
+            <div class="pill price">
+              <span class="price-where">conifer cloud</span>
+              <span class="price-what"><b>Model's rate.</b> Cloud tokens bill at list price. Nothing on top.</span>
+            </div>
+            <a class="pill link-btn" href="https://www.conifer.build/pricing/">pricing →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="block explore" aria-labelledby="h-explore">
+        <div class="wrap">
+          <header class="block-head">
+            <span class="kicker">04 — explore</span>
+            <h2 id="h-explore" class="title">The rest of <em>the tree.</em></h2>
+          </header>
+          <div class="tile-grid reveal">
+            <a class="pill tile" href="https://www.conifer.build/docs/">
+              <img src="./assets/spec-sprig-glyph-sm.png" alt="" width="32" height="32" />
+              <span class="tile-t">docs <span aria-hidden="true">↗</span></span>
+              <span class="tile-d">Install, configure, route.</span>
+            </a>
+            <a class="pill tile" href="https://www.conifer.build/models/">
+              <img src="./assets/spec-cone-glyph-sm.png" alt="" width="32" height="32" />
+              <span class="tile-t">models <span aria-hidden="true">↗</span></span>
+              <span class="tile-d">200+ behind one key.</span>
+            </a>
+            <a class="pill tile" href="https://www.conifer.build/console">
+              <img src="./assets/spec-leaf-glyph-sm.png" alt="" width="32" height="32" />
+              <span class="tile-t">console <span aria-hidden="true">↗</span></span>
+              <span class="tile-d">Keys, usage, the bill.</span>
+            </a>
+            <a class="pill tile" href="https://www.conifer.build/faq/">
+              <img src="./assets/spec-twig-glyph-sm.png" alt="" width="32" height="32" />
+              <span class="tile-t">faq <span aria-hidden="true">↗</span></span>
+              <span class="tile-d">Short answers.</span>
+            </a>
+            <a class="pill tile" href="https://www.conifer.build/contact/">
+              <img src="./assets/spec-seed-glyph-sm.png" alt="" width="32" height="32" />
+              <span class="tile-t">contact <span aria-hidden="true">↗</span></span>
+              <span class="tile-d">Teams with real spend.</span>
+            </a>
+            <a class="pill tile" href="https://www.conifer.build/vision/">
+              <img src="./assets/spec-bonsai-glyph-sm.png" alt="" width="32" height="32" />
+              <span class="tile-t">vision <span aria-hidden="true">↗</span></span>
+              <span class="tile-d">Why local-first.</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="block quote" aria-label="From the founders">
+        <div class="wrap reveal">
+          <blockquote class="quote-text">
+            “Model labs direct every request to the cloud, with no incentive to route your queries to a
+            cheaper competitor or a free, on-device model. That may benefit them, but it's
+            <em>unnecessarily costly for you.</em>”
+          </blockquote>
+          <div class="quote-who">
+            <span class="kicker">why we built it</span>
+            <span><b>Michael Jeffords</b> &amp; <b>Charles Muehlberger</b></span>
+            <span>Founders, Conifer · YC S26</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="block final" aria-labelledby="h-final">
+        <div class="wrap final-inner reveal">
+          <div>
+            <span class="kicker">start</span>
+            <h2 id="h-final" class="title">Start every request <em>at $0.</em></h2>
+            <p class="lead">Install in one line. Route your first query in under two minutes.</p>
+          </div>
+          <div class="final-actions">
+            <div class="pill cmd" data-cmd>
+              <span class="cmd-text">conifer.build/install...</span>
+              <button class="copy" type="button" data-copy>copy</button>
+            </div>
+            <div class="final-row">
+              <a class="pill cta" href="https://www.conifer.build/console">get an api key →</a>
+              <a class="pill link-btn" href="mailto:contact@conifer.build">contact@conifer.build</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <div class="pill footer-links">
+          <span>© 2026 Conifer</span>
+          <a href="https://www.conifer.build/faq/">faq</a>
+          <a href="https://www.conifer.build/docs/">docs</a>
+          <a href="https://www.conifer.build/privacy/">privacy</a>
+          <a href="https://www.conifer.build/contact/">partner with us</a>
+        </div>
+        <div class="pill socials">
+          <a href="https://x.com/coniferbuild" aria-label="X"><img src="./assets/x-glyph.svg" alt="" /></a>
+          <a href="https://github.com/ConiferKit/use-conifer" aria-label="GitHub"><img src="./assets/github-glyph.svg" alt="" /></a>
+          <a href="https://discord.com/invite/DakgqGebRH" aria-label="Discord"><img src="./assets/discord-glyph.svg" alt="" /></a>
+          <a href="mailto:contact@conifer.build" aria-label="Email"><img src="./assets/mail-glyph.svg" alt="" /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./ascii-layer.js"></script>
+    <script src="./ascii-widget.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

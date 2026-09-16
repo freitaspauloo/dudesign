@@ -1,0 +1,1176 @@
+# Conifer gateway: setup runbook for coding agents
+
+Conifer is one API key and one endpoint in front of every model and every provider, on the OpenAI-compatible and Anthropic-compatible wires. Name a model and it is served as named; the gateway picks the provider, fails over, and returns a cost receipt.
+The gateway is https://api.conifer.build. It serves the OpenAI chat wire, the OpenAI Responses wire, and the Anthropic Messages wire on one credential.
+This page tells an AI coding agent how to wire Conifer into a Slack bot, an MCP wrapper, curl, the official SDKs, or any other HTTP client. Claude Code is one recipe, not the product. Follow it top to bottom.
+Human page: https://conifer.build/docs/tools/
+
+## Port this into any agent
+
+Two facts: base URL + bearer key. Every other recipe is that pair in a different dialect.
+
+Mint a key at https://conifer.build/console#/keys, under Mint API keys.
+New keys start with `sk-conifer-`. Do not send people to /account to mint keys.
+
+```sh
+export CONIFER_API_KEY='sk-conifer-…'
+export OPENAI_BASE_URL=https://api.conifer.build/v1
+export OPENAI_API_KEY=$CONIFER_API_KEY
+```
+
+```sh
+curl https://api.conifer.build/v1/chat/completions \
+  -H "Authorization: Bearer $CONIFER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-haiku-4-5",
+    "max_tokens": 1024,
+    "messages": [{"role": "user", "content": "three names for a build cache"}]
+  }'
+```
+
+That is enough for a Slack bot, an MCP wrapper, a CLI, a Next.js route, or a random HTTP client. Pick a model id from GET /v1/models with that key.
+
+```sh
+curl -s https://api.conifer.build/v1/catalog
+```
+
+`GET /v1/catalog` is the public price list (no key). `GET /v1/models` is the
+caller's entitled set; use that authenticated response when choosing a model.
+
+## Install the CLI
+
+macOS:
+
+```sh
+curl -fsSL https://conifer.build/setup | bash
+```
+
+Linux (the script is POSIX sh; Alpine often has no bash):
+
+```sh
+curl -fsSL https://conifer.build/setup | sh
+```
+
+Windows (paste into an already-open PowerShell window; do not wrap in powershell -c):
+
+```powershell
+curl.exe -fsSL https://conifer.build/setup.ps1 | iex
+```
+
+The script detects OS/arch, verifies SHA-256, puts `conifer` on PATH, then
+runs `conifer setup` (account, card, API key, a local model, agent CLIs).
+Linux is a thin client: no local inference after setup.
+
+## Get a key
+
+Mint a key at https://conifer.build/console#/keys, under Mint API keys.
+You can mint before entering a card: a key is free to hold and spends nothing
+until it is used. A card-less account has a zero balance, so its first call is
+refused with a 402 until pay-as-you-go billing is set up
+(https://conifer.build/console#/billing).
+The key is one long opaque token string. It is shown exactly once; the server keeps no copy it can re-show.
+Keys are revocable from the same page (effective in seconds).
+A personal key covers your full model catalog. A per-key spend cap is set on https://conifer.build/console#/limits, and a team admin can scope a key to a list of models. Revocation is immediate, so treat every key as a credential.
+Store it as CONIFER_API_KEY. The recipes below map that one variable into each client's own name.
+
+## Wire it up
+
+OpenAI SDK (any language). Set two env vars and change no code:
+
+```sh
+export OPENAI_BASE_URL=https://api.conifer.build/v1
+export OPENAI_API_KEY=$CONIFER_API_KEY
+```
+
+Anthropic SDK (any language). There is no /v1 suffix on this base URL:
+
+```sh
+export ANTHROPIC_BASE_URL=https://api.conifer.build
+export ANTHROPIC_API_KEY=$CONIFER_API_KEY
+```
+
+ANTHROPIC_AUTH_TOKEN also works.
+
+## Official SDKs
+
+Two supported clients. For a plain drop-in, use the official OpenAI package
+pointed at the gateway; the official Anthropic package is the Messages-wire
+twin. Both are shown below and neither needs a Conifer-specific package.
+
+The other is the first-party open-source Conifer SDK, for exact per-turn cost
+receipts and a server-enforced spend ceiling:
+https://github.com/ConiferKit/use-conifer (Apache-2.0, TypeScript + Python).
+Install: `npm install conifer-sdk` or `pip install "conifer-sdk[tls]"`. The npm
+package is UNSCOPED. `@conifer/sdk` does not exist and 404s.
+
+What the SDK adds over the official clients (each is a thin wrapper on the
+public wire, so you can also do all of this with curl):
+
+- `conifer.chat({ ..., maxCostNanoUsd })`: a server-enforced per-request
+  spend ceiling (wire header `x-conifer-max-cost-nanousd`), checked against
+  the worst case BEFORE any upstream call. Refuses instead of serving.
+- `answer.receipt`: the exact settled cost of that call in integer
+  nanodollars, read from the response headers (see Cost receipts below).
+- Typed errors you can branch on: `ConiferCostCeilingError` (your ceiling),
+  `ConiferPaymentError` (account credit), `ConiferCapabilityError` (request
+  shape the model cannot serve; unbilled, safe to retry on another model).
+- `ReceiptCollector`: receipts inside the official OpenAI/Anthropic
+  packages, LangChain, LiteLLM, or the Vercel AI SDK, by injecting a `fetch`
+  / `http_client` that reads the headers on the way past. One line changed.
+- `SpendBudget`: a client-side session ceiling in integer nanodollars;
+  once exhausted the NEXT call throws before any request is sent.
+- `serverFallbackModels` / `fallbackModels`: see Fallbacks below.
+- `defer()` / `jobs.wait()`: deferred (batch-style) execution, see
+  Deferred jobs below.
+- `emptyReason(answer)` (TS) / `answer.empty_reason` (Python): distinguishes
+  an empty answer caused by the thinking budget eating `max_tokens`
+  (`finish_reason: "length"`) from a refusal or filter. Empty text beside a
+  tool call is a correct answer, not an absence.
+
+Python notes: use 0.1.2+ (earlier versions sent Python's default User-Agent,
+which Cloudflare 403s at the edge), and install the `[tls]` extra on macOS
+(python.org installs often have an empty CA store; the extra pulls certifi).
+
+Human pages: https://conifer.build/docs/sdk/
+
+TypeScript, `npm install openai`:
+
+```ts
+import OpenAI from "openai";
+
+export function conifer() {
+  const apiKey = process.env.CONIFER_API_KEY;
+  if (!apiKey) {
+    throw new Error("CONIFER_API_KEY is missing. Set it before calling the gateway.");
+  }
+  return new OpenAI({
+    baseURL: process.env.OPENAI_BASE_URL ?? "https://api.conifer.build/v1",
+    apiKey,
+  });
+}
+
+export async function POST(req: Request) {
+  const res = await conifer().chat.completions.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "three names for a build cache" }],
+  });
+
+  return Response.json({ content: res.choices[0].message.content });
+}
+```
+
+Python, `pip install openai`:
+
+```py
+from openai import OpenAI
+import os
+
+client = OpenAI(
+    base_url=os.environ.get("OPENAI_BASE_URL", "https://api.conifer.build/v1"),
+    api_key=os.environ["CONIFER_API_KEY"],
+)
+
+res = client.chat.completions.create(
+    model="claude-haiku-4-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "three names for a build cache"}],
+)
+
+print(res.choices[0].message.content)
+```
+
+Anthropic Python, `pip install anthropic`. Base URL has no /v1 suffix:
+
+```py
+from anthropic import Anthropic
+import os
+
+client = Anthropic(
+    base_url=os.environ.get("ANTHROPIC_BASE_URL", "https://api.conifer.build"),
+    api_key=os.environ["CONIFER_API_KEY"],
+)
+
+res = client.messages.create(
+    model="claude-haiku-4-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "three names for a build cache"}],
+)
+
+print(res.content)
+```
+
+Anthropic TypeScript, `npm install @anthropic-ai/sdk`. App Router
+handler: paste into a route, or put `conifer()` in `lib/` and call it
+from the handler. Base URL has no /v1 suffix.
+
+```ts
+import Anthropic from "@anthropic-ai/sdk";
+
+export function conifer() {
+  const apiKey = process.env.CONIFER_API_KEY;
+  if (!apiKey) {
+    throw new Error("CONIFER_API_KEY is missing. Set it before calling the gateway.");
+  }
+  return new Anthropic({
+    baseURL: process.env.ANTHROPIC_BASE_URL ?? "https://api.conifer.build",
+    apiKey,
+  });
+}
+
+export async function POST(req: Request) {
+  const res = await conifer().messages.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "three names for a build cache" }],
+  });
+
+  return Response.json({ content: res.content });
+}
+```
+
+Verify (https://conifer.build/docs/sdk/install/). TypeScript is an App
+Router handler: paste into a route, or put `conifer()` in `lib/` and
+call it from the handler. Python is a script:
+
+```ts
+import OpenAI from "openai";
+
+export function conifer() {
+  const apiKey = process.env.CONIFER_API_KEY;
+  if (!apiKey) {
+    throw new Error("CONIFER_API_KEY is missing. Set it before calling the gateway.");
+  }
+  return new OpenAI({
+    baseURL: "https://api.conifer.build/v1",
+    apiKey,
+  });
+}
+
+export async function POST(req: Request) {
+  const res = await conifer().chat.completions.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 64,
+    messages: [{ role: "user", content: "Say hello from Conifer and nothing else." }],
+  });
+
+  return Response.json({ content: res.choices[0].message.content });
+}
+```
+
+```py
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.conifer.build/v1",
+    api_key=os.environ["CONIFER_API_KEY"],
+)
+
+res = client.chat.completions.create(
+    model="claude-haiku-4-5",
+    max_tokens=64,
+    messages=[{"role": "user", "content": "Say hello from Conifer and nothing else."}],
+)
+
+print(res.choices[0].message.content)
+```
+
+Streaming: `stream: true` / `stream=True` on chat completions. Tools: send
+OpenAI-shaped `tools` only after `GET /v1/models` `caps` includes
+`tools`; handle `tool_calls` or `[]`. Reasoning: read
+`choices[0].message.reasoning` (and `reasoning_content`) only when
+present; pass `reasoning: {effort:"medium"}` (Python: `extra_body`).
+`n > 1` on the chat wire is refused by name (400). The gateway serves
+exactly one choice per request; `n: 1` or omitting it is fine
+(`/v1/completions` refuses `n > 1` the same way). Cost on a chat-wire stream:
+the `x-conifer-cost-nanousd` header is absent (the response head is sent
+before the money settles); reconcile from the final chunk's `usage` and
+the catalog prices. The terminal `conifer_receipt` SSE event is the
+`/v1/messages` stream disclosure only.
+Cache on the chat wire: `usage.prompt_tokens_details` may be omitted;
+when present read `cached_tokens` and `cache_write_tokens` (0 if none).
+Do not assume a thinking-token count on usage unless that field exists.
+Azure BYOK model id: `azure/<deployment>` or the deployment name. Errors:
+catch the official SDK class and branch on status and `code`.
+OpenAI-compat (`/v1/chat/completions`, `/v1/completions`,
+`/v1/responses`): 401 type `invalid_request_error`, code
+`invalid_api_key`, message "Incorrect API key provided", header
+`WWW-Authenticate: Bearer` (all auth failures are this one 401); 402
+billing stays 402 `insufficient_allowance` with additive code
+`insufficient_quota` (not remapped to 429); spend cap stays
+`cost_ceiling_exceeded`; key spend cap stays `key_spend_cap_exceeded`
+(no `code`; branch on type; not remapped to 429); 429 type `rate_limit_error`, code
+`rate_limit_exceeded`, `Retry-After: 1` (no invented `x-ratelimit-*`
+figures); 404 code `model_not_found` + param `model`; context overflow is
+400 type `invalid_request_error`, code `context_length_exceeded`, and where
+the provider reports it itself that relays as 422 `upstream_error` naming
+the token counts. A missing
+capability (tools, vision, or another omitted `caps` string) is a 400
+that names the problem, not a 402 and not a 429. Stream in-band
+error object matches the buffered envelope. `request-id` and
+`x-request-id` echo `x-conifer-request-id`. Anthropic `/v1/messages`
+types were already industry-shaped and stay that way.
+
+Local CLI Azure endpoint (distinct from gateway custody):
+`printf %s "$AZURE_KEY" | conifer endpoints add byok azure --url https://{resource}.openai.azure.com/openai/v1`.
+
+OpenRouter ai-sdk provider. The base URL is the only change:
+
+```ts
+import { createOpenRouter } from "@openrouter/ai-sdk-provider";
+
+export function conifer() {
+  const apiKey = process.env.CONIFER_API_KEY;
+  if (!apiKey) {
+    throw new Error("CONIFER_API_KEY is missing. Set it before calling the gateway.");
+  }
+  const openrouter = createOpenRouter({
+    baseURL: "https://api.conifer.build/v1",
+    apiKey,
+  });
+  return openrouter("anthropic/claude-opus-5");
+}
+```
+
+OpenRouter-only body fields (provider, transforms) and the HTTP-Referer /
+X-Title headers are accepted and ignored, so an unmodified request is served
+rather than refused. One combination CONVERTS instead: `models` with
+`route: "fallback"` maps onto the gateway's own one-request server fallback
+chain (see Fallbacks below); `models` without `route` stays a client-side
+concern.
+
+Read that carefully before relying on it. "Ignored" means the request SUCCEEDS
+while the behavior those fields asked for does NOT happen: no provider pinning,
+no middle-out prompt compression. If you are
+porting an app that depended on any of them, the gateway will not tell you.
+It will just serve a different request than the one you thought you sent. The
+migration guide (https://conifer.build/docs/sdk/migrate/) lists field by field
+what carries over, what translates, and what has no equivalent at all.
+
+The one rule that explains all of those absences: THE GATEWAY SERVES EXACTLY
+THE MODEL YOU NAME. It chooses the provider that serves that model and fails
+over between providers, but never to an undisclosed different model, which
+is what makes the price you were quoted the price you are charged. The one server-side fallback
+that exists is the one you declare yourself and that is disclosed on the
+receipt: the `x-conifer-fallback-models` header / `serverFallbackModels`
+(see Fallbacks below). OpenRouter's `models` + `route: "fallback"` maps onto
+it; anything else is a client-side chain of separate billed requests.
+
+## Cost receipts and spend ceilings
+
+Every buffered response on all three doors (/v1/chat/completions,
+/v1/responses, /v1/messages) carries receipt headers:
+
+- `x-conifer-cost-nanousd`: settled cost of this call, integer nanodollars
+  ($1 = 1e9). Absent on a streamed turn (head is sent before money settles).
+- `x-conifer-cost-components-nanousd`: itemization
+  (`fresh`, `cache_write`, `cache_read`, `output`). The four sum to the total.
+- `x-conifer-requested-model` / `x-conifer-effective-model`: what you asked
+  for and what served. They differ only when you let Conifer choose (`auto` or
+  `default`), when a fallback you declared served, or on an id re-spelling.
+  Never a silent substitution.
+- `x-conifer-receipt-reason`: `as_requested`, `provider_failover` when a
+  retry happened, or `routed` when Conifer chose the model.
+- `x-conifer-request-id`: quote this in support requests; echoed on
+  `request-id` and `x-request-id`.
+
+The Conifer SDK also copies the cost into the body as `usage.cost` (where
+OpenRouter puts it) and `usage.cost_nanousd` (the integer); the official
+clients do not. On a stream, request `stream_options: {"include_usage": true}`
+and price the terminal `usage` chunk from the catalog.
+
+Absent means unknown, never zero. A missing cost header is "not settled
+yet", not "free".
+
+Hard per-request ceiling: send `x-conifer-max-cost-nanousd: <integer>` (SDK:
+`maxCostNanoUsd` / `max_cost_nano_usd`). The gateway refuses with 402 type
+`cost_ceiling_exceeded` before any upstream call if the worst case exceeds
+it. Nothing is spent on a refused turn.
+
+Human page: https://conifer.build/docs/sdk/receipts/
+
+## Fallbacks
+
+Two mechanisms, both opt-in, both disclosed:
+
+Server chain: one request, money held once, settled once against whichever
+member served, refunded in full if none did. On the wire it is one header:
+
+```sh
+curl https://api.conifer.build/v1/chat/completions \
+  -H "Authorization: Bearer $CONIFER_API_KEY" \
+  -H "x-conifer-fallback-models: glm-5.3-flash,gemini-3.5-flash" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"deepseek-v4-flash","max_tokens":200,"messages":[{"role":"user","content":"hi"}]}'
+```
+
+SDK: `serverFallbackModels` / `server_fallback_models`. Rules: at most 3
+members, every member validated against the catalog before anything is
+spent, duplicates and the primary refused (that is a retry loop, not a
+fallback). Read who served from `x-conifer-effective-model`.
+
+Client chain: SDK `fallbackModels` plus `allowClientFallback: true`
+(required, because each member that reaches upstream is a separate billed
+request). A 402 or malformed request stops the chain; a
+`ConiferCapabilityError` (e.g. image content on a model without the
+`vision` cap) advances it unbilled.
+
+Human page: https://conifer.build/docs/sdk/fallbacks/
+
+## Deferred jobs
+
+Batch-style execution rides the `x-conifer-defer` header on
+POST /v1/chat/completions (there is no Batches API). The gateway requires a
+completion window of at least 24 hours and refuses anything narrower rather
+than quietly serving it synchronously at a different price. SDK:
+
+```ts
+const job = await conifer.defer({ model: "claude-haiku-4-5", messages });
+const answer = await conifer.jobs.wait(job.jobId);
+```
+
+`wait()` stops on terminal states, backs off between polls, and on timeout
+raises WITHOUT cancelling, because a client-side clock should not kill work you
+already paid for.
+
+## MCP server (for tools that do not speak the OpenAI wire)
+
+Pointing OPENAI_BASE_URL at Conifer only helps something that already builds an
+OpenAI client. An agent, a Slack bot, or an editor extension can only use what
+its host exposes as a tool, so the gateway also ships an MCP server (stdio,
+newline-delimited JSON-RPC, no dependency tree):
+
+The package is on npm as `conifer-sdk` (UNSCOPED; `@conifer/sdk` does not
+exist and 404s). Register it with npx; no build step:
+
+```json
+{
+  "mcpServers": {
+    "conifer": {
+      "command": "npx",
+      "args": ["-y", "conifer-sdk", "conifer-mcp"],
+      "env": { "CONIFER_API_KEY": "sk-conifer-..." }
+    }
+  }
+}
+```
+
+Or, against a local checkout, point the host at the compiled binary:
+
+```json
+{
+  "mcpServers": {
+    "conifer": {
+      "command": "node",
+      "args": ["/path/to/use-conifer/bin/conifer-mcp.mjs"],
+      "env": { "CONIFER_API_KEY": "sk-conifer-..." }
+    }
+  }
+}
+```
+
+Five tools: `conifer_complete` (ask any model a question or hand it a whole
+conversation; the answer returns WITH its settled cost, and max_cost_nanousd
+bounds the spend before the call), `conifer_compare` (the same prompt across
+2-5 models in parallel, each answer beside its cost, cheapest first; the
+ceiling caps EACH turn, not the total), `conifer_list_models` (catalog with
+declared caps and as-charged prices), `conifer_choose_model` (cheapest model
+DECLARING the caps you need; undeclared caps are skipped, not assumed), and
+`conifer_balance`. Per-client setup for Claude Code, Codex, Cursor, and
+VS Code: https://conifer.build/docs/sdk/install/#mcp
+
+Plain HTTP: the key goes in `Authorization: Bearer <key>` or `x-api-key: <key>`
+(Authorization wins if both are sent).
+
+OpenAI chat wire:
+
+```sh
+curl https://api.conifer.build/v1/chat/completions \
+  -H "Authorization: Bearer $CONIFER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-haiku-4-5",
+    "max_tokens": 1024,
+    "messages": [{"role": "user", "content": "three names for a build cache"}]
+  }'
+```
+
+Anthropic Messages wire (Anthropic model ids only):
+
+```sh
+curl https://api.conifer.build/v1/messages \
+  -H "x-api-key: $CONIFER_API_KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-haiku-4-5",
+    "max_tokens": 1024,
+    "messages": [{"role": "user", "content": "three names for a build cache"}]
+  }'
+```
+
+max_tokens is required on /v1/messages. On the chat wire it is optional; the
+server applies 4096 when it is absent.
+
+## Any OpenAI-compatible client
+
+Set the OpenAI base URL, set the key, pick a model id from GET /v1/models.
+That is LangChain, the Vercel AI SDK, a Slack bot, an MCP host, or an
+internal tool.
+
+LangChain:
+
+```py
+from langchain_openai import ChatOpenAI
+import os
+
+llm = ChatOpenAI(
+    model="claude-haiku-4-5",
+    base_url=os.environ.get("OPENAI_BASE_URL", "https://api.conifer.build/v1"),
+    api_key=os.environ["CONIFER_API_KEY"],
+)
+
+print(llm.invoke("three names for a build cache").content)
+```
+
+Vercel AI SDK (`@ai-sdk/openai-compatible` `chatModel` posts
+`/v1/chat/completions`; official `@ai-sdk/openai` defaults to `/v1/responses`):
+
+```ts
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import { generateText } from "ai";
+
+export async function POST() {
+  const apiKey = process.env.CONIFER_API_KEY;
+  if (!apiKey) throw new Error("CONIFER_API_KEY is missing");
+  const conifer = createOpenAICompatible({
+    name: "conifer",
+    baseURL: process.env.OPENAI_BASE_URL ?? "https://api.conifer.build/v1",
+    apiKey,
+  });
+  const { text } = await generateText({
+    model: conifer.chatModel("claude-haiku-4-5"),
+    prompt: "three names for a build cache",
+  });
+  return Response.json({ text });
+}
+```
+
+Raw fetch (Slack bot, MCP tool, Next.js route, anything):
+
+```ts
+export async function POST() {
+  const apiKey = process.env.CONIFER_API_KEY;
+  if (!apiKey) throw new Error("CONIFER_API_KEY is missing");
+  const res = await fetch("https://api.conifer.build/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "claude-haiku-4-5",
+      max_tokens: 1024,
+      messages: [{ role: "user", content: "three names for a build cache" }],
+    }),
+  });
+  const data = await res.json();
+  return Response.json(data, { status: res.status });
+}
+```
+
+## Slack bot
+
+There is no Conifer Slack app. Hold CONIFER_API_KEY on your server.
+Bolt (or any HTTP handler) posts /v1/chat/completions.
+
+```ts
+import { App } from "@slack/bolt";
+
+const app = new App({
+  token: process.env.SLACK_BOT_TOKEN,
+  signingSecret: process.env.SLACK_SIGNING_SECRET,
+});
+
+app.message(async ({ message, say }) => {
+  if (message.subtype || !("text" in message) || !message.text) return;
+  const res = await fetch("https://api.conifer.build/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.CONIFER_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "claude-haiku-4-5",
+      max_tokens: 1024,
+      messages: [{ role: "user", content: message.text }],
+    }),
+  });
+  const data = await res.json();
+  await say(data.choices?.[0]?.message?.content ?? "no reply");
+});
+
+await app.start(Number(process.env.PORT) || 3000);
+```
+
+## MCP wrapper
+
+Install the v1 wrapper dependencies with `npm install @modelcontextprotocol/sdk@1 zod`.
+Run this standalone TypeScript process with a runner such as tsx. The published
+conifer-sdk MCP server is an alternative; see https://conifer.build/docs/sdk/install/#mcp.
+
+There is no hosted Conifer MCP endpoint. Do not invent one. Wrap the same
+HTTP wire as a tool named `complete` that POSTs /v1/chat/completions.
+
+```ts
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod";
+
+const server = new McpServer({ name: "conifer-complete", version: "1.0.0" });
+
+server.registerTool(
+  "complete",
+  {
+    description: "Complete a prompt via Conifer chat completions",
+    inputSchema: { prompt: z.string() },
+  },
+  async ({ prompt }) => {
+    const res = await fetch("https://api.conifer.build/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.CONIFER_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "claude-haiku-4-5",
+        max_tokens: 1024,
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+    const data = await res.json();
+    const text = data.choices?.[0]?.message?.content ?? JSON.stringify(data);
+    return { content: [{ type: "text", text }] };
+  },
+);
+
+await server.connect(new StdioServerTransport());
+```
+
+Point the MCP host at that stdio process. Keep CONIFER_API_KEY in the
+process environment.
+
+## Tool calling and agents
+
+Tool/function calling works on the chat wire (/v1/chat/completions): send
+OpenAI-shaped `tools` and handle `tool_calls` in the reply, exactly as with
+OpenAI.
+
+Not every model supports tools. Each entry in GET /v1/models carries a `caps`
+list of freeform strings (observed values include `chat`, `tools`, `vision`);
+pick a model whose caps include "tools". Sending tools to a model whose
+caps do not include it is a clear 400 that says so, never a silent drop,
+never a 402, never a 429. A successful reply with no `tool_calls` means
+the model did not call a tool.
+
+```ts
+console.log(res.choices[0].message.tool_calls ?? []);
+```
+
+SSE streaming works on the chat wire (`stream: true`).
+
+For agent runs on your own infrastructure (sandboxed workers, CI, bots), hold
+the key server-side as an env var, exactly like the proxy pattern in the
+client-side section below, and give the key its own spend cap on
+https://conifer.build/console#/limits.
+
+## Codex
+
+Codex needs a provider entry in ~/.codex/config.toml. Recent Codex versions
+refuse chat-wire providers at config load; wire_api = "responses" is required.
+
+```toml
+[model_providers.conifer]
+name = "conifer"
+base_url = "https://api.conifer.build/v1"
+wire_api = "responses"
+env_key = "CONIFER_API_KEY"
+```
+
+One-shot, no default change:
+
+```sh
+codex -c model_provider="conifer" -c model="claude-haiku-4-5" "rename this function across the repo"
+```
+
+Human page: https://conifer.build/docs/tools/codex/
+
+## Pick a model
+
+```sh
+curl -s https://api.conifer.build/v1/models \
+  -H "Authorization: Bearer $CONIFER_API_KEY"
+```
+
+The response is the catalog your key can call (about a hundred models;
+this response is the authority on the current count), with prices
+and `caps`. Keep `caps` in any jq projection; dropping it hides divergence.
+The `id` field is the exact string for a request's `model` field.
+OpenRouter-style namespaced ids also work: `anthropic/claude-opus-5` resolves
+to the catalog's `claude-opus-5`. The response headers
+`x-conifer-requested-model` and `x-conifer-effective-model` name both spellings.
+An id the catalog does not serve is refused by name with a 404, never substituted
+with something near it.
+
+Named versus routed: a catalog id is served as that id. Four virtual ids are
+also served, listed with `virtual: true`:
+
+- `auto`, `balanced`, `best`: Conifer picks the model for the turn from the
+  catalog your key can call. `auto` is `balanced` (the best value among the
+  models that can answer the request well); `best` is the most capable,
+  regardless of price. The response headers say what happened:
+  `x-conifer-requested-model: auto`, `x-conifer-effective-model: <the pick>`,
+  `x-conifer-receipt-reason: routed`. Works on /v1/chat/completions and
+  /v1/responses. /v1/messages relays the native Anthropic wire only and
+  serves the default pin for these ids.
+- `default`: Conifer's documented default pin.
+
+The decision alone, free, no completion:
+
+```sh
+curl -s https://api.conifer.build/v1/route \
+  -H "Authorization: Bearer $CONIFER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"<the last user message>","policy":"balanced"}'
+# {"model":"deepseek-v4-flash","fallbacks":["glm-5.3-flash","qwen3.8-max"],
+#  "policy":"balanced"}
+```
+
+`policy` is `balanced` or `best`; anything else is a 400. If the router does
+not answer in time on a chat turn, the gateway serves the default pin for
+that turn (`as_requested`) and the next turn routes. A 503 from /v1/route
+saying the router did not answer means the same thing: retry.
+Full page: https://conifer.build/docs/cloud/router/
+
+Pinning `claude --model claude-haiku-4-5` is a named request and turns that
+routing off.
+
+Bring-your-own-key traffic is billed by the provider. Conifer's take-rate is
+0% (`fee_pct` on the catalog entry). Azure BYOK is the same: the gateway's
+fee on those requests is nothing.
+
+```sh
+curl -s https://api.conifer.build/v1/models \
+  -H "Authorization: Bearer $CONIFER_API_KEY" \
+  | jq '.data[] | {id, caps, context_window, pricing}'
+```
+
+## When models diverge
+
+Do not treat every catalog id as GPT-4o-with-tools. Sandbox each feature:
+
+- Tools: require `caps` to include `tools` before sending `tools`. Absence
+  is a 400 that names the problem. `tool_calls` missing on a 200 is not an
+  error.
+- Reasoning traces: read `reasoning` / `reasoning_content` only when the
+  field exists. An omitted field means this model produced no trace.
+- Cache / thinking tokens: read usage fields that exist. Chat
+  `prompt_tokens_details` may be omitted. Do not invent a thinking-token
+  count. Messages-wire cache fields are listed below.
+- Switching models mid-conversation changes caps. Recheck the new id.
+- 402 is billing or the spend ceiling. 429 is rate limit. Neither is a
+  missing capability.
+
+## Reasoning traces
+
+Chat completions (`POST /v1/chat/completions`): read
+`choices[0].message.reasoning` (OpenRouter / OpenAI-compat) when present. Also
+`choices[0].message.reasoning_content` when upstream used DeepSeek's name.
+Both stream on `choices[0].delta`. Not every model emits either field.
+
+Optional request knobs: `reasoning` as `{effort|max_tokens}`, or
+`reasoning_effort` as `none|minimal|low|medium|high|xhigh|max` (the
+superset across providers; the gateway translates per provider and
+snaps to the nearest served tier). On Anthropic
+models the effort becomes a thinking budget; set `max_tokens` high enough
+that the answer has room after the thinking.
+The measured per-model support matrix is at
+https://conifer.build/docs/sdk/effort/
+
+```sh
+curl https://api.conifer.build/v1/chat/completions \
+  -H "Authorization: Bearer $CONIFER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-haiku-4-5",
+    "max_tokens": 8192,
+    "reasoning": {"effort": "medium"},
+    "messages": [{"role": "user", "content": "three names for a build cache"}]
+  }'
+```
+
+TypeScript: the official client does not type these fields. Read them, then
+test presence:
+
+```ts
+const res = await client.chat.completions.create({
+  model: "claude-haiku-4-5",
+  max_tokens: 8192,
+  reasoning: { effort: "medium" },
+  messages: [{ role: "user", content: "three names for a build cache" }],
+});
+
+const msg = res.choices[0].message;
+const trace = msg.reasoning ?? msg.reasoning_content;
+if (trace) console.log(trace);
+```
+
+```py
+res = client.chat.completions.create(
+    model="claude-haiku-4-5",
+    max_tokens=8192,
+    extra_body={"reasoning": {"effort": "medium"}},
+    messages=[{"role": "user", "content": "three names for a build cache"}],
+)
+
+msg = res.choices[0].message
+trace = getattr(msg, "reasoning", None) or getattr(msg, "reasoning_content", None)
+if trace:
+    print(trace)
+```
+
+Anthropic Messages (`POST /v1/messages`): a thinking block is a content item
+
+```json
+{
+  "type": "thinking",
+  "thinking": "the model scratch work",
+  "signature": "…"
+}
+```
+
+## Cache information
+
+Chat completions (`POST /v1/chat/completions`): when
+`usage.prompt_tokens_details` is present, read `cached_tokens` and
+`cache_write_tokens` (0 if none). The details object itself may be
+omitted. Do not assume a thinking-token count on usage unless that
+field is on the body.
+
+```json
+{
+  "prompt_tokens_details": {
+    "cached_tokens": 80,
+    "cache_write_tokens": 0
+  }
+}
+```
+
+```ts
+const details = res.usage?.prompt_tokens_details;
+console.log(details?.cached_tokens);
+console.log(details?.cache_write_tokens);
+```
+
+```py
+details = getattr(getattr(res, "usage", None), "prompt_tokens_details", None)
+if details is not None:
+    print(getattr(details, "cached_tokens", None))
+    print(getattr(details, "cache_write_tokens", None))
+```
+
+Prompt cache directives ride `/v1/messages`. Send `cache_control`
+breakpoints; they pass through unchanged.
+
+```sh
+curl https://api.conifer.build/v1/messages \
+  -H "x-api-key: $CONIFER_API_KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-haiku-4-5",
+    "max_tokens": 1024,
+    "system": [{
+      "type": "text",
+      "text": "You are a build-cache namer. Keep answers to three words.",
+      "cache_control": {"type": "ephemeral"}
+    }],
+    "messages": [{"role": "user", "content": "three names for a build cache"}]
+  }'
+```
+
+Read cache from `response.usage`:
+
+```json
+{
+  "input_tokens": 120,
+  "cache_creation_input_tokens": 80,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 24
+}
+```
+
+`cache_read_input_tokens` and `cache_creation_input_tokens` are the
+`/v1/messages` usage fields.
+
+## Embeddings
+
+`POST /v1/embeddings` is served on the same key and base URL. The official
+OpenAI SDK works unmodified:
+
+```py
+from openai import OpenAI
+client = OpenAI(base_url="https://api.conifer.build/v1", api_key=os.environ["CONIFER_API_KEY"])
+
+vec = client.embeddings.create(model="text-embedding-3-small", input="hello").data[0].embedding
+```
+
+`input` takes a string or an array of strings (one `data[i]` per member).
+`dimensions` (Matryoshka shortening) and `encoding_format` (`float` or
+`base64`) are forwarded to the provider unchanged.
+
+Billing is INPUT ONLY. An embedding produces no completion, and every
+embedding model prices output at zero.
+
+Models: list them with `GET /v1/models` and filter on
+`caps` containing `embeddings`; each row also carries
+`embedding_dimensions` so you can size a vector column before spending a
+token. Served today: text-embedding-3-small, text-embedding-3-large,
+text-embedding-ada-002, bge-m3, qwen3-embedding-8b, gte-large,
+multilingual-e5-large.
+
+A chat model sent to this endpoint is a typed 400 naming
+/v1/chat/completions, not an upstream 404 on your money. Token-id
+(integer-array) input is refused: the gateway cannot price tokens it did not
+tokenize.
+
+## Bring your own Azure OpenAI
+
+The gateway can route through your own Azure OpenAI resource, so usage is
+billed to your Azure credits while your callers keep the one Conifer wire.
+
+Azure is not a normal OpenAI key. PUT /v1/keys/azure with
+`{"api_key":"...","base_url":"https://{resource}.openai.azure.com/openai/v1"}`.
+No `deployments` field (retired). A malformed row is a 422 naming `azure`;
+a key that fails live verification against your resource is a 502
+`upstream_error` ("key verification failed"). Your stored rows read back
+on GET /v1/keys (an empty list means none). The upstream header is `api-key`.
+
+Setup is two values, self-serve: your Azure API key and your resource's v1
+surface (https://{resource}.openai.azure.com/openai/v1). Add them under Azure
+in https://conifer.build/console#/keys (signed-in users can add, see, and
+remove the endpoint there), or with the CLI:
+`printf %s "$AZURE_KEY" | conifer keys add azure --url https://{resource}.openai.azure.com/openai/v1`.
+That is gateway custody: callers keep using CONIFER_API_KEY. To register
+Azure as a local CLI endpoint instead (`conifer run` hits the resource
+directly):
+`printf %s "$AZURE_KEY" | conifer endpoints add byok azure --url https://{resource}.openai.azure.com/openai/v1`.
+The key is verified live against your resource at paste time and stored sealed.
+Plain API keys on a publicly reachable resource are the supported path today;
+Entra ID / managed identity is built on the gateway but not yet offered on
+this flow.
+
+Then set `model` to the Azure deployment name, or `azure/<deployment>`, on
+/v1/chat/completions. Azure resolves them; the gateway maps nothing and its
+fee on these requests is nothing (the same 0% take-rate as other BYOK). Your
+deployments are not listed in GET
+/v1/models (they are yours, not catalog entries), and a name your resource
+does not serve returns Azure's own error. One rule: a deployment named exactly
+like a model the gateway itself serves (e.g. gpt-5.4) routes to the catalog,
+not your resource, so give deployments distinct names. Requests ride the api-key
+header
+and the current OpenAI dialect; streaming on Azure routes is buffered today.
+
+## Deployed client-side (browser / app) use
+
+Direct browser and webview calls work. CORS is granted on the gateway,
+including the `x-api-key`, `anthropic-version`, and `anthropic-beta` headers,
+so a client-side fetch to the endpoints above succeeds without a proxy.
+
+Rules to follow before shipping a key to a client:
+
+- A key embedded in client code is visible to every end user. Assume it will
+  be extracted.
+- A minted key covers your full model catalog. Give a key that ships to a
+  client its own spend cap on https://conifer.build/console#/limits.
+- If the key leaks, revoke it at https://conifer.build/console#/keys. Revocation
+  reaches the gateway in seconds.
+- Because of the two points above: for anything with real spend attached,
+  prefer a thin server proxy that holds the key and forwards the same wire.
+  The client speaks the identical protocol to your proxy; only the base URL
+  differs.
+
+Minimal proxy (Next.js route handler, app/api/chat/route.ts):
+
+```ts
+export async function POST(req: Request) {
+  const upstream = await fetch("https://api.conifer.build/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.CONIFER_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: await req.text(),
+  });
+  return new Response(upstream.body, {
+    status: upstream.status,
+    headers: { "Content-Type": upstream.headers.get("Content-Type") ?? "application/json" },
+  });
+}
+```
+
+Point the client's base URL at your app's /api and keep CONIFER_API_KEY
+server-side only.
+
+## What is not served
+
+As of 2026-08-26 every unserved or unknown path answers a TYPED refusal, a
+404 with type `invalid_request_error`, code `unknown_url`, and a message
+naming the surface, never an empty body:
+
+- /v1/moderations, /v1/rerank, /v1/images/*, /v1/audio/*, /v1/files,
+  /v1/batches, /v1/fine_tuning/*, the Assistants API (/v1/assistants,
+  /v1/threads), /v1/vector_stores, /v1/uploads: not served; each refusal
+  says so by name.
+- Anthropic-namespace subpaths (/v1/messages/count_tokens,
+  /v1/messages/batches, legacy /v1/complete): not served; refusals there
+  ride the ANTHROPIC error envelope ({"type":"error",...}) so the official
+  SDKs parse them. Stored-response retrieval (GET /v1/responses/{id}) is
+  not served either; responses are synchronous.
+- Batch-style execution rides the `x-conifer-defer` header on
+  POST /v1/chat/completions, not a Batches API.
+- /v1/completions (legacy): served, buffered JSON only; no streaming (the SSE
+  wire is /v1/chat/completions).
+- /v1/messages serves Anthropic model ids only. A non-Anthropic id there is a
+  400 (`wire_upstream_mismatch`). Every other model is on /v1/chat/completions.
+
+## Palm
+
+Palm is an overlay for the terminal agents, in beta on macOS and Windows:
+pause and resume Conifer routing and switch models mid-session without
+restarting claude. `conifer setup` installs and starts it and asks which
+agents you use. With Claude Code picked there, the plain `claude` command in
+every terminal runs under Palm; a Codex pick wraps plain `codex` the same way
+on macOS. Both fail open to the real binary when Palm is absent. `palm codex`
+opens Codex under the overlay. Human page:
+https://conifer.build/docs/surfaces/#palm
+
+## Parallax
+
+Parallax reviews a coding agent's work after the session ends: other models
+check it and proven findings arrive as pull requests. Setup and use:
+https://conifer.build/docs/parallax/
+
+## Errors
+
+OpenAI-compat (`/v1/chat/completions`, `/v1/completions`, `/v1/responses`):
+
+- 401: type `invalid_request_error`, code `invalid_api_key`, message
+  "Incorrect API key provided", header `WWW-Authenticate: Bearer`. All
+  auth failures are this one 401. Missing, malformed, expired, and revoked
+  look the same.
+- 402 billing: stays 402. type `insufficient_allowance`, additive code
+  `insufficient_quota`. Not remapped to 429.
+- 402 spend cap: stays 402. type `cost_ceiling_exceeded`.
+- 402 key spend cap: stays 402. type `key_spend_cap_exceeded`. Distinct
+  from `insufficient_allowance` (account prepaid) and
+  `cost_ceiling_exceeded` (per-request `x-conifer-max-cost-nanousd`).
+  Nothing charged. Fields: `key_id`, `cap_nanodollars`, optional
+  `spent_nanodollars` (omitted, never null, when that spend figure was
+  unreadable), `would_charge_nanodollars`. No `code`. No `docs_url`.
+  No `balance_nanodollars`. Clients branch on type.
+- 429: type `rate_limit_error`, code `rate_limit_exceeded`, header
+  `Retry-After: 1`. No invented `x-ratelimit-*` remaining-quota figures.
+- 404 unknown path: type `invalid_request_error`, code `unknown_url`, for any
+  URL outside the served surface (see "What is not served"); the message
+  names the surface when there is one. Wrong method on a served path: 405,
+  same type, code `method_not_allowed`. Neither is ever an empty body.
+- 404: code `model_not_found`, param `model`. The body does not echo the
+  id; when your key can call something close, `error.suggestions` lists up
+  to three ids. See GET /v1/models with your key.
+- context length: 400 type `invalid_request_error`, code
+  `context_length_exceeded`. Where the provider reports it itself, that
+  relays as 422 `upstream_error` naming the token counts.
+- Other 400s: the body names the problem, including a non-Anthropic id on
+  /v1/messages (`wire_upstream_mismatch`), tools on a model whose caps
+  omit them, or a modality the model does not declare. Capability
+  refusals stay 400; they are not remapped to 402 or 429.
+- Stream in-band error object matches the buffered envelope.
+- `request-id` and `x-request-id` echo the same value as
+  `x-conifer-request-id`.
+
+```json
+{
+  "error": {
+    "message": "Incorrect API key provided",
+    "type": "invalid_request_error",
+    "code": "invalid_api_key"
+  }
+}
+```
+
+```json
+{
+  "error": {
+    "type": "insufficient_allowance",
+    "code": "insufficient_quota",
+    "docs_url": "https://conifer.build/console#/billing"
+  }
+}
+```
+
+```json
+{
+  "error": {
+    "type": "cost_ceiling_exceeded"
+  }
+}
+```
+
+```json
+{
+  "error": {
+    "type": "key_spend_cap_exceeded",
+    "key_id": "…",
+    "cap_nanodollars": 5000000000,
+    "spent_nanodollars": 4900000000,
+    "would_charge_nanodollars": 200000000
+  }
+}
+```
+
+```json
+{
+  "error": {
+    "type": "rate_limit_error",
+    "code": "rate_limit_exceeded"
+  }
+}
+```
+
+```json
+{
+  "error": {
+    "code": "model_not_found",
+    "param": "model"
+  }
+}
+```
+
+```json
+{
+  "error": {
+    "type": "invalid_request_error",
+    "code": "context_length_exceeded"
+  }
+}
+```
+
+Anthropic `/v1/messages` types were already industry-shaped and stay that
+way.
+
+Product honesty: all auth failures are one 401; 402 is not remapped to 429;
+upstream identity is not leaked (no OpenRouter provider metadata);
+no fake remaining-quota headers.

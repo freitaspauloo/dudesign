@@ -51,22 +51,16 @@ export default async function SocialPostPage({ params }: PageProps) {
           <h1>{post.title}</h1>
           <p className="post-visual-note">{post.visual}</p>
 
-          <h2>LinkedIn</h2>
+          <h2>LinkedIn / Instagram</h2>
           <pre>{post.linkedin}</pre>
           <div className="post-actions">
-            <CopyCaption label="LinkedIn" text={post.linkedin} />
+            <CopyCaption label="LinkedIn / Instagram" text={post.linkedin} />
           </div>
 
           <h2>X</h2>
           <pre>{post.x}</pre>
           <div className="post-actions">
             <CopyCaption label="X" text={post.x} />
-          </div>
-
-          <h2>Instagram</h2>
-          <pre>{post.linkedin}</pre>
-          <div className="post-actions">
-            <CopyCaption label="Instagram" text={post.linkedin} />
           </div>
 
           <p className="post-note">

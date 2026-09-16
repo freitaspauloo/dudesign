@@ -1,0 +1,7 @@
+﻿PROJETO: Costco — Kirkland Signature Automotive Branding
+SITE: https://dudesign.us/work/costco
+
+IMAGENS NESTA PASTA:
+- 01.png = capa (primeira imagem)
+- 02.png, 03.png... = resto na ordem do site
+

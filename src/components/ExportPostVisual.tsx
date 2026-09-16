@@ -2,64 +2,83 @@
 
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
-import type { SocialPost } from "@/content/social-posts";
-import { PostVisual } from "./PostVisual";
-
-const exportSizeFor = (slug: string) =>
-  slug === "wait-three-months"
-    ? { width: 1080, height: 1350 }
-    : { width: 1080, height: 1080 };
+import {
+  POST_EXPORT_HEIGHT,
+  POST_EXPORT_WIDTH,
+  type SocialPost,
+} from "@/content/social-posts";
+import { PostVisual } from "@/components/PostVisual";
 
 async function waitForAssets(root: HTMLElement) {
   await document.fonts.ready;
   await Promise.all(
-    Array.from(root.querySelectorAll("img")).map(
-      (img) =>
-        new Promise<void>((resolve) => {
-          if (img.complete) {
-            resolve();
-            return;
-          }
+    Array.from(root.querySelectorAll("img")).map(async (img) => {
+      if (!img.complete) {
+        await new Promise<void>((resolve) => {
           img.onload = () => resolve();
           img.onerror = () => resolve();
-        }),
-    ),
+        });
+      }
+      if (img.decode) {
+        try {
+          await img.decode();
+        } catch {
+          /* ignore decode errors */
+        }
+      }
+    }),
   );
+}
+
+async function waitForPaint() {
+  await new Promise<void>((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+  });
 }
 
 export function ExportPostVisual({ post }: { post: SocialPost }) {
   const previewRef = useRef<HTMLDivElement>(null);
-  const exportRef = useRef<HTMLDivElement>(null);
+  const exportStageRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<"idle" | "busy" | "done">("idle");
-  const { width, height } = exportSizeFor(post.slug);
-  const isPoster = post.slug === "wait-three-months";
 
   async function exportPng() {
-    const node = isPoster ? exportRef.current : previewRef.current;
-    if (!node || state === "busy") return;
+    if (state === "busy") return;
+
+    const preview = previewRef.current;
+    const exportStage = exportStageRef.current;
+    const exportFrame = exportStage?.querySelector<HTMLElement>(".pv-frame--export");
+
+    const captureNode =
+      post.kind === "portfolio" ? preview : exportFrame;
+    if (!captureNode) return;
 
     setState("busy");
 
-    try {
-      await waitForAssets(node);
+    if (post.kind !== "portfolio" && exportStage) {
+      exportStage.classList.add("is-capturing");
+    }
 
-      const dataUrl = isPoster
-        ? await toPng(node, {
-            width,
-            height,
-            pixelRatio: 1,
-            cacheBust: true,
-            skipAutoScale: true,
-            backgroundColor: "#ffffff",
-          })
-        : await (async () => {
-            const rect = node.getBoundingClientRect();
-            return toPng(node, {
-              pixelRatio: width / rect.width,
-              cacheBust: true,
+    try {
+      await waitForAssets(captureNode);
+      await waitForPaint();
+
+      const dataUrl =
+        post.kind === "portfolio"
+          ? await toPng(captureNode, {
+              pixelRatio:
+                POST_EXPORT_WIDTH / captureNode.getBoundingClientRect().width,
               skipAutoScale: true,
+              cacheBust: true,
+              backgroundColor: "#ffffff",
+            })
+          : await toPng(captureNode, {
+              width: POST_EXPORT_WIDTH,
+              height: POST_EXPORT_HEIGHT,
+              pixelRatio: 1,
+              skipAutoScale: true,
+              cacheBust: true,
+              backgroundColor: "#ffffff",
             });
-          })();
 
       const link = document.createElement("a");
       link.download = `${post.number}-${post.slug}.png`;
@@ -69,6 +88,8 @@ export function ExportPostVisual({ post }: { post: SocialPost }) {
       window.setTimeout(() => setState("idle"), 1600);
     } catch {
       setState("idle");
+    } finally {
+      exportStage?.classList.remove("is-capturing");
     }
   }
 
@@ -77,18 +98,18 @@ export function ExportPostVisual({ post }: { post: SocialPost }) {
 
   return (
     <div className="post-visual-export">
-      <div className="pv-frame pv-frame--preview" ref={previewRef}>
+      <div
+        ref={previewRef}
+        className={`pv-frame pv-frame--preview pv-frame--${post.kind}`}
+      >
         <PostVisual post={post} />
       </div>
 
-      {isPoster ? (
-        <div
-          className="pv-frame pv-frame--export"
-          ref={exportRef}
-          aria-hidden
-          style={{ width, height }}
-        >
-          <PostVisual post={post} />
+      {post.kind === "process" ? (
+        <div className="pv-export-stage" ref={exportStageRef} aria-hidden>
+          <div className="pv-frame pv-frame--export">
+            <PostVisual post={post} />
+          </div>
         </div>
       ) : null}
 

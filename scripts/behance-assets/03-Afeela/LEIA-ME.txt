@@ -1,0 +1,7 @@
+PROJETO: Afeela — EV Personalization Platform
+SITE: https://dudesign.us/work/afeela
+
+IMAGENS NESTA PASTA:
+- 01.jpg = capa (primeira imagem)
+- 02.jpg, 03.jpg... = resto na ordem do site
+

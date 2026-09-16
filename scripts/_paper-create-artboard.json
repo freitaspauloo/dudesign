@@ -1,0 +1,13 @@
+{
+  "fileId": "01M24F81DKMGKVSDRNH67HD222",
+  "name": "Current — conifer.build",
+  "styles": {
+    "display": "flex",
+    "flexDirection": "column",
+    "width": "1440px",
+    "height": "4600px",
+    "backgroundColor": "#f8f8f8",
+    "padding": "0px",
+    "gap": "0px"
+  }
+}

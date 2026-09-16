@@ -22,14 +22,14 @@ export default function PostsHubPage() {
         <div className="posts-grid">
           {socialPosts
             .slice()
-            .sort((a, b) => a.date.localeCompare(b.date))
+            .sort((a, b) => a.number.localeCompare(b.number))
             .map((post) => (
               <Link
                 key={post.slug}
                 href={`/posts/${post.slug}`}
                 className="posts-card"
               >
-                <div className="pv-frame">
+                <div className={`pv-frame pv-frame--${post.kind}`}>
                   <PostVisual post={post} />
                 </div>
                 <div className="posts-card-meta">

@@ -1,0 +1,23 @@
+TÍTULO DO PROJETO (Behance):
+Afeela — EV Personalization Platform
+
+SUBTÍTULO:
+Vehicle Personalization for Sony and Honda's EV Venture
+
+DESCRIÇÃO (copiar e colar):
+
+Brand-new car company needed its entire personalization experience designed — from first click to delivery day.
+
+Afeela is Sony and Honda's joint electric vehicle brand, entering a market where personalization is no longer optional — it's expected. The challenge was designing the complete digital experience for how a customer discovers, configures, prices, and purchases a personalized EV. This meant building the configurator UX, a 3D visualization system that renders wraps and options in real time, the checkout and pricing flow, a companion mobile app, and the post-purchase experience including delivery tracking and social sharing.
+
+From Concept to a Complete Purchase Journey
+
+The final system takes a customer from browsing paint colors and wrap designs through to a submitted order with delivery countdown — all through interfaces designed to match the premium, forward-looking identity of the Afeela brand. The mobile app extends the experience beyond the browser, letting owners preview their car in 3D, track production status, and share custom configurations directly to social media.
+
+Designed at xix3D
+
+TAGS:
+Afeela, Sony, Honda, EV, UX/UI, Configurator, 3D
+
+IMAGENS:
+Use 01.jpg como capa. Suba todas na ordem (01, 02, 03...).

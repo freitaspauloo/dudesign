@@ -1,0 +1,7 @@
+﻿PROJETO: Ford — First OEM-Aftermarket Program
+SITE: https://dudesign.us/work/ford
+
+IMAGENS NESTA PASTA:
+- 01.png = capa (primeira imagem)
+- 02.png, 03.png... = resto na ordem do site
+

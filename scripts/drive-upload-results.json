@@ -1,0 +1,275 @@
+{
+  "images": {
+    "total": 37,
+    "successes": 37,
+    "failures": 0
+  },
+  "textFiles": {
+    "total": 6,
+    "successes": 6,
+    "failures": 0
+  },
+  "totalSuccesses": 43,
+  "totalFailures": 0,
+  "successList": [
+    {
+      "file": "01-3M-Films__01.jpg.json",
+      "ok": true,
+      "id": "1DsMzk9IgSPPWFRC0EAUhpDHy7SJRF6X6",
+      "title": "01.jpg"
+    },
+    {
+      "file": "01-3M-Films__02.jpg.json",
+      "ok": true,
+      "id": "1u1vcyaWVO5sN0nnnJaGP1bLxxkS51Z3S",
+      "title": "02.jpg"
+    },
+    {
+      "file": "01-3M-Films__03.jpg.json",
+      "ok": true,
+      "id": "1kVK5smisSFxsBC4bvEFHQFVAdennHTzI",
+      "title": "03.jpg"
+    },
+    {
+      "file": "01-3M-Films__04.jpg.json",
+      "ok": true,
+      "id": "1SdkZkVPCFlpCKVr7Zp6u3vtCHcxOZnk7",
+      "title": "04.jpg"
+    },
+    {
+      "file": "01-3M-Films__05.jpg.json",
+      "ok": true,
+      "id": "1-_5aPwLrJZYk823QaQ0GI6MEHg5JKrpx",
+      "title": "05.jpg"
+    },
+    {
+      "file": "01-3M-Films__06.jpg.json",
+      "ok": true,
+      "id": "11pAhyvzcAmcqfBerasJmSgW-A0M3-vWV",
+      "title": "06.jpg"
+    },
+    {
+      "file": "01-3M-Films__07.jpg.json",
+      "ok": true,
+      "id": "1_lMInvEqNyM9Gpf-wag5elwGEtXp4Oeu",
+      "title": "07.jpg"
+    },
+    {
+      "file": "01-3M-Films__08.jpg.json",
+      "ok": true,
+      "id": "19Kcm1ikTg5KQKPq99HbesEyYub_aha4h",
+      "title": "08.jpg"
+    },
+    {
+      "file": "01-3M-Films__09.jpg.json",
+      "ok": true,
+      "id": "1t0XusJLMs9pY5Ntl8GWz4uLVPcJFI4rw",
+      "title": "09.jpg"
+    },
+    {
+      "file": "01-3M-Films__10.jpg.json",
+      "ok": true,
+      "id": "10JF-eFYntZby9jT_GemG89eL3lPCSRsE",
+      "title": "10.jpg"
+    },
+    {
+      "file": "02-Ford__01.jpg.json",
+      "ok": true,
+      "id": "1oJ7TPKg7g1CvyVNDw_6S8Lz5Who5O5Ct",
+      "title": "01.jpg"
+    },
+    {
+      "file": "02-Ford__02.jpg.json",
+      "ok": true,
+      "id": "19h9l_BN1ta0Hievy2lCgszCa0qiy9TJK",
+      "title": "02.jpg"
+    },
+    {
+      "file": "02-Ford__03.jpg.json",
+      "ok": true,
+      "id": "1tuYpwO6asqtxEPhOb2lvL0ER2oObAjHt",
+      "title": "03.jpg"
+    },
+    {
+      "file": "02-Ford__04.jpg.json",
+      "ok": true,
+      "id": "1mZUB9rfAcPz2PuFygO6ktpri57EeLmxD",
+      "title": "04.jpg"
+    },
+    {
+      "file": "03-Afeela__01.jpg.json",
+      "ok": true,
+      "id": "1WUFWaHNNBqF13twcbzuBmqW_cxPg4kIP",
+      "title": "01.jpg"
+    },
+    {
+      "file": "03-Afeela__02.jpg.json",
+      "ok": true,
+      "id": "1KwWwE4ayAuVHkJEuuMJJdeRqw8WPBxbX",
+      "title": "02.jpg"
+    },
+    {
+      "file": "03-Afeela__03.jpg.json",
+      "ok": true,
+      "id": "1hWz4-ahy8KrEifjaJYj4RKgdOUg3uG0z",
+      "title": "03.jpg"
+    },
+    {
+      "file": "03-Afeela__04.jpg.json",
+      "ok": true,
+      "id": "18BIb-qLOmsI_NP4RGxOl10NWWeNnymyi",
+      "title": "04.jpg"
+    },
+    {
+      "file": "03-Afeela__05.jpg.json",
+      "ok": true,
+      "id": "1Vg-mFppX6CO-jPj5XWGtdyD9dTJDxN3I",
+      "title": "05.jpg"
+    },
+    {
+      "file": "03-Afeela__06.jpg.json",
+      "ok": true,
+      "id": "1ASR1JQpcwK87RqdEZKTZSkcgIlMUEuix",
+      "title": "06.jpg"
+    },
+    {
+      "file": "03-Afeela__07.jpg.json",
+      "ok": true,
+      "id": "1xWahHQXudbLzubSu1VUYpNEoSQ5r9cGG",
+      "title": "07.jpg"
+    },
+    {
+      "file": "03-Afeela__08.jpg.json",
+      "ok": true,
+      "id": "10XKQNKwfn48SJXdE2Gin5kWRmg3-ljjE",
+      "title": "08.jpg"
+    },
+    {
+      "file": "03-Afeela__09.jpg.json",
+      "ok": true,
+      "id": "12-HdpyrHfTonK2ZJuqC1lNLhMac9-JZu",
+      "title": "09.jpg"
+    },
+    {
+      "file": "03-Afeela__10.jpg.json",
+      "ok": true,
+      "id": "1ukv3UG8bwCrrBlPDpNSKh0TJuMkQ9wP0",
+      "title": "10.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__01.jpg.json",
+      "ok": true,
+      "id": "1i3vUgrqC0iqU3A0NfaM-rqybwZVEorMR",
+      "title": "01.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__02.jpg.json",
+      "ok": true,
+      "id": "1Gh-b2U31YkqpvlFBr_15AzkH4fJiYnlX",
+      "title": "02.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__03.jpg.json",
+      "ok": true,
+      "id": "1Nqtl4Ct6NHcFNFjpcKe8_YlFejvrW_FI",
+      "title": "03.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__04.jpg.json",
+      "ok": true,
+      "id": "1szEBeukh2Syq0dmvnZmuShCWT26rQAfx",
+      "title": "04.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__05.jpg.json",
+      "ok": true,
+      "id": "1VLO8guoOayCGakjmJuEv7xwERusczTjj",
+      "title": "05.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__06.jpg.json",
+      "ok": true,
+      "id": "1Mx6p-CJ4D6SAzd-vlKJp3Vm3UZ8SeIsX",
+      "title": "06.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__07.jpg.json",
+      "ok": true,
+      "id": "1wxfIg87_NUOlNNJ6RsbKefBs4joa_Z6v",
+      "title": "07.jpg"
+    },
+    {
+      "file": "04-Audi-3M-Samsung__08.jpg.json",
+      "ok": true,
+      "id": "1rWSe3IeJBRcnLc8C-JRUOoE0hz6QQfjK",
+      "title": "08.jpg"
+    },
+    {
+      "file": "05-Costco__01.jpg.json",
+      "ok": true,
+      "id": "1EDcbd9lPoqmVqTaIZkmoeSmHkF0IY1el",
+      "title": "01.jpg"
+    },
+    {
+      "file": "05-Costco__02.jpg.json",
+      "ok": true,
+      "id": "1MSxRs_fH9lkYVZR_8BTqkn_QDXEdutUb",
+      "title": "02.jpg"
+    },
+    {
+      "file": "05-Costco__03.jpg.json",
+      "ok": true,
+      "id": "1Kl3D5W4s6iSS9sUIJrbyB2C9yEzT14rL",
+      "title": "03.jpg"
+    },
+    {
+      "file": "05-Costco__04.jpg.json",
+      "ok": true,
+      "id": "190cB4f9UFcioil6CeaTLvjAkDfbInfam",
+      "title": "04.jpg"
+    },
+    {
+      "file": "05-Costco__05.jpg.json",
+      "ok": true,
+      "id": "1TL4HruN8toPogLNeV4_sbCEh4bBk12vc",
+      "title": "05.jpg"
+    },
+    {
+      "file": "00-COMECE-AQUI.txt",
+      "ok": true,
+      "id": "1L0B09x1llAVPydybVAQo3NJ1VpvdLZ4b",
+      "title": "00-COMECE-AQUI.txt"
+    },
+    {
+      "file": "01-3M-Films/TEXTO-DO-PROJETO.txt",
+      "ok": true,
+      "id": "1qntM-cR0nWVqBmjQ92PQTErJI_nbPBU2",
+      "title": "TEXTO-DO-PROJETO.txt"
+    },
+    {
+      "file": "02-Ford/TEXTO-DO-PROJETO.txt",
+      "ok": true,
+      "id": "1KNts7Cp9BmgWs3Iq85vKfL8hllV37qmB",
+      "title": "TEXTO-DO-PROJETO.txt"
+    },
+    {
+      "file": "03-Afeela/TEXTO-DO-PROJETO.txt",
+      "ok": true,
+      "id": "1zW7Mef9wYhnDGf2qG3E_3X-zC4-0Dg9z",
+      "title": "TEXTO-DO-PROJETO.txt"
+    },
+    {
+      "file": "04-Audi-3M-Samsung/TEXTO-DO-PROJETO.txt",
+      "ok": true,
+      "id": "1ExGVG_iIHmUbYQDEBH19kSLCDoBbMA6b",
+      "title": "TEXTO-DO-PROJETO.txt"
+    },
+    {
+      "file": "05-Costco/TEXTO-DO-PROJETO.txt",
+      "ok": true,
+      "id": "1587amHg57n09YD9cim6Fc5jsCDLCW4so",
+      "title": "TEXTO-DO-PROJETO.txt"
+    }
+  ],
+  "failureList": []
+}

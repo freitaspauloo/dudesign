@@ -1,0 +1,7 @@
+PROJETO: Audi, 3M, Samsung — Global Automotive Summit CGI
+SITE: https://dudesign.us/work/audi3msamsung
+
+IMAGENS NESTA PASTA:
+- 01.jpg = capa (primeira imagem)
+- 02.jpg, 03.jpg... = resto na ordem do site
+

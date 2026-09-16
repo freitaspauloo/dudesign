@@ -1,0 +1,163 @@
+# PARTE C: CONTRA
+<callout icon="🔗" color="orange_bg">
+	**Como funciona:** no Contra use **Linked Project** (projeto linkado): capa + título + link pro Behance. O case completo fica no Behance.
+</callout>
+<callout icon="💡" color="yellow_bg">
+	**Faz por último.** Precisa dos links do Behance já publicados.
+</callout>
+<callout icon="📋" color="gray_bg">
+	**Campos do formulário "Project Details"** (em todo projeto):
+	<table header-row="true">
+	<tr>
+	<td>Campo</td>
+	<td>O que fazer</td>
+	</tr>
+	<tr>
+	<td>**I confirm this is my original work**</td>
+	<td>Marca a caixa ✓</td>
+	</tr>
+	<tr>
+	<td>**Skills**</td>
+	<td>Cola as 3 skills (texto pronto abaixo)</td>
+	</tr>
+	<tr>
+	<td>**Tools**</td>
+	<td>Cola as 3 tools (texto pronto abaixo)</td>
+	</tr>
+	<tr>
+	<td>**Completed work link**</td>
+	<td>Cola o link do Behance daquele projeto</td>
+	</tr>
+	<tr>
+	<td>**Collaborators**</td>
+	<td>Opcional. Deixa em branco ou digita `xix3D`</td>
+	</tr>
+	<tr>
+	<td>**Client(s)**</td>
+	<td>Cola o cliente (texto pronto abaixo)</td>
+	</tr>
+	<tr>
+	<td>**Start date / End date**</td>
+	<td>Opcional. Deixa em branco</td>
+	</tr>
+	<tr>
+	<td>**Industry**</td>
+	<td>Seleciona no dropdown (texto pronto abaixo)</td>
+	</tr>
+	</table>
+</callout>
+<details>
+<summary>**Contra: perfil (faz 1 vez)**</summary>
+	**Perfil:** [Abrir Contra](https://contra.com/community/profile/paulo_freitas_7icxv2yg)
+	- [ ] **1.** Clica **Edit profile**
+	- [ ] **2.** Cola a **Bio**:
+	> Product design partner for AI startups. Fortune 500 craft: Audi, Samsung, 3M, Ford, Sony + Honda, Costco.
+	- [ ] **3.** Cola o **Website**:
+	> [https://dudesign.us](https://dudesign.us)
+	- [ ] **4.** Salva o perfil
+</details>
+<details>
+<summary>**Contra, Projeto 01: 3M Films**</summary>
+	**Checklist (faz na ordem):**
+	- [ ] **1.** Perfil → **Work** → **Create** → **Linked Project**
+	- [ ] **2.** Cola o **Completed work link** (link Behance):
+	> *(cola depois de publicar no Behance)*
+	- [ ] **3.** Se pedir capa: `01.jpg` da [pasta 01](https://drive.google.com/drive/folders/1bSwny3-XftWxG52ELiZIO3fZ_PRWLRzH)
+	- [ ] **4.** Cola o **Preview description**:
+	> 3M Films retail technology. Kiosk, dealer portal, and showroom experience for automotive vinyl customization.
+	- [ ] **5.** Marca **I confirm this is my original work** ✓
+	- [ ] **6.** Cola **Skills** (3):
+	> Product Design, UX/UI, Interaction Design
+	- [ ] **7.** Cola **Tools** (3):
+	> Figma, Adobe Photoshop, Blender
+	- [ ] **8.** Cola **Client(s)**:
+	> 3M
+	- [ ] **9.** **Collaborators:** deixa em branco (ou `xix3D`)
+	- [ ] **10.** **Start date / End date:** deixa em branco
+	- [ ] **11.** **Industry:** seleciona **Automotive**
+	- [ ] **12.** Clica **Add to profile**
+</details>
+<details>
+<summary>**Contra, Projeto 02: Ford**</summary>
+	**Checklist (faz na ordem):**
+	- [ ] **1.** **Work** → **Create** → **Linked Project**
+	- [ ] **2.** Cola o **Completed work link**:
+	> *(link Behance do projeto 02)*
+	- [ ] **3.** Capa (se pedir): `01.jpg` da [pasta 02](https://drive.google.com/drive/folders/1BK51vb5zUXDmA2ofb8Q2o_bkkd-vHvsO)
+	- [ ] **4.** Cola o **Preview description**:
+	> Ford OEM-aftermarket wrap program. Configurator, training academy, and full dealer journey.
+	- [ ] **5.** Marca **I confirm this is my original work** ✓
+	- [ ] **6.** Cola **Skills** (3):
+	> Product Design, UX/UI, Interaction Design
+	- [ ] **7.** Cola **Tools** (3):
+	> Figma, Adobe Photoshop, Adobe Illustrator
+	- [ ] **8.** Cola **Client(s)**:
+	> Ford
+	- [ ] **9.** **Collaborators:** deixa em branco (ou `xix3D`)
+	- [ ] **10.** **Start date / End date:** deixa em branco
+	- [ ] **11.** **Industry:** seleciona **Automotive**
+	- [ ] **12.** Clica **Add to profile**
+</details>
+<details>
+<summary>**Contra, Projeto 03: Afeela**</summary>
+	**Checklist (faz na ordem):**
+	- [ ] **1.** **Work** → **Create** → **Linked Project**
+	- [ ] **2.** Cola o **Completed work link**:
+	> *(link Behance do projeto 03)*
+	- [ ] **3.** Capa (se pedir): `01.jpg` da [pasta 03](https://drive.google.com/drive/folders/1AIrHE8HF3yGl_btdRAx6F5IaYWuAcgPT)
+	- [ ] **4.** Cola o **Preview description**:
+	> Afeela EV personalization for Sony and Honda. Configurator, 3D visualization, and purchase flow.
+	- [ ] **5.** Marca **I confirm this is my original work** ✓
+	- [ ] **6.** Cola **Skills** (3):
+	> Product Design, UX/UI, Interaction Design
+	- [ ] **7.** Cola **Tools** (3):
+	> Figma, Adobe Photoshop, Blender
+	- [ ] **8.** Cola **Client(s)**:
+	> Sony, Honda
+	- [ ] **9.** **Collaborators:** deixa em branco (ou `xix3D`)
+	- [ ] **10.** **Start date / End date:** deixa em branco
+	- [ ] **11.** **Industry:** seleciona **Automotive**
+	- [ ] **12.** Clica **Add to profile**
+</details>
+<details>
+<summary>**Contra, Projeto 04: Audi / 3M / Samsung**</summary>
+	**Checklist (faz na ordem):**
+	- [ ] **1.** **Work** → **Create** → **Linked Project**
+	- [ ] **2.** Cola o **Completed work link**:
+	> *(link Behance do projeto 04)*
+	- [ ] **3.** Capa (se pedir): `01.jpg` da [pasta 04](https://drive.google.com/drive/folders/1UVHd-a9bClelEQYetwpQAJDFqSXD0kwi)
+	- [ ] **4.** Cola o **Preview description**:
+	> CGI and presentation design for Audi, 3M, and Samsung global automotive summit.
+	- [ ] **5.** Marca **I confirm this is my original work** ✓
+	- [ ] **6.** Cola **Skills** (3):
+	> Graphic Design, 3D Art, Product Design
+	- [ ] **7.** Cola **Tools** (3):
+	> Blender, Cinema 4D, Adobe Photoshop
+	- [ ] **8.** Cola **Client(s)**:
+	> Audi, Samsung, 3M
+	- [ ] **9.** **Collaborators:** deixa em branco (ou `xix3D`)
+	- [ ] **10.** **Start date / End date:** deixa em branco
+	- [ ] **11.** **Industry:** seleciona **Automotive**
+	- [ ] **12.** Clica **Add to profile**
+</details>
+<details>
+<summary>**Contra, Projeto 05: Costco**</summary>
+	**Checklist (faz na ordem):**
+	- [ ] **1.** **Work** → **Create** → **Linked Project**
+	- [ ] **2.** Cola o **Completed work link**:
+	> *(link Behance do projeto 05)*
+	- [ ] **3.** Capa (se pedir): `01.jpg` da [pasta 05](https://drive.google.com/drive/folders/13_g0etYSyNf4P9P73GS31T5lyWZBnLS3)
+	- [ ] **4.** Cola o **Preview description**:
+	> Kirkland Signature automotive branding and packaging for Costco's product line.
+	- [ ] **5.** Marca **I confirm this is my original work** ✓
+	- [ ] **6.** Cola **Skills** (3):
+	> Branding, Graphic Design, Packaging
+	- [ ] **7.** Cola **Tools** (3):
+	> Adobe Illustrator, Adobe Photoshop, Figma
+	- [ ] **8.** Cola **Client(s)**:
+	> Costco
+	- [ ] **9.** **Collaborators:** deixa em branco (ou `xix3D`)
+	- [ ] **10.** **Start date / End date:** deixa em branco
+	- [ ] **11.** **Industry:** seleciona **Retail & Consumer Goods** (se não achar, usa **Automotive**)
+	- [ ] **12.** Clica **Add to profile**
+</details>

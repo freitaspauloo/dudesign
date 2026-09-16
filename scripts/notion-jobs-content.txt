@@ -1,0 +1,126 @@
+<callout icon="🇧🇷" color="blue_bg">
+**Para o Daniel:** 100 vagas atualizadas (scraped 7 Sep 2026). Comece pelas linhas com **⭐ Top**. Clique em **Apply**, preencha com <mention-page url="https://app.notion.com/p/3d40f86a1720813b8d35ccfc1ce50b18"/>, **não clique Submit** — mover card para **Em revisão** e avisar Paulo.
+</callout>
+<callout icon="📋" color="gray_bg">
+**Status column:** To apply → In progress → Ready for review → Applied → Rejected
+</callout>
+---
+## Top 10 — aplicar primeiro
+<table header-row="true">
+<tr><td>#</td><td>Company</td><td>Role</td><td>Link</td></tr>
+<tr><td>87</td><td>Harvey</td><td>Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/harvey/d527a336-24e3-46ef-8d05-1da557c7bff4)</td></tr>
+<tr><td>69</td><td>Owner</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/owner/0ab7a1e4-0164-499e-9b2f-b10d8b2fae41)</td></tr>
+<tr><td>70</td><td>Render</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/render/0f0ccf3e-4caf-4586-9a66-411dbf49fcc5)</td></tr>
+<tr><td>60</td><td>Vercel</td><td>Senior Product Designer, Growth</td><td>[Apply](https://job-boards.greenhouse.io/vercel/jobs/6131210004)</td></tr>
+<tr><td>79</td><td>Linear</td><td>Senior / Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/linear/a264869e-f058-487c-ab7f-9b77dffa427c)</td></tr>
+<tr><td>67</td><td>Runpod</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/runpod/94029301-60be-479d-963f-c97c2ba31906)</td></tr>
+<tr><td>99</td><td>Notion</td><td>Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620)</td></tr>
+<tr><td>22</td><td>Durable</td><td>Senior Product Designer, AI</td><td>[Apply](https://job-boards.greenhouse.io/durable/jobs/5156296008)</td></tr>
+<tr><td>73</td><td>Tessera Labs</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/tessera-labs/742eb648-a305-4da8-90fa-6d3af8e16f8d)</td></tr>
+<tr><td>74</td><td>Check</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/check-technologies/f027e599-17b7-49c1-8665-db4df03146a0)</td></tr>
+</table>
+---
+## All 100 roles
+<table header-row="true" fit-page-width="true">
+<tr><td>#</td><td>Company</td><td>Role</td><td>Link</td><td>Location</td><td>Remote</td><td>Priority</td><td>Status</td></tr>
+<tr><td>1</td><td>Stripe</td><td>Product Designer, Connect Risk</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7568117)</td><td>US / Canada</td><td></td><td></td><td></td></tr>
+<tr><td>2</td><td>Stripe</td><td>Product Designer - Dashboard</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7980578)</td><td>US / Canada</td><td></td><td></td><td></td></tr>
+<tr><td>3</td><td>Stripe</td><td>Product Designer, Global</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7861422)</td><td>Ireland</td><td></td><td></td><td></td></tr>
+<tr><td>4</td><td>Stripe</td><td>Product Designer, Growth</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=8164479)</td><td>New York, NY </td><td></td><td></td><td></td></tr>
+<tr><td>5</td><td>Stripe</td><td>Product Designer, Internal Tools</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7954207)</td><td>US / Canada</td><td></td><td></td><td></td></tr>
+<tr><td>6</td><td>Stripe</td><td>Product Designer, Link</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=8155002)</td><td>US / Canada</td><td></td><td></td><td></td></tr>
+<tr><td>7</td><td>Stripe</td><td>Product Designer, Risk</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7954118)</td><td>Ireland / United Kingdom</td><td></td><td></td><td></td></tr>
+<tr><td>8</td><td>Stripe</td><td>Product Designer, Stablecoin</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7663023)</td><td>Canada</td><td></td><td></td><td></td></tr>
+<tr><td>9</td><td>Stripe</td><td>Product Designer, Terminal</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7925550)</td><td>Toronto</td><td></td><td></td><td></td></tr>
+<tr><td>10</td><td>Stripe</td><td>Senior Mechanical and Industrial Design Engineer</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=8170920)</td><td>Taipei,Taiwan</td><td></td><td></td><td></td></tr>
+<tr><td>11</td><td>Stripe</td><td>Senior Staff Product Designer, Dashboard Studio</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=8174316)</td><td>United States</td><td></td><td></td><td></td></tr>
+<tr><td>12</td><td>Stripe</td><td>Senior Staff Product Designer, Data & AI</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=8128499)</td><td>US / Canada</td><td></td><td></td><td></td></tr>
+<tr><td>13</td><td>Stripe</td><td>Senior Staff Product Designer, Risk</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=8031782)</td><td>US Remote</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>14</td><td>Stripe</td><td>Staff Product Designer, Link</td><td>[Apply](https://stripe.com/jobs/search?gh_jid=7202630)</td><td>NYC</td><td></td><td></td><td></td></tr>
+<tr><td>15</td><td>Scale AI</td><td>Senior Product Design Manager</td><td>[Apply](https://job-boards.greenhouse.io/scaleai/jobs/4721008005)</td><td>New York, NY; San Francisco, CA</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>16</td><td>Scale AI</td><td>Senior Product Design Manager, Enterprise</td><td>[Apply](https://job-boards.greenhouse.io/scaleai/jobs/4729620005)</td><td>London, UK</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>17</td><td>Scale AI</td><td>Staff Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/scaleai/jobs/4724276005)</td><td>New York, NY; Washington, DC</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>18</td><td>Fin</td><td>Senior Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/intercom/jobs/7862050)</td><td>Dublin, Ireland</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>19</td><td>Fin</td><td>Senior Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/intercom/jobs/7861866)</td><td>London, England</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>20</td><td>Fin</td><td>Staff/Principal Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/intercom/jobs/7862038)</td><td>Dublin, Ireland</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>21</td><td>Fin</td><td>Staff/Principal Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/intercom/jobs/7862042)</td><td>London, England</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>22</td><td>Durable</td><td>Senior Product Designer, AI</td><td>[Apply](https://job-boards.greenhouse.io/durable/jobs/5156296008)</td><td>Vancouver</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>23</td><td>Durable</td><td>Staff Product Designer, AI</td><td>[Apply](https://job-boards.greenhouse.io/durable/jobs/5214357008)</td><td>Vancouver</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>24</td><td>VSCO</td><td>Senior Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/vsco39/jobs/8563099002)</td><td>San Francisco, California </td><td></td><td></td><td></td></tr>
+<tr><td>25</td><td>VSCO</td><td>Staff Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/vsco39/jobs/8567712002)</td><td>San Francisco, California</td><td></td><td></td><td></td></tr>
+<tr><td>26</td><td>Sigma Computing</td><td>Senior Product Designer, AI </td><td>[Apply](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767897003)</td><td>San Francisco, CA</td><td></td><td></td><td></td></tr>
+<tr><td>27</td><td>AiDASH, Inc.</td><td>Senior Product Designer </td><td>[Apply](https://job-boards.greenhouse.io/aidashinc/jobs/4377978009)</td><td>Bengaluru, Karnataka, India</td><td></td><td></td><td></td></tr>
+<tr><td>28</td><td>Anthropic</td><td>Product Designer, Evals & Prompts</td><td>[Apply](https://job-boards.greenhouse.io/anthropic/jobs/5411318008)</td><td>San Francisco, CA</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>29</td><td>Figma</td><td>Product Designer, AI Models</td><td>[Apply](https://boards.greenhouse.io/figma/jobs/5711913004?gh_jid=5711913004)</td><td>San Francisco, CA • New York, NY • United States</td><td></td><td></td><td></td></tr>
+<tr><td>30</td><td>Figma</td><td>Product Designer, CMS</td><td>[Apply](https://boards.greenhouse.io/figma/jobs/6126976004?gh_jid=6126976004)</td><td>San Francisco, CA • New York, NY • United States</td><td></td><td></td><td></td></tr>
+<tr><td>31</td><td>Figma</td><td>Product Designer, Design, Dev, & AI Tools</td><td>[Apply](https://boards.greenhouse.io/figma/jobs/5711468004?gh_jid=5711468004)</td><td>San Francisco, CA • New York, NY • United States</td><td></td><td></td><td></td></tr>
+<tr><td>32</td><td>Figma</td><td>Product Designer, Design Systems</td><td>[Apply](https://boards.greenhouse.io/figma/jobs/5787576004?gh_jid=5787576004)</td><td>San Francisco, CA • New York, NY • United States</td><td></td><td></td><td></td></tr>
+<tr><td>33</td><td>Figma</td><td>Product Designer - Figma Weave (Tel Aviv, Israel)</td><td>[Apply](https://boards.greenhouse.io/figma/jobs/5991320004?gh_jid=5991320004)</td><td>Tel Aviv, Israel</td><td></td><td></td><td></td></tr>
+<tr><td>34</td><td>Figma</td><td>Product Designer, Growth & Monetization</td><td>[Apply](https://boards.greenhouse.io/figma/jobs/5711595004?gh_jid=5711595004)</td><td>San Francisco, CA • New York, NY • United States</td><td></td><td></td><td></td></tr>
+<tr><td>35</td><td>Datadog</td><td>Senior Staff Product Designer, Design Lab</td><td>[Apply](https://careers.datadoghq.com/detail/8100001/?gh_jid=8100001)</td><td>New York, New York, USA</td><td></td><td></td><td></td></tr>
+<tr><td>36</td><td>Datadog</td><td>Staff Product Designer, APM</td><td>[Apply](https://careers.datadoghq.com/detail/7989348/?gh_jid=7989348)</td><td>New York, New York, USA</td><td></td><td></td><td></td></tr>
+<tr><td>37</td><td>Datadog</td><td>Staff Product Designer, Modern Compute</td><td>[Apply](https://careers.datadoghq.com/detail/8094854/?gh_jid=8094854)</td><td>New York, New York, USA</td><td></td><td></td><td></td></tr>
+<tr><td>38</td><td>Databricks</td><td>Sr. Product Designer, AI/BI</td><td>[Apply](https://databricks.com/company/careers/open-positions/job?gh_jid=8429978002)</td><td>Mountain View, California; San Francisco, California; Seattle, Washington</td><td></td><td></td><td></td></tr>
+<tr><td>39</td><td>Databricks</td><td>Staff Product Designer, AI Products </td><td>[Apply](https://databricks.com/company/careers/open-positions/job?gh_jid=8584704002)</td><td>New York City, New York</td><td></td><td></td><td></td></tr>
+<tr><td>40</td><td>Brex</td><td>Staff Product Designer</td><td>[Apply](https://www.brex.com/careers/8777938002?gh_jid=8777938002)</td><td>New York, New York, United States</td><td></td><td></td><td></td></tr>
+<tr><td>41</td><td>Brex</td><td>Staff Product Designer</td><td>[Apply](https://www.brex.com/careers/8777949002?gh_jid=8777949002)</td><td>San Francisco, California, United States</td><td></td><td></td><td></td></tr>
+<tr><td>42</td><td>Brex</td><td>Staff Product Designer</td><td>[Apply](https://www.brex.com/careers/8777953002?gh_jid=8777953002)</td><td>Seattle, Washington, United States</td><td></td><td></td><td></td></tr>
+<tr><td>43</td><td>Brex</td><td>Staff Product Designer, AI</td><td>[Apply](https://www.brex.com/careers/8616214002?gh_jid=8616214002)</td><td>San Francisco, California, United States</td><td></td><td></td><td></td></tr>
+<tr><td>44</td><td>Gusto, Inc.</td><td>Design Systems, Product Designer</td><td>[Apply](https://job-boards.greenhouse.io/gusto/jobs/8111984)</td><td>Denver, CO - Hybrid; New York, New York, United States; San Francisco, CA - Hybrid</td><td></td><td></td><td></td></tr>
+<tr><td>45</td><td>Gusto, Inc.</td><td>Product Designer, Finance</td><td>[Apply](https://job-boards.greenhouse.io/gusto/jobs/6625049)</td><td>Denver, CO - Hybrid; New York, New York, United States; San Francisco, CA - Hybrid</td><td></td><td></td><td></td></tr>
+<tr><td>46</td><td>Gusto, Inc.</td><td>Product Designer, Growth Pricing & Revenue Systems</td><td>[Apply](https://job-boards.greenhouse.io/gusto/jobs/8112001)</td><td>Denver, CO - Hybrid; New York, New York, United States; San Francisco, CA - Hybrid</td><td></td><td></td><td></td></tr>
+<tr><td>47</td><td>Gusto, Inc.</td><td>Product Designer, HR Experiences</td><td>[Apply](https://job-boards.greenhouse.io/gusto/jobs/7905702)</td><td>New York, New York, United States</td><td></td><td></td><td></td></tr>
+<tr><td>48</td><td>Gusto, Inc.</td><td>Product Designer, Retirement</td><td>[Apply](https://job-boards.greenhouse.io/gusto/jobs/7514758)</td><td>Denver, CO;San Francisco, CA;New York, NY</td><td></td><td></td><td></td></tr>
+<tr><td>49</td><td>Airtable</td><td>Product Designer (8+ YOE)</td><td>[Apply](https://job-boards.greenhouse.io/airtable/jobs/8400776002)</td><td>San Francisco, CA</td><td></td><td></td><td></td></tr>
+<tr><td>50</td><td>Asana</td><td>Product Designer</td><td>[Apply](https://www.asana.com/jobs/apply/7952123?gh_jid=7952123)</td><td>San Francisco</td><td></td><td></td><td></td></tr>
+<tr><td>51</td><td>Asana</td><td>Product Designer</td><td>[Apply](https://www.asana.com/jobs/apply/8024052?gh_jid=8024052)</td><td>Vancouver, BC</td><td></td><td></td><td></td></tr>
+<tr><td>52</td><td>Asana</td><td>Product Designer, Coordinate</td><td>[Apply](https://www.asana.com/jobs/apply/7587002?gh_jid=7587002)</td><td>Warsaw</td><td></td><td></td><td></td></tr>
+<tr><td>53</td><td>Dropbox</td><td>Staff Product Designer</td><td>[Apply](https://jobs.dropbox.com/listing/8092715?gh_jid=8092715)</td><td>Remote - Canada: Select locations</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>54</td><td>Dropbox</td><td>Staff Product Designer</td><td>[Apply](https://jobs.dropbox.com/listing/8092712?gh_jid=8092712)</td><td>Remote - US: Select locations</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>55</td><td>Discord</td><td>Product Designer, Growth</td><td>[Apply](https://job-boards.greenhouse.io/discord/jobs/8674411002)</td><td>San Francisco Bay Area</td><td></td><td></td><td></td></tr>
+<tr><td>56</td><td>Discord</td><td>Senior Product Designer, Consumer Revenue</td><td>[Apply](https://job-boards.greenhouse.io/discord/jobs/8731898002)</td><td>San Francisco Bay Area</td><td></td><td></td><td></td></tr>
+<tr><td>57</td><td>Discord</td><td>Senior Product Designer, Developer Success</td><td>[Apply](https://job-boards.greenhouse.io/discord/jobs/8595014002)</td><td>San Francisco Bay Area</td><td></td><td></td><td></td></tr>
+<tr><td>58</td><td>Discord</td><td>Senior Product Design Manager, Growth</td><td>[Apply](https://job-boards.greenhouse.io/discord/jobs/8780263002)</td><td>San Francisco Bay Area</td><td></td><td></td><td></td></tr>
+<tr><td>59</td><td>Vercel</td><td>Product Designer, Marketplace</td><td>[Apply](https://job-boards.greenhouse.io/vercel/jobs/6160974004)</td><td>Hybrid - San Francisco</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>60</td><td>Vercel</td><td>Senior Product Designer, Growth</td><td>[Apply](https://job-boards.greenhouse.io/vercel/jobs/6131210004)</td><td>Hybrid - San Francisco, New York City</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>61</td><td>Mixpanel</td><td>Staff Design Engineer</td><td>[Apply](https://job-boards.greenhouse.io/mixpanel/jobs/8053868)</td><td>San Francisco, US (Remote)</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>62</td><td>Engine</td><td>Senior Product Designer, Flights</td><td>[Apply](https://job-boards.greenhouse.io/engine/jobs/7734784003)</td><td>Remote - US</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>63</td><td>Engine</td><td>Staff Product Designer, FinTech</td><td>[Apply](https://job-boards.greenhouse.io/engine/jobs/7695468003)</td><td>Remote - US</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>64</td><td>Instacart</td><td>Senior Product Designer II - Order Quality</td><td>[Apply](https://instacart.careers/job/?gh_jid=8160008)</td><td>United States - Remote</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>65</td><td>Instacart</td><td>Senior Product Designer II - Order Quality</td><td>[Apply](https://instacart.careers/job/?gh_jid=8160010)</td><td>Canada - Remote (ON, AB, BC, or NS Only)</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>66</td><td>Cloudflare</td><td>Senior Design Engineer</td><td>[Apply](https://boards.greenhouse.io/cloudflare/jobs/6998777?gh_jid=6998777)</td><td>Hybrid</td><td></td><td></td><td></td></tr>
+<tr><td>67</td><td>Runpod</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/runpod/94029301-60be-479d-963f-c97c2ba31906)</td><td>Remote - USA</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>68</td><td>Owner</td><td>Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/owner/14876095-0e3c-485b-871a-bc8d0e316e9a)</td><td>Remote - United States or Canada</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>69</td><td>Owner</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/owner/0ab7a1e4-0164-499e-9b2f-b10d8b2fae41)</td><td>Remote - United States or Canada</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>70</td><td>Render</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/render/0f0ccf3e-4caf-4586-9a66-411dbf49fcc5)</td><td>Remote: United States</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>71</td><td>Render</td><td>Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/render/b847e042-6be5-4f8b-b36e-fe6a462cbb63)</td><td>Remote: United States</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>72</td><td>Render</td><td>Staff Product Designer - Agent Experience</td><td>[Apply](https://jobs.ashbyhq.com/render/b4a86799-59d4-4bf3-9681-23264550f1ea)</td><td>Remote: United States</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>73</td><td>Tessera-Labs</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/tessera-labs/742eb648-a305-4da8-90fa-6d3af8e16f8d)</td><td>Remote in the U.S.</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>74</td><td>Check-Technologies</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/check-technologies/f027e599-17b7-49c1-8665-db4df03146a0)</td><td>Remote</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>75</td><td>Futurefitai</td><td>Lead Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/futurefitai/a60ba7fe-27e8-4a42-b661-954d3ef67202)</td><td>Remote (North America)</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>76</td><td>Whoop</td><td>Senior Product Designer, Ecommerce & Web Experiences (Growth)</td><td>[Apply](https://jobs.ashbyhq.com/whoop/18e5c1fa-6362-42ac-b4d3-d418727ff4ab)</td><td>Boston, MA</td><td></td><td></td><td></td></tr>
+<tr><td>77</td><td>Whoop</td><td>Product Designer II (Health)</td><td>[Apply](https://jobs.ashbyhq.com/whoop/6ccfd47f-dac8-4d55-83a8-2bfbf673261b)</td><td>Boston, MA</td><td></td><td></td><td></td></tr>
+<tr><td>78</td><td>Whoop</td><td>Senior Product Designer, AI & Emerging Technology Focus</td><td>[Apply](https://jobs.ashbyhq.com/whoop/6baa0220-a2e8-4830-9a36-91ceedae81d5)</td><td>Boston, MA</td><td></td><td></td><td></td></tr>
+<tr><td>79</td><td>Linear</td><td>Senior / Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/linear/a264869e-f058-487c-ab7f-9b77dffa427c)</td><td>North America</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>80</td><td>Linear</td><td>Principal Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/linear/ba8a41d2-4198-481a-a7f4-e09c5364ff7f)</td><td>Europe</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>81</td><td>Linear</td><td>Mobile Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/linear/eac7f181-d658-4943-9430-51bae2bcd110)</td><td>North America</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>82</td><td>Perplexity</td><td>Lead Product Designer, Growth</td><td>[Apply](https://jobs.ashbyhq.com/perplexity/74a5eaeb-0a4b-412b-ac3a-ad73403b3fb7)</td><td>San Francisco</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>83</td><td>Perplexity</td><td>Lead Product Designer, Enterprise</td><td>[Apply](https://jobs.ashbyhq.com/perplexity/9ce0fef8-7ead-4c0d-a71e-433bdd5b4d82)</td><td>San Francisco</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>84</td><td>Lovable</td><td>Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/lovable/cf78be5e-41ca-478a-b480-0d0839c24543)</td><td>Stockholm</td><td></td><td></td><td></td></tr>
+<tr><td>85</td><td>Lovable</td><td>Staff / Principal Design Engineer, Web</td><td>[Apply](https://jobs.ashbyhq.com/lovable/51885ae5-4f4c-46c4-abd3-d7aad1c8d9c0)</td><td>New York City</td><td></td><td></td><td></td></tr>
+<tr><td>86</td><td>Lovable</td><td>Staff / Principal Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/lovable/5635b88f-a361-4f5f-8209-ca343a003947)</td><td>Stockholm</td><td></td><td></td><td></td></tr>
+<tr><td>87</td><td>Harvey</td><td>Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/harvey/24616c39-e293-4bcc-a3dd-e6f33a71c8ee)</td><td>San Francisco</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>88</td><td>Harvey</td><td>Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/harvey/d527a336-24e3-46ef-8d05-1da557c7bff4)</td><td>New York</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>89</td><td>Harvey</td><td>Senior or Staff Design Engineer, Design Systems</td><td>[Apply](https://jobs.ashbyhq.com/harvey/aede4098-91f4-44f5-9d53-27c15cb2bae7)</td><td>San Francisco</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>90</td><td>Harvey</td><td>Senior or Staff Design Engineer, Design Systems</td><td>[Apply](https://jobs.ashbyhq.com/harvey/9814b9ca-5917-43f8-8f76-6df7aa7e2be3)</td><td>New York</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>91</td><td>Harvey</td><td>Staff Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/harvey/7325a214-908d-48a4-bbc2-f5c3a6c9ed00)</td><td>Toronto</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>92</td><td>Harvey</td><td>Product Designer, Design Systems</td><td>[Apply](https://jobs.ashbyhq.com/harvey/7af73358-0a99-4d3a-8fde-b0f735045613)</td><td>Toronto</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>93</td><td>Harvey</td><td>Product Designer, Design Systems</td><td>[Apply](https://jobs.ashbyhq.com/harvey/4cea74f1-7c08-4a9c-884f-796903aa77ed)</td><td>San Francisco</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>94</td><td>Harvey</td><td>Product Designer, Design Systems</td><td>[Apply](https://jobs.ashbyhq.com/harvey/6541a2da-ab46-467b-8aaa-289a6a1d087b)</td><td>New York</td><td></td><td>⭐ Top</td><td></td></tr>
+<tr><td>95</td><td>Ramp</td><td>Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/ramp/eca54d0e-232a-4c3e-bfcc-d6c6add393f5)</td><td>New York, NY (HQ)</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>96</td><td>Resend</td><td>Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/resend/8d7e13ac-4c08-4981-9589-c163a4b29dee)</td><td>Americas</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>97</td><td>Resend</td><td>Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/resend/b4d679e8-f41b-4c59-b091-dc5581345fcb)</td><td>Europe</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>98</td><td>Baseten</td><td>Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/baseten/382978bd-7eef-4657-a229-3381a1057b4e)</td><td>San Francisco</td><td>Remote</td><td></td><td></td></tr>
+<tr><td>99</td><td>Notion</td><td>Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620)</td><td>San Francisco, California</td><td>Remote</td><td>⭐ Top</td><td></td></tr>
+<tr><td>100</td><td>Ashby</td><td>Senior Product Designer</td><td>[Apply](https://jobs.ashbyhq.com/ashby/f40ef345-82a8-4956-9150-193b4fdf8183)</td><td>Remote - US</td><td>Remote</td><td></td><td></td></tr>
+</table>

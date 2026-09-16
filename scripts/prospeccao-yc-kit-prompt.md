@@ -1,8 +1,20 @@
 # Kit prospecção YC — prompt para agente
 
-Referência fixa para preencher planilhas **YC CEOs** no Notion (Message + Message 2). Tom **humano**, **natural**, **sem cara de IA**. Mensagens em **inglês** (founders YC).
+Referência fixa para **Message + Message 2** na planilha **master** do Notion. Tom **humano**, **natural**, **sem cara de IA**. Mensagens em **inglês** (founders YC).
+
+**Planilha única:** [`docs/prospeccao-yc-master.md`](../docs/prospeccao-yc-master.md) (links Notion + data source MCP).
 
 Leia também: [`positioning.md`](../positioning.md), [`pitch/offer.md`](../pitch/offer.md).
+
+## Onde escrever (obrigatório)
+
+| ✅ Sim | ❌ Não |
+|--------|--------|
+| **YC CEOs — master outreach** (dentro de *YC CEOs — master (Weeks 1–5 merged)*) | Week 1, Week 2, Week 3, Week 4, Week 5 (só arquivo) |
+| Novas linhas no **master** com `Source week` = rótulo do lote | Criar nova database “Week N” só para mensagens |
+| Data source MCP: `collection://3b1fd109-9879-4ab1-9cff-23f2d075b483` | Duplicar mensagens em duas planilhas |
+
+Link de trabalho (humano): https://app.notion.com/p/YC-CEOs-master-Weeks-1-5-merged-3dd0f86a17208174bc33d1f37773a50d?v=3cf0f86a172081f3b94a000c5077834c
 
 ## Estratégia comercial (set 2026)
 
@@ -28,13 +40,14 @@ Leia também: [`positioning.md`](../positioning.md), [`pitch/offer.md`](../pitch
 - Personalizar **uma** hipótese de surface com base no one-liner (ex.: timeline de agent run, review screen, inbox de voz, etc.).
 - Message 2: **um** follow-up só, tom “friendly nudge”, sem repetir o Message 1 inteiro.
 
-## Colunas Notion
+## Colunas Notion (master)
 
 | Campo | Uso |
 |-------|-----|
 | Message | Primeiro DM após connect (ou corpo principal) |
 | Message 2 | Follow-up único |
 | Status | Não alterar salvo instrução explícita |
+| Source week | Rótulo do lote (Week 6, expansion Sep 2026, etc.) |
 | Notes | Só se houver flag (dupe, skip, etc.) |
 
 ## Template Message 1 (paid)
@@ -77,22 +90,26 @@ Use o one-liner YC. Exemplos:
 
 ## Exclusões e dedupe
 
-- Não reutilizar LinkedIn slugs já nas semanas 1–5 ou no master merged.
+- Dedupe contra **master** (Name + LinkedIn slug), não contra week sheets isoladas.
 - LinkedIn **só** de páginas YC live (`data-page` founders).
 - Linhas `[FAKE DELETE]` / `[DUP DELETE]`: não mensagem.
 
-## Prompt para colar em chat novo (Week 6+ ou reescrita)
+## Prompt para colar em chat novo (mensagens)
 
 ```
-Você preenche Message + Message 2 na planilha YC CEOs do Notion usando scripts/prospeccao-yc-kit-prompt.md, positioning.md e pitch/offer.md.
+Você preenche Message + Message 2 SOMENTE na planilha master YC CEOs — master outreach (Notion). Leia docs/prospeccao-yc-master.md e scripts/prospeccao-yc-kit-prompt.md, positioning.md, pitch/offer.md.
 
-Regras: inglês, tom humano, SEM oferta free/case study swap. Foco clientes pagos (design partner + UI em código). Personalize surface a partir do one-liner. Nunca enviar LinkedIn. Não mudar Status salvo pedido.
+Data source: collection://3b1fd109-9879-4ab1-9cff-23f2d075b483
 
-Entrega: atualizar Notion + opcional messages.json no workspace. Nada enviado ao LinkedIn.
+Regras: inglês, tom humano, SEM oferta free/case study swap. Foco clientes pagos. Personalize surface a partir do one-liner. NÃO editar Week 1–5 week databases. Nunca enviar LinkedIn. Não mudar Status salvo pedido.
+
+Entrega: atualizar linhas no master + opcional messages.json no repo. Nada enviado ao LinkedIn.
 ```
 
-## Prompt separado — só montar planilha (roster)
+## Prompt separado — roster (novos CEOs no master)
 
 ```
-Monte a próxima planilha YC (100–200 CEOs) no Notion: schema igual às semanas anteriores, Status = To send invite, LinkedIn só do YC, dedupe contra master. Depois use scripts/prospeccao-yc-kit-prompt.md para drafts paid. Nunca enviar DMs.
+Adicione novos CEOs YC como linhas na database YC CEOs — master outreach (Notion), data source collection://3b1fd109-9879-4ab1-9cff-23f2d075b483. Dedupe contra o master. LinkedIn só do YC. Status = To send invite. Source week = Week N (rótulo). NÃO criar planilha Week separada para mensagens.
+
+Depois preencha Message + Message 2 com scripts/prospeccao-yc-kit-prompt.md (paid). Nunca enviar DMs.
 ```

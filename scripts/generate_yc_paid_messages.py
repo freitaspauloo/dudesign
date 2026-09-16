@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Generate paid YC outreach Message + Message 2 from roster rows (JSON on stdin).
+"""Generate human YC outreach: Message = invite note, Message 2 = reply after connect.
 
-Output is for Notion **YC CEOs — master outreach** only. See docs/prospeccao-yc-master.md.
+Output for Notion **YC CEOs — master outreach** only. See docs/prospeccao-yc-master.md.
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -16,88 +17,158 @@ def first_name(full: str) -> str:
     return full.strip().split()[0] if full.strip() else "there"
 
 
-def surface_hint(one_liner: str, company: str) -> str:
+def stable_index(key: str, modulo: int) -> int:
+    h = hashlib.sha256(key.encode()).hexdigest()
+    return int(h[:8], 16) % modulo
+
+
+def surface_hint(one_liner: str) -> tuple[str, str]:
+    """Return (short noun phrase, casual clause) for copy."""
     text = (one_liner or "").lower()
     if any(w in text for w in ("voice", "call", "phone", "hotel")):
-        return "the live call or handoff screen"
-    if any(w in text for w in ("eval", "observability", "quality", "monitor")):
-        return "the run or eval detail view"
-    if any(w in text for w in ("doc", "documentation", "changelog")):
-        return "the doc surface users actually read"
-    if any(w in text for w in ("agent", "automation", "process")):
-        return "the agent run timeline"
-    if any(w in text for w in ("hire", "recruit", "ats", "crm")):
-        return "the pipeline or review screen"
-    if any(w in text for w in ("legal", "law", "compliance", "trade")):
-        return "the review or approval queue"
-    if any(w in text for w in ("cad", "hardware", "design software")):
-        return "the primary workspace screen"
-    if any(w in text for w in ("data", "training", "multilingual")):
-        return "the dataset or review UI"
-    if any(w in text for w in ("chat", "react", "library", "word", "editor")):
-        return "the main interaction surface"
-    if any(w in text for w in ("mobile", "app")):
-        return "the core app flow"
-    return "the main workflow screen where users decide to trust the output"
-
-
-OPENERS = [
-    "Paulo here. Product designer — mostly UI for AI and technical teams.",
-    "I'm Paulo. Product designer working with AI and technical teams.",
-    "Paulo here — product designer, mostly UI for AI startups.",
-]
-
-
-def product_tie(company: str, one_liner: str, hint: str) -> str:
-    co = company.strip() or "your product"
-    ol = (one_liner or "").strip()
-    if ol:
-        ol_short = ol if len(ol) <= 90 else ol[:87].rstrip() + "…"
         return (
-            f"At {co}, {ol_short.rstrip('.')} — I'd probably start with {hint}."
+            "the call handoff",
+            "where someone hands off from the bot to a person",
         )
-    return f"At {co}, I'd probably start with {hint}."
-
-
-def message1(row: dict[str, Any], idx: int) -> str:
-    name = first_name(row.get("Name", ""))
-    company = row.get("Company") or "your company"
-    ol = row.get("One-liner") or ""
-    hint = surface_hint(ol, company)
-    opener = OPENERS[idx % len(OPENERS)]
-    tie = product_tie(company, ol, hint)
+    if any(w in text for w in ("eval", "observability", "quality", "monitor")):
+        return (
+            "the run detail view",
+            "where you actually trust what the model did",
+        )
+    if any(w in text for w in ("doc", "documentation", "changelog")):
+        return (
+            "in-app docs",
+            "where users decide if the product is legit",
+        )
+    if any(w in text for w in ("agent", "automation", "process")):
+        return (
+            "the agent timeline",
+            "where people sanity-check what ran",
+        )
+    if any(w in text for w in ("hire", "recruit", "ats", "crm")):
+        return (
+            "the review queue",
+            "where a recruiter says yes or no fast",
+        )
+    if any(w in text for w in ("legal", "law", "compliance", "trade")):
+        return (
+            "the approval step",
+            "where someone signs off without reading everything",
+        )
+    if any(w in text for w in ("cad", "hardware", "design software")):
+        return (
+            "the main workspace",
+            "where the messy config actually lives",
+        )
+    if any(w in text for w in ("data", "training", "multilingual")):
+        return (
+            "the labeling/review UI",
+            "where quality shows up or doesn't",
+        )
+    if any(w in text for w in ("chat", "react", "library", "word", "editor")):
+        return (
+            "the chat surface",
+            "where the product stops feeling like a demo",
+        )
+    if any(w in text for w in ("mobile", "app")):
+        return (
+            "the core flow",
+            "where people bounce if it feels rough",
+        )
     return (
-        f"Hi {name}, {opener}\n\n"
-        "I run DUDESIGN as a design partner for AI startups: product calls, UX/UI, "
-        "and we ship the interface in code.\n\n"
-        f"{tie}\n\n"
-        "If it's useful, I can send a short loom on one screen I'd tighten — no deck. "
-        "If timing's bad, one word is enough."
+        "the main workflow",
+        "where users decide to trust the output",
     )
 
 
-def message2(row: dict[str, Any]) -> str:
+def company_short(company: str) -> str:
+    c = (company or "").strip()
+    return c if c else "your team"
+
+
+INVITE_TEMPLATES = [
+    "Hi {name}, Paulo here. I design product UI for AI teams and ship the front end. {company} stood out on YC. Would be good to connect.",
+    "Hi {name}. Product designer, mostly AI/SaaS. I saw {company} and thought it'd be worth connecting. Paulo.",
+    "Hey {name}, Paulo. I help AI founders tighten the UI (and build it in code). Happy to connect if you're open.",
+    "Hi {name}, I'm Paulo. Product design for technical teams. {company} looks interesting. Would love to connect.",
+    "Hi {name}. Paulo here, designer who codes. Working with AI startups on the interface layer. Connect?",
+]
+
+
+def message_invite(row: dict[str, Any]) -> str:
     name = first_name(row.get("Name", ""))
-    company = row.get("Company") or "your company"
-    ol = row.get("One-liner") or ""
-    hint = surface_hint(ol, company)
-    return (
-        f"Hi {name}. Friendly bump once.\n\n"
-        f"Still happy to share a quick, concrete take on {hint} at {company} if that helps. "
-        "No pitch call unless you want one.\n\n"
-        "If it's not on your radar, totally fine — just say so."
+    company = company_short(row.get("Company") or "")
+    key = row.get("url") or row.get("Name") or name
+    tpl = INVITE_TEMPLATES[stable_index(key, len(INVITE_TEMPLATES))]
+    msg = tpl.format(name=name, company=company)
+    # LinkedIn connection notes cap ~300 chars; trim softly if needed
+    if len(msg) > 300:
+        msg = (
+            f"Hi {name}, Paulo here. Product designer for AI teams (I ship UI in code). "
+            f"Would be good to connect."
+        )
+    return msg
+
+
+REPLY_TEMPLATES = [
+    (
+        "Thanks for connecting, {name}.\n\n"
+        "I'm Paulo. I run DUDESIGN, a small product design partner for AI startups. "
+        "Product calls, UX/UI, and we implement the interface in React/Next, not just Figma.\n\n"
+        "On {company}, I'd probably poke at {hint_short} first. {hint_clause}.\n\n"
+        "If it's ever useful, I can record a quick loom on one screen. No call unless you want one. "
+        "If not, totally fine."
+    ),
+    (
+        "Appreciate the connect, {name}.\n\n"
+        "Quick intro: product designer, mostly AI. My studio (DUDESIGN) helps teams ship one surface end to end, "
+        "design through production UI.\n\n"
+        "Random guess on {company}: {hint_short} is where friction shows up. {hint_clause}.\n\n"
+        "Happy to send a short video walkthrough if that saves you time. If you're slammed, just ignore this."
+    ),
+    (
+        "Hey {name}, thanks for accepting.\n\n"
+        "Paulo here. I work with AI founders on the part users actually touch. "
+        "Partner setup, not a generic agency handoff.\n\n"
+        "For {company}, I keep thinking about {hint_short}. {hint_clause}.\n\n"
+        "Want me to send a 2-min loom on one idea? Or say pass and I won't bug you."
+    ),
+    (
+        "Thanks for connecting.\n\n"
+        "I'm Paulo, product designer. I partner with AI teams on UX and ship the UI in code.\n\n"
+        "Looking at {company}, {hint_short} feels like the hinge. {hint_clause}.\n\n"
+        "I can share a concrete take async if helpful. One word is enough if it's a bad time."
+    ),
+]
+
+def message_reply(row: dict[str, Any]) -> str:
+    name = first_name(row.get("Name", ""))
+    company = company_short(row.get("Company") or "")
+    hint_short, hint_clause = surface_hint(row.get("One-liner") or "")
+    key = (row.get("url") or "") + "reply"
+    tpl = REPLY_TEMPLATES[stable_index(key, len(REPLY_TEMPLATES))]
+    return tpl.format(
+        name=name,
+        company=company,
+        hint_short=hint_short,
+        hint_clause=hint_clause.capitalize(),
     )
 
 
 def main() -> None:
     rows = json.load(sys.stdin)
     out = []
-    for i, row in enumerate(rows):
+    for row in rows:
+        name = row.get("Name") or ""
+        if "DUP DELETE" in name or "FAKE DELETE" in name:
+            continue
+        if row.get("Status") == "Skip":
+            continue
         out.append(
             {
                 **row,
-                "Message": message1(row, i),
-                "Message 2": message2(row),
+                "Message": message_invite(row),
+                "Message 2": message_reply(row),
             }
         )
     json.dump(out, sys.stdout, indent=2, ensure_ascii=False)

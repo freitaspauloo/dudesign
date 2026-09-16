@@ -44,33 +44,35 @@ Link de trabalho (humano): https://app.notion.com/p/YC-CEOs-master-Weeks-1-5-mer
 
 | Campo | Uso |
 |-------|-----|
-| Message | Primeiro DM após connect (ou corpo principal) |
-| Message 2 | Follow-up único |
+| **Message** | **Convite** LinkedIn (nota curta ao pedir conexão, ~300 chars quando possível) |
+| **Message 2** | **Resposta** após aceitar (primeiro DM: quem é Paulo, paid partner, 1 hipótese de UI, loom opcional) |
 | Status | Não alterar salvo instrução explícita |
 | Source week | Rótulo do lote (Week 6, expansion Sep 2026, etc.) |
 | Notes | Só se houver flag (dupe, skip, etc.) |
 
-## Template Message 1 (paid)
+Gerador no repo: `scripts/generate_yc_paid_messages.py` (invite + reply humanizados, variação por pessoa).
+
+## Template Message (convite)
 
 ```
-Hi {FirstName}, Paulo here. Product designer — mostly UI for AI and technical teams.
-
-I run DUDESIGN as a design partner for AI startups: product calls, UX/UI, and we ship the interface in code.
-
-{One sentence tying their product to a concrete UI surface — not generic praise.}
-
-If it's useful, I can send a short loom on one screen I'd tighten — no deck. If timing's bad, one word is enough.
+Hi {FirstName}, Paulo here. I design product UI for AI teams and ship the front end. {Company} stood out on YC. Would be good to connect.
 ```
 
-## Template Message 2 (paid)
+Variar abertura; manter curto e coloquial. Sem oferta free. Sem pitch longo no convite.
+
+## Template Message 2 (resposta)
 
 ```
-Hi {FirstName}. Friendly bump once.
+Thanks for connecting, {FirstName}.
 
-Still happy to share a quick, concrete take on {surface hint} at {Company} if that helps. No pitch call unless you want one.
+I'm Paulo. I run DUDESIGN, a small product design partner for AI startups. Product calls, UX/UI, and we implement the interface in React/Next, not just Figma.
 
-If it's not on your radar, totally fine — just say so.
+On {Company}, I'd probably poke at {surface} first. {Why it matters in plain words}.
+
+If it's ever useful, I can record a quick loom on one screen. No call unless you want one. If not, totally fine.
 ```
+
+Tom de mensagem real (contractions, uma ideia concreta). **Message 2 não é bump**; é a primeira resposta depois do connect.
 
 ## Surface hints (escolher 1 por empresa)
 

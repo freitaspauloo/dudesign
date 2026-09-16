@@ -1,9 +1,6 @@
 {
-  "next_index": 55,
-  "success": 55,
+  "next_index": 15,
+  "success": 15,
   "errors": [],
-  "total_target": 679,
-  "method": "CallDynamicTool notion-update-page allow_async",
-  "batch_files": "/tmp/mcp_round/batch_*.json",
-  "note": "Continue from index 55 using payloads in /tmp/notion_calls_new/{i:04d}.json"
+  "note": "async_task queued counts as submitted"
 }

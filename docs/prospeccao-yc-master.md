@@ -21,6 +21,8 @@
 ## Regras operacionais
 
 1. **Escrever mensagens** só na tabela **YC CEOs — master outreach** (parent: *YC CEOs — master (Weeks 1–5 merged)*).
+   - **Message** = texto do **convite** (conexão LinkedIn, curto).
+   - **Message 2** = **resposta** após aceitar (primeiro DM, paid partner, humano).
 2. **Novos CEOs:** criar linha no **master**; preencher Batch, Company, LinkedIn, One-liner, Role, YC; Status = `To send invite`; **Source week** = rótulo do lote (ex. `Week 6`).
 3. **Dedupe:** não repetir Name ou slug do LinkedIn já presente no master. Ignorar `[DUP DELETE]`, `[FAKE DELETE]`, página *FAKE rows to delete*.
 4. **LinkedIn:** agente **nunca** envia convite ou DM; Paulo/Daniel enviam manualmente após revisão.

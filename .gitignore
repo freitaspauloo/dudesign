@@ -9,3 +9,6 @@ out
 *.log
 *.tsbuildinfo
 __pycache__/
+scripts/master-roster-full.json
+scripts/master-human-messages.json
+scripts/notion-paid-update-queue.json

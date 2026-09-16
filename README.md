@@ -26,6 +26,9 @@ Open [http://localhost:3000](http://localhost:3000) — arrow keys / space to na
 | [pitch/offer.md](pitch/offer.md) | Timelines, pricing, commercial terms |
 | [src/content/slides.ts](src/content/slides.ts) | Live deck content (source of truth for slides) |
 | [people/paulo-freitas.md](people/paulo-freitas.md) | Founder profile — Paulo Freitas |
+| [docs/prospeccao-yc-master.md](docs/prospeccao-yc-master.md) | YC outreach — **planilha master Notion** (fonte única) |
+| [scripts/prospeccao-yc-kit-prompt.md](scripts/prospeccao-yc-kit-prompt.md) | YC LinkedIn outreach drafts (paid focus) — agent prompt |
+| [scripts/candidaturas-kit-prompt.md](scripts/candidaturas-kit-prompt.md) | Job application forms — agent prompt |
 | [docs/portfolio-case-study-discovery.md](docs/portfolio-case-study-discovery.md) | 12-month portfolio and career execution plan |
 
 The code deck is narrowed to the new partner offer only — not the older Figma Foundation / handoff material.

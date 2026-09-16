@@ -55,6 +55,12 @@ def mcp_post(client: httpx.Client, headers: dict, body: dict) -> tuple[dict, dic
 
 
 def main() -> None:
+    print(
+        "ERROR: Direct MCP HTTP returns invalid_token in cloud agents. "
+        "Use CallDynamicTool Notion notion-update-page instead.",
+        file=sys.stderr,
+    )
+    sys.exit(1)
     start = int(sys.argv[1]) if len(sys.argv) > 1 else 15
     end = int(sys.argv[2]) if len(sys.argv) > 2 else 678
 

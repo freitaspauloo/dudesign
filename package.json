@@ -1,0 +1,17 @@
+{
+  "name": "conifer-redesign",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Conifer landing-page redesign workspace (mirror, drafts, preview)",
+  "scripts": {
+    "mirror": "node scripts/mirror-conifer.mjs",
+    "preview": "node scripts/serve-conifer.mjs",
+    "preview:redesign": "node scripts/serve-conifer.mjs redesign",
+    "preview:v2": "node scripts/serve-conifer.mjs redesign-v2",
+    "preview:v3": "node scripts/serve-conifer.mjs redesign-v3",
+    "preview:v4": "node scripts/serve-conifer.mjs redesign-v4"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
+}

@@ -6,13 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "conifer:mirror": "node scripts/mirror-conifer.mjs",
-    "conifer:preview": "node scripts/serve-conifer.mjs",
-    "conifer:redesign": "node scripts/serve-conifer.mjs redesign",
-    "conifer:v2": "node scripts/serve-conifer.mjs redesign-v2",
-    "conifer:v3": "node scripts/serve-conifer.mjs redesign-v3",
-    "conifer:v4": "node scripts/serve-conifer.mjs redesign-v4"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^15.4.6",

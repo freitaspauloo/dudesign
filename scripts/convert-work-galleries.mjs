@@ -3,7 +3,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const srcRoot = "c:/Users/Paulo Freitas/Projects/dudesign/scripts/behance-assets";
-const destRoot = "c:/Users/Paulo Freitas/Projects/paulo-portfolio/public/work/cases";
+const destRoot = path.join(process.cwd(), "portfolio/public/work/cases");
 
 const map = {
   "01-3M-Films": "3m-films",

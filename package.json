@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "portfolio:install": "npm install --prefix portfolio",
+    "portfolio:dev": "npm run dev --prefix portfolio",
+    "portfolio:build": "npm run build --prefix portfolio"
   },
   "dependencies": {
     "geist": "^1.7.2",

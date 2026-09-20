@@ -1,6 +1,6 @@
 # Paulo portfolio — Frameline homepage grid
 
-Patch for **freitaspauloo/Paulo** (deploys to [paulo.dudesign.us](https://paulo.dudesign.us)).
+Legacy patch notes for the old **freitaspauloo/Paulo** repo. Portfolio now lives in **`portfolio/`** in this repo and deploys to [paulo.dudesign.us](https://paulo.dudesign.us).
 
 ## Apply (local or Cloud Agent without Paulo repo push access)
 

@@ -2,7 +2,7 @@
 
 Personal portfolio: **https://paulo.dudesign.us**
 
-Full checklist lives in the portfolio repo: `paulo-portfolio/docs/distribution.md`
+Full checklist lives in `portfolio/docs/distribution.md`
 
 ## Quick copy
 

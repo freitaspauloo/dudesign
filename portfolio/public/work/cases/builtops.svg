@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#0a0a0b"/>
+  <rect x="80" y="80" width="1040" height="515" rx="12" stroke="#2a2a2e" stroke-width="1" fill="#111113"/>
+  <rect x="120" y="120" width="200" height="24" rx="4" fill="#1e1e22"/>
+  <rect x="120" y="160" width="320" height="12" rx="3" fill="#252529"/>
+  <rect x="120" y="184" width="280" height="12" rx="3" fill="#1a1a1e"/>
+  <rect x="120" y="240" width="960" height="280" rx="8" fill="#151518" stroke="#252529"/>
+  <text x="120" y="580" fill="#6b6b70" font-family="system-ui,sans-serif" font-size="14">BuiltOps  community microsite platform</text>
+</svg>

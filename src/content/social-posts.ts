@@ -103,7 +103,7 @@ Figma is a step. Not the product.`,
     format: "Case",
     channels: ["LinkedIn", "X", "Instagram"],
     visual: "Portfolio frame. Aligned AI workspace. 1080 x 1350.",
-    portfolioImage: "/work/cases/aligned.webp",
+    portfolioImage: "/work/cases/aligned-ai/desktop-1.png",
     linkedin: `Aligned AI workspace.
 Personal AI surface. Designed and coded.`,
     x: `Aligned AI workspace. Designed and coded.`,

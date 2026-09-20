@@ -11,11 +11,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/paulo",
-        destination: `${portfolioOrigin}/paulo`,
+        destination: `${portfolioOrigin}/`,
       },
       {
         source: "/paulo/:path*",
-        destination: `${portfolioOrigin}/paulo/:path*`,
+        destination: `${portfolioOrigin}/:path*`,
       },
     ];
   },

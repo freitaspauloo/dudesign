@@ -3511,7 +3511,7 @@ a.frame-hero__company {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background: rgb(0 0 0 / 0.12);
+  background: rgb(0 0 0 / 0.06);
   opacity: 0;
   transform: translate3d(var(--cursor-x, 0px), var(--cursor-y, 0px), 0)
     translate(-50%, -50%) scale(0.75);

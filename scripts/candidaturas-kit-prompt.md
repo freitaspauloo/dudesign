@@ -16,8 +16,9 @@ Referência fixa (Notion: **Kit candidaturas — respostas (EN)**). Use para pre
 |-------|--------|
 | Nome legal | Paulo Eduardo Gonçalves de Freitas |
 | Nome preferido | Paulo Freitas |
-| Email | hello@dudesign.us |
-| Telefone US | +1 (202) 773-8428 / +12027738428 |
+| Email | contato.dudesign1@gmail.com |
+| Telefone | +55 11 96170-3585 / +5511961703585 |
+| Email (alt / studio) | hello@dudesign.us |
 | País | Brazil |
 | Cidade | São Paulo, Brazil (remote) |
 | Fuso | UTC-3 (Brasília) |

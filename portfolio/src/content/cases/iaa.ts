@@ -156,5 +156,5 @@ export const iaa: CaseStudy = {
     { src: "/work/logos/samsung.svg", alt: "Samsung" },
   ],
   published: true,
-  order: 9,
+  order: 8,
 };

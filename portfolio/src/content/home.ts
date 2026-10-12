@@ -47,21 +47,21 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
     },
   },
   {
-    title: "Design-engineering surface library",
-    client: "FRAMELINE",
-    href: "/work/frameline",
+    title: "3D software for the showroom floor",
+    client: "3M FILMS",
+    href: "/work/3m-films",
     image: {
-      src: "/work/cases/frameline.webp",
-      alt: "Frameline design system surfaces",
+      src: "/work/cases/3m-films/01.webp",
+      alt: "3M Zeno kiosk — 3D wrap visualizer on shop-floor hardware",
     },
   },
   {
-    title: "BuiltOps / Losani",
-    client: "LOSANI",
-    href: "/work/builtops",
+    title: "EV personalization platform",
+    client: "AFEELA",
+    href: "/work/afeela",
     image: {
-      src: "/work/06.webp",
-      alt: "FORGE.AI product interface",
+      src: "/work/cases/afeela/01.webp",
+      alt: "Afeela Model 1 configurator — paint, personalize, and live vehicle preview",
     },
   },
   {

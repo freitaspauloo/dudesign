@@ -87,8 +87,8 @@ export const alignedAi: CaseStudy = {
       id: "outcome",
       title: "Outcome",
       body: [
-        "Delivered a coherent workspace direction with benchmark content wired into the product narrative — ready for stakeholder review and engineering iteration.",
-        "Established reusable patterns for AI trust UX (provenance, draft vs. committed, human override) that scale across future features.",
+        "Shipped production UI at joinaligned.ai — workspace home, document review, voice capture, and settings — plus consumer and enterprise landing pages and a launch film used in GTM.",
+        "Trust UX patterns (provenance, draft vs. committed, human-in-the-loop) are live in the product, not a slide deck — the team uses them as the baseline for new AI-assisted flows.",
       ],
     },
     {

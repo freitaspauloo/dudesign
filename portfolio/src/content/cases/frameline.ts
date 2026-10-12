@@ -218,5 +218,5 @@ export const frameline: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/frameline.png", alt: "Frameline" }],
   published: true,
-  order: 2,
+  order: 5,
 };

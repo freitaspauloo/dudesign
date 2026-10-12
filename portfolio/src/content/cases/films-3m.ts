@@ -69,7 +69,8 @@ export const films3m: CaseStudy = {
       id: "outcome",
       title: "From screen to showroom floor",
       body: [
-        "The Zeno platform became 3M's flagship retail technology product, deployed across dealerships with a full ecosystem of branding, UI/UX, presentation decks, email campaigns, video content, social media assets, and printed collateral supporting its rollout. Every piece was designed to do the same thing: make vinyl customization feel premium, approachable, and profitable for the shops installing it.",
+        "Zeno rolled out as 3M's flagship retail stack — kiosk UI, dealer portal, sales academy, and companion mobile — with one visual system from the shop floor through GTM decks and dealer maps.",
+        "The network target was 700 Pro Shops and 850 kiosks; the design job was making visualization, training, and sell-in feel like one product so shops could close bigger wrap jobs on the spot.",
         "Designed at xix3D.",
       ],
     },
@@ -175,5 +176,5 @@ export const films3m: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/3m.svg", alt: "3M" }],
   published: true,
-  order: 8,
+  order: 3,
 };

@@ -67,7 +67,7 @@ export const builtops: CaseStudy = {
   prototype: {
     label: "Open Losani preview deploy",
     url: "https://losani-connected-site-experience-git-dev-elevow-devs.vercel.app",
-    embed: true,
+    embed: false,
   },
   sections: [
     {
@@ -104,63 +104,11 @@ export const builtops: CaseStudy = {
     },
   ],
   cover: {
-    src: "/work/cases/ford.webp",
-    alt: "BuiltOps community platform — Losani Homes",
+    src: "/work/cases/builtops.svg",
+    alt: "BuiltOps community microsite platform — Losani Homes",
+    fit: "contain",
   },
-  gallery: [
-    {
-      id: "interfaces",
-      title: "Buyer experiences",
-      layout: "devices",
-      items: [
-        {
-          id: "community-desktop",
-          label: "Community page — desktop",
-          caption: "Stage-aware templates for Future / Coming Soon / Available",
-          variant: "desktop",
-        },
-        {
-          id: "community-mobile",
-          label: "Community page — mobile",
-          caption: "Lot maps, pricing, and model detail on mobile",
-          variant: "mobile",
-        },
-      ],
-    },
-    {
-      id: "landings",
-      title: "Enterprise vs. buyer surfaces",
-      layout: "duo",
-      items: [
-        {
-          id: "buyer-portal",
-          label: "Buyer portal",
-          caption: "Connected-site experience for shoppers",
-          variant: "desktop",
-        },
-        {
-          id: "cms-admin",
-          label: "CMS admin",
-          caption: "Payload workflows for marketing and sales",
-          variant: "desktop",
-        },
-      ],
-    },
-    {
-      id: "launch",
-      title: "Platform walkthrough",
-      layout: "video",
-      items: [
-        {
-          id: "walkthrough",
-          label: "Walkthrough video",
-          caption: "Editorial updates, preview, and stage rollout",
-          variant: "video",
-        },
-      ],
-    },
-  ],
-  logos: [{ src: "/work/logos/ford.svg", alt: "BuiltOps" }],
+  logos: [{ src: "/work/cases/builtops.svg", alt: "BuiltOps" }],
   published: true,
-  order: 3,
+  order: 10,
 };

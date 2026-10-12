@@ -11,14 +11,14 @@ import { iaa } from "./iaa";
 
 export const allCases: CaseStudy[] = [
   alignedAi,
-  frameline,
-  builtops,
   conifer,
-  ford,
-  afeela,
-  costco,
   films3m,
+  afeela,
+  frameline,
+  ford,
+  costco,
   iaa,
+  builtops,
 ];
 
 export function getCaseBySlug(slug: string): CaseStudy | undefined {

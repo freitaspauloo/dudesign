@@ -145,5 +145,5 @@ export const conifer: CaseStudy = {
   },
   logos: [{ src: "/work/logos/conifer.svg", alt: "Conifer" }],
   published: true,
-  order: 4,
+  order: 2,
 };

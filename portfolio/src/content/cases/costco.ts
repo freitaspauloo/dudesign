@@ -2,12 +2,13 @@ import type { CaseStudy } from "../types";
 
 export const costco: CaseStudy = {
   slug: "costco",
-  title: "Costco — Retail technology at scale",
+  title: "Costco",
+  cardTitle: "Automotive packaging",
   client: "Costco",
   subtitle:
     "A mass-market retail brand needed to look like it belonged next to specialist automotive products.",
   displayTitle: "Branding and packaging for Costco's automotive product line",
-  metaLabel: "Retail",
+  metaLabel: "Packaging",
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
@@ -65,7 +66,7 @@ export const costco: CaseStudy = {
     },
     {
       id: "outcome",
-      title: "Premium perception at Kirkland value",
+      title: "Outcome",
       body: [
         "The final brand and packaging system bridges the gap between mass-market retail and the specialist automotive world — giving Kirkland products shelf presence and visual credibility that competes with brands charging significantly more, without losing the brand's identity as an accessible, high-quality option.",
       ],

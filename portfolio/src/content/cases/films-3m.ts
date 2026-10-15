@@ -2,7 +2,8 @@ import type { CaseStudy } from "../types";
 
 export const films3m: CaseStudy = {
   slug: "3m-films",
-  title: "3M Films — Automotive retail technology",
+  title: "3M Films",
+  cardTitle: "Showroom 3D software",
   client: "3M",
   subtitle:
     "How do you put a real-time vehicle customization tool into thousands of dealerships — and make it sell?",
@@ -67,11 +68,10 @@ export const films3m: CaseStudy = {
     },
     {
       id: "outcome",
-      title: "From screen to showroom floor",
+      title: "Outcome",
       body: [
         "Zeno rolled out as 3M's flagship retail stack — kiosk UI, dealer portal, sales academy, and companion mobile — with one visual system from the shop floor through GTM decks and dealer maps.",
         "The network target was 700 Pro Shops and 850 kiosks; the design job was making visualization, training, and sell-in feel like one product so shops could close bigger wrap jobs on the spot.",
-        "Designed at xix3D.",
       ],
     },
   ],

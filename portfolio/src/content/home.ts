@@ -38,7 +38,7 @@ export const homeTimeline: HomeTimelineEntry[] = [
 export const homeFeaturedProjects: HomeFeaturedProject[] = [
   {
     title: "Personal AI workspace",
-    client: "ALIGNED AI",
+    client: "Aligned",
     href: "/work/aligned-ai",
     image: {
       src: "/work/cases/aligned-ai/desktop-1.png",
@@ -47,8 +47,17 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
     },
   },
   {
-    title: "3D software for the showroom floor",
-    client: "3M FILMS",
+    title: "Inference gateway",
+    client: "Conifer",
+    href: "/work/conifer",
+    image: {
+      src: "/work/cases/conifer/hero.png",
+      alt: "Conifer landing page — run AI locally, route the rest",
+    },
+  },
+  {
+    title: "Showroom 3D software",
+    client: "3M",
     href: "/work/3m-films",
     image: {
       src: "/work/cases/3m-films/01.webp",
@@ -57,7 +66,7 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
   },
   {
     title: "EV personalization platform",
-    client: "AFEELA",
+    client: "Afeela",
     href: "/work/afeela",
     image: {
       src: "/work/cases/afeela/01.webp",
@@ -65,12 +74,12 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
     },
   },
   {
-    title: "Inference gateway redesign",
-    client: "CONIFER",
-    href: "/work/conifer",
+    title: "OEM-aftermarket program",
+    client: "Ford",
+    href: "/work/ford",
     image: {
-      src: "/work/cases/conifer/hero.png",
-      alt: "Conifer landing page — run AI locally, route the rest",
+      src: "/work/cases/ford/01.webp",
+      alt: "Ford wrap configurator on a laptop — Bronco with real-time film and color selection",
     },
   },
 ];

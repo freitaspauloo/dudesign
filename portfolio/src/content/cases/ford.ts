@@ -2,7 +2,8 @@ import type { CaseStudy } from "../types";
 
 export const ford: CaseStudy = {
   slug: "ford",
-  title: "Ford — First OEM-aftermarket program",
+  title: "Ford",
+  cardTitle: "OEM-aftermarket program",
   client: "Ford",
   subtitle:
     "Ford wanted to own vehicle customization at the dealer level. Nothing like it had been done before.",
@@ -67,10 +68,9 @@ export const ford: CaseStudy = {
     },
     {
       id: "outcome",
-      title: "A program, not just a product",
+      title: "Outcome",
       body: [
         "The final delivery spanned the full customer and dealer journey: a vehicle configurator with real-time color selection, the Ford Wrap Learning Academy with video tutorials and PDF guides, installation documentation, progress tracking forms, email marketing sequences, billboard and advertising creative, and the branded partnership identity between xix3D and Ford. Every asset was designed to make a complex, multi-party process feel seamless.",
-        "Designed at xix3D.",
       ],
     },
   ],
@@ -120,5 +120,5 @@ export const ford: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/ford.svg", alt: "Ford" }],
   published: true,
-  order: 6,
+  order: 5,
 };

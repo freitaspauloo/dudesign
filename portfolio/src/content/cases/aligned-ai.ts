@@ -5,6 +5,7 @@ const base = "/work/cases/aligned-ai";
 export const alignedAi: CaseStudy = {
   slug: "aligned-ai",
   title: "Aligned AI",
+  cardTitle: "Personal AI workspace",
   client: "Aligned",
   subtitle:
     "A private, trustworthy AI assistant for the whole family, designed to give everyone what they need and more time for what matters most.",

@@ -25,54 +25,8 @@ export const enterpriseWork = {
     { name: "Honda", logos: [{ src: "/work/logos/honda.svg", alt: "Honda" }] },
     { name: "Costco", logos: [{ src: "/work/logos/costco.svg", alt: "Costco" }] },
   ],
-  highlights: [
-    {
-      client: "Ford",
-      title: "First OEM-aftermarket program",
-      description:
-        "Product and visual design for Ford's aftermarket digital experience — OEM-grade quality with partner velocity.",
-      href: "/work/ford",
-      image: { src: "/work/cases/ford.webp", alt: "Ford aftermarket digital experience" },
-      logos: [{ src: "/work/logos/ford.svg", alt: "Ford" }],
-    },
-    {
-      client: "Afeela",
-      title: "EV personalization platform",
-      description:
-        "Sony + Honda venture — HMI and personalization surfaces for next-generation electric mobility.",
-      href: "/work/afeela",
-      image: { src: "/work/cases/afeela.webp", alt: "Afeela EV personalization interface" },
-      logos: [
-        { src: "/work/logos/sony.svg", alt: "Sony" },
-        { src: "/work/logos/honda.svg", alt: "Honda" },
-      ],
-    },
-    {
-      client: "Costco",
-      title: "Retail technology at scale",
-      description:
-        "Consumer-facing digital touchpoints built for clarity and trust — high volume, no compromise on craft.",
-      href: "/work/costco",
-      image: { src: "/work/cases/costco.webp", alt: "Costco retail technology experience" },
-      logos: [{ src: "/work/logos/costco.svg", alt: "Costco" }],
-    },
-  ] satisfies EnterpriseHighlight[],
-  secondaryHighlights: [
-    {
-      client: "3M",
-      title: "3M Films",
-      description: "Automotive film visualization and retail-ready product presentation.",
-      href: "/work/3m-films",
-      image: { src: "/work/03.webp", alt: "3M automotive film visualization" },
-      logos: [{ src: "/work/logos/3m.svg", alt: "3M" }],
-    },
-    {
-      client: "IAA",
-      title: "IAA Summit",
-      description: "Stage and experiential design for international automotive showcase.",
-      href: "/work/iaa",
-      image: { src: "/work/cases/iaa-stage.webp", alt: "IAA Summit stage design" },
-      logos: [{ src: "/work/logos/audi.svg", alt: "IAA" }],
-    },
-  ] satisfies EnterpriseHighlight[],
+  /** Ford lives in the homepage project grid, not as a card under this copy. */
+  highlights: [] satisfies EnterpriseHighlight[],
+  /** Costco + IAA stay on /work only — not promoted on the homepage grid. */
+  secondaryHighlights: [] satisfies EnterpriseHighlight[],
 } as const;

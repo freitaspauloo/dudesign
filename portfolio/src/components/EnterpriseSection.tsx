@@ -60,13 +60,9 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
 
   if (variant === "frame") {
 
-    const rows = [
-
-      enterpriseWork.highlights,
-
-      enterpriseWork.secondaryHighlights,
-
-    ];
+    const rows = [enterpriseWork.highlights, enterpriseWork.secondaryHighlights].filter(
+      (row) => row.length > 0,
+    );
 
 
 
@@ -77,22 +73,6 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
         className="frame-enterprise"
         aria-labelledby="enterprise-heading"
       >
-
-        <div className="frame-logo-wall-shell">
-          <Reveal targets=".frame-logo-wall li" stagger={0.04}>
-            <ul className="frame-logo-wall" aria-label="Clients">
-              {enterpriseWork.clientLogos.map((client) => (
-                <li key={client.name}>
-                  {client.logos.map((logo) => (
-                    <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
-                  ))}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-
-
 
         <Reveal targets="[data-reveal]">
           <div className="frame-enterprise__intro">
@@ -118,6 +98,20 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
 
         </div>
         </Reveal>
+
+        <div className="frame-logo-wall-shell">
+          <Reveal targets=".frame-logo-wall li" stagger={0.04}>
+            <ul className="frame-logo-wall" aria-label="Clients">
+              {enterpriseWork.clientLogos.map((client) => (
+                <li key={client.name}>
+                  {client.logos.map((logo) => (
+                    <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
+                  ))}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
 
 
 

@@ -48,7 +48,7 @@ export default function WorkPage() {
                 </div>
                 <div className="frame-work__meta">
                   <span className="frame-work__title">
-                    <SwapLabel>{caseStudy.title}</SwapLabel>
+                    <SwapLabel>{caseStudy.cardTitle ?? caseStudy.title}</SwapLabel>
                   </span>
                   <span className="frame-work__role">
                     {caseStudy.client.toUpperCase()}

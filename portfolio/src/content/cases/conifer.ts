@@ -5,6 +5,7 @@ const base = "/work/cases/conifer";
 export const conifer: CaseStudy = {
   slug: "conifer",
   title: "Conifer",
+  cardTitle: "Inference gateway",
   client: "Conifer",
   subtitle:
     "Every request goes to the cheapest model that clears it — starting with your own hardware. Most never touch the cloud.",

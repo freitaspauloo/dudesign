@@ -3,11 +3,12 @@ import type { CaseStudy } from "../types";
 export const iaa: CaseStudy = {
   slug: "iaa",
   title: "IAA Summit",
+  cardTitle: "Summit visual system",
   client: "Audi, 3M, Samsung",
   subtitle:
     "Three global brands. One stage. The visuals needed to match the caliber of the conversation.",
   displayTitle: "CGI and visual identity for a landmark automotive summit",
-  metaLabel: "CGI / Event",
+  metaLabel: "Event CGI",
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
@@ -67,10 +68,9 @@ export const iaa: CaseStudy = {
     },
     {
       id: "outcome",
-      title: "Setting the visual standard for the industry",
+      title: "Outcome",
       body: [
         "Delivered a complete visual system for the summit: keynote stage graphics, speaker introduction cards, promotional CGI renders, animated brand sequences, and presentation materials — all produced to broadcast quality. The work helped frame the event as a defining moment for the intersection of automotive OEMs, material science, and consumer technology.",
-        "Designed at xix3D.",
       ],
     },
   ],

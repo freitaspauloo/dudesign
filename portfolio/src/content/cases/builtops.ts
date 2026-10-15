@@ -2,7 +2,8 @@ import type { CaseStudy } from "../types";
 
 export const builtops: CaseStudy = {
   slug: "builtops",
-  title: "BuiltOps / Losani",
+  title: "BuiltOps",
+  cardTitle: "Community microsites",
   client: "Losani Homes",
   subtitle:
     "A modular community-microsite platform where editorial teams own content and design owns the system — without either side blocking the other.",
@@ -15,7 +16,7 @@ export const builtops: CaseStudy = {
   roleTitle: "Product Designer",
   tags: ["Enterprise B2B", "CMS + code", "Multi-stage rollout"],
   skillsProven: [
-    "Developer tools, B2B SaaS, or enterprise complexity",
+    "Enterprise product systems",
     "Cross-functional leadership with PM and Eng",
     "Systems thinking and design systems",
     "End-to-end product design",
@@ -110,5 +111,5 @@ export const builtops: CaseStudy = {
   },
   logos: [{ src: "/work/cases/builtops.svg", alt: "BuiltOps" }],
   published: true,
-  order: 10,
+  order: 9,
 };

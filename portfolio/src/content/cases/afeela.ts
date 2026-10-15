@@ -2,12 +2,13 @@ import type { CaseStudy } from "../types";
 
 export const afeela: CaseStudy = {
   slug: "afeela",
-  title: "Afeela — EV personalization platform",
+  title: "Afeela",
+  cardTitle: "EV personalization platform",
   client: "Afeela",
   subtitle:
     "Brand-new car company needed its entire personalization experience designed — from first click to delivery day.",
   displayTitle: "Vehicle personalization for Sony and Honda's EV venture",
-  metaLabel: "EV / Technology",
+  metaLabel: "EV personalization",
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
@@ -67,10 +68,9 @@ export const afeela: CaseStudy = {
     },
     {
       id: "outcome",
-      title: "From concept to a complete purchase journey",
+      title: "Outcome",
       body: [
         "The final system takes a customer from browsing paint colors and wrap designs through to a submitted order with delivery countdown — all through interfaces designed to match the premium, forward-looking identity of the Afeela brand. The mobile app extends the experience beyond the browser, letting owners preview their car in 3D, track production status, and share custom configurations directly to social media.",
-        "Designed at xix3D.",
       ],
     },
   ],

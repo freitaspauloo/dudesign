@@ -3,6 +3,7 @@ import type { CaseStudy } from "../types";
 export const frameline: CaseStudy = {
   slug: "frameline",
   title: "Frameline",
+  cardTitle: "Installable design system",
   client: "Frameline",
   subtitle:
     "A design-engineering surface library — because taste doesn't ship as code unless someone builds the install path.",
@@ -218,5 +219,5 @@ export const frameline: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/frameline.png", alt: "Frameline" }],
   published: true,
-  order: 5,
+  order: 6,
 };

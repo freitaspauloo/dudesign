@@ -49,7 +49,10 @@ export type CaseGalleryBlock = {
 
 export type CaseStudy = {
   slug: string;
+  /** Browser title and case identity. */
   title: string;
+  /** Short label on work grids. Falls back to title. */
+  cardTitle?: string;
   client: string;
   subtitle: string;
   tags: string[];

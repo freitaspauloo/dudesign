@@ -24,47 +24,9 @@ type Props = {
 
 
 
-type FrameHighlight = {
-  client: string;
-  title: string;
-  href: string;
-  image: { src: string; alt: string };
-};
-
-function FrameEnterpriseCard({ item }: { item: FrameHighlight }) {
-  return (
-    <Link href={item.href} className="frame-work__card frame-enterprise__card">
-      <div className="frame-enterprise__media" data-cursor="case">
-        <Image
-          src={assetPath(item.image.src)}
-          alt={item.image.alt}
-          fill
-          unoptimized
-          sizes="(max-width: 960px) 100vw, 33vw"
-          style={{ objectFit: "cover" }}
-        />
-      </div>
-      <div className="frame-work__meta">
-        <span className="frame-work__title">
-          <SwapLabel>{item.title}</SwapLabel>
-        </span>
-        <span className="frame-work__role">{item.client.toUpperCase()}</span>
-      </div>
-    </Link>
-  );
-}
-
-
-
 export function EnterpriseSection({ index, variant = "default" }: Props) {
 
   if (variant === "frame") {
-
-    const rows = [enterpriseWork.highlights, enterpriseWork.secondaryHighlights].filter(
-      (row) => row.length > 0,
-    );
-
-
 
     return (
 
@@ -112,24 +74,6 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
             </ul>
           </Reveal>
         </div>
-
-
-
-        {rows.map((row) => (
-
-          <Reveal key={row[0]?.title} targets=".frame-enterprise__card" stagger={0.08}>
-            <div className="frame-enterprise__row">
-
-            {row.map((item) => (
-
-              <FrameEnterpriseCard key={item.title} item={item} />
-
-            ))}
-
-            </div>
-          </Reveal>
-
-        ))}
 
       </section>
 

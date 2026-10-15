@@ -26,7 +26,7 @@ export const enterpriseWork = {
     { name: "Costco", logos: [{ src: "/work/logos/costco.svg", alt: "Costco" }] },
   ],
   /** Ford lives in the homepage project grid, not as a card under this copy. */
-  highlights: [] satisfies EnterpriseHighlight[],
+  highlights: [] as EnterpriseHighlight[],
   /** Costco + IAA stay on /work only — not promoted on the homepage grid. */
-  secondaryHighlights: [] satisfies EnterpriseHighlight[],
-} as const;
+  secondaryHighlights: [] as EnterpriseHighlight[],
+};

@@ -120,5 +120,5 @@ export const ford: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/ford.svg", alt: "Ford" }],
   published: true,
-  order: 5,
+  order: 4,
 };

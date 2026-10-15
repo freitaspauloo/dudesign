@@ -176,5 +176,5 @@ export const films3m: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/3m.svg", alt: "3M" }],
   published: true,
-  order: 3,
+  order: 2,
 };

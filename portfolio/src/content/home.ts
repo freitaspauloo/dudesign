@@ -47,15 +47,6 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
     },
   },
   {
-    title: "Inference gateway",
-    client: "Conifer",
-    href: "/work/conifer",
-    image: {
-      src: "/work/cases/conifer/hero.png",
-      alt: "Conifer landing page — run AI locally, route the rest",
-    },
-  },
-  {
     title: "Showroom 3D software",
     client: "3M",
     href: "/work/3m-films",
@@ -80,6 +71,15 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
     image: {
       src: "/work/cases/ford/01.webp",
       alt: "Ford wrap configurator on a laptop — Bronco with real-time film and color selection",
+    },
+  },
+  {
+    title: "Inference gateway",
+    client: "Conifer",
+    href: "/work/conifer",
+    image: {
+      src: "/work/cases/conifer/hero.png",
+      alt: "Conifer landing page — run AI locally, route the rest",
     },
   },
 ];

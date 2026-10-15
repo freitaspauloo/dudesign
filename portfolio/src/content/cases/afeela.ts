@@ -139,5 +139,5 @@ export const afeela: CaseStudy = {
     { src: "/work/logos/honda.svg", alt: "Honda" },
   ],
   published: true,
-  order: 4,
+  order: 3,
 };

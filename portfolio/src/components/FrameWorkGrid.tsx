@@ -30,7 +30,7 @@ export function FrameWorkGrid({ projects, label = "Selected work" }: Props) {
               href={project.href}
               className="frame-work__card"
             >
-              <div className="frame-work__media" data-cursor="case">
+              <div className="frame-work__media" data-cursor="case-study">
                 <Image
                   src={assetPath(project.image.src)}
                   alt={project.image.alt}

@@ -4,7 +4,7 @@ export const films3m: CaseStudy = {
   slug: "3m-films",
   title: "3M Films",
   cardTitle: "Showroom 3D software",
-  client: "3M",
+  client: "3M Films",
   subtitle:
     "How do you put a real-time vehicle customization tool into thousands of dealerships — and make it sell?",
   displayTitle: "3D software product design for the showroom floor",

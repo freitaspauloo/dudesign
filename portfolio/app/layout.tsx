@@ -21,6 +21,21 @@ export const metadata: Metadata = {
   },
   description: site.tagline,
   metadataBase: new URL(site.url),
+  icons: {
+    icon: [
+      {
+        url: "/brand/mark-light.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/brand/mark-dark.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    apple: "/brand/mark-light.svg",
+  },
   openGraph: {
     title: `${site.name} — ${site.title}`,
     description: site.tagline,

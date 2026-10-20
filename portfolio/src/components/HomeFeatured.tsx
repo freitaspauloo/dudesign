@@ -26,7 +26,7 @@ export function HomeFeatured({ caseStudy }: Props) {
         <Parallax
           className="featured-hero-media"
           amount={coverContain ? 0 : 6}
-          data-cursor="case"
+          data-cursor="case-study"
         >
           <Image
             src={assetPath(caseStudy.cover.src)}

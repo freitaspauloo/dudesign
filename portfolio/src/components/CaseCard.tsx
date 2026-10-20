@@ -24,7 +24,7 @@ export function CaseCard({ caseStudy, index, variant = "default" }: Props) {
         <article className="paper-card">
           <div
             className="paper-card__media"
-            data-cursor="case"
+            data-cursor="case-study"
             style={{ backgroundColor: tint }}
           >
             <Image
@@ -55,7 +55,7 @@ export function CaseCard({ caseStudy, index, variant = "default" }: Props) {
             <p className="micro-label">{caseStudy.client}</p>
           </div>
         ) : null}
-        <div className="work-card-media" data-cursor="case">
+        <div className="work-card-media" data-cursor="case-study">
           <Image
             src={assetPath(caseStudy.cover.src)}
             alt={caseStudy.cover.alt}

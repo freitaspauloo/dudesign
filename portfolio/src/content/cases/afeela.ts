@@ -4,7 +4,7 @@ export const afeela: CaseStudy = {
   slug: "afeela",
   title: "Afeela",
   cardTitle: "EV personalization platform",
-  client: "Afeela",
+  client: "Afeela (Sony + Honda EV Venture)",
   subtitle:
     "Brand-new car company needed its entire personalization experience designed — from first click to delivery day.",
   displayTitle: "Vehicle personalization for Sony and Honda's EV venture",

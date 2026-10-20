@@ -6,7 +6,7 @@ export const alignedAi: CaseStudy = {
   slug: "aligned-ai",
   title: "Aligned AI",
   cardTitle: "Personal AI workspace",
-  client: "Aligned",
+  client: "Aligned AI",
   subtitle:
     "A private, trustworthy AI assistant for the whole family, designed to give everyone what they need and more time for what matters most.",
   displayTitle: "Less time asking. More time living.",

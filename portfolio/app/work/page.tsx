@@ -36,7 +36,7 @@ export default function WorkPage() {
                 href={`/work/${caseStudy.slug}`}
                 className="frame-work__card"
               >
-                <div className="frame-work__media" data-cursor="case">
+                <div className="frame-work__media" data-cursor="case-study">
                   <Image
                     src={assetPath(caseStudy.cover.src)}
                     alt={caseStudy.cover.alt}

@@ -11,8 +11,8 @@ export const enterpriseWork = {
   headline: "Fortune 500 experience.",
   subheadline: "Shipped at startup speed.",
   body: [
-    "The work comes from design leadership at XIX3D: product design, HMI, and brand systems for global automotive and consumer tech clients.",
-    "Audi, Samsung, 3M, Ford, Sony + Honda (Afeela), and Costco. The studio brings that same bar to AI-native product work.",
+    "Before DUDESIGN, I led design at XIX3D — product design, HMI, and brand systems for global automotive and consumer tech clients.",
+    "Audi, Samsung, 3M, Ford, Sony + Honda (Afeela), and Costco. I bring that same bar to AI-native product work.",
   ],
   mosaic: { src: "/work/tiles.webp", alt: "Selected work across automotive, retail, and consumer tech" },
   clients: ["Audi", "Samsung", "3M", "Ford", "Sony", "Honda", "Costco"],

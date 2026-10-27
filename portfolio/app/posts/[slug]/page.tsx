@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyCaption } from "@/src/components/CopyCaption";
 import { ExportPostVisual } from "@/src/components/ExportPostVisual";
-import { site } from "@/src/content/site";
 import { getSocialPost, socialPosts } from "@/src/content/social-posts";
 
 type PageProps = {
@@ -34,8 +33,8 @@ export default async function SocialPostPage({ params }: PageProps) {
     <>
       <header className="posts-bar">
         <Link href="/posts" className="posts-brand">
-          <span className="posts-brand-name">{site.name}</span>
-          <span className="posts-brand-role">{site.title}</span>
+          <span className="posts-brand-name">Paulo Freitas</span>
+          <span className="posts-brand-role">Product Designer + Engineer</span>
         </Link>
         <p className="posts-bar-meta">posts</p>
       </header>

@@ -29,6 +29,15 @@ npm run portfolio:dev       # http://localhost:3001
 
 Local preview through the deck: [http://localhost:3000/paulo](http://localhost:3000/paulo) (requires portfolio dev server on 3001).
 
+## Studio site
+
+[`studio/`](studio/) is a duplicate of the personal portfolio with studio copy. It does not replace `portfolio/`, and it does not deploy to paulo.dudesign.us. Canonical metadata uses [dudesign.us](https://dudesign.us). The pitch deck at the repo root stays as it is.
+
+```bash
+npm run studio:install   # first time
+npm run studio:dev       # http://localhost:3002
+```
+
 ## Docs
 
 | Path | Purpose |

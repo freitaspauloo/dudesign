@@ -7,7 +7,7 @@ import { funPage } from "@/src/content/fun";
 export const metadata: Metadata = {
   title: "Fun",
   description:
-    "Running, reading, design, and tech. Outside the studio.",
+    "Running, reading, design, and tech — what Paulo Freitas likes outside client work.",
 };
 
 export default function FunPage() {

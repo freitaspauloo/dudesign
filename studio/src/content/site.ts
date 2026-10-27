@@ -1,0 +1,26 @@
+export const site = {
+  name: "DUDESIGN",
+  title: "Product design studio",
+  x: "https://x.com/freitaspauloo",
+  tagline:
+    "We decide what to build, design it, and we implement the interface.",
+  domain: "dudesign.us",
+  url: "https://dudesign.us",
+  email: "hello@dudesign.us",
+  linkedin: "https://www.linkedin.com/in/freitas-pauloo",
+  github: "https://github.com/freitaspauloo",
+  credibility: ["Audi", "Samsung", "3M", "Ford", "Sony + Honda", "Costco"],
+  skills: [
+    "Product UX & UI design",
+    "Interaction design",
+    "Visual design & typography",
+    "Design systems",
+    "User research & testing",
+    "AI & agent UX",
+    "Trust & accessibility UX",
+    "Prototyping in code",
+    "B2B SaaS & enterprise",
+    "Cross-functional leadership",
+  ],
+  builtWith: "Designed and built by DUDESIGN",
+} as const;

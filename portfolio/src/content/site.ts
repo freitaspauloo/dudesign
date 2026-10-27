@@ -1,11 +1,10 @@
 export const site = {
-  name: "DUDESIGN",
-  title: "Product design studio",
+  name: "Paulo Freitas",
+  title: "Product Designer + Engineer",
   x: "https://x.com/freitaspauloo",
-  tagline:
-    "We decide what to build, design it, and we implement the interface.",
-  domain: "dudesign.us",
-  url: "https://dudesign.us",
+  tagline: "I design complex product surfaces and ship them in code.",
+  domain: "paulo.dudesign.us",
+  url: "https://paulo.dudesign.us",
   email: "hello@dudesign.us",
   linkedin: "https://www.linkedin.com/in/freitas-pauloo",
   github: "https://github.com/freitaspauloo",
@@ -22,5 +21,5 @@ export const site = {
     "B2B SaaS & enterprise",
     "Cross-functional leadership",
   ],
-  builtWith: "Designed and built by DUDESIGN",
+  builtWith: "Designed and built by me in Next.js + Cursor",
 } as const;

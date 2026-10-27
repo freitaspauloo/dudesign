@@ -5,9 +5,9 @@ export function HomeHero() {
   return (
     <section className="frame-hero" aria-label="Introduction">
       <h1 className="frame-hero__title">
-        We&apos;re DUDESIGN, a product
+        I&apos;m Paulo, a product
         <br />
-        design studio.
+        designer who engineers.
       </h1>
 
       <HomeHeroTimeline entries={homeTimeline} />

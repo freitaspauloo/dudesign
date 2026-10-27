@@ -5,7 +5,7 @@ import { site } from "@/src/content/site";
 
 export const metadata: Metadata = {
   title: "Résumé",
-  description: "DUDESIGN — product design studio",
+  description: "Paulo Freitas — Senior Product Designer, AI/SaaS",
 };
 
 export default function ResumePage() {
@@ -13,7 +13,7 @@ export default function ResumePage() {
     <article className="resume-page">
       <p className="resume-hint">
         Print this page (Ctrl+P / Cmd+P) and save as PDF, or{" "}
-        <Link href={resume.pdfPath}>download the PDF</Link>.
+        <Link href={resume.pdfPath}>download the PDF</Link> for applications.
       </p>
 
       <h1>{site.name}</h1>

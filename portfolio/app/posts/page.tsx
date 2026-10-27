@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PostVisual } from "@/src/components/PostVisual";
+import { site } from "@/src/content/site";
 import { socialPosts } from "@/src/content/social-posts";
 
 export default function PostsHubPage() {
@@ -7,17 +8,16 @@ export default function PostsHubPage() {
     <>
       <header className="posts-bar">
         <Link href="/" className="posts-brand">
-          <span className="posts-brand-name">Paulo Freitas</span>
-          <span className="posts-brand-role">Product Designer + Engineer</span>
+          <span className="posts-brand-name">{site.name}</span>
+          <span className="posts-brand-role">{site.title}</span>
         </Link>
         <p className="posts-bar-meta">posts</p>
       </header>
       <div className="posts-wrap">
-        <h1 className="posts-h1">I&apos;m Paulo, a product designer who engineers.</h1>
+        <h1 className="posts-h1">We&apos;re DUDESIGN, a product design studio.</h1>
         <p className="posts-lead">
-          I design complex product surfaces and ship them in code. Visuals
-          here. Copy ready to paste. The YC work stays unnamed until you want
-          the name public.
+          {site.tagline} Visuals here. Copy ready to paste. The YC work stays
+          unnamed until you want the name public.
         </p>
         <div className="posts-grid">
           {socialPosts

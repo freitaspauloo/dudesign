@@ -7,9 +7,9 @@ export type ResumeJob = {
 };
 
 export const resume = {
-  title: "Senior Product Designer",
+  title: "Product design studio",
   summary:
-    "Product designer who ships in code, not just mocks. I've designed complex B2B and AI products, built Fortune 500-facing experiences for Audi, Samsung, 3M, Ford, Sony + Honda, and Costco, and founded Frameline, a design-engineering surface library live in production. Looking for a senior IC role where craft, UX strategy, and working close to engineering matter.",
+    "DUDESIGN is an independent product design studio. We design complex B2B and AI products and ship the interface in code. The work includes Fortune 500-facing experiences for Audi, Samsung, 3M, Ford, Sony + Honda, and Costco, and Frameline, a design-engineering surface library live in production.",
   jobs: [
     {
       company: "Amplif.AI",

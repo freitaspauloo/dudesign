@@ -6,7 +6,8 @@ import { site } from "@/src/content/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Product Designer — AI/SaaS. Based in the US market.",
+  description:
+    "Independent product design studio founded by Paulo Freitas. We decide what to build, design it, and implement the interface.",
 };
 
 export default function AboutPage() {
@@ -22,29 +23,18 @@ export default function AboutPage() {
       <div className="about-page-grid">
         <div className="about-body">
           <p>
-            I&apos;m Paulo Freitas — a product designer who works at the
-            intersection of AI/SaaS, visual craft, and production UI. I ship
-            for startups today; before that I led design at XIX3D for global
-            clients including Audi, Samsung, 3M, Ford, Sony + Honda, and
-            Costco.
+            DUDESIGN is an independent product design studio founded by Paulo
+            Freitas. We decide what to build, design it, and implement the
+            interface.
           </p>
           <p>
-            I also build my own tools when the market gap is obvious — like{" "}
+            Fortune 500 craft from Audi, Samsung, 3M, Ford, Sony + Honda, and
+            Costco, for teams that need product judgment, UX/UI, and a shipped
+            interface. The studio also builds its own tools, including{" "}
             <a href="https://frameline.ai" className="text-link">
               <SwapLabel>Frameline</SwapLabel>
-            </a>{" "}
-            — and run{" "}
-            <a href="https://dudesign.us" className="text-link">
-              <SwapLabel>DUDESIGN</SwapLabel>
-            </a>{" "}
-            as an independent product design partner for AI startups.
-          </p>
-          <p>
-            I&apos;m looking for{" "}
-            <strong>Product Designer — AI/SaaS</strong> roles in the US. I work
-            best with PM and Engineering when the bet is clear but the surface is hard —
-            complex B2B, agent UX, or dev-facing products that need to ship in
-            code, not slide decks.
+            </a>
+            .
           </p>
           <nav className="about-body__links" aria-label="Contact">
             <Link href="/resume" className="frame-bar__link">
@@ -65,7 +55,7 @@ export default function AboutPage() {
         </div>
 
         <aside className="about-sidebar-panel">
-          <h2>What teams hire me for</h2>
+          <h2>What the studio does</h2>
           <ul className="tag-list">
             {site.skills.map((skill) => (
               <li key={skill}>{skill}</li>

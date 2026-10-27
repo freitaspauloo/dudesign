@@ -9,7 +9,7 @@ export type FunInterest = {
 
 export const funPage = {
   title: "Fun",
-  lead: "Outside client work — what I actually like spending time on.",
+  lead: "Outside the studio.",
   interests: [
     {
       id: "running",

@@ -31,7 +31,7 @@ Local preview through the deck: [http://localhost:3000/paulo](http://localhost:3
 
 ## Studio site
 
-[`studio/`](studio/) is a duplicate of the personal portfolio with studio copy. It does not replace `portfolio/`, and it does not deploy to paulo.dudesign.us. Canonical metadata uses [dudesign.us](https://dudesign.us). The pitch deck at the repo root stays as it is.
+[`studio/`](studio/) is a duplicate of the personal portfolio with studio copy. It deploys to [studio.dudesign.us](https://studio.dudesign.us). It does not replace `portfolio/`, paulo.dudesign.us, or the pitch deck.
 
 ```bash
 npm run studio:install   # first time

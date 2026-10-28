@@ -4,7 +4,7 @@ Duplicate of the personal portfolio, with studio copy.
 
 The personal site stays in [`portfolio/`](../portfolio/) and keeps deploying to [paulo.dudesign.us](https://paulo.dudesign.us). This app does not replace it, and it does not replace the pitch deck at the repo root.
 
-**Canonical URL in metadata:** [dudesign.us](https://dudesign.us)
+**Live URL:** [studio.dudesign.us](https://studio.dudesign.us)
 
 ## Run locally
 

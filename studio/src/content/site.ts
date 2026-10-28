@@ -4,8 +4,8 @@ export const site = {
   x: "https://x.com/freitaspauloo",
   tagline:
     "We decide what to build, design it, and we implement the interface.",
-  domain: "dudesign.us",
-  url: "https://dudesign.us",
+  domain: "studio.dudesign.us",
+  url: "https://studio.dudesign.us",
   email: "hello@dudesign.us",
   linkedin: "https://www.linkedin.com/in/freitas-pauloo",
   github: "https://github.com/freitaspauloo",

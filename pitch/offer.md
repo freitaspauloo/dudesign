@@ -25,7 +25,9 @@ Commercial terms below. Slide content lives in code (`src/content/slides.ts`).
 
 Shipping is in the critical path (design + UI build overlap), not a late-phase handoff. First surface is about 8 weeks on every tier.
 
-### Standard. 8 weeks
+### Standard. $7,000/mo · 3-month commit
+
+Billed monthly. $21,000 total.
 
 
 | Weeks | Focus                                               |
@@ -50,11 +52,11 @@ Same seat as Partner, for the year. Billed monthly. Priority scheduling and a qu
 ## Pricing
 
 
-| Tier                        | Price            | Term                         | Best for                                      |
-| --------------------------- | ---------------- | ---------------------------- | --------------------------------------------- |
-| **Standard**                | **$21,000**      | 8 weeks, then done           | Closed box. Pay extra to walk away.           |
-| **Partner**                 | **$6,000/mo**    | 6-month min ($36,000)        | Flexibility. An out at month 6.               |
-| **Yearly** *(recommended)*  | **$5,000/mo**    | 12-month commit ($60,000)    | You already know this isn’t one surface.      |
+| Tier                        | Price         | Term                                      | Best for                                 |
+| --------------------------- | ------------- | ----------------------------------------- | ---------------------------------------- |
+| **Standard**                | **$7,000/mo** | 3-month commit ($21,000). Billed monthly. | Closed box. Pay extra to walk away.      |
+| **Partner**                 | **$6,000/mo** | 6-month min ($36,000)                     | Flexibility. An out at month 6.          |
+| **Yearly** *(recommended)*  | **$5,000/mo** | 12-month commit ($60,000)                 | You already know this isn’t one surface. |
 
 
 ### Why this value
@@ -76,7 +78,7 @@ Same seat as Partner, for the year. Billed monthly. Priority scheduling and a qu
 
 ### What’s in each
 
-**Standard ($21k)**  
+**Standard ($7,000/mo, 3-month commit, $21k total)**  
 One surface · 2 revision rounds · weekly updates · production UI in code  
 Bonuses: 30-day post-ship review · recorded system tour
 
@@ -93,11 +95,11 @@ Bonuses: everything in Partner · priority throughout the year
 ### Payment
 
 
-| Tier     | Schedule                                                                 |
-| -------- | ------------------------------------------------------------------------ |
-| Standard | $7,000 kick-off · $7,000 end of month 1 · $7,000 end of month 2          |
-| Partner  | $6,000 kick-off · $6,000/mo through month 6 · then month-to-month        |
-| Yearly   | $5,000 kick-off · $5,000/mo through month 12                             |
+| Tier     | Schedule                                                                                                                                  |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard | $7,000 at kick-off (month 1) · $7,000/mo months 2–3, same date each month · billed monthly, 3-month commit ($21,000)                      |
+| Partner  | $6,000 kick-off · $6,000/mo through month 6 · then month-to-month                                                                         |
+| Yearly   | $5,000 kick-off · $5,000/mo through month 12                                                                                              |
 
 
 Wire / ACH · USD · net 7 · invoices on fixed dates · IP to client on final payment · DUDESIGN portfolio rights · NDA first · extra revision rounds $500

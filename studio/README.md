@@ -29,16 +29,23 @@ npm run dev
 | `/` | Home — hero + selected work |
 | `/work` | Case index |
 | `/work/*` | Case studies |
-| `/fun` | Interests |
 | `/about` | Studio |
-| `/resume` | Studio background |
+
+`/fun` and `/resume` exist only on the personal portfolio. Here they redirect to `/about`.
 
 ## Content
 
-Case studies live in `src/content/cases/`. They match the personal portfolio. Studio voice is in the public chrome: home, about, footer, and metadata.
+Case studies live in `src/content/cases/`. They use the same projects as the personal portfolio, written in the studio voice (we, our).
 
 ## Deploy
 
 Do not point the existing Paulo Vercel project at this folder. That project must keep Root Directory `portfolio` so paulo.dudesign.us stays the personal site.
 
-A separate Vercel project can use Root Directory `studio`. Attaching `dudesign.us` to it would replace the pitch deck, so leave domains as they are until that cutover is intentional.
+`studio.dudesign.us` is a subdomain of `dudesign.us`, which is already registered at Hover, so there is nothing to buy. To put it live:
+
+1. In Vercel, create a new project from this repo with Root Directory `studio`.
+2. In that project, go to Settings → Domains and add `studio.dudesign.us`. Make it the primary domain.
+3. In Hover, open DNS for `dudesign.us` and add a `CNAME` record with host `studio` and the target Vercel shows (for example `cname.vercel-dns.com`).
+4. Wait for Vercel to show the domain as Valid Configuration. It issues HTTPS automatically.
+
+Attaching `dudesign.us` itself to this project would replace the pitch deck, so leave the apex domain as it is until that cutover is intentional.

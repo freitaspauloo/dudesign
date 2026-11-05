@@ -12,7 +12,7 @@ export const iaa: CaseStudy = {
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["CGI", "Event", "Automotive"],
   skillsProven: [
     "CGI and motion for live events",
@@ -63,7 +63,7 @@ export const iaa: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I built a CGI language for the room: lineup, silhouette, material, interior, lamp — then dropped those stills onto the keynote wall so the conversation and the picture were the same object.",
+        "We built a CGI language for the room: lineup, silhouette, material, interior, lamp — then dropped those stills onto the keynote wall so the conversation and the picture were the same object.",
       ],
     },
     {

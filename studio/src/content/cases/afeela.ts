@@ -12,7 +12,7 @@ export const afeela: CaseStudy = {
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["EV", "Configurator", "Mobile"],
   skillsProven: [
     "End-to-end product design",
@@ -62,7 +62,7 @@ export const afeela: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I mapped the purchase as a single path: Model 1, paint and packages, wrap library (including Sony IP), pricing, checkout — then ownership on the phone.",
+        "We mapped the purchase as a single path: Model 1, paint and packages, wrap library (including Sony IP), pricing, checkout — then ownership on the phone.",
         "The mobile app had to extend the 3D car, not shrink the website. Production countdown, rotate-in-3D, photo share, and video export are how owners show the car before it exists.",
       ],
     },

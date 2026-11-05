@@ -13,7 +13,7 @@ export const builtops: CaseStudy = {
   year: "2025",
   timeline: "2024 – 2025",
   team: "Losani + engineering partners",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["Enterprise B2B", "CMS + code", "Multi-stage rollout"],
   skillsProven: [
     "Enterprise product systems",
@@ -83,7 +83,7 @@ export const builtops: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I designed BuiltOps as a modular platform: Next.js 16, Tailwind CSS 4, Payload CMS, TypeScript — SQLite locally, Postgres in production.",
+        "We designed BuiltOps as a modular platform: Next.js 16, Tailwind CSS 4, Payload CMS, TypeScript — SQLite locally, Postgres in production.",
         "Templates encode stage logic in code (safety rails) while editorial content stays flexible in the CMS. Empty sections hide automatically so half-finished pages never ship broken.",
         "Deliverables include community pages, model pages, a version archive, preview-version widget catalog, and lot editor tooling — coordinated with the Losani Connected Site integration.",
       ],
@@ -98,7 +98,7 @@ export const builtops: CaseStudy = {
     },
     {
       id: "reflection",
-      title: "What I'd do differently",
+      title: "What we'd do differently",
       body: [
         "Lock CMS field schemas with design earlier — a few retrofits were needed when marketing wanted section variants we hadn't modeled.",
       ],

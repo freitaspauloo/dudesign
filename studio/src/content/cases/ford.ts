@@ -12,7 +12,7 @@ export const ford: CaseStudy = {
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["Automotive", "Configurator", "Dealer tools"],
   skillsProven: [
     "End-to-end product design",
@@ -62,8 +62,8 @@ export const ford: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I designed the customer-facing configurator around the actual decision order: pick the vehicle, confirm paint, then wrap. Real-time color and film visualization had to feel like Ford, not a kiosk demo.",
-        "In parallel I structured the Wrap Learning Academy and the status/pickup emails so installers and customers weren't left guessing once the order left the screen.",
+        "We designed the customer-facing configurator around the actual decision order: pick the vehicle, confirm paint, then wrap. Real-time color and film visualization had to feel like Ford, not a kiosk demo.",
+        "In parallel we structured the Wrap Learning Academy and the status/pickup emails so installers and customers weren't left guessing once the order left the screen.",
       ],
     },
     {

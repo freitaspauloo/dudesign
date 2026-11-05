@@ -30,14 +30,14 @@ function buildNavItems(caseStudy: CaseStudy): CaseStudyNavItem[] {
       id: section.id,
       label: section.title,
     })),
-    { id: "role", label: "My role" },
+    { id: "role", label: "Our role" },
     { id: "decisions", label: "Key decisions" },
   ];
 }
 
 export function CaseStudyLayout({ caseStudy }: Props) {
   const displayTitle = caseStudy.displayTitle ?? caseStudy.subtitle;
-  const roleTitle = caseStudy.roleTitle ?? "Product Designer";
+  const roleTitle = caseStudy.roleTitle ?? "Product design";
   const timeline =
     caseStudy.timeline ??
     (caseStudy.year ? caseStudy.year : "—");
@@ -147,7 +147,7 @@ export function CaseStudyLayout({ caseStudy }: Props) {
             ))}
 
             <section id="role" className="case-study__role">
-              <h2>My role</h2>
+              <h2>Our role</h2>
               <div className="role-columns">
                 <div>
                   <h3>Owned</h3>

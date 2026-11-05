@@ -12,7 +12,7 @@ export const costco: CaseStudy = {
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["Packaging", "Brand", "Retail"],
   skillsProven: [
     "Packaging and brand systems",
@@ -61,7 +61,7 @@ export const costco: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I treated packaging as the product interface: grade, count, use, and trust have to read at warehouse distance. Medical and automotive variants share a mark and structure so the line feels like one brand, not a pile of white boxes.",
+        "We treated packaging as the product interface: grade, count, use, and trust have to read at warehouse distance. Medical and automotive variants share a mark and structure so the line feels like one brand, not a pile of white boxes.",
       ],
     },
     {

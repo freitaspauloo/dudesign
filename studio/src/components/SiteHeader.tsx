@@ -4,9 +4,7 @@ import { SwapLabel } from "@/src/components/SwapLabel";
 
 const nav = [
   { href: "/work", label: "work" },
-  { href: "/fun", label: "fun" },
   { href: "/about", label: "about" },
-  { href: "/resume", label: "resume" },
 ];
 
 export function SiteHeader() {

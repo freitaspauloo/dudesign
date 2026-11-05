@@ -11,8 +11,8 @@ export const frameline: CaseStudy = {
   metaLabel: "Design system",
   year: "2025",
   timeline: "2024 – present",
-  team: "Solo (DUDESIGN)",
-  roleTitle: "Product Designer + Engineer",
+  team: "DUDESIGN studio",
+  roleTitle: "Product design + engineering",
   tags: ["Design system", "Dev-facing", "Built with Cursor"],
   skillsProven: [
     "Systems thinking and design systems",
@@ -55,7 +55,7 @@ export const frameline: CaseStudy = {
         "Months of user interviews before a single material ships. Speed to PMF over research theater.",
     },
   ],
-  collaborators: ["DUDESIGN (solo operator)", "Early design-engineer advisors"],
+  collaborators: ["DUDESIGN studio", "Early design-engineer advisors"],
   links: [
     { label: "Live product", url: "https://frameline.ai" },
     { label: "GitHub", url: "https://github.com/freitaspauloo/frameline" },
@@ -78,10 +78,10 @@ export const frameline: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I defined Frameline as a commercial surface & materials system: typed React components, token-bound, production-safe, with a live configurator and plain-language licensing.",
+        "We defined Frameline as a commercial surface & materials system: typed React components, token-bound, production-safe, with a live configurator and plain-language licensing.",
         "Discovery Phase 01 focused on Gate 01 evidence — waitlist, willingness-to-pay, and install intent — before locking commerce architecture.",
         "The catalog includes screen templates (e.g. Softwave hero and feature cards) that demonstrate how materials compose into real product surfaces, not isolated demos.",
-        "Built with Next.js App Router, WebGL shaders, and a solo-operable publishing pipeline so each new material ships in hours, not days.",
+        "Built with Next.js App Router, WebGL shaders, and a publishing pipeline a small team can run so each new material ships in hours, not days.",
       ],
     },
     {
@@ -89,12 +89,12 @@ export const frameline: CaseStudy = {
       title: "Outcome",
       body: [
         "Live product at frameline.ai with a growing material catalog, configurator, and discovery instrumentation in place.",
-        "Frameline doubles as portfolio proof: I own the full narrative from problem definition through shipped code.",
+        "Frameline doubles as studio proof: we own the full narrative from problem definition through shipped code.",
       ],
     },
     {
       id: "reflection",
-      title: "What I'd do differently",
+      title: "What we'd do differently",
       body: [
         "Publish fewer materials earlier with stronger before/after case studies — buyers need to see transformation on a real app shell, not just the material in isolation.",
       ],

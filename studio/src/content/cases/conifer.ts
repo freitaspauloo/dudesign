@@ -14,7 +14,7 @@ export const conifer: CaseStudy = {
   year: "2026",
   timeline: "2025 – 2026",
   team: "Conifer (YC S26)",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["AI infrastructure", "Landing + product", "Shipped in code"],
   skillsProven: [
     "Developer tools and AI product UX",
@@ -89,7 +89,7 @@ export const conifer: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I mirrored the live product, mapped the narrative gaps, and rebuilt the landing as a static redesign — hero, routing story, model exploration, and footer — before handing off to production.",
+        "We mirrored the live product, mapped the narrative gaps, and rebuilt the landing as a static redesign — hero, routing story, model exploration, and footer — before handing off to production.",
         "The ASCII bonsai and marble ground became the visual anchor: a craft signal that reads developer-native without abandoning clarity for non-designer buyers.",
       ],
       visualsLayout: "full",

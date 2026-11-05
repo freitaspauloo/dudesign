@@ -14,7 +14,7 @@ export const alignedAi: CaseStudy = {
   year: "2025",
   timeline: "2025 – 2026",
   team: "Aligned AI",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["AI workspace", "Trust UX", "Shipped in code"],
   skillsProven: [
     "AI and agent UX design",
@@ -79,9 +79,9 @@ export const alignedAi: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I mapped the core jobs: orient in the workspace, run an AI-assisted task, review output, and commit a result. Each step needed explicit trust UX — not bolted-on disclaimers, but structural clarity in the UI.",
+        "We mapped the core jobs: orient in the workspace, run an AI-assisted task, review output, and commit a result. Each step needed explicit trust UX — not bolted-on disclaimers, but structural clarity in the UI.",
         "Benchmark content was treated as product evidence, not a side project. The structure mirrors how users evaluate AI tools: capability, limits, and comparison points.",
-        "I prototyped key flows in code so PM and Eng could react to real interaction — scroll, focus, loading, and error states included.",
+        "We prototyped key flows in code so PM and Eng could react to real interaction — scroll, focus, loading, and error states included.",
       ],
     },
     {
@@ -94,7 +94,7 @@ export const alignedAi: CaseStudy = {
     },
     {
       id: "reflection",
-      title: "What I'd do differently",
+      title: "What we'd do differently",
       body: [
         "Instrument earlier usability sessions on the commit/review step — that's where trust breaks or holds, and we relied too much on internal review at first.",
       ],

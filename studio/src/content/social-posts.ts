@@ -43,7 +43,7 @@ What the product is for, who uses it, what success looks like. Architecture and 
 Week 2 the first surface ships in the product.
 Components, pages, click-through. Your team reacts to real UI, not a file.
 
-From week 3 I keep building in code.
+From week 3 we keep building in code.
 Production UI, iteration in the build, design and implementation in the same place. No handoff queue.`,
     x: `Week 1: bet, architecture, key flows.
 Week 2: first surface in the product.
@@ -134,9 +134,9 @@ Losani. Designed and coded.`,
     linkedin: `Most AI products look the same.
 Same chat. Same purple button. Same "ask anything."
 That's the model default. Not a designed product.
-I replace that screen and ship it in code.`,
+We replace that screen and ship it in code.`,
     x: `Most AI products look the same.
-That's the model default. I replace that screen and ship it in code.`,
+That's the model default. We replace that screen and ship it in code.`,
   },
   {
     slug: "ford-operator",

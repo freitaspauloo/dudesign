@@ -4,7 +4,7 @@ import "../posts.css";
 
 export const metadata: Metadata = {
   title: "Posts",
-  description: "I design complex product surfaces and ship them in code.",
+  description: "We design complex product surfaces and ship them in code.",
   robots: { index: false, follow: false },
 };
 

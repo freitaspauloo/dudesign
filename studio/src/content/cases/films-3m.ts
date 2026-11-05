@@ -12,7 +12,7 @@ export const films3m: CaseStudy = {
   year: "2024",
   timeline: "2023 – 2025",
   team: "xix3D",
-  roleTitle: "Product Designer",
+  roleTitle: "Product design",
   tags: ["Retail tech", "Kiosk", "3D"],
   skillsProven: [
     "Product UX for hardware + software",
@@ -62,7 +62,7 @@ export const films3m: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I designed Zeno as the flagship retail product: kiosk visualization first, then the dealer portal and academy so the same shops could learn new films and run the hardware.",
+        "We designed Zeno as the flagship retail product: kiosk visualization first, then the dealer portal and academy so the same shops could learn new films and run the hardware.",
         "Go-to-market — decks, dealer maps, fleet CGI — used the same identity so rollout didn't look like a different company from the tool on the floor.",
       ],
     },

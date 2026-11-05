@@ -50,10 +50,10 @@ function WaitThreeMonths() {
       <img className="pv-poster-photo" src={assetPath("/posts/mac-hill.png")} alt="" />
       <div className="pv-poster-card" aria-hidden />
       <p className="pv-poster-head">
-        They wait months for a Figma file. I ship the first code in week two.
+        They wait months for a Figma file. We ship the first code in week two.
       </p>
       <p className="pv-poster-sub">
-        Here&apos;s how I do it
+        Here&apos;s how we do it
         <img
           className="pv-poster-arrow"
           src={assetPath("/posts/poster-arrow.svg")}

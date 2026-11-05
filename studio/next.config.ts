@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
       { source: "/posts/keep-the-system", destination: "/posts/how-a-surface-ships", permanent: true },
       { source: "/posts/not-that-hire", destination: "/posts/wait-three-months", permanent: true },
       { source: "/posts/fortune-500-craft", destination: "/posts/wait-three-months", permanent: true },
+      { source: "/fun", destination: "/about", permanent: true },
+      { source: "/resume", destination: "/about", permanent: true },
     ];
   },
 };

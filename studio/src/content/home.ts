@@ -13,7 +13,7 @@ export type HomeFeaturedProject = {
   image: { src: string; alt: string; fit?: "cover" | "contain" };
 };
 
-/** Homepage hero — client/project milestones (employment detail lives on /resume). */
+/** Homepage hero — client/project milestones. */
 export const homeTimeline: HomeTimelineEntry[] = [
   {
     year: "2026",

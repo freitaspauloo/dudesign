@@ -87,7 +87,6 @@ body {
   .proof-strip__label,
   .role-columns h3,
   .decision__index,
-  .resume-block h2,
   .about-sidebar-panel h2,
   .site-footer__base,
   .slide-footer,
@@ -2448,124 +2447,6 @@ html {
   color: var(--ink);
 }
 
-/* --------------------------------------------------------------- résumé */
-.resume-page {
-  max-width: 46rem;
-  margin-inline: auto;
-  padding: var(--space-6) 0 0;
-}
-
-.resume-page h1 {
-  font-size: var(--t-display);
-  letter-spacing: -0.03em;
-  font-weight: 400;
-  color: var(--ink);
-  margin: 0 0 var(--space-1);
-}
-
-.resume-title {
-  font-size: var(--t-body);
-  color: var(--body);
-  margin: 0 0 var(--space-1);
-}
-
-.resume-meta {
-  font-size: var(--t-small);
-  color: var(--body);
-  margin: 0 0 var(--space-5);
-}
-
-.resume-meta a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.resume-meta a:hover {
-  color: var(--ink);
-}
-
-.resume-hint {
-  font-size: var(--t-small);
-  color: var(--mute);
-  margin-bottom: var(--space-4);
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
-.resume-block {
-  padding: var(--space-4) 0;
-  border-top: 1px solid var(--line);
-}
-
-.resume-block h2 {
-  font-size: var(--t-meta);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--mute);
-  margin: 0 0 var(--space-2);
-  font-weight: 500;
-}
-
-.resume-block p,
-.resume-block li {
-  font-size: var(--t-body);
-  line-height: 1.65;
-  color: var(--body);
-}
-
-.resume-block strong {
-  color: var(--ink-2);
-  font-weight: 500;
-}
-
-.resume-block p {
-  margin: 0 0 var(--space-2);
-}
-
-.resume-job {
-  margin-bottom: var(--space-4);
-}
-
-.resume-job--compact {
-  margin-bottom: var(--space-2);
-}
-
-.resume-job__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  margin-bottom: 0.15rem;
-}
-
-.resume-job__head strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.resume-job__head span {
-  font-size: var(--t-small);
-  color: var(--mute);
-  white-space: nowrap;
-}
-
-.resume-job__role {
-  font-size: var(--t-small);
-  color: var(--body);
-  margin: 0 0 var(--space-2);
-}
-
-.resume-skills {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.resume-skills li {
-  margin-bottom: var(--space-2);
-}
-
 /* ------------------------------------------------------------ responsive */
 @media (max-width: 960px) {
   .site-header {
@@ -2947,15 +2828,6 @@ html {
   color: var(--frame-ink);
 }
 
-.page--frame .resume-page h1 {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  letter-spacing: -0.02em;
-}
-
-.page--frame .resume-block h2 {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-}
-
 .frame-home {
   display: flex;
   flex-direction: column;
@@ -3179,55 +3051,6 @@ a.frame-hero__company {
   flex-shrink: 0;
 }
 
-.frame-fun {
-  padding: 0;
-}
-
-.frame-fun__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
-}
-
-.frame-fun__card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  min-width: 0;
-}
-
-.frame-fun__label {
-  margin: 0;
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--frame-meta);
-}
-
-.frame-fun__title {
-  margin: 0;
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  color: var(--frame-title);
-}
-
-.frame-fun__copy {
-  margin: 0;
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  color: var(--frame-body);
-  max-width: 42ch;
-}
-
-.frame-fun__link-wrap {
-  margin: 0.25rem 0 0;
-  font-size: var(--t-small);
-}
-
 .frame-work {
   padding: 1rem var(--frame-pad-x);
 }
@@ -3428,8 +3251,7 @@ a.frame-hero__company {
     width: 100%;
   }
 
-  .frame-work__grid,
-  .frame-fun__grid {
+  .frame-work__grid {
     grid-template-columns: 1fr;
   }
 
@@ -3576,7 +3398,6 @@ a.frame-hero__company {
   .frame-bar,
   .site-header,
   .site-footer,
-  .resume-hint,
   .case-study__back,
   .prototype-embed,
   .site-cursor {

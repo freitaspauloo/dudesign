@@ -29,9 +29,9 @@ npm run dev
 | `/` | Home — hero + selected work |
 | `/work` | Case index |
 | `/work/*` | Case studies |
-| `/fun` | Interests |
 | `/about` | Studio |
-| `/resume` | Studio background |
+
+`/fun` and `/resume` exist only on the personal portfolio. Here they redirect to `/about`.
 
 ## Content
 

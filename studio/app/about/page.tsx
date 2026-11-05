@@ -37,9 +37,6 @@ export default function AboutPage() {
             .
           </p>
           <nav className="about-body__links" aria-label="Contact">
-            <Link href="/resume" className="frame-bar__link">
-              <SwapLabel>resume</SwapLabel>
-            </Link>
             <a
               href={site.linkedin}
               className="frame-bar__link"

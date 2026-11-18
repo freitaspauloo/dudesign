@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
-  engagement,
   enterpriseWork,
 } from "@/src/content/enterprise-work";
 
@@ -48,7 +47,14 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
           />
           <div className="frame-enterprise__main">
             <h2 id="enterprise-heading" className="frame-enterprise__headline">
-              {enterpriseWork.headline}
+              <span className="frame-enterprise__headline-line">
+                {enterpriseWork.headline}
+              </span>
+              {enterpriseWork.subheadline ? (
+                <span className="frame-enterprise__headline-line frame-enterprise__headline-line--soft">
+                  {enterpriseWork.subheadline}
+                </span>
+              ) : null}
             </h2>
             <div className="frame-enterprise__copy">
               {enterpriseWork.body.map((paragraph) => (
@@ -76,22 +82,6 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
 
         <div className="frame-engagement">
           <FrameMarquee />
-          <div className="frame-engagement__intro">
-            <p className="frame-engagement__eyebrow">The sprint</p>
-            <h3>Shipped in two weeks.</h3>
-            <p>
-              $4,500. One sprint at a time. After that, from $4,000 a month.
-            </p>
-          </div>
-          <ol className="frame-engagement__track">
-            {engagement.map((step) => (
-              <li key={step.index}>
-                <p className="frame-engagement__when">{step.when}</p>
-                <h4>{step.title}</h4>
-                <p>{step.body}</p>
-              </li>
-            ))}
-          </ol>
         </div>
 
       </section>

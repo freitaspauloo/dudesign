@@ -7,25 +7,25 @@ export type EnterpriseHighlight = {
   logos: { src: string; alt: string }[];
 };
 
-/** The current sprint. Same terms as studio pricing and the deck. */
+/** How a project runs with Paulo. The priced sprint lives on the studio site. */
 export const engagement = [
   {
     index: "01",
-    when: "Week 1",
-    title: "Questions, then the flow",
-    body: "Questions on day 1. Then the flow, with 2 or 3 options, then a clickable prototype. Every day, a 10-minute check-in.",
+    when: "First",
+    title: "The job",
+    body: "I write what the person is trying to finish, and the constraint, before I draw.",
   },
   {
     index: "02",
-    when: "Week 2",
-    title: "In the product",
-    body: "Production UI in your code. Then staging, a recorded walkthrough, and a handoff note.",
+    when: "Then",
+    title: "The flow",
+    body: "A couple of options, then a clickable version of the hard part.",
   },
   {
     index: "03",
-    when: "After",
-    title: "From $4,000 a month",
-    body: "A 3-month minimum. Continue within two weeks and the sprint fee is credited to the first month.",
+    when: "In the product",
+    title: "The interface",
+    body: "I build it in the code, then stay next to engineering while it ships.",
   },
 ];
 
@@ -39,10 +39,11 @@ export const experienceTimeline = [
 ];
 
 export const enterpriseWork = {
-  headline: "Before the startups, the hard surfaces.",
-  subheadline: "",
+  headline: "The sprint is short",
+  subheadline: "because the last decade wasn't.",
   body: [
-    "For two years I was the product designer at xix3D, designing the customer-facing software behind Audi, Samsung, 3M, Ford, Sony, Honda, and Costco. Configurators, 3D on the shop floor, dealer tools, packaging systems. The same job as the startup work: a person has to finish something hard, and the interface is how they do it.",
+    "Before DUDESIGN, I designed product, HMI and brand systems at xix3D for global automotive and consumer tech clients.",
+    "Audi, Samsung, 3M, Ford, and Sony + Honda (Afeela). Now that same bar goes into AI startups.",
   ],
   mosaic: { src: "/work/tiles.webp", alt: "Selected work across automotive, retail, and consumer tech" },
   clients: ["Audi", "Samsung", "3M", "Ford", "Sony", "Honda", "Costco"],

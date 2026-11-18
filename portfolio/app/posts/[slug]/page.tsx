@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyCaption } from "@/src/components/CopyCaption";
+import { DepartureMonoSlide } from "@/src/components/DepartureMonoSlide";
 import { ExportPostVisual } from "@/src/components/ExportPostVisual";
 import { getSocialPost, socialPosts } from "@/src/content/social-posts";
 
@@ -43,7 +44,16 @@ export default async function SocialPostPage({ params }: PageProps) {
           all posts
         </Link>
         <div className="post-page">
-          <ExportPostVisual post={post} />
+          <div className="post-slides">
+            <ExportPostVisual post={post} />
+            {post.slug === "pixel-fonts" ? (
+              <div className="pv-frame pv-frame--preview">
+                <div className="pv">
+                  <DepartureMonoSlide />
+                </div>
+              </div>
+            ) : null}
+          </div>
           <div className="post-copy">
             <p className="post-sub">
               {post.number} · {post.format} · {date} · {post.channels.join(" · ")}

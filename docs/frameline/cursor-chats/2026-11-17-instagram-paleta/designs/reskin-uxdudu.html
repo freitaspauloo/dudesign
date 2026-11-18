@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<title>ux.dudu reskin</title>
+<style>
+  @font-face { font-family: Inter; src: url("fonts/Inter-Regular.ttf"); font-weight: 400; }
+  @font-face { font-family: Inter; src: url("fonts/Inter-Medium.ttf"); font-weight: 500; }
+  @font-face { font-family: "Instrument Serif"; src: url("fonts/InstrumentSerif-Regular.ttf"); font-weight: 400; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: #0b0d12; }
+  .slide { display: none; width: 1080px; height: 1350px; position: relative; background: #070b14; }
+  .slide:target { display: block; }
+  .grain {
+    position: absolute; inset: 0; pointer-events: none; z-index: 2;
+    background-image: url("grain.png?v=3");
+    background-size: 720px 720px;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+  }
+  .slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  #cap {
+    padding: 64px 52px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(70% 50% at 100% 0%, rgba(45,107,255,.35), transparent 60%),
+      #070b14;
+  }
+  #cap:target { display: flex; }
+  #cap .grain { opacity: 0.35; }
+  #cap h1 {
+    font-family: "Instrument Serif", serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #f4f7ff;
+    letter-spacing: -0.02em;
+  }
+  #cap p {
+    margin-top: 28px;
+    font-family: Inter, sans-serif;
+    font-size: 28px;
+    line-height: 1.45;
+    color: rgba(244,247,255,.72);
+    max-width: 22em;
+  }
+</style>
+</head>
+<body>
+
+<section class="slide" id="cap">
+  <div class="grain"></div>
+  <h1>Sites para você buscar inspiração de design, ver se seu projeto está otimizado para IA, estúdio para criação de posts, biblioteca de componentes e skill de ilustração vetorial isométrica</h1>
+</section>
+
+<section class="slide" id="01"><img src="refs/uxdudu/01-vibrant.jpg" alt="" /></section>
+<section class="slide" id="02"><img src="refs/uxdudu/02-premotio.jpg" alt="" /></section>
+<section class="slide" id="03"><img src="refs/uxdudu/03.jpg" alt="" /></section>
+<section class="slide" id="04"><img src="refs/uxdudu/04.jpg" alt="" /></section>
+<section class="slide" id="05"><img src="refs/uxdudu/05-cta.jpg" alt="" /></section>
+
+</body>
+</html>

@@ -26,6 +26,7 @@ body {
   --paper-line: #ddddda;
 
   --frame-max: 100rem;
+  --frame-bg: #fafafa;
   --frame-pad-x: clamp(1rem, 3vw, 2.5rem);
   --frame-bar-pad-x: clamp(1rem, 3vw, 2.5rem);
   --frame-ink: #32404f;
@@ -1523,7 +1524,6 @@ html {
   gap: 1.25rem 2rem;
   margin: 0;
   padding: clamp(1.25rem, 2vw, 1.75rem) 0 clamp(1.5rem, 3vw, 2rem);
-  border-top: 1px solid var(--line);
 }
 
 .case-study__fact {
@@ -1659,7 +1659,7 @@ html {
 }
 
 .case-study__hero:not(:has(.prototype-launch)) {
-  border: 1px solid #ececec;
+  border: 0;
 }
 
 .case-study__hero:has(video) {
@@ -2666,7 +2666,7 @@ html {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: #ffffff;
+    background: var(--frame-bg);
     padding-bottom: 0.75rem;
     margin-inline: calc(-1 * var(--frame-pad-x, 1rem));
     padding-inline: var(--frame-pad-x, 1rem);
@@ -2802,7 +2802,7 @@ html {
 
 /* ------------------------------------------- Paper frame (15H-0) homepage */
 .page--frame {
-  background: #ffffff;
+  background: var(--frame-bg);
   width: 100%;
   min-height: 100dvh;
 }
@@ -2862,14 +2862,14 @@ html {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: #ffffff;
+  background: var(--frame-bg);
 }
 
 .page--frame:has(.case-study) .case-study__sidebar {
   position: sticky;
   top: calc(3.25rem + 0.75rem);
   max-height: calc(100dvh - 3.25rem - 1.5rem);
-  background: #ffffff;
+  background: var(--frame-bg);
 }
 
 .page--frame .case-study__back {
@@ -2963,9 +2963,10 @@ html {
 }
 
 .frame-home {
+  --section-pad: 10rem;
   display: flex;
   flex-direction: column;
-  padding-bottom: 4rem;
+  padding-bottom: 0;
   width: 100%;
 }
 
@@ -3074,10 +3075,10 @@ html {
 .frame-hero {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: end;
+  align-items: start;
   gap: 2rem;
   min-height: 24.9375rem;
-  padding: 5.5rem var(--frame-pad-x) 4rem;
+  padding: clamp(6rem, 14vw, 12.5rem) var(--frame-pad-x) clamp(3.5rem, 7vw, 6.25rem);
   box-sizing: border-box;
 }
 
@@ -3091,8 +3092,9 @@ html {
   padding-bottom: 0.5rem;
 }
 
-.frame-hero__actions .btn {
+.frame-bar__cta {
   border-radius: 0;
+  flex-shrink: 0;
   padding: 10px 14px;
   font-size: 1rem;
   font-weight: 400;
@@ -3100,7 +3102,7 @@ html {
   gap: 6px;
 }
 
-.frame-hero__actions .btn-arrow {
+.frame-bar__cta .btn-arrow {
   width: 14px;
   height: 14px;
 }
@@ -3111,12 +3113,6 @@ html {
   font-size: 0.9375rem;
   line-height: 1.5;
   color: var(--frame-ink-soft);
-}
-
-.frame-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
 }
 
 .frame-hero__title {
@@ -3187,6 +3183,16 @@ html {
 .hero-timeline-preview[data-visible="true"] {
   opacity: 1;
   visibility: visible;
+}
+
+.hero-timeline-preview.is-bonsai {
+  background: #044efd;
+  border-color: #044efd;
+}
+
+.hero-timeline-preview.is-bonsai .bonsai-thumb svg {
+  transform: scale(1.65);
+  transform-origin: center center;
 }
 
 .hero-timeline-preview img {
@@ -3286,10 +3292,10 @@ a.frame-hero__company {
 
 .frame-proposal {
   display: grid;
-  grid-template-columns: minmax(7rem, 0.72fr) minmax(0, 1.7fr);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  padding: clamp(4.5rem, 10vh, 7.5rem) var(--frame-pad-x);
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  padding: 0 var(--frame-pad-x) clamp(5rem, 12.8vw, 11.5625rem);
   box-sizing: border-box;
 }
 
@@ -3297,7 +3303,7 @@ a.frame-hero__company {
   display: grid;
   grid-template-columns: repeat(3, 22px);
   gap: 16px 22px;
-  justify-self: end;
+  justify-self: start;
   width: max-content;
 }
 
@@ -3322,11 +3328,16 @@ a.frame-hero__company {
   }
 }
 
+.frame-proposal__copy {
+  width: min(100%, 22em);
+  font-size: clamp(2.25rem, 4.15vw, 3.75rem);
+}
+
 .frame-proposal h2 {
   margin: 0;
-  max-width: min(14em, 100%);
+  max-width: none;
   font-family: var(--font-suisse), "Suisse Int'l", sans-serif;
-  font-size: clamp(2.25rem, 4.15vw, 3.75rem);
+  font-size: 1em;
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.03em;
@@ -3334,8 +3345,8 @@ a.frame-hero__company {
 }
 
 .frame-proposal__meter {
-  width: min(16rem, 72%);
-  margin: 2.75rem auto 0;
+  width: 100%;
+  margin: 0.85em 0 0;
 }
 
 .frame-proposal__meter-labels {
@@ -3371,8 +3382,8 @@ a.frame-hero__company {
     justify-self: start;
   }
 
-  .frame-proposal__meter {
-    margin-left: 0;
+  .frame-proposal__copy {
+    width: 100%;
   }
 }
 
@@ -3389,7 +3400,7 @@ a.frame-hero__company {
 }
 
 .frame-home .frame-work {
-  padding: 1.5rem var(--frame-pad-x) 4.5rem;
+  padding: 0 var(--frame-pad-x) clamp(4.5rem, 11vw, 10rem);
 }
 
 .frame-work__grid {
@@ -3576,35 +3587,37 @@ a.frame-hero__company {
 .frame-enterprise {
   display: flex;
   flex-direction: column;
-  gap: clamp(5.5rem, 10vh, 8.5rem);
-  padding: clamp(8rem, 14vh, 12rem) var(--frame-pad-x) clamp(4rem, 8vh, 7rem);
+  gap: clamp(6rem, 17vw, 15.375rem);
+  padding: clamp(4.5rem, 11vw, 10rem) var(--frame-pad-x) 0;
 }
 
 .frame-enterprise__layout {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(4.5rem, 17.5rem) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.875rem;
 }
 
 .frame-enterprise__mark {
   width: 1.75rem;
   height: 1.75rem;
+  margin-top: 0.625rem;
 }
 
 .frame-enterprise__main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2.25rem;
+  gap: 3.125rem;
   min-width: 0;
+  width: 100%;
 }
 
 .frame-enterprise__clients {
-  display: inline-grid;
-  grid-template-columns: max-content;
-  max-width: min(46rem, 100%);
-  margin-top: 0.75rem;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin-top: 0.625rem;
 }
 
 .frame-logo-row {
@@ -3612,10 +3625,12 @@ a.frame-hero__company {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 2.25rem;
+  justify-content: space-between;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
-  max-width: 100%;
+  width: 100%;
+  max-width: none;
 }
 
 .frame-logo-row img {
@@ -3634,7 +3649,7 @@ a.frame-hero__company {
   align-items: center;
   gap: 0.75rem;
   width: 100%;
-  margin-top: 1.25rem;
+  margin-top: 3.75rem;
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.6875rem;
   letter-spacing: 0.04em;
@@ -3667,7 +3682,7 @@ a.frame-hero__company {
   align-items: center;
   justify-content: center;
   gap: 0.875rem;
-  background: #ffffff;
+  background: var(--frame-bg);
   border-right: 1px solid var(--frame-line);
   border-bottom: 1px solid var(--frame-line);
   padding: clamp(1rem, 2.5vw, 1.75rem) clamp(0.5rem, 2vw, 0.75rem);
@@ -3707,7 +3722,7 @@ a.frame-hero__company {
 }
 
 .frame-enterprise__headline-line--soft {
-  color: var(--frame-body);
+  color: inherit;
 }
 
 .frame-enterprise__copy {
@@ -3719,9 +3734,9 @@ a.frame-hero__company {
 
 .frame-enterprise__copy p {
   margin: 0;
-  max-width: 42ch;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  max-width: 70%;
+  font-size: clamp(1.125rem, 1.67vw, 1.5rem);
+  line-height: 1.4;
   color: var(--frame-body);
 }
 
@@ -3940,10 +3955,9 @@ a.frame-hero__company {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  min-height: 69.7vh;
   background: var(--ink);
   color: var(--white);
-  padding: clamp(7.65rem, 15.3vh, 12.75rem) clamp(1.5rem, 6vw, 4rem);
+  padding: clamp(6rem, 15.3vw, 13.75rem) clamp(1.5rem, 6vw, 4rem);
 }
 
 .frame-feedback figure {
@@ -3987,8 +4001,17 @@ a.frame-hero__company {
 .frame-how,
 .frame-tools,
 .frame-contact {
-  padding: clamp(4.5rem, 8vw, 7rem) var(--frame-pad-x);
+  padding: var(--section-pad) var(--frame-pad-x);
   border-top: 1px solid var(--frame-border);
+}
+
+.frame-how {
+  padding: clamp(4.5rem, 11vw, 10rem) var(--frame-pad-x) 0;
+}
+
+.frame-contact {
+  border-top: 0;
+  padding: clamp(4.5rem, 11vw, 10rem) var(--frame-pad-x);
 }
 
 .frame-how h2,
@@ -4001,6 +4024,10 @@ a.frame-hero__company {
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.03em;
+}
+
+.frame-contact h2 {
+  max-width: none;
 }
 
 .frame-how__list {
@@ -4050,7 +4077,7 @@ a.frame-hero__company {
 }
 
 .frame-engagement__intro h3 {
-  margin: 0.4rem 0 0;
+  margin: 0;
   font-family: var(--font-suisse), "Suisse Int'l", sans-serif;
   font-size: clamp(2.25rem, 4.15vw, 3.75rem);
   font-weight: 400;
@@ -4094,10 +4121,11 @@ a.frame-hero__company {
 
 .frame-marquee__group {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 1.75rem;
   margin: 0;
-  padding: 0 0.875rem 0 0;
+  padding: 0 1.75rem 0 0;
   list-style: none;
 }
 
@@ -4132,15 +4160,6 @@ a.frame-hero__company {
   .frame-marquee__track {
     animation: none;
   }
-}
-
-.frame-engagement__eyebrow {
-  margin: 0;
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--frame-ink-soft);
 }
 
 .frame-engagement__track {

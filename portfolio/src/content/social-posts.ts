@@ -166,6 +166,19 @@ OEM-aftermarket program. Designed with Ford.`,
 In-cabin experience. Designed and coded.`,
     x: `Afeela HMI surface. Designed and coded.`,
   },
+  {
+    slug: "pixel-fonts",
+    number: "10",
+    title: "Pixel fonts",
+    date: "2026-11-18",
+    kind: "process",
+    format: "Stack",
+    channels: ["Instagram"],
+    visual: "Blue field, Bayer 16×16 dither, Geist Pixel. 1080 × 1350.",
+    linkedin: `pixel
+fonts`,
+    x: `pixel fonts`,
+  },
 ];
 
 export function getSocialPost(slug: string): SocialPost | undefined {

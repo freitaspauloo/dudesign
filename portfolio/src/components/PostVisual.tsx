@@ -1,4 +1,5 @@
 import type { SocialPost } from "@/src/content/social-posts";
+import { PixelFontsPost } from "@/src/components/PixelFontsPost";
 import { assetPath } from "@/src/lib/asset-path";
 
 type PostVisualProps = {
@@ -25,6 +26,8 @@ function visualFor(post: SocialPost) {
       return <ProcessSurfaceShips />;
     case "model-default":
       return <ProcessModelDefault />;
+    case "pixel-fonts":
+      return <PixelFontsPost />;
     default:
       return null;
   }

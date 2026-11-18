@@ -6,7 +6,7 @@ import { bonsaiMarks, type BonsaiMark } from "./bonsai-marks";
 const PITCH = 22.5;
 const SIZE = 19;
 const PAD = (PITCH - SIZE) / 2;
-const HOLD = 3;
+const HOLD = 7;
 const ROW_GAP = 0.038;
 const FADE = 0.16;
 const STAGGER = 0.01;
@@ -63,7 +63,7 @@ function build(mark: BonsaiMark): Built {
   return { id: mark.id, squares, intro };
 }
 
-const marks = bonsaiMarks.map(build);
+const marks = [build(bonsaiMarks[0])];
 const cycle = marks.reduce((sum, mark) => sum + mark.intro * 2 + HOLD, 0);
 
 function shown(start: number, time: number) {

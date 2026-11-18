@@ -2,7 +2,7 @@ export const site = {
   name: "Paulo Freitas",
   title: "Product Designer + Engineer",
   tagline:
-    "I get startups ready to go to market. I design the product so it can launch, raise, and look 10x bigger, and I ship the interface in code. 5+ years, since 2021, from Fortune 500 automotive to early-stage AI.",
+    "I design the product and ship the interface in code. 5+ years, since 2021, from Fortune 500 companies to early-stage AI.",
   status:
     "Open to senior product design roles. US market. I work with product and engineering from the first bet through the shipped interface.",
   domain: "paulo.dudesign.us",

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Kalypso reskin</title>
+<style>
+  @font-face { font-family: Anton; src: url("fonts/Anton.ttf"); font-weight: 400; }
+  @font-face { font-family: Inter; src: url("fonts/Inter-Regular.ttf"); font-weight: 400; }
+  @font-face { font-family: Inter; src: url("fonts/Inter-ExtraBold.ttf"); font-weight: 800; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1440px; overflow: hidden; background: #0b0d12; }
+  .slide { display: none; width: 1080px; height: 1440px; position: relative; background: #0b0d12; }
+  .slide:target { display: block; }
+  .grain {
+    position: absolute; inset: 0; pointer-events: none; z-index: 3;
+    background-image: url("grain.png?v=3");
+    background-size: 720px 720px;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+  }
+  #cover {
+    padding: 72px 48px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #cover:target { display: flex; }
+  #cover h1 {
+    font-family: Anton, Inter, sans-serif;
+    font-size: 300px;
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #2d6bff;
+    white-space: nowrap;
+  }
+  .shot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<section class="slide" id="cover">
+  <div class="grain"></div>
+  <h1>OPEN<br>SOURCE<br>DESIGN<br>TOOLS</h1>
+</section>
+
+<section class="slide shot" id="s2"><img src="refs/kalypso-02.jpg" alt="" /></section>
+<section class="slide shot" id="s3"><img src="refs/kalypso-03.jpg" alt="" /></section>
+<section class="slide shot" id="s4"><img src="refs/kalypso-04.jpg" alt="" /></section>
+<section class="slide shot" id="s5"><img src="refs/kalypso-05.jpg" alt="" /></section>
+<section class="slide shot" id="s6"><img src="refs/kalypso-06.jpg" alt="" /></section>
+
+</body>
+</html>

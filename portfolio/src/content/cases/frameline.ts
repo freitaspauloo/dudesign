@@ -3,7 +3,7 @@ import type { CaseStudy } from "../types";
 export const frameline: CaseStudy = {
   slug: "frameline",
   title: "Frameline",
-  cardTitle: "Installable design system",
+  cardTitle: "AI design assets library",
   client: "Frameline",
   subtitle:
     "A design-engineering surface library, because taste doesn't ship as code unless someone builds the install path.",

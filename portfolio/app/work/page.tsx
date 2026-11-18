@@ -7,7 +7,7 @@ import { getPublishedCases } from "@/src/content/cases";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Selected product design work, from early-stage AI to Fortune 500 automotive.",
+  description: "Selected product design work, from early-stage AI to Fortune 500 companies.",
 };
 
 export default function WorkPage() {
@@ -18,7 +18,7 @@ export default function WorkPage() {
       <header className="page-intro page-intro--frame">
         <h1>Work</h1>
         <p>
-          Selected product design work, from early-stage AI to Fortune 500 automotive.
+          Selected product design work, from early-stage AI to Fortune 500 companies.
         </p>
       </header>
 

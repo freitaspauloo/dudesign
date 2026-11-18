@@ -1523,7 +1523,6 @@ html {
   gap: 1.25rem 2rem;
   margin: 0;
   padding: clamp(1.25rem, 2vw, 1.75rem) 0 clamp(1.5rem, 3vw, 2rem);
-  border-top: 1px solid var(--line);
 }
 
 .case-study__fact {
@@ -1659,7 +1658,7 @@ html {
 }
 
 .case-study__hero:not(:has(.prototype-launch)) {
-  border: 1px solid #ececec;
+  border: 0;
 }
 
 .case-study__hero:has(video) {
@@ -3632,7 +3631,7 @@ a.frame-hero__company {
   align-items: center;
   gap: 0.75rem;
   width: 100%;
-  margin-top: 1.25rem;
+  margin-top: 2.25rem;
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.6875rem;
   letter-spacing: 0.04em;

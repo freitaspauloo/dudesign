@@ -3,7 +3,7 @@ import type { CaseStudy } from "../types";
 export const costco: CaseStudy = {
   slug: "costco",
   title: "Costco",
-  cardTitle: "Automotive packaging",
+  cardTitle: "Medical gloves packaging",
   client: "Costco",
   subtitle:
     "A mass-market retail brand needed to look like it belonged next to specialist automotive products.",

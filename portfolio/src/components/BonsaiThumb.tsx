@@ -6,7 +6,7 @@ import { bonsaiMarks, type BonsaiMark } from "./bonsai-marks";
 const PITCH = 22.5;
 const SIZE = 19;
 const PAD = (PITCH - SIZE) / 2;
-const HOLD = 3;
+const HOLD = 7;
 const ROW_GAP = 0.038;
 const FADE = 0.16;
 const STAGGER = 0.01;
@@ -63,7 +63,11 @@ function build(mark: BonsaiMark): Built {
   return { id: mark.id, squares, intro };
 }
 
-const marks = bonsaiMarks.map(build);
+const marks = [build(bonsaiMarks[0])];
+
+type Props = {
+  patternId?: string;
+};
 const cycle = marks.reduce((sum, mark) => sum + mark.intro * 2 + HOLD, 0);
 
 function shown(start: number, time: number) {
@@ -87,7 +91,7 @@ function markAt(elapsed: number) {
   return { index: 0, time: 0 };
 }
 
-export function BonsaiThumb() {
+export function BonsaiThumb({ patternId = "bonsai-field" }: Props = {}) {
   const nodes = useRef<(SVGRectElement | null)[][]>([]);
   const root = useRef<HTMLDivElement>(null);
 
@@ -160,7 +164,7 @@ export function BonsaiThumb() {
         <title>Conifer pixel marks</title>
         <defs>
           <pattern
-            id="bonsai-field"
+            id={patternId}
             width={PITCH * SCALE}
             height={PITCH * SCALE}
             patternUnits="userSpaceOnUse"
@@ -178,7 +182,7 @@ export function BonsaiThumb() {
           </pattern>
         </defs>
         <rect x={VIEW_X} y="0" width={VIEW_W} height={VIEW_H} fill="#044EFD" />
-        <rect x={VIEW_X} y="0" width={VIEW_W} height={VIEW_H} fill="url(#bonsai-field)" />
+        <rect x={VIEW_X} y="0" width={VIEW_W} height={VIEW_H} fill={`url(#${patternId})`} />
         <g transform={`translate(${CX} ${CY}) scale(${SCALE}) translate(${-CX} ${-CY})`}>
           {marks.map((mark, markIndex) =>
             mark.squares.map((square, index) => (

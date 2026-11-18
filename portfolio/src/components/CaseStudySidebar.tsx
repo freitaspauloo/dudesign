@@ -44,7 +44,7 @@ export function CaseStudySidebar({ items }: Props) {
   return (
     <aside className="case-study__sidebar">
       <Link href="/work" className="case-study__back">
-        ← BACK
+        Back
       </Link>
       <nav className="case-study__nav" aria-label="Case study sections">
         <ul>

@@ -13,7 +13,7 @@ export function SiteFooter() {
     <footer className="frame-bar frame-bar--footer">
       <div className="frame-bar__inner">
         <p className="frame-bar__credit">
-          <a href={site.studioUrl}>Need a product sprint? DUDESIGN studio</a>
+          <a href={site.studioUrl}>DUDESIGN studio</a>
         </p>
         <nav className="frame-bar__social" aria-label="Footer">
           {links.map((item) => (

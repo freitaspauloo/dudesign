@@ -9,7 +9,10 @@
     "lint": "next lint",
     "portfolio:install": "npm install --prefix portfolio",
     "portfolio:dev": "npm run dev --prefix portfolio",
-    "portfolio:build": "npm run build --prefix portfolio"
+    "portfolio:build": "npm run build --prefix portfolio",
+    "studio:install": "npm install --prefix studio",
+    "studio:dev": "npm run dev --prefix studio",
+    "studio:build": "npm run build --prefix studio"
   },
   "dependencies": {
     "geist": "^1.7.2",

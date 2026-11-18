@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Instrument_Serif } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
@@ -14,10 +15,17 @@ const instrumentSerif = Instrument_Serif({
   weight: ["400"],
 });
 
+const suisse = localFont({
+  src: "../fonts/SuisseIntl-Regular.otf",
+  variable: "--font-suisse",
+  weight: "400",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.title}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | Senior Product Designer`,
+    template: `%s | ${site.name}`,
   },
   description: site.tagline,
   metadataBase: new URL(site.url),
@@ -37,7 +45,7 @@ export const metadata: Metadata = {
     apple: "/brand/mark-light.svg",
   },
   openGraph: {
-    title: `${site.name} — ${site.title}`,
+    title: `${site.name} | Senior Product Designer`,
     description: site.tagline,
     url: site.url,
     siteName: site.name,
@@ -53,9 +61,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} ${instrumentSerif.variable}`}
+      className={`${suisse.variable} ${GeistSans.variable} ${GeistMono.variable} ${instrumentSerif.variable}`}
     >
-      <body className={GeistSans.className}>
+      <body className={suisse.className}>
         <SiteCursor />
         <div className="page page--frame">
           <SiteHeader />

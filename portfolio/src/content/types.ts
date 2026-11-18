@@ -63,10 +63,18 @@ export type CaseStudy = {
   links: CaseLink[];
   prototype?: CasePrototype;
   sections: CaseSection[];
-  cover: { src: string; alt: string; fit?: "cover" | "contain" };
+  cover: {
+    src: string;
+    alt: string;
+    fit?: "cover" | "contain";
+    /** Looping cover. `src` is the still poster. */
+    video?: string;
+  };
   logos?: { src: string; alt: string }[];
   /** Visual blocks between overview and narrative sections. */
   gallery?: CaseGalleryBlock[];
+  /** One line under the title naming the surface. */
+  surfaceLine?: string;
   /** Large display headline under the eyebrow. Falls back to subtitle. */
   displayTitle?: string;
   /** Short label in the eyebrow after the client, e.g. "AI WORKSPACE". */
@@ -78,4 +86,6 @@ export type CaseStudy = {
   featured?: boolean;
   published: boolean;
   order: number;
+  /** Place the key-decisions block after this section, then continue the story. */
+  decisionsAfter?: string;
 };

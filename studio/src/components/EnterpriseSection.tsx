@@ -1,0 +1,350 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { engagement, enterpriseWork } from "@/src/content/enterprise-work";
+
+import { assetPath } from "@/src/lib/asset-path";
+
+import { FrameMarquee } from "@/src/components/FrameMarquee";
+import { SwapLabel } from "@/src/components/SwapLabel";
+import { Reveal } from "./motion/Reveal";
+
+import { SectionIntro } from "./motion/SectionIntro";
+
+
+
+type Props = {
+
+  /** Only supplied on the home page, which numbers its sections. */
+
+  index?: string;
+
+  variant?: "default" | "paper" | "frame";
+
+};
+
+
+
+export function EnterpriseSection({ index, variant = "default" }: Props) {
+
+  if (variant === "frame") {
+
+    return (
+
+      <section
+        id="enterprise-work"
+        className="frame-enterprise"
+        aria-labelledby="enterprise-heading"
+      >
+
+        <div className="frame-enterprise__layout">
+          <img
+            className="frame-enterprise__mark"
+            src={assetPath("/brand/mark-light.svg")}
+            alt=""
+          />
+          <div className="frame-enterprise__main">
+            <h2 id="enterprise-heading" className="frame-enterprise__headline">
+              <span className="frame-enterprise__headline-line">
+                {enterpriseWork.headline}
+              </span>
+              {enterpriseWork.subheadline ? (
+                <span className="frame-enterprise__headline-line frame-enterprise__headline-line--soft">
+                  {enterpriseWork.subheadline}
+                </span>
+              ) : null}
+            </h2>
+            <div className="frame-enterprise__copy">
+              {enterpriseWork.body.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="frame-enterprise__clients">
+              <ul className="frame-logo-row" aria-label="Clients">
+                {enterpriseWork.clientLogos.map((client) => (
+                  <li key={client.name}>
+                    {client.logos.map((logo) => (
+                      <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
+                    ))}
+                  </li>
+                ))}
+              </ul>
+              <div className="frame-enterprise__range" aria-hidden="true">
+                <span>2021</span>
+                <span className="frame-enterprise__range-line" />
+                <span>NOW</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="frame-engagement">
+          <FrameMarquee />
+          <div className="frame-engagement__intro">
+            <p className="frame-engagement__eyebrow">The sprint</p>
+            <h3>What happens in two weeks.</h3>
+            <p>
+              Decided with you, and built in the product. Every day, a 10-minute
+              check-in.
+            </p>
+          </div>
+          <ol className="frame-engagement__track">
+            {engagement.map((step) => (
+              <li key={step.index}>
+                <h4>{step.title}</h4>
+                <p>{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+      </section>
+
+    );
+
+  }
+
+
+
+  if (variant === "paper") {
+
+    return (
+
+      <section className="paper-enterprise" aria-labelledby="enterprise-heading">
+
+        <div className="paper-enterprise__intro">
+
+          <h2 id="enterprise-heading" className="paper-enterprise__headline">
+
+            {enterpriseWork.headline}{" "}
+
+            {enterpriseWork.subheadline ? (
+              <span className="is-soft">{enterpriseWork.subheadline}</span>
+            ) : null}
+
+          </h2>
+
+          <div className="paper-enterprise__copy">
+
+            {enterpriseWork.body.map((paragraph) => (
+
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+
+            ))}
+
+          </div>
+
+        </div>
+
+
+
+        <div className="logo-wall-shell">
+          <ul className="logo-wall paper-logo-wall" aria-label="Clients">
+            {enterpriseWork.clientLogos.map((client) => (
+              <li key={client.name}>
+                {client.logos.map((logo) => (
+                  <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
+                ))}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+
+
+        <div className="paper-enterprise__highlights">
+
+          {enterpriseWork.highlights.map((item) => (
+
+            <article key={item.client} className="paper-enterprise-card">
+
+              <div className="paper-enterprise-card__media">
+
+                <Image
+
+                  src={assetPath(item.image.src)}
+
+                  alt={item.image.alt}
+
+                  fill
+
+                  unoptimized
+
+                  sizes="(max-width: 960px) 100vw, 33vw"
+
+                  style={{ objectFit: "cover" }}
+
+                />
+
+              </div>
+
+              <div className="paper-enterprise-card__body">
+
+                <h3>{item.title}</h3>
+
+                <p>{item.client.toUpperCase()} • ENTERPRISE</p>
+
+              </div>
+
+            </article>
+
+          ))}
+
+        </div>
+
+      </section>
+
+    );
+
+  }
+
+
+
+  return (
+
+    <section
+      id="enterprise-work"
+      className="enterprise-section"
+      aria-labelledby="enterprise-heading"
+    >
+
+      <SectionIntro
+
+        index={index}
+
+        label="Fortune 500 work"
+
+        aside="Previously at XIX3D"
+
+      />
+
+
+
+      <Reveal targets="[data-reveal]" className="enterprise-intro">
+
+        <div className="enterprise-copy" data-reveal>
+
+          <h2 id="enterprise-heading" className="enterprise-headline">
+
+            <span>{enterpriseWork.headline}</span>
+
+            {enterpriseWork.subheadline ? (
+              <span className="is-soft">{enterpriseWork.subheadline}</span>
+            ) : null}
+
+          </h2>
+
+          {enterpriseWork.body.map((paragraph) => (
+
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+
+          ))}
+
+        </div>
+
+        <div data-reveal>
+
+          <div className="enterprise-mosaic">
+
+            <Image
+
+              src={assetPath(enterpriseWork.mosaic.src)}
+
+              alt={enterpriseWork.mosaic.alt}
+
+              fill
+
+              unoptimized
+
+              sizes="(max-width: 960px) 100vw, 42vw"
+
+              style={{ objectFit: "contain" }}
+
+            />
+
+          </div>
+
+        </div>
+
+      </Reveal>
+
+
+
+      <Reveal>
+        <div className="logo-wall-shell">
+          <ul className="logo-wall" aria-label="Clients">
+            {enterpriseWork.clientLogos.map((client) => (
+              <li key={client.name}>
+                {client.logos.map((logo) => (
+                  <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
+                ))}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
+
+
+
+      <Reveal targets=".enterprise-card" stagger={0.12}>
+
+        <div className="enterprise-highlights">
+
+          {enterpriseWork.highlights.map((item) => (
+
+            <Link key={item.client} href={item.href} className="enterprise-card">
+
+              <div className="enterprise-card-media">
+
+                <Image
+
+                  src={assetPath(item.image.src)}
+
+                  alt={item.image.alt}
+
+                  fill
+
+                  unoptimized
+
+                  sizes="(max-width: 960px) 100vw, 33vw"
+
+                  style={{ objectFit: "cover" }}
+
+                />
+
+              </div>
+
+              <div className="enterprise-card-body">
+
+                <div className="enterprise-card-logos">
+
+                  {item.logos.map((logo) => (
+
+                    <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
+
+                  ))}
+
+                </div>
+
+                <h3>
+                  <SwapLabel>{item.title}</SwapLabel>
+                </h3>
+                <p>{item.description}</p>
+
+              </div>
+
+            </Link>
+
+          ))}
+
+        </div>
+
+      </Reveal>
+
+    </section>
+
+  );
+
+}
+
+

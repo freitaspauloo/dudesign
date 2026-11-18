@@ -35,7 +35,7 @@ export const costco: CaseStudy = {
     {
       title: "Specialist-grade vs. warehouse-generic",
       chosen:
-        "Medical and automotive cues — shield, grade marks, use icons — so the box earns trust next to brands that charge more.",
+        "Medical and automotive cues, shield, grade marks, use icons, so the box earns trust next to brands that charge more.",
       rejected:
         "A plain warehouse carton. Value without craft reads as cheap in a category where people buy on trust.",
     },
@@ -48,13 +48,13 @@ export const costco: CaseStudy = {
     },
   ],
   collaborators: ["xix3D", "Costco / Kirkland Signature"],
-  links: [{ label: "Studio writeup", url: "https://dudesign.us/work/costco" }],
+  links: [],
   sections: [
     {
       id: "problem",
       title: "Problem",
       body: [
-        "Kirkland Signature is known for value, but in the automotive aftermarket space, value alone doesn't build trust. The challenge was creating brand identity and packaging that positions Kirkland's automotive and technology products as credible competitors to specialist brands — while staying true to the straightforward, no-nonsense identity that Costco customers expect.",
+        "Kirkland Signature is known for value, but in the automotive aftermarket space, value alone doesn't build trust. The challenge was creating brand identity and packaging that positions Kirkland's automotive and technology products as credible competitors to specialist brands, while staying true to the straightforward, no-nonsense identity that Costco customers expect.",
       ],
     },
     {
@@ -68,13 +68,13 @@ export const costco: CaseStudy = {
       id: "outcome",
       title: "Outcome",
       body: [
-        "The final brand and packaging system bridges the gap between mass-market retail and the specialist automotive world — giving Kirkland products shelf presence and visual credibility that competes with brands charging significantly more, without losing the brand's identity as an accessible, high-quality option.",
+        "The final brand and packaging system bridges the gap between mass-market retail and the specialist automotive world, giving Kirkland products shelf presence and visual credibility that competes with brands charging significantly more, without losing the brand's identity as an accessible, high-quality option.",
       ],
     },
   ],
   cover: {
     src: "/work/cases/costco/01.webp",
-    alt: "True Barrier nitrile glove packaging — medical-grade retail system",
+    alt: "True Barrier nitrile glove packaging, medical-grade retail system",
   },
   gallery: [
     {
@@ -85,7 +85,7 @@ export const costco: CaseStudy = {
         {
           id: "medical",
           label: "Medical-grade",
-          caption: "Clear count, size, and grade — trust at warehouse distance.",
+          caption: "Clear count, size, and grade, trust at warehouse distance.",
           src: "/work/cases/costco/03.webp",
           alt: "True Barrier medical nitrile gloves packaging detail",
           variant: "shot",
@@ -93,7 +93,7 @@ export const costco: CaseStudy = {
         {
           id: "heavy-duty",
           label: "Heavy-duty / automotive",
-          caption: "Same mark, darker system — food, home, auto, sanitary, painting, vet.",
+          caption: "Same mark, darker system, food, home, auto, sanitary, painting, vet.",
           src: "/work/cases/costco/04.webp",
           alt: "True Barrier heavy-duty nitrile gloves packaging",
           variant: "shot",

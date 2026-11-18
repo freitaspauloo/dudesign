@@ -125,7 +125,7 @@ export type Slide =
       web: string;
     };
 
-/** Live deck content. Partner offer only. */
+/** Live deck content. The two-week sprint, then monthly. */
 export const slides: Slide[] = [
   {
     id: "title",
@@ -137,17 +137,17 @@ export const slides: Slide[] = [
     kind: "claim",
     category: "",
     lines: [
-      "Product design partner",
+      "Product sprints design",
       "for AI startups.",
     ],
   },
   {
     id: "about",
     kind: "about",
-    headline: "Fortune 500 craft.\nStartup speed.",
+    headline: "Two weeks.\nOne surface.",
     body: [
-      "DUDESIGN is an independent product design partner for AI startups. Product judgment, UX/UI, and interface implementation. One engagement.",
-      "We've shipped for Audi, Samsung, 3M, Ford, Sony + Honda, and Costco. That same standard now serves Series A–B teams that need to move without lowering the bar.",
+      "DUDESIGN runs product sprints for AI startups. We design the one surface that has to be obvious, and ship it in the product. $4,500. One sprint at a time.",
+      "We've shipped for Audi, Samsung, 3M, Ford, Sony + Honda, and Costco. That same standard now goes into one surface, for two weeks.",
     ],
     work: "/work/tiles.png",
   },
@@ -211,70 +211,73 @@ export const slides: Slide[] = [
     layers: [
       {
         name: "Product",
-        detail: "Clarify the bet: discovery, priorities, and what success looks like",
+        detail: "Day 1: the surface in one sentence, what we will not touch, and what done means",
       },
       {
         name: "Design",
-        detail: "Flows, UX/UI, system, and a hi-fi prototype ready to build from",
+        detail: "The flow, including the AI moment, then a clickable prototype",
       },
       {
         name: "Implementation",
-        detail: "Production UI in code: components and pages your team can extend",
+        detail: "Production UI in your code, on staging by the last day",
       },
     ],
   },
   {
     id: "process",
     kind: "process",
-    label: "The Process",
-    headline: "First surface in week two.",
+    label: "The sprint",
+    headline: "One surface in two weeks.",
     phases: [
       {
         when: "Week 1",
-        title: "Discover",
-        detail: "Product bets, architecture, and key flows locked",
+        title: "Questions, then the flow",
+        detail:
+          "Questions on day 1. Then the flow, with 2 or 3 options, then a clickable prototype. Every day, a 10-minute check-in.",
       },
       {
         when: "Week 2",
-        title: "First surface",
-        detail: "Screens in the product you can click through. Not a Figma dump",
+        title: "In the product",
+        detail:
+          "Production UI in your code. Then staging, a recorded walkthrough, and a handoff note.",
       },
       {
-        when: "From week 3",
-        title: "Design + build",
-        detail: "Production UI continues. Standard hands over. Partner and Yearly stay on",
+        when: "After",
+        title: "From $4,000 a month",
+        detail:
+          "A 3-month minimum. Continue within two weeks and the sprint fee is credited to the first month.",
       },
     ],
   },
   {
     id: "included",
     kind: "included",
-    label: "What's Included",
-    headline: "Beyond the deliverables:",
+    label: "What you leave with",
+    headline: "What you leave with.",
     items: [
       {
-        title: "Weekly progress updates",
-        detail: "Every week, a clear summary of what shipped and what's next. No status meetings.",
+        title: "The bet, in one page",
+        detail: "The surface in one sentence, what we will not touch, and what done means.",
       },
       {
-        title: "Dedicated comms channel",
-        detail: "Slack, email, or whatever you use. Direct line to the company.",
+        title: "The flow, including the AI moment",
+        detail: "What the user sees while the model is working, what happens when it is wrong, and how they steer it.",
       },
       {
-        title: "Design system documentation",
-        detail: "Everything your team needs to extend the work after the engagement ends.",
+        title: "The interface",
+        detail: "A clickable prototype in your visual language, then the production UI.",
       },
       {
-        title: "Production UI package",
-        detail: "Specs, assets, component library, production-ready files. No back-and-forth.",
+        title: "Type, color, and components",
+        detail: "For that surface, so your team can extend it.",
       },
       {
-        title: "Iteration in the build",
-        detail: "Feedback as we go. Not two rounds and a freeze. The timeline still holds.",
+        title: "Production UI in your codebase",
+        detail: "In your repo. If the repo is not ready, a coded prototype on your stack.",
       },
       {
-        title: "Portfolio-grade case study",
-        detail: "Published with your approval. Becomes part of your company's design story.",
+        title: "A recorded walkthrough",
+        detail: "On the last day, with a short handoff note. A case study only after you review it.",
       },
     ],
   },
@@ -285,19 +288,19 @@ export const slides: Slide[] = [
     headline: "Compared to the usual options.",
     rows: [
       {
-        buy: "Design agency (handoff)",
-        cost: "$35–60k",
-        us: "A stronger body of work. Shipped in the product, not a file.",
+        buy: "Design agency",
+        cost: "Project fee",
+        us: "The surface ships in the product, in two weeks.",
       },
       {
-        buy: "Full-time design engineer",
-        cost: "$150–220k + equity",
-        us: "Senior partner capacity without a full-time seat",
+        buy: "Full-time hire",
+        cost: "$150k to $220k a year",
+        us: "Senior the whole way, for $4,500.",
       },
       {
-        buy: "Software house MVP",
-        cost: "$40–80k+",
-        us: "Product taste first. Not a build-by-the-hour shop.",
+        buy: "Software house",
+        cost: "$40k to $80k",
+        us: "Product design first, then the UI in your code.",
       },
     ],
   },
@@ -305,160 +308,70 @@ export const slides: Slide[] = [
     id: "tiers",
     kind: "tiers",
     label: "Engagement",
-    headline: "Ways to work together.",
+    headline: "The sprint, then monthly.",
     tiers: [
       {
-        name: "Standard",
-        blurb: "A defined surface, designed and shipped",
-        price: "$7,000/mo",
-        duration: "3-month commit. Billed monthly.",
+        name: "Sprint",
+        tag: "Now",
+        blurb: "A founding price while we build the next set of case studies.",
+        price: "$4,500",
+        duration: "Two weeks. One sprint at a time.",
         includes: [
-          "Hi-fi prototype and production UI",
-          "Iteration in the build, as the work needs it",
-          "Production UI package in code",
-          "First surface in week two",
+          "Questions on day 1, then the flow",
+          "A clickable prototype, then production UI",
+          "Staging, a recorded walkthrough, and a handoff note",
+          "A 10-minute check-in every day",
         ],
-        bestFor: "A first product surface with a defined end date.",
-        note: "Backend, auth, and infra available via engineering partners. A separate engagement, quoted in addition.",
+        bestFor: "A team that needs one surface to be obvious.",
+        note: "Not included: the rest of the app, brand identity, a marketing site, auth, APIs, or infrastructure. Backend work is quoted separately with an engineering partner.",
       },
       {
-        name: "Partner",
-        blurb: "The seat, six-month minimum",
-        price: "$6,000/mo",
-        duration: "6-month commit. Billed monthly.",
-        save: "Save $6,000",
+        name: "Monthly",
+        blurb: "Stay on after the sprint.",
+        price: "From $4,000",
+        duration: "3-month minimum. Billed monthly.",
         includes: [
-          "Everything from Standard, plus:",
-          "Product decisions and design system",
-          "Ongoing product and UI shipping",
-          "The next surface is in the seat, not a new project",
+          "A seat in the weekly product meeting",
+          "One design cycle a week, in your code",
+          "The sprint fee credited if you continue within two weeks",
         ],
-        bestFor: "An ongoing design seat, with a six-month commitment.",
-      },
-      {
-        name: "Yearly",
-        tag: "Recommended",
-        blurb: "The same seat, for the year",
-        price: "$5,000/mo",
-        duration: "12-month commit. Billed monthly.",
-        save: "Save $24,000",
-        includes: [
-          "Everything from Partner, plus:",
-          "Usability testing in the build",
-          "Priority scheduling",
-          "Quarterly design audit",
-          "Design and UI through the year, not a project",
-        ],
-        bestFor:
-          "Series A–B teams who already know this isn’t a one-surface problem.",
+        bestFor: "A team that wants the work to continue.",
       },
     ],
   },
   {
     id: "payment",
     kind: "payment",
-    label: "Payment Structure",
-    headline: "Fair terms. Clear dates.",
-    body: "Invoices issued on fixed dates, independent of feedback pace or deliverable status. Payment schedules scale to each engagement.",
-    note: "Payment via wire transfer or ACH. Invoices payable within 7 days of receipt. All amounts in USD.",
+    label: "Payment",
+    headline: "Half to book. Half at the end.",
+    body: "The sprint is $4,500. Half holds the slot. The rest is due when the two weeks end.",
+    note: "USD, by wire or ACH. IP transfers to you on the final payment.",
     plans: [
       {
-        name: "Standard",
-        blurb: "A defined surface, designed and shipped",
-        price: "$7,000/mo",
-        duration: "3 months",
+        name: "Sprint",
+        blurb: "Two weeks. One surface.",
+        price: "$4,500",
+        duration: "One sprint at a time.",
         schedule: [
-          { pct: "Month 1", when: "At kick-off", amount: "$7,000" },
-          { pct: "Months 2–3", when: "Same date each month", amount: "$7,000/mo" },
+          { pct: "Half", when: "To hold the slot", amount: "$2,250" },
+          { pct: "Half", when: "At the end", amount: "$2,250" },
         ],
-        foot: "Billed monthly. 3-month commit.",
+        foot: "A 30-minute fit call and a one-page intake come first.",
       },
       {
-        name: "Partner",
-        blurb: "The seat, six-month minimum",
-        price: "$6,000/mo",
-        duration: "6-month commit",
-        save: "Save $6,000",
+        name: "Monthly",
+        blurb: "After the sprint.",
+        price: "From $4,000",
+        duration: "3-month minimum.",
         schedule: [
-          { pct: "Month 1", when: "At kick-off", amount: "$6,000" },
-          { pct: "Months 2–6", when: "Same date each month", amount: "$6,000/mo" },
-          { pct: "After", when: "Month-to-month", amount: "$6,000/mo" },
-        ],
-        foot: "Billed monthly. 6-month commit.",
-      },
-      {
-        name: "Yearly",
-        tag: "Recommended",
-        blurb: "The same seat, for the year",
-        price: "$5,000/mo",
-        duration: "12-month commit",
-        save: "Save $24,000",
-        schedule: [
-          { pct: "Month 1", when: "At kick-off", amount: "$5,000" },
-          { pct: "Months 2–12", when: "Same date each month", amount: "$5,000/mo" },
-        ],
-        foot: "Billed monthly. 12-month commit.",
-      },
-    ],
-  },
-  {
-    id: "bonuses",
-    kind: "bonuses",
-    label: "Bonuses",
-    headline: "What you also get.",
-    body: "The work is in the product. These extras help it land with users and with the team.",
-    plans: [
-      {
-        name: "Standard",
-        blurb: "A defined surface, designed and shipped",
-        count: "+2",
-        items: [
+          { pct: "Each month", when: "Same date", amount: "From $4,000" },
           {
-            title: "Recorded system tour",
-            detail:
-              "Twenty minutes they can replay for a new hire. Not a live engineering meeting.",
-          },
-          {
-            title: "Co-authored story",
-            detail:
-              "A case study they can publish. You get the work on record.",
+            pct: "First month",
+            when: "If you continue within two weeks",
+            amount: "Sprint fee credited",
           },
         ],
-      },
-      {
-        name: "Partner",
-        blurb: "The seat, six-month minimum",
-        count: "+2",
-        items: [
-          {
-            title: "Everything in Standard, plus:",
-            detail:
-              "Recorded system tour and co-authored story.",
-          },
-          {
-            title: "30-day post-ship review",
-            detail:
-              "One session on the live surface. What to fix, what to leave.",
-          },
-          {
-            title: "Internal rollout deck",
-            detail:
-              "Branded slides for board or all-hands. Ready to present.",
-          },
-        ],
-      },
-      {
-        name: "Yearly",
-        tag: "Recommended",
-        blurb: "The same seat, for the year",
-        count: "+1",
-        items: [
-          {
-            title: "Everything in Partner",
-            detail:
-              "Post-ship review and internal rollout deck.",
-          },
-        ],
+        foot: "Billed monthly. 3-month minimum.",
       },
     ],
   },
@@ -470,27 +383,27 @@ export const slides: Slide[] = [
     items: [
       {
         q: "Do you replace our engineers?",
-        a: "No. We own product, design, and interface implementation. If you need backend, we can introduce trusted engineering partners. That's a separate engagement, quoted in addition.",
+        a: "No. We own product, design, and the interface. Backend, auth, APIs, and infrastructure are quoted separately with an engineering partner.",
       },
       {
         q: "Do I own the work?",
-        a: "Yes. Full IP transfers on final payment. Source files and UI code included. DUDESIGN retains portfolio rights only.",
+        a: "Yes. IP transfers to you on the final payment. We may publish a case study only after you review it.",
       },
       {
-        q: "Can we start Standard and switch later?",
-        a: "Yes. You can move to Partner or Yearly anytime. Partner still has a 6-month commit. Yearly still has a 12-month commit.",
+        q: "What happens after the two weeks?",
+        a: "We can stay on from $4,000 a month, with a 3-month minimum. Continue within two weeks and the sprint fee is credited to the first month.",
       },
       {
         q: "Can you work with our existing system?",
-        a: "Yes. We work in what you already have. If the interface isn't at the level the product needs, we raise it — same essence, higher standard. We don't keep weak design just because it exists.",
+        a: "Yes. We work in what you already have. If the interface is not at the level the product needs, we raise it. We do not keep a weak interface just because it exists.",
       },
     ],
   },
   {
     id: "cta",
     kind: "cta",
-    headline: "Ready when you are.",
+    headline: "Book the sprint.",
     email: "hello@dudesign.us",
-    web: "dudesign.us",
+    web: "studio.dudesign.us",
   },
 ];

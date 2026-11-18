@@ -1,0 +1,393 @@
+html:has(.ads-root),
+html:has(.ads-root) body {
+  overflow: auto;
+  height: auto;
+  min-height: 100%;
+  background: #f6f6f4;
+}
+
+html:has(.ads-root) .frame-bar,
+html:has(.ads-root) nextjs-portal {
+  display: none !important;
+}
+
+/* The site cursor hides the system pointer. On this review page that
+   left no visible mouse, so the system pointer comes back here. */
+html:has(.ads-review).has-site-cursor,
+html:has(.ads-review).has-site-cursor * {
+  cursor: auto !important;
+}
+
+html:has(.ads-review).has-site-cursor :is(a, button, summary, label) {
+  cursor: pointer !important;
+}
+
+html:has(.ads-review) .site-cursor,
+html:has(.ads-render) .site-cursor {
+  display: none !important;
+}
+
+html:has(.ads-root) .page--frame,
+html:has(.ads-root) .page--frame .page-main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: #f6f6f4;
+}
+
+html:has(.ads-render),
+html:has(.ads-render) body,
+html:has(.ads-render) .page--frame,
+html:has(.ads-render) .page--frame .page-main {
+  overflow: hidden;
+  width: 1080px;
+  background: var(--white);
+}
+
+html:has(.ads-render[data-format="feed"]),
+html:has(.ads-render[data-format="feed"]) body,
+html:has(.ads-render[data-format="feed"]) .page--frame,
+html:has(.ads-render[data-format="feed"]) .page--frame .page-main {
+  height: 1350px;
+}
+
+html:has(.ads-render[data-format="story"]),
+html:has(.ads-render[data-format="story"]) body,
+html:has(.ads-render[data-format="story"]) .page--frame,
+html:has(.ads-render[data-format="story"]) .page--frame .page-main {
+  height: 1920px;
+}
+
+.ads-render .ig-ad {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.ads-review {
+  width: min(100%, 92rem);
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 3vw, 2.5rem) 5rem;
+  color: var(--frame-title);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.ads-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.9375rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.ads-bar a {
+  color: var(--frame-ink);
+  text-decoration: none;
+}
+
+.ads-bar span {
+  color: var(--frame-ink);
+  opacity: 0.5;
+}
+
+.ads-section {
+  margin: 3rem 0 0;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--frame-meta);
+}
+
+.ads-review h1 {
+  margin: 0 0 0.75rem;
+  max-width: 18em;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.ads-lead,
+.ads-held {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--frame-body);
+}
+
+.ads-held {
+  margin-top: 0.75rem;
+}
+
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.ads-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--frame-ink);
+  opacity: 0.5;
+}
+
+.ads-scale {
+  width: 100%;
+  aspect-ratio: 1080 / 1350;
+  overflow: hidden;
+  background: var(--white);
+  outline: 1px solid var(--frame-line);
+}
+
+.ads-scale--story {
+  aspect-ratio: 1080 / 1920;
+}
+
+.ads-scale__inner {
+  width: 1080px;
+  height: 1350px;
+  transform: scale(calc(100cqw / 1080px));
+  transform-origin: top left;
+}
+
+.ads-scale__inner--story {
+  height: 1920px;
+}
+
+.ads-scale {
+  container-type: inline-size;
+}
+
+.ads-card > h2 {
+  margin: 1rem 0 0.35rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.ads-card__note,
+.ads-card__file {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--frame-body);
+}
+
+.ads-card__file {
+  margin-top: 0.35rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--frame-meta);
+}
+
+.ads-card pre {
+  margin: 1rem 0 0.75rem;
+  white-space: pre-wrap;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--frame-title);
+}
+
+.ads-card button {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--frame-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.ads-card__full {
+  display: inline-block;
+  margin-left: 1rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--frame-ink);
+}
+
+.ads-card__file + .ads-card__full {
+  display: inline-block;
+  margin-top: 0.75rem;
+  margin-left: 0;
+}
+
+@media (max-width: 1100px) {
+  .ads-grid {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+  }
+}
+
+/* ------------------------------------------------------------ 1080 × 1350 */
+
+.ig-ad {
+  width: 1080px;
+  height: 1350px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  color: var(--frame-title);
+  overflow: hidden;
+}
+
+.ig-ad__top {
+  flex: 0 0 auto;
+  padding: 72px 72px 0;
+}
+
+.ig-ad__mark {
+  margin: 0;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--frame-ink);
+}
+
+.ig-ad .ig-ad__headline {
+  margin: 88px 0 0;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--frame-title);
+}
+
+.ig-ad__headline span {
+  display: block;
+}
+
+.ig-ad__flow {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 56px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--frame-line);
+}
+
+.ig-ad__flow span,
+.ig-ad__flow strong,
+.ig-ad__credit {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.ig-ad__flow span {
+  display: block;
+  font-size: 26px;
+  letter-spacing: 0.14em;
+  color: var(--frame-meta);
+}
+
+.ig-ad__flow strong {
+  display: block;
+  margin-top: 14px;
+  font-size: 36px;
+  letter-spacing: -0.03em;
+  color: var(--frame-title);
+}
+
+.ig-ad__media {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 56px 72px 0;
+  background: var(--frame-media);
+  overflow: hidden;
+}
+
+.ig-ad__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ig-ad__credit {
+  flex: 0 0 auto;
+  margin: 28px 72px 64px;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  color: var(--frame-meta);
+}
+
+.ig-ad--bleed .ig-ad__credit {
+  margin: 48px 0 0;
+}
+
+.ig-ad--bleed .ig-ad__media {
+  margin: 56px 0 0;
+}
+
+.ig-ad--flow .ig-ad__headline {
+  font-size: 76px;
+}
+
+.ig-ad[data-ad="product-design"] .ig-ad__media img {
+  transform: scale(1.46);
+  transform-origin: 46% 58%;
+}
+
+.ig-ad[data-ad="flows-to-ui"] .ig-ad__media img {
+  transform: scale(1.48);
+  transform-origin: 58% 22%;
+}
+
+.ig-ad[data-ad="clearer-next-version"] .ig-ad__media img {
+  transform: none;
+}
+
+/* Story — 1080 × 1920. Same type. Extra height is air and image.
+   Top and bottom stay clear of the story header and the reply bar. */
+
+.ig-ad--story {
+  height: 1920px;
+}
+
+.ig-ad--story .ig-ad__top {
+  padding-top: 188px;
+}
+
+.ig-ad--story .ig-ad__credit {
+  margin-bottom: 220px;
+}
+
+.ig-ad--story.ig-ad--bleed .ig-ad__credit {
+  margin-bottom: 0;
+}
+
+.ig-ad--story.ig-ad--bleed .ig-ad__media {
+  margin-bottom: 220px;
+}

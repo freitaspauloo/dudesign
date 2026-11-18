@@ -1,5 +1,6 @@
 import type { CaseStudy } from "../types";
 import { alignedAi } from "./aligned-ai";
+import { alpic } from "./alpic";
 import { builtops } from "./builtops";
 import { conifer } from "./conifer";
 import { frameline } from "./frameline";
@@ -10,6 +11,7 @@ import { films3m } from "./films-3m";
 import { iaa } from "./iaa";
 
 export const allCases: CaseStudy[] = [
+  alpic,
   alignedAi,
   conifer,
   films3m,

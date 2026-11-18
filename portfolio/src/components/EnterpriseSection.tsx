@@ -1,10 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { enterpriseWork } from "@/src/content/enterprise-work";
+import {
+  engagement,
+  enterpriseWork,
+} from "@/src/content/enterprise-work";
 
 import { assetPath } from "@/src/lib/asset-path";
 
+import { FrameMarquee } from "@/src/components/FrameMarquee";
 import { SwapLabel } from "@/src/components/SwapLabel";
 import { Reveal } from "./motion/Reveal";
 
@@ -36,43 +40,58 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
         aria-labelledby="enterprise-heading"
       >
 
-        <Reveal targets="[data-reveal]">
-          <div className="frame-enterprise__intro">
-
-          <h2 id="enterprise-heading" className="frame-enterprise__headline" data-reveal>
-            <span className="frame-enterprise__headline-line">
+        <div className="frame-enterprise__layout">
+          <img
+            className="frame-enterprise__mark"
+            src={assetPath("/brand/mark-light.svg")}
+            alt=""
+          />
+          <div className="frame-enterprise__main">
+            <h2 id="enterprise-heading" className="frame-enterprise__headline">
               {enterpriseWork.headline}
-            </span>
-            <span className="frame-enterprise__headline-line frame-enterprise__headline-line--soft">
-              {enterpriseWork.subheadline}
-            </span>
-          </h2>
-
-          <div className="frame-enterprise__copy" data-reveal>
-
-            {enterpriseWork.body.map((paragraph) => (
-
-              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-
-            ))}
-
-          </div>
-
-        </div>
-        </Reveal>
-
-        <div className="frame-logo-wall-shell">
-          <Reveal targets=".frame-logo-wall li" stagger={0.04}>
-            <ul className="frame-logo-wall" aria-label="Clients">
-              {enterpriseWork.clientLogos.map((client) => (
-                <li key={client.name}>
-                  {client.logos.map((logo) => (
-                    <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
-                  ))}
-                </li>
+            </h2>
+            <div className="frame-enterprise__copy">
+              {enterpriseWork.body.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
               ))}
-            </ul>
-          </Reveal>
+            </div>
+            <div className="frame-enterprise__clients">
+              <ul className="frame-logo-row" aria-label="Clients">
+                {enterpriseWork.clientLogos.map((client) => (
+                  <li key={client.name}>
+                    {client.logos.map((logo) => (
+                      <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
+                    ))}
+                  </li>
+                ))}
+              </ul>
+              <div className="frame-enterprise__range" aria-hidden="true">
+                <span>2021</span>
+                <span className="frame-enterprise__range-line" />
+                <span>NOW</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="frame-engagement">
+          <FrameMarquee />
+          <div className="frame-engagement__intro">
+            <p className="frame-engagement__eyebrow">The sprint</p>
+            <h3>Shipped in two weeks.</h3>
+            <p>
+              $4,500. One sprint at a time. After that, from $4,000 a month.
+            </p>
+          </div>
+          <ol className="frame-engagement__track">
+            {engagement.map((step) => (
+              <li key={step.index}>
+                <p className="frame-engagement__when">{step.when}</p>
+                <h4>{step.title}</h4>
+                <p>{step.body}</p>
+              </li>
+            ))}
+          </ol>
         </div>
 
       </section>
@@ -95,7 +114,9 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
 
             {enterpriseWork.headline}{" "}
 
-            <span className="is-soft">{enterpriseWork.subheadline}</span>
+            {enterpriseWork.subheadline ? (
+              <span className="is-soft">{enterpriseWork.subheadline}</span>
+            ) : null}
 
           </h2>
 
@@ -203,7 +224,9 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
 
             <span>{enterpriseWork.headline}</span>
 
-            <span className="is-soft">{enterpriseWork.subheadline}</span>
+            {enterpriseWork.subheadline ? (
+              <span className="is-soft">{enterpriseWork.subheadline}</span>
+            ) : null}
 
           </h2>
 
@@ -319,5 +342,6 @@ export function EnterpriseSection({ index, variant = "default" }: Props) {
   );
 
 }
+
 
 

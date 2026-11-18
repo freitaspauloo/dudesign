@@ -5,7 +5,7 @@ import { site } from "@/src/content/site";
 
 export const metadata: Metadata = {
   title: "Résumé",
-  description: "Paulo Freitas — Senior Product Designer, AI/SaaS",
+  description: "Paulo Freitas, Senior Product Designer, AI/SaaS",
 };
 
 export default function ResumePage() {

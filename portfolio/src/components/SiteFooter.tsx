@@ -12,7 +12,9 @@ export function SiteFooter() {
   return (
     <footer className="frame-bar frame-bar--footer">
       <div className="frame-bar__inner">
-        <p className="frame-bar__credit">designed and coded by paulo</p>
+        <p className="frame-bar__credit">
+          <a href={site.studioUrl}>Need a product sprint? DUDESIGN studio</a>
+        </p>
         <nav className="frame-bar__social" aria-label="Footer">
           {links.map((item) => (
             <a

@@ -6,7 +6,7 @@ import { site } from "@/src/content/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Product Designer — AI/SaaS. Based in the US market.",
+  description: site.tagline,
 };
 
 export default function AboutPage() {
@@ -22,29 +22,23 @@ export default function AboutPage() {
       <div className="about-page-grid">
         <div className="about-body">
           <p>
-            I&apos;m Paulo Freitas — a product designer who works at the
-            intersection of AI/SaaS, visual craft, and production UI. I ship
-            for startups today; before that I led design at XIX3D for global
-            clients including Audi, Samsung, 3M, Ford, Sony + Honda, and
-            Costco.
+            I&apos;m Paulo Freitas, a product designer who works at the
+            intersection of AI products, visual craft, and production UI. I
+            ship for startups today. Before that I designed at xix3D for Audi,
+            Samsung, 3M, Ford, Sony, Honda, and Costco.
           </p>
           <p>
-            I also build my own tools when the market gap is obvious — like{" "}
+            I also build my own tools when the market gap is obvious, like{" "}
             <a href="https://frameline.ai" className="text-link">
               <SwapLabel>Frameline</SwapLabel>
-            </a>{" "}
-            — and run{" "}
-            <a href="https://dudesign.us" className="text-link">
-              <SwapLabel>DUDESIGN</SwapLabel>
-            </a>{" "}
-            as an independent product design partner for AI startups.
+            </a>
+            .
           </p>
           <p>
-            I&apos;m looking for{" "}
-            <strong>Product Designer — AI/SaaS</strong> roles in the US. I work
-            best with PM and Engineering when the bet is clear but the surface is hard —
-            complex B2B, agent UX, or dev-facing products that need to ship in
-            code, not slide decks.
+            I&apos;m looking for senior product design roles in the US. I work
+            best with product and engineering when the bet is clear but the
+            surface is hard. Complex B2B, agent UX, or developer-facing
+            products that need to ship in code.
           </p>
           <nav className="about-body__links" aria-label="Contact">
             <Link href="/resume" className="frame-bar__link">

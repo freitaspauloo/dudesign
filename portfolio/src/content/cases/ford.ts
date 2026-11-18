@@ -21,7 +21,7 @@ export const ford: CaseStudy = {
   ],
   role: {
     owned: [
-      "Vehicle configurator UX — model, paint, wrap, and real-time visualization",
+      "Vehicle configurator UX, model, paint, wrap, and real-time visualization",
       "Ford Wrap Learning Academy structure (video + PDF installer guides)",
       "Customer communication flow: order status, delays, and pickup scheduling",
       "Program identity and go-to-market assets for the xix3D × Ford partnership",
@@ -43,19 +43,19 @@ export const ford: CaseStudy = {
     {
       title: "OEM-grade vs. aftermarket-looking UI",
       chosen:
-        "Ford identity, real vehicle SKUs, and production-looking visualization so it reads as an OEM program — not a third-party wrap shop tool.",
+        "Ford identity, real vehicle SKUs, and production-looking visualization so it reads as an OEM program, not a third-party wrap shop tool.",
       rejected:
         "A generic aftermarket aesthetic. It would have undercut the first OEM–aftermarket collaboration in the category.",
     },
   ],
   collaborators: ["xix3D", "Ford dealer and aftermarket partners"],
-  links: [{ label: "Studio writeup", url: "https://dudesign.us/work/ford" }],
+  links: [],
   sections: [
     {
       id: "problem",
       title: "Problem",
       body: [
-        "This was the automotive industry's first collaboration between an OEM manufacturer and the aftermarket customization world. The challenge wasn't just designing a configurator — it was building an entire program from zero: a tool that lets customers visualize wraps on their Ford, a training system that teaches installers how to do it right, and a communication flow that keeps everyone from the dealer to the end customer informed through every step of the process.",
+        "This was the automotive industry's first collaboration between an OEM manufacturer and the aftermarket customization world. The challenge wasn't just designing a configurator, it was building an entire program from zero: a tool that lets customers visualize wraps on their Ford, a training system that teaches installers how to do it right, and a communication flow that keeps everyone from the dealer to the end customer informed through every step of the process.",
       ],
     },
     {
@@ -76,7 +76,7 @@ export const ford: CaseStudy = {
   ],
   cover: {
     src: "/work/cases/ford/01.webp",
-    alt: "Ford wrap configurator on a laptop — Bronco with real-time film and color selection",
+    alt: "Ford wrap configurator on a laptop, Bronco with real-time film and color selection",
   },
   gallery: [
     {
@@ -87,7 +87,7 @@ export const ford: CaseStudy = {
         {
           id: "vehicle-select",
           label: "Vehicle selection",
-          caption: "Bronco, F-150, Explorer, Mustang — start with the actual Ford, not a generic model.",
+          caption: "Bronco, F-150, Explorer, Mustang, start with the actual Ford, not a generic model.",
           src: "/work/cases/ford/02.webp",
           alt: "Ford wrap program vehicle selection screen",
           variant: "shot",
@@ -110,7 +110,7 @@ export const ford: CaseStudy = {
         {
           id: "pickup",
           label: "Pickup scheduling",
-          caption: "Status, delay, and pickup in one customer-facing flow — not a black box after checkout.",
+          caption: "Status, delay, and pickup in one customer-facing flow, not a black box after checkout.",
           src: "/work/cases/ford/03.webp",
           alt: "Ford Wrap Program mobile pickup scheduling and order details",
           variant: "shot",
@@ -120,5 +120,5 @@ export const ford: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/ford.svg", alt: "Ford" }],
   published: true,
-  order: 4,
+  order: 5,
 };

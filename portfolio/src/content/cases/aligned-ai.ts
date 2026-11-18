@@ -7,6 +7,7 @@ export const alignedAi: CaseStudy = {
   title: "Aligned AI",
   cardTitle: "Personal AI workspace",
   client: "Aligned AI",
+  surfaceLine: "Shipped to production at joinaligned.ai",
   subtitle:
     "A private, trustworthy AI assistant for the whole family, designed to give everyone what they need and more time for what matters most.",
   displayTitle: "Less time asking. More time living.",
@@ -39,23 +40,23 @@ export const alignedAi: CaseStudy = {
     {
       title: "Workspace-first vs. docs-first",
       chosen:
-        "Lead with a workspace metaphor — users need a place to work, not another docs site. Benchmark content supports the product story instead of replacing it.",
+        "Lead with a workspace metaphor. Users need a place to work, not another docs site. Benchmark content supports the product story instead of replacing it.",
       rejected:
         "A standalone Mintlify docs site with no product shell. It would read like marketing, not something you'd use daily.",
     },
     {
       title: "Trust patterns for AI output",
       chosen:
-        "Explicit provenance, editable drafts, and clear human-in-the-loop states — so users always know what the system suggested vs. what they committed.",
+        "Explicit provenance, editable drafts, and clear human-in-the-loop states, so users always know what the system suggested vs. what they committed.",
       rejected:
         "Magic auto-complete with no audit trail. Fast to demo, impossible to trust in a professional workflow.",
     },
     {
       title: "Prototype fidelity",
       chosen:
-        "Ship working UI in code early — enough to test navigation, density, and agent handoffs with real stakeholders.",
+        "Ship working UI in code early, enough to test navigation, density, and agent handoffs with real stakeholders.",
       rejected:
-        "High-fidelity Figma only. The team needed to feel latency, scroll, and state — not a slideshow.",
+        "High-fidelity Figma only. The team needed to feel latency, scroll, and state, not a slideshow.",
     },
   ],
   collaborators: ["Aligned AI", "Engineering partners"],
@@ -69,34 +70,54 @@ export const alignedAi: CaseStudy = {
   sections: [
     {
       id: "problem",
-      title: "Problem",
+      title: "The problem",
       body: [
-        "Aligned is building in the personal AI workspace category — a space where generic chat UIs fail because professionals need persistent context, trustworthy outputs, and workflows that fit how they already work.",
+        "Aligned is building in the personal AI workspace category, a space where generic chat UIs fail because professionals need persistent context, trustworthy outputs, and workflows that fit how they already work.",
         "The design challenge wasn't a landing page. It was making AI feel like a workspace you can rely on: clear ownership of suggestions, readable benchmark content, and surfaces that don't collapse under real data density.",
       ],
     },
     {
+      id: "constraints",
+      title: "Constraints",
+      body: ["[TODO: constraints. Do not invent numbers or quotes.]"],
+    },
+    {
+      id: "questions",
+      title: "Questions I had to answer",
+      body: ["[TODO: the questions. One per paragraph.]"],
+    },
+    {
       id: "process",
-      title: "Process",
+      title: "How I worked",
       body: [
-        "I mapped the core jobs: orient in the workspace, run an AI-assisted task, review output, and commit a result. Each step needed explicit trust UX — not bolted-on disclaimers, but structural clarity in the UI.",
+        "I mapped the core jobs: orient in the workspace, run an AI-assisted task, review output, and commit a result. Each step needed explicit trust UX, not bolted-on disclaimers, but structural clarity in the UI.",
         "Benchmark content was treated as product evidence, not a side project. The structure mirrors how users evaluate AI tools: capability, limits, and comparison points.",
-        "I prototyped key flows in code so PM and Eng could react to real interaction — scroll, focus, loading, and error states included.",
+        "I prototyped key flows in code so product and engineering could react to real interaction, including scroll, focus, loading, and error states.",
       ],
+    },
+    {
+      id: "decisions-why",
+      title: "Key decisions and why",
+      body: ["[TODO: each decision, what was chosen, and what it cost.]"],
     },
     {
       id: "outcome",
-      title: "Outcome",
+      title: "What changed",
       body: [
-        "Shipped production UI at joinaligned.ai — workspace home, document review, voice capture, and settings — plus consumer and enterprise landing pages and a launch film used in GTM.",
-        "Trust UX patterns (provenance, draft vs. committed, human-in-the-loop) are live in the product, not a slide deck — the team uses them as the baseline for new AI-assisted flows.",
+        "Shipped production UI at joinaligned.ai: workspace home, document review, voice capture, and settings, plus consumer and enterprise landing pages and a launch film used in go-to-market.",
+        "Trust UX patterns (provenance, draft vs. committed, human-in-the-loop) are live in the product. The team uses them as the baseline for new AI-assisted flows.",
       ],
     },
     {
+      id: "impact",
+      title: "Impact",
+      body: ["[TODO: impact, only with a source in the repo. Otherwise leave this TODO.]"],
+    },
+    {
       id: "reflection",
-      title: "What I'd do differently",
+      title: "What I learned",
       body: [
-        "Instrument earlier usability sessions on the commit/review step — that's where trust breaks or holds, and we relied too much on internal review at first.",
+        "Instrument earlier usability sessions on the commit/review step, that's where trust breaks or holds, and we relied too much on internal review at first.",
       ],
       visualsLayout: "grid",
       visuals: [
@@ -118,6 +139,11 @@ export const alignedAi: CaseStudy = {
         },
       ],
     },
+    {
+      id: "team",
+      title: "Team",
+      body: ["[TODO: who was in the room, and what I did not own.]"],
+    },
   ],
   cover: {
     src: `${base}/desktop-1.png`,
@@ -136,7 +162,7 @@ export const alignedAi: CaseStudy = {
           caption: "Orienting state with mode selection and persistent context",
           variant: "shot",
           src: `${base}/desktop-2.png`,
-          alt: "Aligned AI desktop workspace — Good morning Paulo with Ask anything input",
+          alt: "Aligned AI desktop workspace, Good morning Paulo with Ask anything input",
         },
         {
           id: "workspace-dark",
@@ -190,7 +216,7 @@ export const alignedAi: CaseStudy = {
       items: [
         {
           id: "mobile-light-dark",
-          label: "Mobile — light & dark",
+          label: "Mobile, light & dark",
           caption: "Responsive home and review on the go",
           variant: "shot",
           src: `${base}/mobile-1.png`,
@@ -198,7 +224,7 @@ export const alignedAi: CaseStudy = {
         },
         {
           id: "mobile-doc",
-          label: "Mobile — long-form",
+          label: "Mobile, long-form",
           caption: "Commit flows carried through on small screens",
           variant: "shot",
           src: `${base}/mobile-2.png`,
@@ -214,7 +240,7 @@ export const alignedAi: CaseStudy = {
         {
           id: "launch-video",
           label: "Enterprise launch film",
-          caption: "Enterprise landing page walkthrough — capabilities, cost, privacy, and deployment",
+          caption: "Enterprise landing page walkthrough, capabilities, cost, privacy, and deployment",
           alt: "Aligned AI enterprise landing page launch video",
           variant: "video",
           src: `${base}/launch-video.mp4`,
@@ -241,5 +267,5 @@ export const alignedAi: CaseStudy = {
   logos: [{ src: "/work/logos/aligned.svg", alt: "Aligned AI" }],
   featured: true,
   published: true,
-  order: 1,
+  order: 2,
 };

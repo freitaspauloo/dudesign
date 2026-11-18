@@ -6,7 +6,7 @@ export const builtops: CaseStudy = {
   cardTitle: "Community microsites",
   client: "Losani Homes",
   subtitle:
-    "A modular community-microsite platform where editorial teams own content and design owns the system — without either side blocking the other.",
+    "A modular community-microsite platform where editorial teams own content and design owns the system, without either side blocking the other.",
   displayTitle:
     "Community microsites without engineering bottlenecks",
   metaLabel: "Enterprise B2B",
@@ -40,12 +40,12 @@ export const builtops: CaseStudy = {
       chosen:
         "Payload owns copy, images, prices, links, section order, users, and version history. Code owns layout, design, hide-if-empty rules, and stage safety rails.",
       rejected:
-        "Fully hardcoded marketing pages — fast initially, but every copy change became an engineering ticket and blocked the marketing team.",
+        "Fully hardcoded marketing pages, fast initially, but every copy change became an engineering ticket and blocked the marketing team.",
     },
     {
       title: "Single site vs. modular subpages",
       chosen:
-        "BuiltOps as a vendored module inside the connected-site repo — community subpages proxied through the portal origin so buyers stay in one experience.",
+        "BuiltOps as a vendored module inside the connected-site repo, community subpages proxied through the portal origin so buyers stay in one experience.",
       rejected:
         "Standalone microsites per community with no shared system. Unmaintainable at scale.",
     },
@@ -75,7 +75,7 @@ export const builtops: CaseStudy = {
       id: "problem",
       title: "Problem",
       body: [
-        "Losani needed community-specific web experiences that could launch at different lifecycle stages — future land, coming soon, available now — while marketing teams updated copy and pricing without waiting on engineering for every change.",
+        "Losani needed community-specific web experiences that could launch at different lifecycle stages, future land, coming soon, available now, while marketing teams updated copy and pricing without waiting on engineering for every change.",
         "The product surface spans buyers, sales, and admin workflows. Complexity comes from multi-role needs, not from visual decoration.",
       ],
     },
@@ -83,16 +83,16 @@ export const builtops: CaseStudy = {
       id: "process",
       title: "Process",
       body: [
-        "I designed BuiltOps as a modular platform: Next.js 16, Tailwind CSS 4, Payload CMS, TypeScript — SQLite locally, Postgres in production.",
+        "I designed BuiltOps as a modular platform: Next.js 16, Tailwind CSS 4, Payload CMS, TypeScript, SQLite locally, Postgres in production.",
         "Templates encode stage logic in code (safety rails) while editorial content stays flexible in the CMS. Empty sections hide automatically so half-finished pages never ship broken.",
-        "Deliverables include community pages, model pages, a version archive, preview-version widget catalog, and lot editor tooling — coordinated with the Losani Connected Site integration.",
+        "Deliverables include community pages, model pages, a version archive, preview-version widget catalog, and lot editor tooling, coordinated with the Losani Connected Site integration.",
       ],
     },
     {
       id: "outcome",
       title: "Outcome",
       body: [
-        "Working platform integrated into the Losani connected-site repo with PR #7 — preview deploy live, production alias pending admin handoff.",
+        "Working platform integrated into the Losani connected-site repo with PR #7, preview deploy live, production alias pending admin handoff.",
         "Marketing can iterate copy and media in Payload while design maintains layout integrity and stage rules in code.",
       ],
     },
@@ -100,16 +100,16 @@ export const builtops: CaseStudy = {
       id: "reflection",
       title: "What I'd do differently",
       body: [
-        "Lock CMS field schemas with design earlier — a few retrofits were needed when marketing wanted section variants we hadn't modeled.",
+        "Lock CMS field schemas with design earlier, a few retrofits were needed when marketing wanted section variants we hadn't modeled.",
       ],
     },
   ],
   cover: {
     src: "/work/cases/builtops.svg",
-    alt: "BuiltOps community microsite platform — Losani Homes",
+    alt: "BuiltOps community microsite platform, Losani Homes",
     fit: "contain",
   },
   logos: [{ src: "/work/cases/builtops.svg", alt: "BuiltOps" }],
-  published: true,
+  published: false,
   order: 9,
 };

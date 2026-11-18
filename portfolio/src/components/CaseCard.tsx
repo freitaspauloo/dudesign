@@ -51,7 +51,7 @@ export function CaseCard({ caseStudy, index, variant = "default" }: Props) {
       <article className="work-card">
         {index ? (
           <div className="work-card-head">
-            <p className="micro-label">Case — {index}</p>
+            <p className="micro-label">Case, {index}</p>
             <p className="micro-label">{caseStudy.client}</p>
           </div>
         ) : null}

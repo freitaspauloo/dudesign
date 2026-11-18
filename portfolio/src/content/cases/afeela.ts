@@ -5,13 +5,14 @@ export const afeela: CaseStudy = {
   title: "Afeela",
   cardTitle: "EV personalization platform",
   client: "Afeela (Sony + Honda EV Venture)",
+  surfaceLine: "Designed at xix3D for Sony Honda Mobility",
   subtitle:
-    "Brand-new car company needed its entire personalization experience designed — from first click to delivery day.",
+    "Brand-new car company needed its entire personalization experience designed, from first click to delivery day.",
   displayTitle: "Vehicle personalization for Sony and Honda's EV venture",
   metaLabel: "EV personalization",
   year: "2024",
   timeline: "2023 – 2025",
-  team: "xix3D",
+  team: "Designed at xix3D",
   roleTitle: "Product Designer",
   tags: ["EV", "Configurator", "Mobile"],
   skillsProven: [
@@ -36,47 +37,77 @@ export const afeela: CaseStudy = {
     {
       title: "Browse-to-delivery as one product",
       chosen:
-        "One journey from color and wrap through checkout, production countdown, and social sharing — not a configurator that dumps the customer at a PDF quote.",
+        "One journey from color and wrap through checkout, production countdown, and social sharing, not a configurator that dumps the customer at a PDF quote.",
       rejected:
         "A marketing visualizer disconnected from order and ownership. Personalization dies if it doesn't survive past the showroom screen.",
     },
     {
       title: "Premium EV identity vs. wrap-shop UI",
       chosen:
-        "Dark, cinematic surfaces that match Afeela's Sony + Honda positioning, with 3D preview and social export as part of ownership — not extras.",
+        "Dark, cinematic surfaces that match Afeela's Sony + Honda positioning, with 3D preview and social export as part of ownership, not extras.",
       rejected:
         "A bright aftermarket catalog. It would have read as a third-party accessory tool on a brand that needed to feel native.",
     },
   ],
   collaborators: ["xix3D", "Sony Honda Mobility"],
-  links: [{ label: "Studio writeup", url: "https://dudesign.us/work/afeela" }],
+  links: [],
   sections: [
     {
       id: "problem",
-      title: "Problem",
+      title: "The problem",
       body: [
-        "Afeela is Sony and Honda's joint electric vehicle brand, entering a market where personalization is no longer optional — it's expected. The challenge was designing the complete digital experience for how a customer discovers, configures, prices, and purchases a personalized EV. This meant building the configurator UX, a 3D visualization system that renders wraps and options in real time, the checkout and pricing flow, a companion mobile app, and the post-purchase experience including delivery tracking and social sharing.",
+        "Afeela is Sony and Honda's joint electric vehicle brand, entering a market where personalization is no longer optional. It is expected. The challenge was designing the complete digital experience for how a customer discovers, configures, prices, and purchases a personalized EV. This meant building the configurator UX, a 3D visualization system that renders wraps and options in real time, the checkout and pricing flow, a companion mobile app, and the post-purchase experience including delivery tracking and social sharing.",
       ],
     },
     {
+      id: "constraints",
+      title: "Constraints",
+      body: ["[TODO: constraints. Do not invent numbers or quotes.]"],
+    },
+    {
+      id: "questions",
+      title: "Questions I had to answer",
+      body: ["[TODO: the questions. One per paragraph.]"],
+    },
+    {
       id: "process",
-      title: "Process",
+      title: "How I worked",
       body: [
-        "I mapped the purchase as a single path: Model 1, paint and packages, wrap library (including Sony IP), pricing, checkout — then ownership on the phone.",
+        "I mapped the purchase as a single path: Model 1, paint and packages, wrap library (including Sony IP), pricing, checkout, then ownership on the phone.",
         "The mobile app had to extend the 3D car, not shrink the website. Production countdown, rotate-in-3D, photo share, and video export are how owners show the car before it exists.",
       ],
     },
     {
+      id: "decisions-why",
+      title: "Key decisions and why",
+      body: ["[TODO: each decision, what was chosen, and what it cost.]"],
+    },
+    {
       id: "outcome",
-      title: "Outcome",
+      title: "What changed",
       body: [
-        "The final system takes a customer from browsing paint colors and wrap designs through to a submitted order with delivery countdown — all through interfaces designed to match the premium, forward-looking identity of the Afeela brand. The mobile app extends the experience beyond the browser, letting owners preview their car in 3D, track production status, and share custom configurations directly to social media.",
+        "The final system takes a customer from browsing paint colors and wrap designs through to a submitted order with delivery countdown, through interfaces designed to match the premium, forward-looking identity of the Afeela brand. The mobile app extends the experience beyond the browser, letting owners preview their car in 3D, track production status, and share custom configurations directly to social media.",
       ],
+    },
+    {
+      id: "impact",
+      title: "Impact",
+      body: ["[TODO: impact, only with a source in the repo. Otherwise leave this TODO.]"],
+    },
+    {
+      id: "learned",
+      title: "What I learned",
+      body: ["[TODO: what I would do differently.]"],
+    },
+    {
+      id: "team",
+      title: "Team",
+      body: ["Designed at xix3D. I did not own vehicle engineering, Sony IP licensing, payments, or order fulfillment."],
     },
   ],
   cover: {
     src: "/work/cases/afeela/01.webp",
-    alt: "Afeela Model 1 configurator — paint, personalize, and live vehicle preview",
+    alt: "Afeela Model 1 configurator, paint, personalize, and live vehicle preview",
   },
   gallery: [
     {
@@ -110,7 +141,7 @@ export const afeela: CaseStudy = {
         {
           id: "countdown",
           label: "Production countdown",
-          caption: "230 days left — rotate in 3D and share before the car exists.",
+          caption: "230 days left, rotate in 3D and share before the car exists.",
           src: "/work/cases/afeela/02.webp",
           alt: "Afeela companion app production countdown and social share",
           variant: "shot",
@@ -118,7 +149,7 @@ export const afeela: CaseStudy = {
         {
           id: "app-pair",
           label: "Companion app",
-          caption: "Login, 3D preview, and video export — ownership on the phone, not a tracking email.",
+          caption: "Login, 3D preview, and video export, ownership on the phone, not a tracking email.",
           src: "/work/cases/afeela/04.webp",
           alt: "Afeela mobile app login and video export screens",
           variant: "shot",

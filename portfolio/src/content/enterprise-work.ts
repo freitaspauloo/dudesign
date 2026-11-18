@@ -7,12 +7,42 @@ export type EnterpriseHighlight = {
   logos: { src: string; alt: string }[];
 };
 
+/** The current sprint. Same terms as studio pricing and the deck. */
+export const engagement = [
+  {
+    index: "01",
+    when: "Week 1",
+    title: "Questions, then the flow",
+    body: "Questions on day 1. Then the flow, with 2 or 3 options, then a clickable prototype. Every day, a 10-minute check-in.",
+  },
+  {
+    index: "02",
+    when: "Week 2",
+    title: "In the product",
+    body: "Production UI in your code. Then staging, a recorded walkthrough, and a handoff note.",
+  },
+  {
+    index: "03",
+    when: "After",
+    title: "From $4,000 a month",
+    body: "A 3-month minimum. Continue within two weeks and the sprint fee is credited to the first month.",
+  },
+];
+
+export const experienceTimeline = [
+  { dates: "2025 to 2026", label: "Aligned AI. Product designer. Personal AI workspace." },
+  { dates: "2025 to 2026", label: "Amplif.AI. Lead product designer." },
+  { dates: "2025 to present", label: "Frameline. Founder. Design-engineering surface library." },
+  { dates: "2026", label: "Conifer. Product designer. Workspace for coding agents." },
+  { dates: "2023 to 2025", label: "xix3D. Product designer. Afeela, Ford, 3M, Audi, Samsung, Costco." },
+  { dates: "2021 to 2025", label: "DUBRANDING. Founder and creative director." },
+];
+
 export const enterpriseWork = {
-  headline: "Fortune 500 experience.",
-  subheadline: "Shipped at startup speed.",
+  headline: "Before the startups, the hard surfaces.",
+  subheadline: "",
   body: [
-    "Before DUDESIGN, I led design at XIX3D — product design, HMI, and brand systems for global automotive and consumer tech clients.",
-    "Audi, Samsung, 3M, Ford, Sony + Honda (Afeela), and Costco. I bring that same bar to AI-native product work.",
+    "For two years I was the product designer at xix3D, designing the customer-facing software behind Audi, Samsung, 3M, Ford, Sony, Honda, and Costco. Configurators, 3D on the shop floor, dealer tools, packaging systems. The same job as the startup work: a person has to finish something hard, and the interface is how they do it.",
   ],
   mosaic: { src: "/work/tiles.webp", alt: "Selected work across automotive, retail, and consumer tech" },
   clients: ["Audi", "Samsung", "3M", "Ford", "Sony", "Honda", "Costco"],
@@ -27,6 +57,6 @@ export const enterpriseWork = {
   ],
   /** Ford lives in the homepage project grid, not as a card under this copy. */
   highlights: [] as EnterpriseHighlight[],
-  /** Costco + IAA stay on /work only — not promoted on the homepage grid. */
+  /** Costco + IAA stay on /work only, not promoted on the homepage grid. */
   secondaryHighlights: [] as EnterpriseHighlight[],
 };

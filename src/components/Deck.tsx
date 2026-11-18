@@ -134,7 +134,7 @@ function SlideShell({
       <div className="slide-main">{children}</div>
       {showFooter ? (
         <footer className="slide-footer">
-          <span>dudesign.us</span>
+          <span>studio.dudesign.us</span>
           <span>hello@dudesign.us</span>
         </footer>
       ) : null}
@@ -370,7 +370,12 @@ function SlideView({ slide }: { slide: Slide }) {
       return (
         <SlideShell>
           <h2 className="tiers-headline">{slide.headline}</h2>
-          <div className="price-grid">
+          <div
+            className="price-grid"
+            style={{
+              gridTemplateColumns: `repeat(${slide.tiers.length}, minmax(0, 1fr))`,
+            }}
+          >
             {slide.tiers.map((tier) => (
               <article
                 className={`price-card${tier.tag ? " is-featured" : ""}`}
@@ -405,7 +410,12 @@ function SlideView({ slide }: { slide: Slide }) {
         <SlideShell>
           <h2 className="tiers-headline">{slide.headline}</h2>
           <p className="section-lead">{slide.body}</p>
-          <div className="price-grid">
+          <div
+            className="price-grid"
+            style={{
+              gridTemplateColumns: `repeat(${slide.plans.length}, minmax(0, 1fr))`,
+            }}
+          >
             {slide.plans.map((plan) => (
               <article
                 className={`price-card${plan.tag ? " is-featured" : ""}`}

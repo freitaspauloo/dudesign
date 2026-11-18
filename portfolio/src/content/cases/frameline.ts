@@ -6,7 +6,7 @@ export const frameline: CaseStudy = {
   cardTitle: "Installable design system",
   client: "Frameline",
   subtitle:
-    "A design-engineering surface library — because taste doesn't ship as code unless someone builds the install path.",
+    "A design-engineering surface library, because taste doesn't ship as code unless someone builds the install path.",
   displayTitle: "Taste that ships as installable code",
   metaLabel: "Design system",
   year: "2025",
@@ -36,14 +36,14 @@ export const frameline: CaseStudy = {
     {
       title: "PNG handoff vs. installable surface",
       chosen:
-        "Typed React components with token binding, SSR-safe fallbacks, and `prefers-reduced-motion` support — materials you install, not PNGs you hope scale.",
+        "Typed React components with token binding, SSR-safe fallbacks, and `prefers-reduced-motion` support, materials you install, not PNGs you hope scale.",
       rejected:
         "Static export only. Faster to ship, but it doesn't solve the engineer's real job: production-safe code in their repo.",
     },
     {
       title: "Generic AI aesthetic vs. opinionated craft",
       chosen:
-        "Curated materials with a clear visual signature — fewer items at a higher bar, each with measured performance budget.",
+        "Curated materials with a clear visual signature, fewer items at a higher bar, each with measured performance budget.",
       rejected:
         "Volume catalog of anonymous effects (the Aceternity problem). High demo impact, zero differentiation.",
     },
@@ -79,7 +79,7 @@ export const frameline: CaseStudy = {
       title: "Process",
       body: [
         "I defined Frameline as a commercial surface & materials system: typed React components, token-bound, production-safe, with a live configurator and plain-language licensing.",
-        "Discovery Phase 01 focused on Gate 01 evidence — waitlist, willingness-to-pay, and install intent — before locking commerce architecture.",
+        "Discovery Phase 01 focused on Gate 01 evidence, waitlist, willingness-to-pay, and install intent, before locking commerce architecture.",
         "The catalog includes screen templates (e.g. Softwave hero and feature cards) that demonstrate how materials compose into real product surfaces, not isolated demos.",
         "Built with Next.js App Router, WebGL shaders, and a solo-operable publishing pipeline so each new material ships in hours, not days.",
       ],
@@ -96,7 +96,7 @@ export const frameline: CaseStudy = {
       id: "reflection",
       title: "What I'd do differently",
       body: [
-        "Publish fewer materials earlier with stronger before/after case studies — buyers need to see transformation on a real app shell, not just the material in isolation.",
+        "Publish fewer materials earlier with stronger before/after case studies, buyers need to see transformation on a real app shell, not just the material in isolation.",
       ],
     },
   ],
@@ -115,7 +115,7 @@ export const frameline: CaseStudy = {
           label: "FORGE.AI",
           caption: "Product design and development",
           src: "/work/cases/frameline/forge-ai-hero.webp",
-          alt: "FORGE.AI landing page — build apps by chatting with AI",
+          alt: "FORGE.AI landing page, build apps by chatting with AI",
           variant: "shot",
         },
         {
@@ -123,7 +123,7 @@ export const frameline: CaseStudy = {
           label: "Pulse",
           caption: "Product design and development",
           src: "/work/cases/frameline/pulse-hero.webp",
-          alt: "Pulse health AI hero — vitals tracking and wellness coaching",
+          alt: "Pulse health AI hero, vitals tracking and wellness coaching",
           variant: "shot",
         },
         {
@@ -131,7 +131,7 @@ export const frameline: CaseStudy = {
           label: "Passo",
           caption: "Product design and development",
           src: "/work/cases/frameline/passo.webp",
-          alt: "Passo running app hero — GPS tracking and pace coaching",
+          alt: "Passo running app hero, GPS tracking and pace coaching",
           variant: "shot",
         },
         {
@@ -139,7 +139,7 @@ export const frameline: CaseStudy = {
           label: "Softwave",
           caption: "Product design and development",
           src: "/work/cases/frameline/softwave-feature-cards.webp",
-          alt: "Softwave feature cards — ML workflow surfaces",
+          alt: "Softwave feature cards, ML workflow surfaces",
           variant: "shot",
         },
         {
@@ -147,7 +147,7 @@ export const frameline: CaseStudy = {
           label: "Reticle",
           caption: "Product design and development",
           src: "/work/cases/frameline/defect-assistant-hero.webp",
-          alt: "Reticle defect assistant hero — in-line semiconductor inspection",
+          alt: "Reticle defect assistant hero, in-line semiconductor inspection",
           variant: "shot",
         },
         {
@@ -155,7 +155,7 @@ export const frameline: CaseStudy = {
           label: "Reticle",
           caption: "Product design and development",
           src: "/work/cases/frameline/ai-inspection-interface.webp",
-          alt: "Reticle AI inspection interface — yield-focused fab tooling",
+          alt: "Reticle AI inspection interface, yield-focused fab tooling",
           variant: "shot",
         },
         {
@@ -171,7 +171,7 @@ export const frameline: CaseStudy = {
           label: "Reticle",
           caption: "Product design and development",
           src: "/work/cases/frameline/pixel-cube-hero.webp",
-          alt: "Reticle pixel cube hero — defect capture for high-volume fabs",
+          alt: "Reticle pixel cube hero, defect capture for high-volume fabs",
           variant: "shot",
         },
         {
@@ -179,7 +179,7 @@ export const frameline: CaseStudy = {
           label: "Reticle",
           caption: "Product design and development",
           src: "/work/cases/frameline/space-explorer-hero.webp",
-          alt: "Reticle space explorer hero — ranked review for yield",
+          alt: "Reticle space explorer hero, ranked review for yield",
           variant: "shot",
         },
         {
@@ -187,7 +187,7 @@ export const frameline: CaseStudy = {
           label: "Reticle",
           caption: "Product design and development",
           src: "/work/cases/frameline/magenta-landscape-hero.webp",
-          alt: "Reticle magenta landscape hero — built for yield",
+          alt: "Reticle magenta landscape hero, built for yield",
           variant: "shot",
         },
         {
@@ -203,7 +203,7 @@ export const frameline: CaseStudy = {
           label: "Reticle",
           caption: "Product design and development",
           src: "/work/cases/frameline/yield-inspection-dashboard.webp",
-          alt: "Reticle yield inspection dashboard — production-qualified models",
+          alt: "Reticle yield inspection dashboard, production-qualified models",
           variant: "shot",
         },
         {
@@ -211,7 +211,7 @@ export const frameline: CaseStudy = {
           label: "Reticle",
           caption: "Product design and development",
           src: "/work/cases/frameline/miracle-login-cyan.webp",
-          alt: "Reticle sign-in — inspection workspace access",
+          alt: "Reticle sign-in, inspection workspace access",
           variant: "shot",
         },
       ],
@@ -219,5 +219,5 @@ export const frameline: CaseStudy = {
   ],
   logos: [{ src: "/work/logos/frameline.png", alt: "Frameline" }],
   published: true,
-  order: 5,
+  order: 6,
 };

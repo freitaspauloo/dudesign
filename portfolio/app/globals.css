@@ -1514,7 +1514,7 @@ html {
   letter-spacing: -0.02em;
   font-weight: 400;
   color: var(--ink);
-  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  margin: 0 0 1rem;
   max-width: 15em;
 }
 
@@ -1652,10 +1652,11 @@ html {
 }
 
 .case-study__hero {
-  border-radius: var(--radius);
-  overflow: hidden;
+  border-radius: 0;
+  overflow: visible;
+  margin-top: 3.5rem;
   margin-bottom: 0;
-  background: var(--line);
+  background: transparent;
 }
 
 .case-study__hero:not(:has(.prototype-launch)) {
@@ -1669,7 +1670,6 @@ html {
 .case-study__hero:has(.prototype-launch) {
   overflow: visible;
   padding-top: 0;
-  margin-top: 0;
   background: transparent;
 }
 
@@ -1678,6 +1678,8 @@ html {
   height: auto;
   aspect-ratio: auto;
   display: block;
+  object-fit: contain;
+  border-radius: 0;
 }
 
 /* Case study visual gallery */
@@ -3075,7 +3077,7 @@ html {
 .frame-hero {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
+  align-items: end;
   gap: 2rem;
   min-height: 24.9375rem;
   padding: clamp(6rem, 14vw, 12.5rem) var(--frame-pad-x) clamp(3.5rem, 7vw, 6.25rem);
@@ -3087,9 +3089,9 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-end;
   gap: 1.75rem;
   min-width: 0;
-  padding-bottom: 0.5rem;
 }
 
 .frame-bar__cta {
@@ -3118,10 +3120,10 @@ html {
 .frame-hero__title {
   margin: 0;
   font-family: var(--font-suisse), "Suisse Int'l", sans-serif;
-  font-size: clamp(calc(2rem - 2px), calc(3.2vw - 2px), calc(2.875rem - 2px));
+  font-size: clamp(2.25rem, 4.15vw, 3.75rem);
   font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   color: var(--frame-title);
   white-space: pre-line;
 }
@@ -3414,6 +3416,8 @@ a.frame-hero__company {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
+  min-width: 0;
+  max-width: 100%;
   color: inherit;
   text-decoration: none;
 }
@@ -3474,6 +3478,7 @@ a.frame-hero__company {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  min-width: 0;
 }
 
 .frame-work__client {
@@ -3549,6 +3554,16 @@ a.frame-hero__company {
   min-width: 0;
 }
 
+.frame-work__title .swap,
+.frame-work__title .swap-line {
+  max-width: 100%;
+}
+
+.frame-work__title .swap-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .frame-work__role {
   color: var(--frame-ink);
   opacity: 0.5;
@@ -3587,8 +3602,8 @@ a.frame-hero__company {
 .frame-enterprise {
   display: flex;
   flex-direction: column;
-  gap: clamp(6rem, 17vw, 15.375rem);
-  padding: clamp(4.5rem, 11vw, 10rem) var(--frame-pad-x) 0;
+  gap: clamp(3.5rem, 7vw, 6.25rem);
+  padding: clamp(3.5rem, 7vw, 6.25rem) var(--frame-pad-x) 0;
 }
 
 .frame-enterprise__layout {
@@ -3608,7 +3623,7 @@ a.frame-hero__company {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3.125rem;
+  gap: 1.75rem;
   min-width: 0;
   width: 100%;
 }
@@ -3709,9 +3724,9 @@ a.frame-hero__company {
   margin: 0;
   min-width: 0;
   font-family: var(--font-suisse), "Suisse Int'l", sans-serif;
-  font-size: clamp(2.25rem, 4.15vw, 3.75rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(calc(2rem - 2px), calc(3.2vw - 2px), calc(2.875rem - 2px));
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   font-weight: 400;
   color: var(--frame-title);
 }
@@ -3729,15 +3744,15 @@ a.frame-hero__company {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .frame-enterprise__copy p {
   margin: 0;
-  max-width: 70%;
-  font-size: clamp(1.125rem, 1.67vw, 1.5rem);
-  line-height: 1.4;
-  color: var(--frame-body);
+  max-width: 34rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--frame-ink-soft);
 }
 
 .frame-enterprise__row {
@@ -3781,7 +3796,7 @@ a.frame-hero__company {
 
   .frame-work__grid,
   .frame-fun__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .frame-logo-wall {
@@ -3826,16 +3841,170 @@ a.frame-hero__company {
 }
 
 @media (max-width: 640px) {
+  .frame-bar--header .frame-bar__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand cta"
+      "nav nav";
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.85rem;
+  }
+
+  .frame-bar--header .frame-bar__brand {
+    grid-area: brand;
+    min-width: 0;
+  }
+
+  .frame-bar--header .frame-bar__brand-name {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .frame-bar--header .frame-bar__nav {
+    grid-area: nav;
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    gap: 1.15rem;
+  }
+
+  .frame-bar--header .frame-bar__cta {
+    grid-area: cta;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+  }
+
+  .frame-bar--footer .frame-bar__inner {
+    flex-wrap: wrap;
+    row-gap: 0.85rem;
+  }
+
+  .frame-bar--footer .frame-bar__social {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.15rem;
+  }
+
   .frame-bar__brand-role {
     display: none;
   }
 
-  .frame-bar__nav {
-    gap: 0.71875rem;
+  .frame-bar__link {
+    font-size: 0.8125rem;
+  }
+
+  .frame-hero__timeline-row {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    column-gap: 0.5rem;
+  }
+
+  .frame-hero__year,
+  .frame-hero__company,
+  .frame-hero__role {
+    font-size: 0.8125rem;
+  }
+
+  .frame-hero__company {
+    flex-shrink: 0;
+    min-width: max-content;
+  }
+
+  .frame-hero__role {
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: normal;
+    text-align: right;
   }
 
   .frame-bar__link {
-    font-size: 0.8125rem;
+    padding-block: 0.45rem;
+  }
+
+  .case-study__client,
+  .case-study__eyebrow {
+    letter-spacing: 0.06em;
+    line-height: 1.45;
+  }
+
+  .case-study__nav a {
+    padding-block: 0.4rem;
+  }
+
+  .frame-work__meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .frame-work__client {
+    justify-content: flex-start;
+  }
+
+  .resume-page {
+    padding-top: var(--space-4);
+  }
+
+  .resume-job__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .resume-job__head span {
+    white-space: normal;
+  }
+
+  .resume-meta {
+    overflow-wrap: anywhere;
+  }
+
+  .case-study__display-title {
+    max-width: none;
+  }
+
+  .case-study__surface {
+    max-width: none;
+  }
+
+  .case-study__nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
+    padding-bottom: 0.15rem;
+    scrollbar-width: none;
+  }
+
+  .case-study__nav li {
+    flex-shrink: 0;
+  }
+
+  .case-study__nav a {
+    white-space: nowrap;
+  }
+
+  .case-study__sidebar {
+    padding-bottom: 0.5rem;
+  }
+
+  .page--frame:has(.case-study) .case-study__sidebar {
+    top: 6rem;
+  }
+
+  .case-study__section,
+  .case-study__role,
+  .case-study__intro {
+    scroll-margin-top: 11rem;
+  }
+
+  .case-study__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
   }
 
   .frame-logo-wall {
@@ -4006,7 +4175,7 @@ a.frame-hero__company {
 }
 
 .frame-how {
-  padding: clamp(4.5rem, 11vw, 10rem) var(--frame-pad-x) 0;
+  padding: clamp(3.5rem, 7vw, 6.25rem) var(--frame-pad-x) 0;
 }
 
 .frame-contact {
@@ -4017,13 +4186,14 @@ a.frame-hero__company {
 .frame-how h2,
 .frame-tools h2,
 .frame-contact h2 {
-  margin: 0 0 2.5rem;
+  margin: 0 0 1.75rem;
   max-width: 18ch;
   font-family: var(--font-suisse), "Suisse Int'l", sans-serif;
-  font-size: clamp(2.25rem, 4.15vw, 3.75rem);
+  font-size: clamp(calc(2rem - 2px), calc(3.2vw - 2px), calc(2.875rem - 2px));
   font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--frame-title);
 }
 
 .frame-contact h2 {
@@ -4036,7 +4206,7 @@ a.frame-hero__company {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.75rem 3.5rem;
+  gap: 1.75rem 2rem;
 }
 
 .frame-how__list li {
@@ -4046,21 +4216,26 @@ a.frame-hero__company {
 }
 
 .frame-how__index {
+  font-size: 0.9375rem;
+  line-height: 1.5;
   font-variant-numeric: tabular-nums;
   color: var(--frame-ink-soft);
 }
 
 .frame-how__list h3 {
-  margin: 0 0 0.65rem;
-  font-size: 1.5rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.9375rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--frame-title);
 }
 
 .frame-how__list p,
 .frame-contact p {
   margin: 0;
-  max-width: 38rem;
+  max-width: 34rem;
+  font-size: 0.9375rem;
   line-height: 1.5;
   color: var(--frame-ink-soft);
 }
@@ -4227,7 +4402,7 @@ a.frame-hero__company {
 }
 
 .case-study__surface {
-  margin: 0.75rem 0 0;
+  margin: 0;
   max-width: 40rem;
   color: var(--frame-ink-soft);
 }

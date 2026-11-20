@@ -55,6 +55,16 @@ export const homeTimeline: HomeTimelineEntry[] = [
     },
   },
   {
+    year: "2025",
+    company: "Frameline",
+    role: "AI design assets library",
+    href: "/work/frameline",
+    preview: {
+      src: "/work/cases/frameline.webp",
+      alt: "Frameline design surface configurator",
+    },
+  },
+  {
     year: "2024",
     company: "Ford",
     role: "OEM wrap program",
@@ -123,6 +133,16 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
       src: "/work/cases/aligned-ai/desktop-1.png",
       alt: "Aligned AI desktop workspace overview with sidebar and Good morning Paulo",
       fit: "contain",
+    },
+  },
+  {
+    title: "AI design assets library",
+    client: "Frameline",
+    href: "/work/frameline",
+    logos: [{ src: "/work/logos/frameline.png", alt: "Frameline", mark: true }],
+    image: {
+      src: "/work/cases/frameline.webp",
+      alt: "Frameline design surface configurator",
     },
   },
   {

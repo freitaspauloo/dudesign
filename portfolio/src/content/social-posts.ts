@@ -179,6 +179,19 @@ In-cabin experience. Designed and coded.`,
 fonts`,
     x: `pixel fonts`,
   },
+  {
+    slug: "use-warp-everywhere",
+    number: "11",
+    title: "Use Warp everywhere",
+    date: "2026-11-21",
+    kind: "process",
+    format: "Stack",
+    channels: ["Instagram"],
+    visual: "Grey field. Project source and link. Same ink border as pixel fonts. 1080 × 1350.",
+    linkedin: `Use Warp everywhere.
+An open agentic development platform, wherever you work.`,
+    x: `Use Warp everywhere.`,
+  },
 ];
 
 export function getSocialPost(slug: string): SocialPost | undefined {

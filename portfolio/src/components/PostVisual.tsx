@@ -1,4 +1,5 @@
 import type { SocialPost } from "@/src/content/social-posts";
+import { FeaturePairPost } from "@/src/components/FeaturePairPost";
 import { PixelFontsPost } from "@/src/components/PixelFontsPost";
 import { assetPath } from "@/src/lib/asset-path";
 
@@ -28,6 +29,8 @@ function visualFor(post: SocialPost) {
       return <ProcessModelDefault />;
     case "pixel-fonts":
       return <PixelFontsPost />;
+    case "use-warp-everywhere":
+      return <FeaturePairPost />;
     default:
       return null;
   }

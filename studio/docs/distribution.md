@@ -65,6 +65,6 @@ Use the personal URL in every application:
 
 ## DUDESIGN (Phase 2 — clients)
 
-- dudesign.us stays the pitch deck
+- dudesign.us is the studio marketing site (`studio/` on Vercel)
 - Work slides now lead with Aligned, Frameline, BuiltOps
 - Case cards link to paulo.dudesign.us/work/* for depth

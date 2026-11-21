@@ -14,7 +14,7 @@ export const site = {
   x: "https://x.com/freitaspauloo",
   github: "https://github.com/freitaspauloo",
   resumePdf: "/resume.pdf",
-  studioUrl: "https://studio.dudesign.us",
+  studioUrl: "https://dudesign.us",
   location: "US market",
   skills: [
     "AI product design",

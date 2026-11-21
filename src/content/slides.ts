@@ -404,6 +404,6 @@ export const slides: Slide[] = [
     kind: "cta",
     headline: "Book the sprint.",
     email: "hello@dudesign.us",
-    web: "studio.dudesign.us",
+    web: "dudesign.us",
   },
 ];

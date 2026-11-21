@@ -134,7 +134,7 @@ function SlideShell({
       <div className="slide-main">{children}</div>
       {showFooter ? (
         <footer className="slide-footer">
-          <span>studio.dudesign.us</span>
+          <span>dudesign.us</span>
           <span>hello@dudesign.us</span>
         </footer>
       ) : null}

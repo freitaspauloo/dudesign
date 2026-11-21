@@ -6,8 +6,8 @@ export const site = {
   description:
     "Two-week product sprints for AI startups. We get the product ready to launch, raise, and look 10x bigger. $4,500, one sprint at a time.",
   credibility: ["Audi", "Samsung", "3M", "Ford", "Sony + Honda"],
-  domain: "studio.dudesign.us",
-  url: "https://studio.dudesign.us",
+  domain: "dudesign.us",
+  url: "https://dudesign.us",
   email: "hello@dudesign.us",
   linkedin: "https://www.linkedin.com/in/freitaspauloo/",
   x: "https://x.com/freitaspauloo",

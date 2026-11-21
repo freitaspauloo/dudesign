@@ -31,7 +31,7 @@ Local preview through the deck: [http://localhost:3000/paulo](http://localhost:3
 
 ## Studio site
 
-[`studio/`](studio/) is a duplicate of the personal portfolio with studio copy. It deploys to [studio.dudesign.us](https://studio.dudesign.us). It does not replace `portfolio/`, paulo.dudesign.us, or the pitch deck.
+[`studio/`](studio/) is the DUDESIGN studio marketing site (studio copy). It deploys to **[dudesign.us](https://dudesign.us)** from Root Directory `studio` on Vercel (`studio.dudesign.us` redirects to the apex). See [docs/deploy-dudesign-apex-domain.md](docs/deploy-dudesign-apex-domain.md) for DNS on Hover. It does not replace `portfolio/` or paulo.dudesign.us.
 
 ```bash
 npm run studio:install   # first time

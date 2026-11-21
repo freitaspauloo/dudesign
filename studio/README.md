@@ -2,7 +2,7 @@
 
 Personal portfolio for **Product Designer — AI/SaaS** job applications.
 
-**Live:** [paulo.dudesign.us](https://paulo.dudesign.us)
+**Live:** [dudesign.us](https://dudesign.us) (legacy host `studio.dudesign.us` redirects here)
 
 This app lives inside the **dudesign** monorepo. Vercel deploys it from `portfolio/` (Root Directory) on pushes to `main`.
 
@@ -45,8 +45,9 @@ One GitHub repo (`freitaspauloo/dudesign`), two Vercel projects:
 
 | Domain | Root Directory | App |
 |--------|----------------|-----|
-| `dudesign.us` | `.` (repo root) | Studio pitch deck |
-| `paulo.dudesign.us` | `portfolio` | This portfolio |
+| `dudesign.us` | `studio` | This studio site |
+| `paulo.dudesign.us` | `portfolio` | Personal portfolio |
+| `.` (repo root) | `.` | Slide deck (local / separate deploy) |
 
 In the **Paulo** Vercel project: **Settings → Git → Root Directory → `portfolio`**, then connect to `freitaspauloo/dudesign` and redeploy.
 

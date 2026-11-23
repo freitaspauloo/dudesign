@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: caseStudy.title,
     description: caseStudy.subtitle,
+    robots: caseStudy.unlisted ? { index: false, follow: false } : undefined,
     openGraph: {
       title: `${caseStudy.title}, Case study`,
       description: caseStudy.subtitle,

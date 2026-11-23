@@ -5,7 +5,7 @@ import { site } from "@/src/content/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
   const caseRoutes = allCases
-    .filter((c) => c.published)
+    .filter((c) => c.published && !c.unlisted)
     .map((c) => ({
       url: `${base}/work/${c.slug}`,
       lastModified: new Date(),

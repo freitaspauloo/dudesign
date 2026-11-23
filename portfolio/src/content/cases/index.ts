@@ -29,7 +29,7 @@ export function getCaseBySlug(slug: string): CaseStudy | undefined {
 
 export function getPublishedCases(): CaseStudy[] {
   return allCases
-    .filter((c) => c.published)
+    .filter((c) => c.published && !c.unlisted)
     .sort((a, b) => a.order - b.order);
 }
 

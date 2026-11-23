@@ -142,5 +142,6 @@ export const alpic: CaseStudy = {
     },
   ],
   published: true,
+  unlisted: true,
   order: 0,
 };

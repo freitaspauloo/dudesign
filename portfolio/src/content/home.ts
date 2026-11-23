@@ -24,17 +24,6 @@ export type HomeFeaturedProject = {
 export const homeTimeline: HomeTimelineEntry[] = [
   {
     year: "2026",
-    company: "Alpic",
-    role: "Agent experiment flow",
-    href: "/work/alpic",
-    preview: {
-      src: "/work/cases/alpic/cover.webp",
-      alt: "Pixel mountain with the line Your next user might not be human",
-      fit: "contain",
-    },
-  },
-  {
-    year: "2026",
     company: "Conifer",
     role: "Workspace for coding agents",
     href: "/work/conifer",
@@ -98,18 +87,6 @@ export const homeTimeline: HomeTimelineEntry[] = [
 
 /** Featured grid on the Paper homepage frame (15H-0). */
 export const homeFeaturedProjects: HomeFeaturedProject[] = [
-  {
-    title: "Agent experiment flow",
-    client: "Alpic",
-    href: "/work/alpic",
-    logos: [{ src: "/work/logos/alpic.svg", alt: "Alpic", mark: true }],
-    image: {
-      src: "/work/cases/alpic/cover.webp",
-      alt: "Pixel mountain with the line Your next user might not be human",
-      fit: "contain",
-      video: "/work/cases/alpic/cover-3.mp4",
-    },
-  },
   {
     title: "Workspace for coding agents",
     client: "Conifer",

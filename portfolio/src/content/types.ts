@@ -85,6 +85,8 @@ export type CaseStudy = {
   roleTitle?: string;
   featured?: boolean;
   published: boolean;
+  /** Reachable by URL, omitted from home, work, about, and the sitemap. */
+  unlisted?: boolean;
   order: number;
   /** Place the key-decisions block after this section, then continue the story. */
   decisionsAfter?: string;

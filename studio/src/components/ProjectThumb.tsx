@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { assetPath } from "@/src/lib/asset-path";
-import { ConiferThumb } from "@/src/components/ConiferThumb";
+import { BonsaiThumb } from "@/src/components/BonsaiThumb";
 
 type Props = {
   src: string;
@@ -49,7 +49,7 @@ export function ProjectThumb({ src, alt, fit = "cover", video, bonsai }: Props) 
     return () => observer.disconnect();
   }, [video]);
 
-  if (bonsai) return <ConiferThumb />;
+  if (bonsai) return <BonsaiThumb />;
 
   if (!video) {
     return (

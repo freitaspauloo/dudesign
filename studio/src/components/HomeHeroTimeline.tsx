@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { HomeTimelineEntry } from "@/src/content/home";
 import { assetPath } from "@/src/lib/asset-path";
+import { BonsaiThumb } from "@/src/components/BonsaiThumb";
 import { SwapLabel } from "@/src/components/SwapLabel";
 
 const HIDE_MS = 90;
@@ -39,6 +40,7 @@ export function HomeHeroTimeline({ entries }: Props) {
   const [previewsEnabled, setPreviewsEnabled] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [shownSrc, setShownSrc] = useState<string | null>(null);
+  const [shownBonsai, setShownBonsai] = useState(false);
   const [visible, setVisible] = useState(false);
 
   const byId = useCallback(
@@ -64,7 +66,7 @@ export function HomeHeroTimeline({ entries }: Props) {
   useEffect(() => {
     if (!previewsEnabled) return;
     for (const entry of entries) {
-      if (!entry.preview) continue;
+      if (!entry.preview?.src) continue;
       const img = new window.Image();
       img.src = assetPath(entry.preview.src);
     }
@@ -85,7 +87,13 @@ export function HomeHeroTimeline({ entries }: Props) {
       if (activeIdRef.current !== id) {
         activeIdRef.current = id;
         setActiveId(id);
-        setShownSrc(assetPath(entry.preview.src));
+        if (entry.preview.bonsai) {
+          setShownBonsai(true);
+          setShownSrc(null);
+        } else if (entry.preview.src) {
+          setShownBonsai(false);
+          setShownSrc(assetPath(entry.preview.src));
+        }
       }
       const el = previewRef.current;
       if (el) placePreview(el, x, y);
@@ -105,10 +113,10 @@ export function HomeHeroTimeline({ entries }: Props) {
 
   useEffect(() => {
     const el = previewRef.current;
-    if (!el || !shownSrc) return;
+    if (!el || (!shownSrc && !shownBonsai)) return;
     const { x, y } = pointerRef.current;
     placePreview(el, x, y);
-  }, [shownSrc]);
+  }, [shownSrc, shownBonsai]);
 
   useEffect(() => {
     const list = listRef.current;
@@ -188,21 +196,29 @@ export function HomeHeroTimeline({ entries }: Props) {
         ))}
       </ol>
 
-      {previewsEnabled && shownSrc ? (
+      {previewsEnabled && (shownSrc || shownBonsai) ? (
         <div
           ref={previewRef}
-          className="hero-timeline-preview"
+          className={
+            shownBonsai
+              ? "hero-timeline-preview is-bonsai"
+              : "hero-timeline-preview"
+          }
           aria-hidden="true"
           data-visible={visible ? "true" : "false"}
         >
-          <Image
-            src={shownSrc}
-            alt=""
-            fill
-            unoptimized
-            sizes="400px"
-            style={{ objectFit: "cover", objectPosition: "center" }}
-          />
+          {shownBonsai ? (
+            <BonsaiThumb patternId="bonsai-field-preview" />
+          ) : shownSrc ? (
+            <Image
+              src={shownSrc}
+              alt=""
+              fill
+              unoptimized
+              sizes="400px"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          ) : null}
         </div>
       ) : null}
     </>

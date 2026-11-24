@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/src/content/site";
+import { BtnArrow } from "@/src/components/BtnArrow";
 import { SwapLabel } from "@/src/components/SwapLabel";
 
 const nav = [
@@ -24,6 +25,10 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+        <Link href={site.bookHref} className="btn btn--solid frame-bar__cta">
+          Book a sprint
+          <BtnArrow />
+        </Link>
       </div>
     </header>
   );

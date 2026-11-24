@@ -3,7 +3,7 @@ export type HomeTimelineEntry = {
   company: string;
   role: string;
   href?: string;
-  preview?: { src: string; alt: string; fit?: "cover" | "contain" };
+  preview?: { src?: string; alt: string; fit?: "cover" | "contain"; bonsai?: boolean };
 };
 
 export type HomeFeaturedProject = {
@@ -39,9 +39,8 @@ export const homeTimeline: HomeTimelineEntry[] = [
     role: "Workspace for coding agents",
     href: "/work/conifer",
     preview: {
-      src: "/work/cases/conifer/product-captain.png",
-      alt: "Parallax Captain splitting one ask across three agents",
-      fit: "contain",
+      alt: "Pixel bonsai",
+      bonsai: true,
     },
   },
   {

@@ -87,7 +87,7 @@ function markAt(elapsed: number) {
   return { index: 0, time: 0 };
 }
 
-export function BonsaiThumb() {
+export function BonsaiThumb({ patternId = "bonsai-field" }: { patternId?: string } = {}) {
   const nodes = useRef<(SVGRectElement | null)[][]>([]);
   const root = useRef<HTMLDivElement>(null);
 
@@ -160,7 +160,7 @@ export function BonsaiThumb() {
         <title>Conifer pixel marks</title>
         <defs>
           <pattern
-            id="bonsai-field"
+            id={patternId}
             width={PITCH * SCALE}
             height={PITCH * SCALE}
             patternUnits="userSpaceOnUse"
@@ -178,7 +178,7 @@ export function BonsaiThumb() {
           </pattern>
         </defs>
         <rect x={VIEW_X} y="0" width={VIEW_W} height={VIEW_H} fill="#044EFD" />
-        <rect x={VIEW_X} y="0" width={VIEW_W} height={VIEW_H} fill="url(#bonsai-field)" />
+        <rect x={VIEW_X} y="0" width={VIEW_W} height={VIEW_H} fill={`url(#${patternId})`} />
         <g transform={`translate(${CX} ${CY}) scale(${SCALE}) translate(${-CX} ${-CY})`}>
           {marks.map((mark, markIndex) =>
             mark.squares.map((square, index) => (

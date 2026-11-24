@@ -57,9 +57,9 @@ Independent studio founded by Paulo (LinkedIn: founded 2020; 1-person company).
 
 **Method:** Strategy. Design. Implementation.
 
-**Tiers (live deck, Aug 2026):**
+**Tiers (official, Oct 2026):**
 
-- **Standard** — $21,000 / 8 weeks — a defined surface, designed and shipped
+- **Standard** — $7,000/mo · 3-month commit ($21,000 total) — billed monthly — a defined surface, designed and shipped
 - **Partner** — $6,000/mo · 6-month minimum ($36,000) — then month-to-month
 - **Yearly** (recommended) — $5,000/mo · 12-month commit ($60,000) — billed monthly
 

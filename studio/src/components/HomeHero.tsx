@@ -6,7 +6,7 @@ export function HomeHero() {
     <section className="frame-hero" aria-label="Introduction">
       <div className="frame-hero__lead">
         <h1 className="frame-hero__title">
-          Product sprints design
+          Product design
           <br />
           for AI startups.
         </h1>

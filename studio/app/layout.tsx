@@ -25,7 +25,7 @@ const suisse = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "DUDESIGN | Product sprints for AI startups",
+    default: "DUDESIGN | Product design for AI startups",
     template: "%s | DUDESIGN",
   },
   description: site.description,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     apple: "/brand/mark-light.svg",
   },
   openGraph: {
-    title: "DUDESIGN | Product sprints for AI startups",
+    title: "DUDESIGN | Product design for AI startups",
     description: site.description,
     url: site.url,
     siteName: site.name,

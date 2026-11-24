@@ -1,6 +1,6 @@
 export const site = {
   name: "DUDESIGN",
-  title: "Product sprints for AI startups",
+  title: "Product design for AI startups",
   tagline:
     "Product sprints that get AI startups to market. Look bigger, launch faster, raise with a product that holds up.",
   description:
@@ -12,8 +12,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/freitaspauloo/",
   x: "https://x.com/freitaspauloo",
   github: "https://github.com/freitaspauloo",
-  bookHref:
-    "https://formdudesign.notion.site/4165ad97dbfc4e0781e6a9ccc6e53469",
+  bookHref: "https://cal.com/paulo-freitas-my9ell/30min",
   price: "$4,500",
   retainerFrom: "$4,000",
   personalSite: "https://paulo.dudesign.us",

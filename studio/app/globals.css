@@ -3094,6 +3094,7 @@ html {
 .frame-bar__cta {
   border-radius: 0;
   flex-shrink: 0;
+  margin-left: 1.25rem;
   padding: 10px 14px;
   font-size: 1rem;
   font-weight: 400;
@@ -3870,6 +3871,7 @@ a.frame-hero__company {
 
   .frame-bar--header .frame-bar__cta {
     grid-area: cta;
+    margin-left: 0;
     padding: 8px 12px;
     font-size: 0.875rem;
   }
